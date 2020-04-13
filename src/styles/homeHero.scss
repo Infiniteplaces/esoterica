@@ -1,0 +1,15 @@
+#homeHero {
+  height: 771px;
+  width: 100%;
+  position: relative;
+  .button {
+    width: 224px;
+    height: 64px;
+    background-color: $black;
+    color: $white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+  }
+}

@@ -1,0 +1,53 @@
+header {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  height: 80px;
+  width: 100%;
+  padding: 0px 10px;
+  border-bottom: 1px solid $grey;
+  color: $black;
+  background-color: $transparent;
+
+  .logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    .nav-logo {
+      width: 202px;
+    }
+  }
+
+  .nav-links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    a {
+      display: flex;
+      align-items: center;
+      span {
+        padding-top: 8px;
+      }
+      .indicator {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background-color: $transparent;
+        margin-right: 7px;
+        &.active {
+          background-color: $black;
+        }
+      }
+    }
+  }
+
+  .nav-icons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    a {
+      margin: 0px 10px;
+    }
+  }
+}
