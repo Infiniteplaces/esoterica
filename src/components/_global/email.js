@@ -3,8 +3,8 @@ import { connect } from "react-redux"
 // import addToMailchimp from "gatsby-plugin-mailchimp"
 
 const Email = ({ mobile }) => {
-  let [msg, setMsg] = useState("Stay in touch, or ")
-  let email_cta = mobile ? "GO" : "SUBMIT"
+  let [msg, setMsg] = useState("Stay in the know")
+  let email_cta = "SEND"
   function _submit(e) {
     e.preventDefault()
     let email = e.target[0].value
@@ -25,15 +25,7 @@ const Email = ({ mobile }) => {
   }
   return (
     <div className="email-signup-container">
-      <div className="email-header">
-        {msg}{" "}
-        <a
-          className="contact-us mobile"
-          href="mailto:info@reedartdepartment.com"
-        >
-          <span>Reach out</span>
-        </a>
-      </div>
+      <div className="email-header">{msg}</div>
       <div className="email-form">
         <form action="" onSubmit={e => _submit(e)}>
           <input
@@ -42,7 +34,7 @@ const Email = ({ mobile }) => {
             htmlFor="email"
             id="email"
             name="email"
-            placeholder="YOUREMAIL@WEBSITE.COM"
+            placeholder="Email Address"
           />
           <input className="submit-button" type="submit" value={email_cta} />
         </form>
