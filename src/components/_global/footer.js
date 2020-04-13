@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import React from "react"
 import { connect } from "react-redux"
 import { Container, Row, Col } from "reactstrap"
+import Email from "./email"
 
 import logo_white from "../../../static/logos/esoterica-logo-white.svg"
 
@@ -41,7 +42,9 @@ const Footer = ({}) => {
               width="467"
             />
           </Col>
-          <Col>Email</Col>
+          <Col className="d-flex justify-content-end align-items-end">
+            <Email />
+          </Col>
         </Row>
       </Container>
       <div className="announcement-bar">
