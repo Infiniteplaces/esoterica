@@ -22,6 +22,11 @@
     url("../../static/fonts/UniversLTPro-BoldExt.woff2") format("woff2");
 }
 
+p {
+  padding: 0;
+  margin: 0;
+}
+
 a,
 link {
   font-family: inherit;
@@ -39,26 +44,23 @@ link {
     color: inherit;
     text-decoration: none;
   }
+  &.underline {
+    text-decoration: underline;
+  }
 }
 
 .button {
   font-family: "univers extended";
   font-size: 22px;
   letter-spacing: -0.5px;
-  margin: 0;
-  padding: 0;
   &:hover {
     font-family: "univers extended";
     font-size: 22px;
     letter-spacing: -0.5px;
-    margin: 0;
-    padding: 0;
   }
 }
 
-body,
-span,
-p {
+body {
   font-family: "univers light";
   font-size: 20px;
   line-height: 28px;
@@ -78,6 +80,9 @@ h1.section {
   margin: 0;
   padding: 0;
   @media (max-width: map-get($grid-breakpoints,md)) {
+    font-size: 60px;
+    line-height: 60px;
+    letter-spacing: -3.69px;
   }
 }
 
@@ -90,6 +95,8 @@ h1.article {
   margin: 0;
   padding: 0;
   @media (max-width: map-get($grid-breakpoints,md)) {
+    font-size: 55px;
+    line-height: 60px;
   }
 }
 
@@ -101,6 +108,8 @@ h2 {
   margin: 0;
   padding: 0;
   @media (max-width: map-get($grid-breakpoints,md)) {
+    font-size: 40px;
+    line-height: 45px;
   }
 }
 
@@ -113,6 +122,8 @@ h3 {
   margin: 0;
   padding: 0;
   @media (max-width: map-get($grid-breakpoints,md)) {
+    font-size: 18px;
+    line-height: 24px;
   }
 }
 

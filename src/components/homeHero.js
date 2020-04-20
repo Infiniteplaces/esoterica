@@ -44,11 +44,11 @@ const HomeHero = ({}) => {
           <h1 className="section">
             Next-generation <br /> investing
           </h1>
-          <p className="py-4">
+          <h3 className="py-4">
             Esoterica is redesigning investing for all. Based in future <br />
             technologies, backed by industry-leading experts.
-          </p>
-          <Link className="button" to="/about">
+          </h3>
+          <Link className="button primary" to="/about">
             Learn More
           </Link>
         </Col>

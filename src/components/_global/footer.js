@@ -43,7 +43,7 @@ const Footer = ({}) => {
             />
           </Col>
           <Col className="d-flex justify-content-end align-items-end">
-            <Email />
+            <Email header={true} />
           </Col>
         </Row>
       </Container>

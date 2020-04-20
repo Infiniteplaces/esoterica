@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { connect } from "react-redux"
 // import addToMailchimp from "gatsby-plugin-mailchimp"
 
-const Email = ({ mobile }) => {
+const Email = ({ mobile, header }) => {
   let [msg, setMsg] = useState("Stay in the know")
   let email_cta = "SEND"
   function _submit(e) {
@@ -25,7 +25,7 @@ const Email = ({ mobile }) => {
   }
   return (
     <div className="email-signup-container">
-      <div className="email-header">{msg}</div>
+      {header ? <div className="email-header">{msg}</div> : ""}
       <div className="email-form">
         <form action="" onSubmit={e => _submit(e)}>
           <input

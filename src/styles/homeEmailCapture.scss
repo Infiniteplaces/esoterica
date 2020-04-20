@@ -1,0 +1,90 @@
+#homeEmailCapture {
+  padding: 150px 20px;
+  background-color: $black;
+  color: $white;
+  h3 {
+    margin-bottom: 50px;
+  }
+  .email-signup-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    .email-header {
+      margin-bottom: 10px;
+    }
+    .email-form {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      form {
+        border-radius: 0;
+        width: 100%;
+        input {
+          background-color: $black;
+          color: $white;
+          border: none;
+          border-bottom: 1px solid $white;
+          &.email-input {
+            padding-bottom: 5px;
+            width: 85%;
+          }
+          &.submit-button {
+            padding-bottom: 5px;
+            width: 15%;
+            color: $white;
+          }
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: map-get($grid-breakpoints,md)) {
+  #homeEmailCapture {
+    padding: 75px 10px;
+    background-color: $black;
+    color: $white;
+    h3 {
+      margin-bottom: 30px;
+      width: 75%;
+    }
+    .email-signup-container {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      .email-header {
+        margin-bottom: 10px;
+      }
+      .email-form {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        form {
+          border-radius: 0;
+          width: 100%;
+          input {
+            background-color: $black;
+            color: $white;
+            border: none;
+            border-bottom: 1px solid $white;
+            &.email-input {
+              padding-bottom: 5px;
+              width: 80%;
+            }
+            &.submit-button {
+              padding-bottom: 5px;
+              width: 20%;
+              color: $white;
+            }
+            &:focus {
+              outline: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

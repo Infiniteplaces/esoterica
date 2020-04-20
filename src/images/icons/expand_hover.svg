@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="25px" height="25px" viewBox="0 0 25 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>Group 2 Copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="25" height="24.9166667" rx="12.4583333"></rect>
+    </defs>
+    <g id="---↳-Final-–-SJ" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1.5-–-Team-–-Hover" transform="translate(-892.000000, -637.000000)">
+            <g id="Group-35" transform="translate(493.000000, 240.000000)">
+                <g id="Group-2-Copy" transform="translate(399.000000, 397.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <rect stroke="#000000" stroke-width="0.5" x="0.25" y="0.25" width="24.5" height="24.4166667" rx="12.2083333"></rect>
+                    <g id="Group-40" mask="url(#mask-2)" stroke="#FDFD52" stroke-linecap="square" stroke-width="0.75">
+                        <g transform="translate(8.000000, 8.000000)" id="Line-6">
+                            <line x1="0.5" y1="4.5" x2="8.5" y2="4.5"></line>
+                            <line x1="0.5" y1="4.5" x2="8.5" y2="4.5" transform="translate(4.500000, 4.500000) rotate(90.000000) translate(-4.500000, -4.500000) "></line>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

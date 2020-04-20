@@ -1,3 +1,34 @@
-main {
-  padding: 0px 10px;
+a:hover {
+  // cursor: url("../images/cursors/pointer.png"), auto !important;
+}
+
+.button {
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &.full-width {
+    width: 100%;
+  }
+  &.primary {
+    width: 224px;
+    height: 64px;
+    background-color: $black;
+    color: $white;
+  }
+  &.secondary {
+    background-color: $transparent;
+    border: 1px solid $black;
+    padding: 15px 20px 10px 20px;
+    span {
+      margin: 0;
+    }
+  }
+  @media (max-width: map-get($grid-breakpoints,md)) {
+    &.secondary {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+  }
 }

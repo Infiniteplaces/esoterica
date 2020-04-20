@@ -1,0 +1,22 @@
+#homeOurFunds {
+  padding: 200px 20px;
+  color: $white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    margin-bottom: 50px;
+  }
+  .button {
+    color: $white;
+    border-color: $white;
+  }
+}
+
+@media (max-width: map-get($grid-breakpoints,md)) {
+  #homeOurFunds {
+    height: 600px;
+  }
+}

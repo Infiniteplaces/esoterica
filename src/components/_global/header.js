@@ -1,5 +1,5 @@
 import { Link } from "gatsby"
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { connect } from "react-redux"
 import { Container, Row, Col } from "reactstrap"
 
@@ -12,12 +12,39 @@ import twitter from "../../../static/icons/twitter.svg"
 import mail from "../../../static/icons/mail.svg"
 
 const Header = ({ path }) => {
+  let [hideNav, setHideNav] = useState(false)
+  let [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset)
+  let [navTransparent, setNavTransparent] = useState(true)
+  let [navColor, setNavColor] = useState("white")
+
+  useEffect(() => {
+    window.addEventListener("scroll", _handleScroll)
+  }, [prevScrollPos])
+
+  function _handleScroll() {
+    let currentScrollPos = window.pageYOffset
+    let hidden = prevScrollPos < currentScrollPos
+
+    setNavTransparent(currentScrollPos < 5)
+    setPrevScrollPos(currentScrollPos)
+    setHideNav(hidden)
+  }
   return (
-    <header>
+    <header
+      className={
+        navColor +
+        (navTransparent ? " transparent " : "") +
+        (hideNav ? " hidden " : "")
+      }
+    >
       <Container fluid className="h-100">
         <Row className="h-100">
           <Col md={{ size: 2 }} className="logo-container">
-            <img src={logo_black} alt="nav-logo" className="nav-logo" />
+            <img
+              src={navColor === "black" ? logo_white : logo_black}
+              alt="nav-logo"
+              className="nav-logo"
+            />
           </Col>
           <Col md={{ size: 6, offset: 1 }} className="nav-links">
             <Link to="/">

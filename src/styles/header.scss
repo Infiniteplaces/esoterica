@@ -7,9 +7,23 @@ header {
   width: 100%;
   padding: 0px 10px;
   border-bottom: 1px solid $grey;
-  color: $black;
-  background-color: $transparent;
 
+  transition: top 250ms linear;
+  &.white {
+    background-color: $white;
+    color: $black;
+  }
+  &.black {
+    background-color: $black;
+    color: $white;
+  }
+  &.transparent {
+    background-color: $transparent !important;
+  }
+  &.hidden {
+    top: -100px;
+    transition: top 250ms linear;
+  }
   .logo-container {
     display: flex;
     align-items: center;
