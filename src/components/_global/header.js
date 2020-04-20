@@ -13,7 +13,7 @@ import mail from "../../../static/icons/mail.svg"
 
 const Header = ({ path }) => {
   let [hideNav, setHideNav] = useState(false)
-  let [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset)
+  let [prevScrollPos, setPrevScrollPos] = useState(0)
   let [navTransparent, setNavTransparent] = useState(true)
   let [navColor, setNavColor] = useState("white")
 
