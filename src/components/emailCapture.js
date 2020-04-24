@@ -7,9 +7,9 @@ import { Container, Row, Col } from "reactstrap"
 import Email from "./_global/email"
 import bg from "../images/homepage/homepage_exploreOurFunds.png"
 
-const HomeEmailCapture = ({}) => {
+const EmailCapture = ({}) => {
   return (
-    <Container id="homeEmailCapture" fluid>
+    <Container id="emailCapture" fluid>
       <Row className="d-flex justify-content-center align-items-center text-center">
         <Col
           md={{ size: 8 }}
@@ -28,4 +28,4 @@ const HomeEmailCapture = ({}) => {
   )
 }
 
-export default connect(state => ({}), null)(HomeEmailCapture)
+export default connect(state => ({}), null)(EmailCapture)

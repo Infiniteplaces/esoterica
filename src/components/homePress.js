@@ -80,6 +80,11 @@ class HomePress extends Component {
     })
     return (
       <Container fluid id="homePress">
+        <Row className="title-row">
+          <Col className="d-flex justify-content-center align-items-center">
+            <h3>Kind words from sources we trust</h3>
+          </Col>
+        </Row>
         <Row className="carousel-row">
           <Col
             xs="1"

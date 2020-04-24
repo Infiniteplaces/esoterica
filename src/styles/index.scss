@@ -58,11 +58,14 @@ $theme-colors: (
 
 // components
 @import "./header.scss";
+@import "./contact.scss";
 @import "./footer.scss";
 @import "./homeHero.scss";
 @import "./homeBlog.scss";
 @import "./homeOurPhilosophy.scss";
 @import "./homeOurFunds.scss";
-@import "./homeEmailCapture.scss";
+@import "./emailCapture.scss";
 @import "./researchTeam.scss";
 @import "./homePress.scss";
+@import "./homeResources.scss";
+@import "./homeGetStarted.scss";

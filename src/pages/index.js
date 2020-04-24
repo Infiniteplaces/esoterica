@@ -10,9 +10,11 @@ import HomeHero from "../components/homeHero"
 import HomeBlog from "../components/homeBlog"
 import HomeOurPhilosophy from "../components/homeOurPhilosophy"
 import HomeOurFunds from "../components/homeOurFunds"
-import HomeEmailCapture from "../components/homeEmailCapture"
+import EmailCapture from "../components/emailCapture"
 import ResearchTeam from "../components/researchTeam"
 import HomePress from "../components/homePress"
+import HomeResources from "../components/homeResources"
+import HomeGetStarted from "../components/homeGetStarted"
 
 const IndexPage = ({ mobile }) => (
   <Layout>
@@ -21,10 +23,12 @@ const IndexPage = ({ mobile }) => (
     <HomeBlog />
     <HomeOurPhilosophy />
     <HomeOurFunds />
-    {mobile ? "" : <HomeEmailCapture />}
+    {mobile ? "" : <EmailCapture />}
     <ResearchTeam />
     <HomePress />
-    {mobile ? <HomeEmailCapture /> : ""}
+    {mobile ? <EmailCapture /> : ""}
+    <HomeResources />
+    <HomeGetStarted />
   </Layout>
 )
 

@@ -1,0 +1,67 @@
+#homeResources {
+  padding-top: 75px;
+  padding-bottom: 75px;
+  background-color: $black;
+  color: $white;
+  ::selection {
+    color: $transparent;
+    text-shadow: 0px 0px 7px $white;
+  }
+  .cta-row {
+    .cta {
+      padding: 50px 0px;
+    }
+  }
+  .marquee-container {
+    overflow: hidden;
+    white-space: nowrap;
+    .marquee {
+      margin: 15px 0px;
+      width: 100vw;
+      .text-path-one {
+        border-bottom: 2px solid $transparent;
+        display: inline-block;
+        animation: marquee 60s linear infinite;
+        &.reverse {
+          animation-direction: reverse;
+        }
+      }
+      .text-path-two {
+        border-bottom: 2px solid $transparent;
+        display: inline-block;
+        animation: marquee2 60s linear infinite;
+        animation-delay: 30s;
+        &.reverse {
+          animation-direction: reverse;
+        }
+      }
+      &:hover {
+        .text-path-one,
+        .text-path-two {
+          animation-play-state: paused;
+          cursor: default;
+          color: $yellow;
+          border-bottom: 2px solid $yellow;
+        }
+      }
+    }
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes marquee2 {
+  from {
+    transform: translateX(-200%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}

@@ -11,11 +11,65 @@ import youtube from "../../../static/icons/youtube.svg"
 import twitter from "../../../static/icons/twitter.svg"
 import mail from "../../../static/icons/mail.svg"
 
+const LINKMAP = [
+  {
+    title: "Home",
+    link: "/",
+    dropdown: false,
+  },
+  {
+    title: "Advisory Solutions",
+    link: "/advisory-solutions",
+    dropdown: true,
+    dropdownLinks: [
+      {
+        title: "Exchange Traded Funds",
+        link: "/advisory-solutions/exchange-traded-funds",
+      },
+      {
+        title: "Advisory Services",
+        link: "/advisory-solutions/advisor-services",
+      },
+      {
+        title: "Individual Investors",
+        link: "/advisory-solutions/individual-investors",
+      },
+      {
+        title: "Institutional Investors",
+        link: "/advisory-solutions/institutional-investors",
+      },
+    ],
+  },
+  {
+    title: "About Us",
+    link: "/about",
+    dropdown: false,
+  },
+  {
+    title: "Resources",
+    link: "/resources",
+    dropdown: true,
+    dropdownLinks: [
+      {
+        title: "Library",
+        link: "/resources/library",
+      },
+      {
+        title: "Resources",
+        link: "/resources/resources",
+      },
+    ],
+  },
+]
+
 const Header = ({ path }) => {
   let [hideNav, setHideNav] = useState(false)
   let [prevScrollPos, setPrevScrollPos] = useState(0)
   let [navTransparent, setNavTransparent] = useState(true)
   let [navColor, setNavColor] = useState("white")
+  let [navHover, setNavHover] = useState(false)
+  let [navHoverCat, setNavHoverCat] = useState(null)
+  let hidden_selector_display = ""
 
   useEffect(() => {
     window.addEventListener("scroll", _handleScroll)
@@ -24,20 +78,73 @@ const Header = ({ path }) => {
   function _handleScroll() {
     let currentScrollPos = window.pageYOffset
     let hidden = prevScrollPos < currentScrollPos
-
     setNavTransparent(currentScrollPos < 5)
     setPrevScrollPos(currentScrollPos)
     setHideNav(hidden)
   }
+
+  let navLinks = LINKMAP.map((i, idx) => {
+    return (
+      <Link
+        key={idx}
+        to={i.link}
+        onMouseOver={() => {
+          setNavHover(i.dropdownLinks ? true : false)
+          setNavHoverCat(i.link)
+        }}
+      >
+        <div className={"indicator " + (path === i.link ? "active" : "")} />
+        <span>{i.title}</span>
+      </Link>
+    )
+  })
+
+  if (navHover) {
+    LINKMAP.map((i, idx) => {
+      if (i.link === navHoverCat) {
+        hidden_selector_display = i.dropdownLinks.map((i, idx) => {
+          return (
+            <Link
+              onMouseOver={() => {
+                setNavHover(true)
+              }}
+              key={idx}
+              to={i.link}
+            >
+              <span
+                onMouseOver={() => {
+                  setNavHover(true)
+                }}
+              >
+                {i.title}
+              </span>
+            </Link>
+          )
+        })
+      }
+    })
+  }
+
+  function _renderNavHover(hover) {
+    console.log(hover)
+    if (!hover) {
+      setNavHover(false)
+    }
+  }
   return (
     <header
-      className={
-        navColor +
-        (navTransparent ? " transparent " : "") +
-        (hideNav ? " hidden " : "")
-      }
+      className={(navHover ? "expand " : "") + (hideNav ? " hidden " : "")}
     >
-      <Container fluid className="h-100">
+      <Container
+        fluid
+        className={
+          "main-nav " +
+          navColor +
+          (navTransparent ? " transparent " : "") +
+          (hideNav ? " hidden " : "") +
+          (navHover ? " expand " : "")
+        }
+      >
         <Row className="h-100">
           <Col md={{ size: 2 }} className="logo-container">
             <img
@@ -47,32 +154,7 @@ const Header = ({ path }) => {
             />
           </Col>
           <Col md={{ size: 6, offset: 1 }} className="nav-links">
-            <Link to="/">
-              <div className={"indicator " + (path === "/" ? "active" : "")} />
-              <span>Home</span>
-            </Link>
-            <Link to="/products">
-              <div
-                className={
-                  "indicator " + (path === "/products" ? "active" : "")
-                }
-              />
-              <span>Products</span>
-            </Link>
-            <Link to="/about">
-              <div
-                className={"indicator " + (path === "/about" ? "active" : "")}
-              />
-              <span>About Us</span>
-            </Link>
-            <Link to="/resources">
-              <div
-                className={
-                  "indicator " + (path === "/resources" ? "active" : "")
-                }
-              />
-              <span>Resources</span>
-            </Link>
+            {navLinks}
           </Col>
           <Col md={{ size: 2, offset: 1 }} className="nav-icons">
             <a href="" target="_blank" rel="norefferer noopener">
@@ -103,6 +185,20 @@ const Header = ({ path }) => {
               <img src={mail} alt="mail" className="mail-icon" width="19" />
             </a>
           </Col>
+        </Row>
+      </Container>
+      <Container
+        fluid
+        onMouseOut={() => _renderNavHover(false)}
+        className={
+          "nav-hover-container " +
+          navColor +
+          (navHover ? " reveal" : "") +
+          (hideNav ? " hidden " : "")
+        }
+      >
+        <Row className="h-100">
+          <Col className="nav-links">{hidden_selector_display}</Col>
         </Row>
       </Container>
     </header>

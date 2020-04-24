@@ -17,7 +17,7 @@
 }
 
 @font-face {
-  font-family: "universe bold extended";
+  font-family: "univers bold extended";
   src: url("../../static/fonts/UniversLTPro-BoldExt.woff") format("woff"),
     url("../../static/fonts/UniversLTPro-BoldExt.woff2") format("woff2");
 }
@@ -71,10 +71,21 @@ body {
   }
 }
 
+footer {
+  font-family: "univers extended";
+  font-size: 18px;
+  line-height: 32px;
+  letter-spacing: -0.1px;
+  margin: 0;
+  padding: 0;
+  @media (max-width: map-get($grid-breakpoints,md)) {
+  }
+}
+
 h1.section {
   font-family: "times now extralight";
-  font-size: 130px;
-  line-height: 125px;
+  font-size: 9.5rem;
+  line-height: 8rem;
   letter-spacing: -8px;
   font-weight: 400;
   margin: 0;
@@ -88,9 +99,9 @@ h1.section {
 
 h1.article {
   font-family: "univers light";
-  font-size: 120px;
-  line-height: 125px;
-  letter-spacing: -5px;
+  font-size: 8rem;
+  line-height: 8rem;
+  letter-spacing: -4px;
   font-weight: 400;
   margin: 0;
   padding: 0;
@@ -116,9 +127,10 @@ h2 {
 h3 {
   font-family: "univers extended";
   font-weight: 400;
-  font-size: 22px;
-  line-height: 31px;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
   letter-spacing: -1px;
+  text-transform: capitalize;
   margin: 0;
   padding: 0;
   @media (max-width: map-get($grid-breakpoints,md)) {
@@ -141,7 +153,7 @@ h4 {
 header,
 .nav {
   font-family: "univers light";
-  font-size: 24px;
+  font-size: 21px;
   letter-spacing: -0.5px;
   margin: 0;
   padding: 0;
@@ -152,7 +164,8 @@ header,
 .eyebrow {
   font-family: "univers bold extended";
   font-size: 12px;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.49px;
+  text-transform: uppercase;
   margin: 0;
   padding: 0;
   @media (max-width: map-get($grid-breakpoints,md)) {

@@ -3,7 +3,7 @@ a:hover {
 }
 
 .button {
-  border-radius: 16px;
+  border-radius: 6px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,17 +11,30 @@ a:hover {
     width: 100%;
   }
   &.primary {
-    width: 224px;
-    height: 64px;
+    width: 292px;
+    height: 80px;
     background-color: $black;
     color: $white;
+    opacity: 1;
+    transition: opacity 500ms Cubic-bezier(0.33, 1, 0.33, 1);
+    &:hover {
+      opacity: 0.8;
+      transition: opacity 500ms Cubic-bezier(0.33, 1, 0.33, 1);
+    }
   }
   &.secondary {
     background-color: $transparent;
     border: 1px solid $black;
-    padding: 15px 20px 10px 20px;
+    padding: 30px 80px 24px;
+    transition: all 500ms Cubic-bezier(0.33, 1, 0.33, 1);
     span {
       margin: 0;
+    }
+    &:hover {
+      background-color: $black;
+      border-color: $black;
+      color: $white;
+      transition: all 500ms Cubic-bezier(0.33, 1, 0.33, 1);
     }
   }
   @media (max-width: map-get($grid-breakpoints,md)) {
@@ -31,4 +44,13 @@ a:hover {
       justify-content: center;
     }
   }
+}
+
+.header-gap {
+  padding-top: 150px;
+}
+
+.spx {
+  padding-left: 20px;
+  padding-right: 20px;
 }

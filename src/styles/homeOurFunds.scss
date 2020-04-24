@@ -13,6 +13,10 @@
     color: $white;
     border-color: $white;
   }
+  ::selection {
+    color: $transparent;
+    text-shadow: 0px 0px 7px $white;
+  }
 }
 
 @media (max-width: map-get($grid-breakpoints,md)) {

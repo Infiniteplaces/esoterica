@@ -1,4 +1,8 @@
 #homeOurPhilosophy {
+  ::selection {
+    color: $transparent;
+    text-shadow: 0px 0px 7px $black;
+  }
   padding: 75px 20px;
   .img-column {
     order: 2;
