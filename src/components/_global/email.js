@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { connect } from "react-redux"
-// import addToMailchimp from "gatsby-plugin-mailchimp"
+import addToMailchimp from "gatsby-plugin-mailchimp"
 
 const Email = ({ mobile, header }) => {
   let [msg, setMsg] = useState("Stay in the know")
@@ -8,13 +8,13 @@ const Email = ({ mobile, header }) => {
   function _submit(e) {
     e.preventDefault()
     let email = e.target[0].value
-    // if (ValidateEmail(email)) {
-    //   addToMailchimp(email).then(data => {
-    //     if ((data.result = "success")) {
-    //       setMsg("thanks for signing up! ")
-    //     }
-    //   })
-    // }
+    if (ValidateEmail(email)) {
+      addToMailchimp(email).then(data => {
+        if ((data.result = "success")) {
+          setMsg("You've signed up!")
+        }
+      })
+    }
   }
   function ValidateEmail(mail) {
     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {

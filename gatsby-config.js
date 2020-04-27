@@ -38,7 +38,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-mailchimp",
       options: {
-        endpoint: "", // add your MC list endpoint here; see instructions below
+        endpoint:
+          "https://esotericacap.us20.list-manage.com/subscribe/post?u=8d8f193b866b9cfa8f79d00df&amp;id=025d3ca8d6", // add your MC list endpoint here; see instructions below
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
