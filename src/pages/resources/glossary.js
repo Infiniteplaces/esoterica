@@ -10,15 +10,14 @@ import Layout from "../../components/_global/layout"
 import Image from "../../components/_global/image"
 import SEO from "../../components/_global/seo"
 
-class ResourcesIndex extends React.Component {
+class GlossaryPage extends React.Component {
   render() {
     const siteTitle = get(this, "props.data.site.siteMetadata.title")
     const glossary = get(this, "props.data.allContentfulGlossary.edges")
-    const library = get(this, "props.data.allContentfulLibrary.edges")
 
     return (
       <Layout location={this.props.location}>
-        <SEO title="Resources" />
+        <SEO title="Glossary" />
         <Helmet title={siteTitle} />
         <Container fluid style={{ paddingTop: 150 }}>
           <Row>
@@ -36,20 +35,6 @@ class ResourcesIndex extends React.Component {
                 </ul>
               </div>
             </Col>
-            <Col>
-              <div className="wrapper">
-                <h1 className="section-headline">Library</h1>
-                <ul>
-                  {library.map(({ node }) => {
-                    return (
-                      <li key={node.slug}>
-                        <ArtcilePreview path={"library"} article={node} />
-                      </li>
-                    )
-                  })}
-                </ul>
-              </div>
-            </Col>
           </Row>
         </Container>
       </Layout>
@@ -57,26 +42,11 @@ class ResourcesIndex extends React.Component {
   }
 }
 
-export default ResourcesIndex
+export default GlossaryPage
 
-export const pageQuery = graphql`
-  query ResourcesIndexQuery {
+export const glossaryQuery = graphql`
+  query GlossaryIndexQuery {
     allContentfulGlossary(sort: { fields: [publishDate], order: DESC }) {
-      edges {
-        node {
-          title
-          slug
-          publishDate(formatString: "MMMM Do, YYYY")
-          tags
-          heroImage {
-            fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
-              ...GatsbyContentfulFluid_tracedSVG
-            }
-          }
-        }
-      }
-    }
-    allContentfulLibrary(sort: { fields: [publishDate], order: DESC }) {
       edges {
         node {
           title

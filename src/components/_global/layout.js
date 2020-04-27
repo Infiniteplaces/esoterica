@@ -8,6 +8,7 @@ import Footer from "./footer"
 import "../../styles/index.scss"
 
 import { setMobile } from "../../state/global"
+import { setNavHover } from "../../state/header"
 
 const Layout = ({ children, dispatch }) => {
   useEffect(() => {
@@ -38,7 +39,7 @@ const Layout = ({ children, dispatch }) => {
         href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
       />
       <Header path={path} />
-      <main>{children}</main>
+      <main onMouseOver={() => dispatch(setNavHover(false))}>{children}</main>
       <Footer />
     </>
   )

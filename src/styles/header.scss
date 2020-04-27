@@ -36,10 +36,6 @@ header {
     top: -80px;
     transition: top 250ms linear;
   }
-  &.expand {
-    border-bottom: none;
-    transition: border-bottom 0ms linear;
-  }
   &.white {
     background-color: $white;
     color: $black;

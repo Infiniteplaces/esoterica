@@ -11,6 +11,15 @@ import youtube from "../../../static/icons/youtube.svg"
 import twitter from "../../../static/icons/twitter.svg"
 import mail from "../../../static/icons/mail.svg"
 
+import {
+  setHideNav,
+  setPrevScrollPos,
+  setNavTransparent,
+  setNavColor,
+  setNavHover,
+  setNavHoverCat,
+} from "../../state/header"
+
 const LINKMAP = [
   {
     title: "Home",
@@ -55,20 +64,23 @@ const LINKMAP = [
         link: "/resources/library",
       },
       {
-        title: "Resources",
-        link: "/resources/resources",
+        title: "Glossary",
+        link: "/resources/glossary",
       },
     ],
   },
 ]
 
-const Header = ({ path }) => {
-  let [hideNav, setHideNav] = useState(false)
-  let [prevScrollPos, setPrevScrollPos] = useState(0)
-  let [navTransparent, setNavTransparent] = useState(true)
-  let [navColor, setNavColor] = useState("white")
-  let [navHover, setNavHover] = useState(false)
-  let [navHoverCat, setNavHoverCat] = useState(null)
+const Header = ({
+  dispatch,
+  path,
+  hideNav,
+  prevScrollPos,
+  navTransparent,
+  navColor,
+  navHover,
+  navHoverCat,
+}) => {
   let hidden_selector_display = ""
 
   useEffect(() => {
@@ -78,9 +90,9 @@ const Header = ({ path }) => {
   function _handleScroll() {
     let currentScrollPos = window.pageYOffset
     let hidden = prevScrollPos < currentScrollPos
-    setNavTransparent(currentScrollPos < 5)
-    setPrevScrollPos(currentScrollPos)
-    setHideNav(hidden)
+    dispatch(setNavTransparent(currentScrollPos < 5))
+    dispatch(setPrevScrollPos(currentScrollPos))
+    dispatch(setHideNav(hidden))
   }
 
   let navLinks = LINKMAP.map((i, idx) => {
@@ -89,8 +101,8 @@ const Header = ({ path }) => {
         key={idx}
         to={i.link}
         onMouseOver={() => {
-          setNavHover(i.dropdownLinks ? true : false)
-          setNavHoverCat(i.link)
+          dispatch(setNavHover(i.dropdownLinks ? true : false))
+          dispatch(setNavHoverCat(i.link))
         }}
       >
         <div className={"indicator " + (path === i.link ? "active" : "")} />
@@ -106,14 +118,14 @@ const Header = ({ path }) => {
           return (
             <Link
               onMouseOver={() => {
-                setNavHover(true)
+                dispatch(setNavHover(true))
               }}
               key={idx}
               to={i.link}
             >
               <span
                 onMouseOver={() => {
-                  setNavHover(true)
+                  dispatch(setNavHover(true))
                 }}
               >
                 {i.title}
@@ -126,9 +138,8 @@ const Header = ({ path }) => {
   }
 
   function _renderNavHover(hover) {
-    console.log(hover)
     if (!hover) {
-      setNavHover(false)
+      dispatch(setNavHover(false))
     }
   }
   return (
@@ -147,11 +158,13 @@ const Header = ({ path }) => {
       >
         <Row className="h-100">
           <Col md={{ size: 2 }} className="logo-container">
-            <img
-              src={navColor === "black" ? logo_white : logo_black}
-              alt="nav-logo"
-              className="nav-logo"
-            />
+            <Link to="/">
+              <img
+                src={navColor === "black" ? logo_white : logo_black}
+                alt="nav-logo"
+                className="nav-logo"
+              />
+            </Link>
           </Col>
           <Col md={{ size: 6, offset: 1 }} className="nav-links">
             {navLinks}
@@ -189,7 +202,6 @@ const Header = ({ path }) => {
       </Container>
       <Container
         fluid
-        onMouseOut={() => _renderNavHover(false)}
         className={
           "nav-hover-container " +
           navColor +
@@ -205,4 +217,14 @@ const Header = ({ path }) => {
   )
 }
 
-export default connect(state => ({}), null)(Header)
+export default connect(
+  state => ({
+    hideNav: state.header.hideNav,
+    prevScrollPos: state.header.prevScrollPos,
+    navTransparent: state.header.navTransparent,
+    navColor: state.header.navColor,
+    navHover: state.header.navHover,
+    navHoverCat: state.header.navHoverCat,
+  }),
+  null
+)(Header)
