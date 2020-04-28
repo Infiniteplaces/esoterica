@@ -7,17 +7,6 @@ import { Container, Row, Col } from "reactstrap"
 import bg from "../images/homepage/homepage_exploreOurFunds.png"
 
 const HomeOurFunds = ({}) => {
-  // const data = useStaticQuery(graphql`
-  //   query {
-  //     file(relativePath: { eq: "homepage/homepage_exploreOurFunds.png" }) {
-  //       childImageSharp {
-  //         fluid(maxWidth: 1440) {
-  //           ...GatsbyImageSharpFluid
-  //         }
-  //       }
-  //     }
-  //   }
-  // `)
   return (
     <Container
       id="homeOurFunds"

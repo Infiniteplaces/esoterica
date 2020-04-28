@@ -3,6 +3,7 @@
   height: 771px;
   width: 100%;
   position: relative;
+  background-color: $yellow;
   @media (max-width: map-get($grid-breakpoints,md)) {
     background-color: $yellow;
   }

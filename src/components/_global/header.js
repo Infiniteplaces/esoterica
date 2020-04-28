@@ -3,13 +3,18 @@ import React, { useState, useEffect } from "react"
 import { connect } from "react-redux"
 import { Container, Row, Col } from "reactstrap"
 
-import logo_black from "../../../static/logos/esoterica-logo-black.svg"
-import logo_white from "../../../static/logos/esoterica-logo-white.svg"
+import logo_black from "../../images/logos/esoterica-logo-black.svg"
+import logo_white from "../../images/logos/esoterica-logo-white.svg"
 
-import linkedin from "../../../static/icons/linkedin.svg"
-import youtube from "../../../static/icons/youtube.svg"
-import twitter from "../../../static/icons/twitter.svg"
-import mail from "../../../static/icons/mail.svg"
+import linkedin_black from "../../images/icons/linkedin.svg"
+import youtube_black from "../../images/icons/youtube.svg"
+import twitter_black from "../../images/icons/twitter.svg"
+import mail_black from "../../images/icons/mail.svg"
+
+import linkedin_white from "../../images/icons/linkedin-white.svg"
+import youtube_white from "../../images/icons/youtube-white.svg"
+import twitter_white from "../../images/icons/twitter-white.svg"
+import mail_white from "../../images/icons/mail-white.svg"
 
 import {
   setHideNav,
@@ -56,7 +61,7 @@ const LINKMAP = [
   },
   {
     title: "Resources",
-    link: "/resources",
+    link: "/resources/library",
     dropdown: true,
     dropdownLinks: [
       {
@@ -172,7 +177,7 @@ const Header = ({
           <Col md={{ size: 2, offset: 1 }} className="nav-icons">
             <a href="" target="_blank" rel="norefferer noopener">
               <img
-                src={twitter}
+                src={navColor === "black" ? twitter_white : twitter_black}
                 alt="twitter"
                 className="twitter-icon"
                 width="16px"
@@ -180,7 +185,7 @@ const Header = ({
             </a>
             <a href="" target="_blank" rel="norefferer noopener">
               <img
-                src={linkedin}
+                src={navColor === "black" ? linkedin_white : linkedin_black}
                 alt="linkedin"
                 className="linkedin-icon"
                 width="17px"
@@ -188,14 +193,19 @@ const Header = ({
             </a>
             <a href="" target="_blank" rel="norefferer noopener">
               <img
-                src={youtube}
+                src={navColor === "black" ? youtube_white : youtube_black}
                 alt="youtube"
                 className="youtube-icon"
                 width="21px"
               />
             </a>
             <a href="malto:" target="_blank" rel="norefferer noopener">
-              <img src={mail} alt="mail" className="mail-icon" width="19" />
+              <img
+                src={navColor === "black" ? mail_white : mail_black}
+                alt="mail"
+                className="mail-icon"
+                width="19"
+              />
             </a>
           </Col>
         </Row>

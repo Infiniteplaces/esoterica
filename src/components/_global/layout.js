@@ -8,9 +8,9 @@ import Footer from "./footer"
 import "../../styles/index.scss"
 
 import { setMobile } from "../../state/global"
-import { setNavHover } from "../../state/header"
+import { setNavHover, setNavColor } from "../../state/header"
 
-const Layout = ({ children, dispatch }) => {
+const Layout = ({ children, dispatch, navTheme }) => {
   useEffect(() => {
     _onWindowResize()
     window.addEventListener("resize", _onWindowResize)
@@ -25,6 +25,9 @@ const Layout = ({ children, dispatch }) => {
   }
 
   const path = typeof window !== "undefined" ? window.location.pathname : ""
+
+  dispatch(setNavColor(navTheme === "dark" ? "black" : "white"))
+
   return (
     <>
       <link

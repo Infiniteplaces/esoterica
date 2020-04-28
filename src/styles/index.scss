@@ -51,21 +51,29 @@ $theme-colors: (
 
 // Additional Scripts
 
-// global
+// global styles
 @import "./global.scss";
 @import "./layout.scss";
 @import "./typography.scss";
 
-// components
+// global components
 @import "./header.scss";
 @import "./contact.scss";
 @import "./footer.scss";
+@import "./emailCapture.scss";
+
+// homepage modules
 @import "./homeHero.scss";
 @import "./homeBlog.scss";
 @import "./homeOurPhilosophy.scss";
 @import "./homeOurFunds.scss";
-@import "./emailCapture.scss";
 @import "./researchTeam.scss";
 @import "./homePress.scss";
 @import "./homeResources.scss";
 @import "./homeGetStarted.scss";
+
+// resources modules
+@import "./resources.scss";
+@import "./article.scss";
+@import "./library.scss";
+@import "./glossary.scss";

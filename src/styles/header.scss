@@ -1,24 +1,24 @@
-header {
-  position: fixed;
-  z-index: 99;
-  height: 80px;
-  width: 100%;
-  transition-property: all;
-  transition-duration: 250ms;
-  transition-timing-function: Cubic-bezier(0.33, 1, 0.33, 1);
-  &.expand {
-    height: 160px;
-    transition-property: all;
-    transition-duration: 250ms;
-    transition-timing-function: Cubic-bezier(0.33, 1, 0.33, 1);
-  }
-  &.hidden {
-    top: -80px;
-    transition-property: all;
-    transition-duration: 250ms;
-    transition-timing-function: Cubic-bezier(0.33, 1, 0.33, 1);
-  }
-}
+// header {
+//   position: fixed;
+//   z-index: 99;
+//   height: 80px;
+//   width: 100%;
+//   transition-property: all;
+//   transition-duration: 250ms;
+//   transition-timing-function: Cubic-bezier(0.33, 1, 0.33, 1);
+//   &.expand {
+//     height: 160px;
+//     transition-property: all;
+//     transition-duration: 250ms;
+//     transition-timing-function: Cubic-bezier(0.33, 1, 0.33, 1);
+//   }
+//   &.hidden {
+//     top: -80px;
+//     transition-property: all;
+//     transition-duration: 250ms;
+//     transition-timing-function: Cubic-bezier(0.33, 1, 0.33, 1);
+//   }
+// }
 
 .main-nav {
   position: fixed;
@@ -29,12 +29,10 @@ header {
   height: 80px;
   width: 100%;
   border-bottom: 1px solid $grey;
-  transition-property: top, border-bottom;
-  transition-duration: 250ms, 0ms;
-  transition-timing-function: Cubic-bezier(0.33, 1, 0.33, 1);
+  transition: top 250ms Cubic-bezier(0.33, 1, 0.33, 1);
   &.hidden {
     top: -80px;
-    transition: top 250ms linear;
+    transition: top 250ms Cubic-bezier(0.33, 1, 0.33, 1);
   }
   &.white {
     background-color: $white;
@@ -42,6 +40,15 @@ header {
     ::selection {
       color: $transparent;
       text-shadow: 0px 0px 7px $black;
+    }
+    .nav-links {
+      a {
+        .indicator {
+          &.active {
+            background-color: $black;
+          }
+        }
+      }
     }
   }
   &.black {
@@ -51,9 +58,19 @@ header {
       color: $transparent;
       text-shadow: 0px 0px 7px $white;
     }
+    .nav-links {
+      a {
+        .indicator {
+          &.active {
+            background-color: $white;
+          }
+        }
+      }
+    }
   }
   &.transparent {
     background-color: $transparent !important;
+    transition: background-color 150ms Cubic-bezier(0.33, 1, 0.33, 1);
   }
 
   .logo-container {
@@ -83,9 +100,6 @@ header {
         border-radius: 50%;
         background-color: $transparent;
         margin-right: 7px;
-        &.active {
-          background-color: $black;
-        }
       }
     }
   }
@@ -109,7 +123,7 @@ header {
   height: 81px;
   border-bottom: none;
   transition-property: top, opacity, border-bottom;
-  transition-duration: 250ms, 0ms, 0ms;
+  transition-duration: 250ms, 250ms, 0ms;
   transition-delay: 0ms, 0ms 0ms;
   &.hidden {
     top: -80px;
