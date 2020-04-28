@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import { connect } from "react-redux"
 import { Container, Row, Col } from "reactstrap"
+import Draggable from "react-draggable"
 
 import icon_1 from "../images/icons/heroIcon_1.svg"
 import icon_2 from "../images/icons/heroIcon_2.svg"
@@ -21,19 +22,15 @@ const HomeHero = ({}) => {
     let top = randomInteger(15, 95)
     let left = randomInteger(5, 95)
     let style = {
-      position: "absolute",
-      transform: "translate(-50%,-50%)",
       top: top + "%",
       left: left + "%",
     }
     return (
-      <img
-        src={i}
-        key={idx}
-        alt="home icon"
-        className="home-icon"
-        style={style}
-      />
+      <Draggable key={idx}>
+        <div className="drag-box" style={style}>
+          <img src={i} alt="home icon" className="home-icon" />
+        </div>
+      </Draggable>
     )
   })
   return (
