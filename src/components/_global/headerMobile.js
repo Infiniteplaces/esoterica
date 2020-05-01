@@ -82,7 +82,10 @@ const HeaderMobile = ({ mobileNavOpen, mobileNavCat, dispatch }) => {
           <Link
             key={idx}
             to={i.link}
-            onClick={() => dispatch(setMobileNavOpen(!mobileNavOpen))}
+            onClick={() => {
+              dispatch(setMobileNavOpen(!mobileNavOpen))}
+              dispatch(setMobileNavCat(null))}
+            }
           >
             <h1>{i.title}</h1>
           </Link>
@@ -106,7 +109,10 @@ const HeaderMobile = ({ mobileNavOpen, mobileNavCat, dispatch }) => {
             <Link
               key={idx}
               to={l.link}
-              onClick={() => dispatch(setMobileNavOpen(!mobileNavOpen))}
+              onClick={() => {
+                dispatch(setMobileNavOpen(!mobileNavOpen))}
+                dispatch(setMobileNavCat(null))}
+              }
             >
               <h2>{l.title}</h2>
             </Link>
