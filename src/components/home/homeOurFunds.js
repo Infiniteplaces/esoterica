@@ -15,7 +15,7 @@ const HomeOurFunds = ({}) => {
       style={{ backgroundImage: `url(${bg})` }}
     >
       <Row>
-        <Col>
+        <Col className="px-0">
           <h1 className="section">
             Value and growth both serve a purpose in any portfolio. We believe,
             fundamentally,  in balance.
