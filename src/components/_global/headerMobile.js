@@ -125,7 +125,9 @@ const HeaderMobile = ({ mobileNavOpen, mobileNavCat, dispatch }) => {
     <section id="headerMobile">
       <div id="headerMobile_nav">
         <div className="logo-container">
-          <img src={logo_black} alt="" />
+          <Link to="/">
+            <img src={logo_black} alt="" />
+          </Link>
         </div>
         <div
           className="menu-container"
