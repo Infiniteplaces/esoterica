@@ -35,7 +35,7 @@
   }
 }
 
-#libraryFeatured {
+#libraryFourPost {
   margin: 50px 0px;
   .post-container {
     height: 50vw;
@@ -88,7 +88,7 @@
         background-size: cover;
       }
       .post-text-container {
-        height: 25%;
+        height: 40%;
         width: 50%;
         text-align: left;
         color: $black;
@@ -115,9 +115,9 @@
     .container-image {
       height: 80%;
       width: 100%;
+      border: 1px solid $black;
       border-radius: 6px;
       position: relative;
-      background-color: $yellow;
       .description {
         position: absolute;
         top: 10px;
@@ -145,5 +145,131 @@
         }
       }
     }
+  }
+  @media (max-width: map-get($grid-breakpoints,md)) {
+    margin: 30px 0px;
+    .post-container {
+      height: 355px;
+      margin: 15px 0px;
+    }
+    .post-container.center {
+      .bottom-container,
+      .top-container {
+        .container-image {
+          height: 70%;
+        }
+        .post-text-container {
+          height: 30%;
+          width: 75%;
+        }
+      }
+    }
+  }
+}
+
+#libraryTwoPost {
+  margin: 50px 0px;
+  .post-container {
+    height: 40vh;
+    min-height: 500px;
+    max-height: 750px;
+    .container-image {
+      height: 75%;
+      width: 100%;
+      border-radius: 6px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .post-text-container {
+      height: 25%;
+      width: 100%;
+      text-align: left;
+      color: $black;
+      ::selection {
+        color: $transparent;
+        text-shadow: 0px 0px 7px $black;
+      }
+      .tag-container {
+        display: flex;
+
+        justify-content: flex-start;
+        align-items: flex-start;
+        .tag {
+          width: auto;
+          border: 1px solid $black;
+          margin: 7px 7px 7px 0px;
+          padding: 3px 10px;
+          font-size: 12px;
+          border-radius: 50px;
+        }
+      }
+    }
+  }
+  @media (max-width: map-get($grid-breakpoints,md)) {
+    margin: 50px 0px;
+    .post-container {
+      height: auto;
+      .container-image {
+        height: 100px;
+        width: 100%;
+        border-radius: 6px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .post-text-container {
+        width: 100%;
+        text-align: left;
+        color: $black;
+        ::selection {
+          color: $transparent;
+          text-shadow: 0px 0px 7px $black;
+        }
+        .tag-container {
+          display: flex;
+
+          justify-content: flex-start;
+          align-items: flex-start;
+          .tag {
+            width: auto;
+            border: 1px solid $black;
+            margin: 10px 7px 10px 0px;
+            padding: 3px 10px;
+            font-size: 12px;
+            border-radius: 50px;
+          }
+        }
+      }
+    }
+  }
+}
+
+#libraryFeatured {
+  height: 700px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  h1 {
+    margin: 15px 0px 30px;
+  }
+  .tag-container {
+    display: flex;
+    .tag {
+      border: 1px solid $white;
+      margin: 10px 10px 10px 0px;
+      padding: 3px 10px;
+      font-size: 12px;
+      border-radius: 50px;
+    }
+  }
+  @media (max-width: map-get($grid-breakpoints,md)) {
+    height: 500px;
+    justify-content: space-around;
   }
 }

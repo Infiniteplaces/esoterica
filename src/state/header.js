@@ -5,6 +5,9 @@ const NAV_COLOR = "navColor"
 const NAV_HOVER = "navHover"
 const NAV_HOVER_CAT = "navHoverCat"
 
+const MOBILE_NAV_OPEN = "mobileNavOpen"
+const MOBILE_NAV_CAT = "mobileNavCat"
+
 const initialState = {
   hideNav: false,
   prevScrollPos: 0,
@@ -12,6 +15,8 @@ const initialState = {
   navColor: "white",
   navHover: false,
   navHoverCat: null,
+  mobileNavOpen: false,
+  mobileNavCat: null,
 }
 
 export const setHideNav = bool => {
@@ -56,6 +61,20 @@ export const setNavHoverCat = obj => {
   }
 }
 
+export const setMobileNavOpen = bool => {
+  return {
+    type: MOBILE_NAV_OPEN,
+    bool,
+  }
+}
+
+export const setMobileNavCat = string => {
+  return {
+    type: MOBILE_NAV_CAT,
+    string,
+  }
+}
+
 export default (state = initialState, action) => {
   switch (action.type) {
     case HIDE_NAV:
@@ -81,6 +100,14 @@ export default (state = initialState, action) => {
     case NAV_HOVER_CAT:
       return Object.assign({}, state, {
         navHoverCat: action.obj,
+      })
+    case MOBILE_NAV_OPEN:
+      return Object.assign({}, state, {
+        mobileNavOpen: action.bool,
+      })
+    case MOBILE_NAV_CAT:
+      return Object.assign({}, state, {
+        mobileNavCat: action.string,
       })
     default:
       return state

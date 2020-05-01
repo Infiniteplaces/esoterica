@@ -4,7 +4,7 @@ import { connect } from "react-redux"
 import Img from "gatsby-image"
 import { Container, Row, Col } from "reactstrap"
 
-import bg from "../images/homepage/homepage_exploreOurFunds.png"
+import bg from "../../images/homepage/homepage_exploreOurFunds.png"
 
 const HomeOurFunds = ({}) => {
   return (
@@ -16,7 +16,7 @@ const HomeOurFunds = ({}) => {
     >
       <Row>
         <Col>
-          <h1 className="article">
+          <h1 className="section">
             Value and growth both serve a purpose in any portfolio. We believe,
             fundamentally,  in balance.
           </h1>

@@ -58,22 +58,25 @@ $theme-colors: (
 
 // global components
 @import "./header.scss";
+@import "./headerMobile.scss";
 @import "./contact.scss";
 @import "./footer.scss";
 @import "./emailCapture.scss";
+@import "./softFooterCta.scss";
+@import "./resourcesMarquee.scss";
+@import "./researchTeam.scss";
 
 // homepage modules
 @import "./homeHero.scss";
-@import "./homeBlog.scss";
 @import "./homeOurPhilosophy.scss";
 @import "./homeOurFunds.scss";
-@import "./researchTeam.scss";
 @import "./homePress.scss";
-@import "./homeResources.scss";
-@import "./homeGetStarted.scss";
 
 // resources modules
 @import "./resources.scss";
 @import "./article.scss";
 @import "./library.scss";
 @import "./glossary.scss";
+
+// advisory solution
+@import "./advisorySolutions.scss";

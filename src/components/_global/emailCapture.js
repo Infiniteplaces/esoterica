@@ -4,8 +4,8 @@ import { connect } from "react-redux"
 import Img from "gatsby-image"
 import { Container, Row, Col } from "reactstrap"
 
-import Email from "./_global/email"
-import bg from "../images/homepage/homepage_exploreOurFunds.png"
+import Email from "./email"
+import bg from "../../images/homepage/homepage_exploreOurFunds.png"
 
 const EmailCapture = ({}) => {
   return (

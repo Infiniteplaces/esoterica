@@ -5,12 +5,20 @@ import Helmet from "react-helmet"
 import Img from "gatsby-image"
 import { Container, Row, Col } from "reactstrap"
 
-import ArtcilePreview from "../../components/resources/articlePreview"
-import LibraryFeatured from "../../components/resources/libraryFeatured"
-
 import Layout from "../../components/_global/layout"
 import Image from "../../components/_global/image"
 import SEO from "../../components/_global/seo"
+
+import ArtcilePreview from "../../components/resources/articlePreview"
+import LibraryFourPost from "../../components/resources/libraryFourPost"
+import LibraryTwoPost from "../../components/resources/libraryTwoPost"
+import LibraryFeatured from "../../components/resources/libraryFeatured"
+
+import EmailCapture from "../../components/_global/emailCapture"
+import ResourcesMarquee from "../../components/_global/resourcesMarquee"
+
+import SoftFooterCta from "../../components/_global/softFooterCta"
+import softFooterBg from "../../images/advisorySolutions/advisorySolutionsFooterCta.png"
 
 import arrow from "../../images/icons/arrow-bent.svg"
 
@@ -34,7 +42,20 @@ class LibraryPage extends React.Component {
             </div>
           </div>
           <div className="body-container">
+            <LibraryFourPost posts={featured} color={"#fdfc71"} />
+            <LibraryTwoPost posts={featured} />
             <LibraryFeatured posts={featured} />
+            <EmailCapture />
+            <LibraryFourPost posts={featured} color={"#3FFF18"} />
+            <LibraryTwoPost posts={featured} />
+            <ResourcesMarquee />
+            <SoftFooterCta
+              background={softFooterBg}
+              text={"How we can work together"}
+              ctaLead={"See"}
+              cta={"Advisory Solutions"}
+              link={"/advisorySolutions"}
+            />
           </div>
         </div>
       </Layout>

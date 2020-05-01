@@ -49,6 +49,10 @@ link {
   }
 }
 
+.underline {
+  text-decoration: underline;
+}
+
 .button {
   font-family: "univers extended";
   font-size: 22px;
@@ -85,8 +89,8 @@ footer {
 h1,
 h1.section {
   font-family: "times now extralight";
-  font-size: 9.5rem;
-  line-height: 8rem;
+  font-size: 8.5rem;
+  line-height: 7.5rem;
   letter-spacing: -8px;
   font-weight: 400;
   margin: 0;
@@ -114,6 +118,7 @@ h1.article {
 
 h2 {
   font-family: "times now extralight";
+  font-weight: 300;
   font-size: 75px;
   line-height: 75px;
   letter-spacing: -4px;
@@ -122,10 +127,12 @@ h2 {
   @media (max-width: map-get($grid-breakpoints,md)) {
     font-size: 40px;
     line-height: 45px;
+    letter-spacing: -2.13px;
   }
 }
 
-h3 {
+h3,
+.cta {
   font-family: "univers extended";
   font-weight: 400;
   font-size: 1.5rem;

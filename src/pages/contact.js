@@ -6,7 +6,7 @@ import Layout from "../components/_global/layout"
 import Image from "../components/_global/image"
 import SEO from "../components/_global/seo"
 
-import EmailCapture from "../components/emailCapture"
+import EmailCapture from "../components/_global/emailCapture"
 
 const ContactPage = () => (
   <Layout>

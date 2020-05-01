@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="16px" viewBox="0 0 22 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group Copy 2</title>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+        <g id="Menu-Icon" stroke="#000000">
+            <g id="Group-Copy-2">
+                <line x1="0.75" y1="1.4375" x2="21" y2="1.375" id="Line-Copy"></line>
+                <line x1="0.75" y1="8.4375" x2="21" y2="8.375" id="Line-Copy-2"></line>
+                <line x1="0.75" y1="15.4375" x2="21" y2="15.375" id="Line-Copy-3"></line>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -4,8 +4,8 @@ import { connect } from "react-redux"
 import { Container, Row, Col } from "reactstrap"
 import Slider from "react-slick"
 
-import next_arrow from "../images/icons/arrow-right.svg"
-import back_arrow from "../images/icons/arrow-left.svg"
+import next_arrow from "../../images/icons/arrow-right.svg"
+import back_arrow from "../../images/icons/arrow-left.svg"
 
 class HomePress extends Component {
   super(props) {

@@ -4,13 +4,14 @@ import { connect } from "react-redux"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
+import HeaderMobile from "./headerMobile"
 import Footer from "./footer"
 import "../../styles/index.scss"
 
 import { setMobile } from "../../state/global"
 import { setNavHover, setNavColor } from "../../state/header"
 
-const Layout = ({ children, dispatch, navTheme }) => {
+const Layout = ({ children, dispatch, mobile, navTheme }) => {
   useEffect(() => {
     _onWindowResize()
     window.addEventListener("resize", _onWindowResize)
@@ -41,7 +42,8 @@ const Layout = ({ children, dispatch, navTheme }) => {
         type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
       />
-      <Header path={path} />
+      {mobile ? <HeaderMobile path={path} /> : <Header path={path} />}
+
       <main onMouseOver={() => dispatch(setNavHover(false))}>{children}</main>
       <Footer />
     </>
@@ -52,4 +54,4 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default connect(state => ({}), null)(Layout)
+export default connect(state => ({ mobile: state.global.mobile }), null)(Layout)

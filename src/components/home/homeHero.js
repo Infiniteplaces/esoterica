@@ -4,12 +4,12 @@ import { connect } from "react-redux"
 import { Container, Row, Col } from "reactstrap"
 import Draggable from "react-draggable"
 
-import icon_1 from "../images/icons/heroIcon_1.svg"
-import icon_2 from "../images/icons/heroIcon_2.svg"
-import icon_3 from "../images/icons/heroIcon_3.svg"
-import icon_4 from "../images/icons/heroIcon_4.svg"
-import icon_5 from "../images/icons/heroIcon_5.svg"
-import icon_6 from "../images/icons/heroIcon_6.svg"
+import icon_1 from "../../images/icons/heroIcon_1.svg"
+import icon_2 from "../../images/icons/heroIcon_2.svg"
+import icon_3 from "../../images/icons/heroIcon_3.svg"
+import icon_4 from "../../images/icons/heroIcon_4.svg"
+import icon_5 from "../../images/icons/heroIcon_5.svg"
+import icon_6 from "../../images/icons/heroIcon_6.svg"
 
 const HomeHero = ({}) => {
   const arr = [icon_1, icon_2, icon_3, icon_4, icon_5, icon_6]

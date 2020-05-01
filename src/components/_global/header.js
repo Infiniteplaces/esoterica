@@ -42,7 +42,7 @@ const LINKMAP = [
       },
       {
         title: "Advisory Services",
-        link: "/advisory-solutions/advisor-services",
+        link: "/advisory-solutions/advisory-services",
       },
       {
         title: "Individual Investors",

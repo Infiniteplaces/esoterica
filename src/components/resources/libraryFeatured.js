@@ -4,111 +4,42 @@ import { connect } from "react-redux"
 import Img from "gatsby-image"
 import { Container, Row, Col } from "reactstrap"
 
-const LibraryFeatured = ({ posts }) => {
-  const f1 = posts[0].node
-  const f2 = posts[1].node
-  const f3 = posts[2].node
-  const f4 = posts[3].node
-  console.log(f1)
+const LibraryFeatured = ({
+  posts,
+  backgroundColor = null,
+  textColor = "white",
+  borderColor = "white",
+}) => {
+  const featured = posts[0].node
+  let style = {
+    backgroundImage: `url(${featured.heroImage.fluid.src})`,
+  }
+  if (backgroundColor) {
+    style = {
+      backgroundColor: backgroundColor,
+    }
+  }
   return (
-    <Container fluid id="libraryFeatured">
-      <Row>
-        <Col md="4">
-          <Link to={"/resources/library/" + f1.slug}>
-            <div
-              className="post-container left"
-              style={{ backgroundImage: `url(${f1.heroImage.fluid.src})` }}
-            >
-              <div className="post-text-container">
-                <div className="tag-container">
-                  {f1.tags.length > 0
-                    ? f1.tags.map((i, idx) => {
-                        return (
-                          <div key={idx} className="tag body-small">
-                            {i}
-                          </div>
-                        )
-                      })
-                    : ""}
-                </div>
-                <h2 className="post-title">{f1.title}</h2>
-              </div>
-            </div>
-          </Link>
-        </Col>
-        <Col md="4">
-          <div className="post-container center">
-            <div className="top-container">
-              <Link to={"/resources/library/" + f2.slug}>
+    <div id="libraryFeatured" style={style} className={"text-" + textColor}>
+      <div className="tag-container">
+        {featured.tags.length > 0
+          ? featured.tags.map((i, idx) => {
+              return (
                 <div
-                  className="container-image"
-                  style={{ backgroundImage: `url(${f2.heroImage.fluid.src})` }}
-                />
-                <div className="post-text-container">
-                  <div className="tag-container">
-                    {f2.tags.length > 0
-                      ? f2.tags.map((i, idx) => {
-                          return (
-                            <div key={idx} className="tag body-small">
-                              {i}
-                            </div>
-                          )
-                        })
-                      : ""}
-                  </div>
-                  <h4 className="post-title">{f2.title}</h4>
+                  key={idx}
+                  className={"tag body-small border-" + borderColor}
+                >
+                  {i}
                 </div>
-              </Link>
-            </div>
-            <div className="bottom-container">
-              <Link to={"/resources/library/" + f3.slug}>
-                <div
-                  className="container-image"
-                  style={{ backgroundImage: `url(${f3.heroImage.fluid.src})` }}
-                />
-                <div className="post-text-container">
-                  <div className="tag-container">
-                    {f3.tags.length > 0
-                      ? f3.tags.map((i, idx) => {
-                          return (
-                            <div key={idx} className="tag body-small">
-                              {i}
-                            </div>
-                          )
-                        })
-                      : ""}
-                  </div>
-                  <h4 className="post-title">{f3.title}</h4>
-                </div>
-              </Link>
-            </div>
-          </div>
-        </Col>
-        <Col md="4">
-          <Link to={"/resources/library/" + f4.slug}>
-            <div className="post-container right">
-              <div className="container-image">
-                <h3 className="description">{f4.description.description}</h3>
-              </div>
-              <div className="post-text-container">
-                <div className="tag-container">
-                  {f4.tags.length > 0
-                    ? f4.tags.map((i, idx) => {
-                        return (
-                          <div key={idx} className="tag body-small">
-                            {i}
-                          </div>
-                        )
-                      })
-                    : ""}
-                </div>
-                <h4 className="post-title">{f4.title}</h4>
-              </div>
-            </div>
-          </Link>
-        </Col>
-      </Row>
-    </Container>
+              )
+            })
+          : ""}
+      </div>
+      <h1>{featured.title}</h1>
+      <Link to={"/library/" + featured.slug} className="underline">
+        <h3>Read the Article</h3>
+      </Link>
+    </div>
   )
 }
 

@@ -4,8 +4,8 @@ import { connect } from "react-redux"
 import { Container, Row, Col, Modal } from "reactstrap"
 import Img from "gatsby-image"
 
-import expand from "../images/icons/expand.svg"
-import expand_hover from "../images/icons/expand_hover.svg"
+import expand from "../../images/icons/expand.svg"
+import expand_hover from "../../images/icons/expand_hover.svg"
 
 const ResearchTeam = ({}) => {
   let [teamModalOne, setTeamModalOne] = useState(false)

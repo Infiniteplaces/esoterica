@@ -4,11 +4,11 @@ import { connect } from "react-redux"
 import Img from "gatsby-image"
 import { Container, Row, Col } from "reactstrap"
 
-const HomeResources = ({}) => {
+const ResourcesMarquee = ({}) => {
   let p =
     "WTF is an ETF? Why the future looks bright for traded investments. Why Morgan Stanley’s E*Trade deal means bigger banks"
   return (
-    <Container fluid id="homeResources">
+    <Container fluid id="resourcesMarquee">
       <Row className="marquee-row">
         <Col md={{}} className="marquee-container">
           <div className="marquee">
@@ -42,4 +42,4 @@ const HomeResources = ({}) => {
   )
 }
 
-export default connect(state => ({}), null)(HomeResources)
+export default connect(state => ({}), null)(ResourcesMarquee)
