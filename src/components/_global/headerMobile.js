@@ -153,7 +153,7 @@ const HeaderMobile = ({ mobileNavOpen, mobileNavCat, dispatch }) => {
                 src={twitter_black}
                 alt="twitter"
                 className="twitter-icon"
-                width="16px"
+                width="20px"
               />
             </a>
             <a href="" target="_blank" rel="norefferer noopener">
@@ -161,7 +161,7 @@ const HeaderMobile = ({ mobileNavOpen, mobileNavCat, dispatch }) => {
                 src={linkedin_black}
                 alt="linkedin"
                 className="linkedin-icon"
-                width="17px"
+                width="21px"
               />
             </a>
             <a href="" target="_blank" rel="norefferer noopener">
@@ -169,7 +169,7 @@ const HeaderMobile = ({ mobileNavOpen, mobileNavCat, dispatch }) => {
                 src={youtube_black}
                 alt="youtube"
                 className="youtube-icon"
-                width="21px"
+                width="25px"
               />
             </a>
             <a href="malto:" target="_blank" rel="norefferer noopener">
@@ -177,7 +177,7 @@ const HeaderMobile = ({ mobileNavOpen, mobileNavCat, dispatch }) => {
                 src={mail_black}
                 alt="mail"
                 className="mail-icon"
-                width="19"
+                width="24"
               />
             </a>
           </div>
