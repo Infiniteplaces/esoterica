@@ -36,7 +36,7 @@ const LibraryFeatured = ({
           : ""}
       </div>
       <h1>{featured.title}</h1>
-      <Link to={"/library/" + featured.slug} className="underline">
+      <Link to={"/resources/library/" + featured.slug} className="underline">
         <h3>Read the Article</h3>
       </Link>
     </div>
