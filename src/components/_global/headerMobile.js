@@ -131,7 +131,10 @@ const HeaderMobile = ({ mobileNavOpen, mobileNavCat, dispatch }) => {
         </div>
         <div
           className="menu-container"
-          onClick={() => dispatch(setMobileNavOpen(!mobileNavOpen))}
+          onClick={() => {
+            dispatch(setMobileNavOpen(!mobileNavOpen))
+            dispatch(setMobileNavCat(null))
+          }}
         >
           <span className="pt-1">Menu</span>
           <img src={mobileNavOpen ? close : hamburgerMenu} alt="" />
@@ -141,13 +144,13 @@ const HeaderMobile = ({ mobileNavOpen, mobileNavCat, dispatch }) => {
         {menuOptions}
         {mobileNavCat ? (
           <div
-            className="pt-4 pb-0 underline"
+            className="pt-4 pb-0 underline menu-footer"
             onClick={() => dispatch(setMobileNavCat(null))}
           >
             Back
           </div>
         ) : (
-          <div className="mobile-social-icons pt-4 pb-0">
+          <div className="mobile-social-icons pt-4 pb-0 mt-auto">
             <a href="" target="_blank" rel="norefferer noopener">
               <img
                 src={twitter_black}
