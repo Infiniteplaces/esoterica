@@ -22,7 +22,7 @@ class ExchangeTradedFundsPage extends React.Component {
     return (
       <Layout>
         <SEO title="Exchange Traded Funds" />
-        <Container fluid id="advisorySolutions">
+        <Container fluid id="exchangeTradeFunds">
           <Row className="header-row">
             <Col>
               <h1>Funds</h1>

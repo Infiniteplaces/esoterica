@@ -2,41 +2,63 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import get from "lodash/get"
 import Helmet from "react-helmet"
+import Img from "gatsby-image"
 import { Container, Row, Col } from "reactstrap"
-
-import ArtcilePreview from "../../components/resources/articlePreview"
 
 import Layout from "../../components/_global/layout"
 import Image from "../../components/_global/image"
 import SEO from "../../components/_global/seo"
 
+import ArtcilePreview from "../../components/resources/articlePreview"
+import LibraryFourPost from "../../components/resources/libraryFourPost"
+import LibraryTwoPost from "../../components/resources/libraryTwoPost"
+import LibraryFeatured from "../../components/resources/libraryFeatured"
+
+import GlossaryPreview from "../../components/resources/glossaryPreview"
+
+import EmailCapture from "../../components/_global/emailCapture"
+import ResourcesMarquee from "../../components/_global/resourcesMarquee"
+
+import SoftFooterCta from "../../components/_global/softFooterCta"
+import softFooterBg from "../../images/advisorySolutions/advisorySolutionsFooterCta.png"
+
+import arrow from "../../images/icons/arrow-bent-black.svg"
+
 class GlossaryPage extends React.Component {
   render() {
     const siteTitle = get(this, "props.data.site.siteMetadata.title")
+    const library = get(this, "props.data.allContentfulLibrary.edges")
     const glossary = get(this, "props.data.allContentfulGlossary.edges")
+    const heroImage = get(this, "props.data.file.childImageSharp.fluid")
+    const featured = library.filter(i => i.node.featured === true)
+
+    console.log(library)
+    console.log(glossary)
 
     return (
       <Layout location={this.props.location}>
         <SEO title="Glossary" />
         <Helmet title={siteTitle} />
-        <Container fluid style={{ paddingTop: 150 }}>
-          <Row>
-            <Col>
-              <div className="wrapper">
-                <h1 className="section-headline">Glossary</h1>
-                <ul>
-                  {glossary.map(({ node }) => {
-                    return (
-                      <li key={node.slug}>
-                        <ArtcilePreview path={"glossary"} article={node} />
-                      </li>
-                    )
-                  })}
-                </ul>
-              </div>
-            </Col>
-          </Row>
-        </Container>
+        <div id="glossaryPage">
+          <div className="hero">
+            <div className="hero-title">
+              <h1 className="section">Glossary</h1>
+              <img src={arrow} alt="" className="arrow" />
+            </div>
+          </div>
+          <div className="body-container">
+            <GlossaryPreview glossary={glossary} />
+            <LibraryFeatured posts={featured} />
+            <EmailCapture />
+            <ResourcesMarquee />
+            <SoftFooterCta
+              text={"Steady stream of the best financial content"}
+              ctaLead={"Check out the"}
+              cta={"Library"}
+              link={"/resources/library"}
+            />
+          </div>
+        </div>
       </Layout>
     )
   }
@@ -44,17 +66,39 @@ class GlossaryPage extends React.Component {
 
 export default GlossaryPage
 
-export const glossaryQuery = graphql`
-  query GlossaryIndexQuery {
+export const glossaryPageQuery = graphql`
+  query glossaryPageQuery {
+    allContentfulLibrary(sort: { fields: [publishDate], order: DESC }) {
+      edges {
+        node {
+          title
+          slug
+          featured
+          description {
+            description
+          }
+          publishDate(formatString: "MMMM Do, YYYY")
+          tags
+          heroImage {
+            fluid(resizingBehavior: SCALE) {
+              ...GatsbyContentfulFluid
+            }
+          }
+        }
+      }
+    }
     allContentfulGlossary(sort: { fields: [publishDate], order: DESC }) {
       edges {
         node {
           title
           slug
+          description {
+            description
+          }
           publishDate(formatString: "MMMM Do, YYYY")
           tags
           heroImage {
-            fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
+            fluid(resizingBehavior: SCALE) {
               ...GatsbyContentfulFluid
             }
           }

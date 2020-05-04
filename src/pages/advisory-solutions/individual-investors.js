@@ -1,89 +1,92 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, useStaticQuery } from "gatsby"
 import get from "lodash/get"
 import { Container, Row, Col } from "reactstrap"
+import Img from "gatsby-image"
 
 import Layout from "../../components/_global/layout"
-import Image from "../../components/_global/image"
 import SEO from "../../components/_global/seo"
 
 import PreviewPill from "../../components/advisorySolutions/previewPill"
-import EmailPill from "../../components/advisorySolutions/emailPill"
+import EmailCapture from "../../components/_global/emailCapture"
+import ResourcesMarquee from "../../components/_global/resourcesMarquee"
 
 import SoftFooterCta from "../../components/_global/softFooterCta"
 import softFooterBg from "../../images/advisorySolutions/advisorySolutionsFooterCta_2.png"
 
 import LibraryFeatured from "../../components/resources/libraryFeatured"
 
+import arrow_black from "../../images/icons/arrow-diag-black.svg"
+import arrow_white from "../../images/icons/arrow-diag.svg"
+
 class IndividualInvestorsPage extends React.Component {
   render() {
     const library = get(this, "props.data.allContentfulLibrary.edges")
     const featured = library.filter(i => i.node.featured === true)
     return (
-      <Layout>
+      <Layout navTheme="dark">
         <SEO title="Individual Investors" />
-        <Container fluid id="advisorySolutions">
-          <Row className="header-row">
-            <Col>
-              <h1>Individual Investors</h1>
-              <div>
+        <div id="individualInvestors">
+          <div className="hero">
+            <Img
+              className="hero-img"
+              fluid={this.props.data.file.childImageSharp.fluid}
+            />
+            <h1 className="title">
+              Individual
+              <br />
+              Investors
+            </h1>
+          </div>
+          <Container fluid>
+            <Row className="header-row">
+              <Col>
                 <p>
-                  Esoterica is the manager of active, thematic ETFs that capture
-                  growth in the new digital economy, enabled by the onset of 5G.
+                  We are an extension of you. We share the same beliefs and
+                  principles that you hold dear and cherish. We want to help
+                  build wealth. We believe the first, and most important step
+                  towards building wealth, is wealth preservation.
                 </p>
                 <p>
-                  The first ETF launched on the Esoterica trust is WUGI, listed
-                  on Cboe, which invests in companies that are foundational to
-                  5G and which are capturing the greatest value.
+                  Our overall goal is to make investing simple. We are adamant
+                  about leveling the playing field. Whether you are an
+                  individual investor or a full-time investment professional,
+                  our ambition is to democratize the investment landscape for
+                  all. We provide insights, tools and solutions that were
+                  previously mainly restricted to large institutional investors.
                 </p>
                 <p>
-                  With 10-100X greater speed, latency and capacity (depending on
-                  the radio frequency of the infrastructure in place), 5G has
-                  been likened to electricity in the era of steam: it will be
-                  transformational, with big winners and losers. Our team of
-                  investment professionals (based in the US and China) have
-                  selected high conviction companies in the US and
-                  internationally (principally in Asia: China, Taiwan, Korea,
-                  Japan), that are capturing the most value in the 5G ecosystem.
+                  We discuss all relevant news items in a timely and
+                  easy-to-understand manner. We examine topics that are moving
+                  markets today, as well as, potential oncoming obstacles and
+                  opportunities. Our plain-spoken insights, which are often
+                  intertwined with humor, are available in written, audio, or
+                  video form. Never feel intimidated, overwhelmed, or bewildered
+                  again!
                 </p>
-                <p>
-                  These are companies that are reconfiguring computing
-                  architecture to bring the cloud closer to the edge so as to
-                  optimize the power of 5G, and those that are creating new SaaS
-                  to extract and manipulate the data (think AI applications), as
-                  well as those that are creating new semi-conductors to power
-                  data centers and smartphones. Subsequent waves of value
-                  capture will include a host of enabled applications (think
-                  gaming), smart cities/factories, telemedicine etc.
-                </p>
-              </div>
-            </Col>
-          </Row>
-          <PreviewPill
-            title={"WUGI ETF"}
-            tags={["technology", "retail"]}
-            text={
-              "Tum dicere exorsus est eligendi optio, cumque nihil molestiae non quo aut reiciendis."
-            }
-            bgColor={"#fdfc71"}
-            textColor={"#000"}
-            link={"/advisory-solutions/exchange-traded-funds"}
+              </Col>
+            </Row>
+            <Row className="contact-row">
+              <Col>
+                <a
+                  href="mailto:info@esotericacap.com"
+                  className="button secondary"
+                >
+                  Start The Conversation
+                </a>
+              </Col>
+            </Row>
+          </Container>
+          <EmailCapture />
+          <ResourcesMarquee />
+          <SoftFooterCta
+            background={softFooterBg}
+            text={"Steady stream of the best financial content"}
+            ctaLead={"Check out the"}
+            cta={"Library"}
+            link={"/resources/library"}
           />
-          <EmailPill />
-        </Container>
-        <LibraryFeatured
-          posts={featured}
-          backgroundColor={"#fdfc71"}
-          textColor={"black"}
-          borderColor={"black"}
-        />
-        <SoftFooterCta
-          background={softFooterBg}
-          text={"Steady stream of the best financial content"}
-          ctaLead={"Check out the"}
-          cta={"Library"}
-          link={"/resources/library"}
-        />
+        </div>
       </Layout>
     )
   }
@@ -109,6 +112,15 @@ export const IndividualInvestorsQuery = graphql`
               ...GatsbyContentfulFluid
             }
           }
+        }
+      }
+    }
+    file(
+      relativePath: { eq: "advisorySolutions/individualInvestorsHero.png" }
+    ) {
+      childImageSharp {
+        fluid(maxWidth: 1440) {
+          ...GatsbyImageSharpFluid
         }
       }
     }

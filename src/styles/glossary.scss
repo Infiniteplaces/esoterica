@@ -1,0 +1,27 @@
+#glossaryPage {
+  .hero-title {
+    height: 300px;
+    display: flex;
+    align-items: center;
+    img {
+      margin-left: 45px;
+      padding-top: 20px;
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+#glossaryPreview {
+  .glossaryPreviewRow {
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 15px 0px;
+    margin: 15px 0px;
+    border-bottom: 1px solid $black;
+    .previewItem {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

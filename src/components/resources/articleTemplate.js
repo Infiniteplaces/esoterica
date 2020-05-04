@@ -39,7 +39,6 @@ class ArticleTemplate extends React.Component {
     let windowHeight = window.innerHeight
     let heroHeight = this.hero.clientHeight
     let articleHeight = this.article_body.clientHeight
-    console.log(windowHeight, articleHeight)
 
     if (currentScrollPos < heroHeight) {
       this.setState({

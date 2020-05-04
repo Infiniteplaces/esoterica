@@ -38,8 +38,8 @@ const LINKMAP = [
         link: "/advisory-solutions/exchange-traded-funds",
       },
       {
-        title: "Advisory Services",
-        link: "/advisory-solutions/advisory-services",
+        title: "Advisor Services",
+        link: "/advisory-solutions/advisor-services",
       },
       {
         title: "Individual Investors",
@@ -50,11 +50,6 @@ const LINKMAP = [
         link: "/advisory-solutions/institutional-investors",
       },
     ],
-  },
-  {
-    title: "About Us",
-    link: "/about",
-    dropdown: false,
   },
   {
     title: "Resources",
@@ -70,6 +65,11 @@ const LINKMAP = [
         link: "/resources/glossary",
       },
     ],
+  },
+  {
+    title: "About Us",
+    link: "/about",
+    dropdown: false,
   },
 ]
 

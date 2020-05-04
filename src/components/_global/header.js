@@ -41,8 +41,8 @@ const LINKMAP = [
         link: "/advisory-solutions/exchange-traded-funds",
       },
       {
-        title: "Advisory Services",
-        link: "/advisory-solutions/advisory-services",
+        title: "Advisor Services",
+        link: "/advisory-solutions/advisor-services",
       },
       {
         title: "Individual Investors",
@@ -53,11 +53,6 @@ const LINKMAP = [
         link: "/advisory-solutions/institutional-investors",
       },
     ],
-  },
-  {
-    title: "About Us",
-    link: "/about",
-    dropdown: false,
   },
   {
     title: "Resources",
@@ -73,6 +68,11 @@ const LINKMAP = [
         link: "/resources/glossary",
       },
     ],
+  },
+  {
+    title: "About Us",
+    link: "/about",
+    dropdown: false,
   },
 ]
 
@@ -105,6 +105,7 @@ const Header = ({
       <Link
         key={idx}
         to={i.link}
+        onClick={() => dispatch(setNavHover(false))}
         onMouseOver={() => {
           dispatch(setNavHover(i.dropdownLinks ? true : false))
           dispatch(setNavHoverCat(i.link))
@@ -125,6 +126,7 @@ const Header = ({
               onMouseOver={() => {
                 dispatch(setNavHover(true))
               }}
+              onClick={() => dispatch(setNavHover(false))}
               key={idx}
               to={i.link}
             >
@@ -199,7 +201,11 @@ const Header = ({
                 width="21px"
               />
             </a>
-            <a href="malto:" target="_blank" rel="norefferer noopener">
+            <a
+              href="malto:info@esotericacap.com"
+              target="_blank"
+              rel="norefferer noopener"
+            >
               <img
                 src={navColor === "black" ? mail_white : mail_black}
                 alt="mail"

@@ -1,4 +1,5 @@
-#advisorySolutions {
+#advisorySolutions,
+#exchangeTradeFunds {
   margin-top: 100px;
   .header-row {
     h1 {
@@ -6,10 +7,41 @@
     }
     p {
       margin-bottom: 30px;
+      padding: 0px 10px;
     }
   }
 }
 
+#individualInvestors,
+#institutionalInvestors,
+#advisorServices {
+  .hero {
+    position: relative;
+    .hero-img {
+      position: absolute;
+    }
+    .title {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      color: $white;
+    }
+  }
+
+  .header-row {
+    margin: 50px 0px 20px;
+    h1 {
+      margin-bottom: 50px;
+    }
+    p {
+      margin-bottom: 30px;
+      padding: 0px 10px;
+    }
+  }
+  .contact-row {
+    margin-bottom: 50px;
+  }
+}
 #previewPill {
   height: 410px;
   margin-bottom: 30px;
