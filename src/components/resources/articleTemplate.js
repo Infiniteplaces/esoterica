@@ -12,6 +12,12 @@ import youtube_black from "../../images/icons/youtube.svg"
 import twitter_black from "../../images/icons/twitter.svg"
 import mail_black from "../../images/icons/mail.svg"
 
+import EmailCapture from "../../components/_global/emailCapture"
+import ResourcesMarquee from "../../components/_global/resourcesMarquee"
+
+import SoftFooterCta from "../../components/_global/softFooterCta"
+import softFooterBg from "../../images/advisorySolutions/advisorySolutionsFooterCta.png"
+
 class ArticleTemplate extends React.Component {
   render() {
     let { postType } = this.props.pageContext
@@ -20,12 +26,12 @@ class ArticleTemplate extends React.Component {
     const siteTitle = get(this.props, "data.site.siteMetadata.title")
 
     let post = postType === "library" ? libraryPost : glossaryPost
+    let json =
+      postType === "library"
+        ? post.childContentfulLibraryArticleRichTextNode.json
+        : post.childContentfulGlossaryArticleRichTextNode.json
 
-    console.log(post.childContentfulLibraryArticleRichTextNode.json)
-
-    let article = documentToReactComponents(
-      post.childContentfulLibraryArticleRichTextNode.json
-    )
+    let article = documentToReactComponents(json)
 
     return (
       <Layout navTheme="dark" location={this.props.location}>
@@ -91,6 +97,15 @@ class ArticleTemplate extends React.Component {
             </Row>
           </Container>
         </div>
+        <EmailCapture />
+        <ResourcesMarquee />
+        <SoftFooterCta
+          background={softFooterBg}
+          text={"How we can work together"}
+          ctaLead={"See"}
+          cta={"Advisory Solutions"}
+          link={"/advisorySolutions"}
+        />
       </Layout>
     )
   }
