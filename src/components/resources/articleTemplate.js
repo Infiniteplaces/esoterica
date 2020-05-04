@@ -118,10 +118,6 @@ class ArticleTemplate extends React.Component {
                     <div className="eyebrow">Author</div>
                     {post.author.name}
                   </div>
-                  <div className="photographer body-small mb-4">
-                    <div className="eyebrow">Photographer</div>
-                    <p>placeholder photog</p>
-                  </div>
                   <div className="social body-small mb-4">
                     <div className="eyebrow">Share</div>
                     <a href="" target="_blank" rel="norefferer noopener">

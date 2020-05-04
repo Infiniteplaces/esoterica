@@ -111,7 +111,12 @@ const Header = ({
           dispatch(setNavHoverCat(i.link))
         }}
       >
-        <div className={"indicator " + (path === i.link ? "active" : "")} />
+        <div
+          className={
+            "indicator " +
+            (i.link.split("/")[1] === path.split("/")[1] ? "active" : "")
+          }
+        />
         <span>{i.title}</span>
       </Link>
     )

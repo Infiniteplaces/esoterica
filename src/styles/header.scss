@@ -118,23 +118,24 @@
   padding: 0px 20px;
   z-index: 998;
   opacity: 0;
-  top: 0px;
+  height: 0px;
+  top: 80px;
   left: 0;
   height: 81px;
   border-bottom: none;
-  transition-property: top, opacity, border-bottom;
-  transition-duration: 250ms, 250ms, 0ms;
+  transition-property: height, opacity, border-bottom;
+  transition-duration: 150ms, 150ms, 0ms;
   transition-delay: 0ms, 0ms 0ms;
   &.hidden {
-    top: -80px;
-    transition: top 250ms linear;
+    height: -80px;
+    transition: height 250ms linear;
   }
   &.reveal {
-    top: 80px;
+    height: 80px;
     opacity: 1;
     border-bottom: 1px solid $grey;
-    transition-property: top, opacity, border-bottom;
-    transition-duration: 250ms, 0ms, 0ms;
+    transition-property: height, opacity, border-bottom;
+    transition-duration: 150ms, 150ms, 0ms;
     transition-delay: 0ms, 50ms, 0ms;
   }
   &.white {
