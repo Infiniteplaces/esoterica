@@ -1,6 +1,10 @@
 footer {
   height: 477px;
   text-transform: uppercase;
+  ::selection {
+    color: $transparent;
+    text-shadow: 0px 0px 7px $white;
+  }
   .footer-container {
     padding: 20px 20px;
     height: 437px;
@@ -19,6 +23,10 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    ::selection {
+      color: $transparent;
+      text-shadow: 0px 0px 7px $black;
+    }
     h3 {
       font-size: 1.25rem;
       text-transform: uppercase;

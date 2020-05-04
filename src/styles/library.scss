@@ -123,6 +123,10 @@
         top: 10px;
         left: 10px;
         width: 90%;
+        &::selection {
+          color: $transparent;
+          text-shadow: 0px 0px 7px $black;
+        }
       }
     }
     .post-text-container {

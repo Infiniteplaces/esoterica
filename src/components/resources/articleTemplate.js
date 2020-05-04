@@ -90,6 +90,9 @@ class ArticleTemplate extends React.Component {
             alignItems: "flex-end",
           }
 
+    //// Create Share Link
+    const shareItem = typeof window !== "undefined" ? window.location : ""
+
     return (
       <Layout navTheme="dark" location={this.props.location}>
         <div id="articleTemplate">
@@ -120,7 +123,13 @@ class ArticleTemplate extends React.Component {
                   </div>
                   <div className="social body-small mb-4">
                     <div className="eyebrow">Share</div>
-                    <a href="" target="_blank" rel="norefferer noopener">
+                    <a
+                      href={
+                        "https://twitter.com/intent/tweet?text=" + shareItem
+                      }
+                      target="_blank"
+                      rel="norefferer noopener"
+                    >
                       <img
                         src={twitter_black}
                         alt="twitter"

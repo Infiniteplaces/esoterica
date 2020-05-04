@@ -87,12 +87,16 @@
     justify-content: space-around;
     align-items: center;
     height: 100%;
+
     a {
       display: flex;
       align-items: center;
       height: 100%;
       span {
         padding-top: 8px;
+      }
+      &:hover {
+        font-style: italic;
       }
       .indicator {
         width: 16px;
@@ -158,9 +162,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
     a {
       padding-top: 5px;
       margin: 0px 50px;
+      &:hover {
+        font-style: italic;
+      }
     }
   }
 }
