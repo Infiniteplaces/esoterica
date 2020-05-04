@@ -1,4 +1,5 @@
-import React from "react"
+import React, { useEffect } from "react"
+import { connect } from "react-redux"
 import { graphql } from "gatsby"
 import Helmet from "react-helmet"
 import get from "lodash/get"
@@ -19,7 +20,46 @@ import SoftFooterCta from "../../components/_global/softFooterCta"
 import softFooterBg from "../../images/advisorySolutions/advisorySolutionsFooterCta.png"
 
 class ArticleTemplate extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      metaPosition: "top",
+    }
+    this._handleScroll = this._handleScroll.bind(this)
+  }
+  componentDidMount() {
+    window.addEventListener("scroll", this._handleScroll)
+  }
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this._handleScroll)
+  }
+
+  _handleScroll() {
+    let currentScrollPos = window.pageYOffset
+    let windowHeight = window.innerHeight
+    let heroHeight = this.hero.clientHeight
+    let articleHeight = this.article_body.clientHeight
+    console.log(windowHeight, articleHeight)
+
+    if (currentScrollPos < heroHeight) {
+      this.setState({
+        metaPosition: "top",
+      })
+    } else if (
+      currentScrollPos > heroHeight &&
+      currentScrollPos < articleHeight
+    ) {
+      this.setState({
+        metaPosition: "fixed",
+      })
+    } else if (currentScrollPos > articleHeight + windowHeight - 350) {
+      this.setState({
+        metaPosition: "bottom",
+      })
+    }
+  }
   render() {
+    //// Handle Rich Text Rendering
     let { postType } = this.props.pageContext
     const libraryPost = get(this.props, "data.contentfulLibrary")
     const glossaryPost = get(this.props, "data.contentfulGlossary")
@@ -33,18 +73,47 @@ class ArticleTemplate extends React.Component {
 
     let article = documentToReactComponents(json)
 
+    //// Handle Scroll Position
+    let elStyle = {
+      position: "fixed",
+      top: "75px",
+      left: "35px",
+    }
+
+    let colStyle =
+      this.state.metaPosition === "top"
+        ? {
+            display: "flex",
+            alignItems: "flex-start",
+          }
+        : {
+            display: "flex",
+            alignItems: "flex-end",
+          }
+
     return (
       <Layout navTheme="dark" location={this.props.location}>
         <div id="articleTemplate">
           <Helmet />
-          <div className="header-container">
+          <div
+            className="header-container"
+            ref={hero => {
+              this.hero = hero
+            }}
+          >
             <Img alt={post.title} fluid={post.heroImage.fluid} />
             <h1 className="section-headline article-title">{post.title}</h1>
           </div>
           <Container fluid>
             <Row className="article-row">
-              <Col md="2">
-                <div className="metadata-container">
+              <Col
+                md="2"
+                style={this.state.metaPosition === "fixed" ? {} : colStyle}
+              >
+                <div
+                  className="metadata-container"
+                  style={this.state.metaPosition === "fixed" ? elStyle : {}}
+                >
                   <div className="date body-small mb-4">{post.publishDate}</div>
                   <div className="author body-small mb-4">
                     <div className="eyebrow">Author</div>
@@ -92,7 +161,14 @@ class ArticleTemplate extends React.Component {
                 </div>
               </Col>
               <Col md="8">
-                <div className="article-container">{article}</div>
+                <div
+                  ref={article_body => {
+                    this.article_body = article_body
+                  }}
+                  className="article-container"
+                >
+                  {article}
+                </div>
               </Col>
             </Row>
           </Container>
@@ -111,7 +187,12 @@ class ArticleTemplate extends React.Component {
   }
 }
 
-export default ArticleTemplate
+export default connect(
+  state => ({
+    prevScrollPos: state.header.prevScrollPos,
+  }),
+  null
+)(ArticleTemplate)
 
 export const pageQuery = graphql`
   query ArticleBySlug($slug: String!) {

@@ -23,6 +23,18 @@
     * {
       width: 40%;
     }
+    .tag-container {
+      display: flex;
+      margin-bottom: 15px;
+      .tag {
+        border: 1px solid $black;
+        margin: 0px 10px 0px 0px;
+        padding: 3px 10px;
+        font-size: 12px;
+        border-radius: 50px;
+        text-align: center;
+      }
+    }
   }
   @media (max-width: map-get($grid-breakpoints,md)) {
     height: 320px;

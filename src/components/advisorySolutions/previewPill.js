@@ -20,7 +20,20 @@ const PreviewPill = ({
             style={{ backgroundColor: bgColor, color: textColor }}
           >
             <h2>{title}</h2>
-            <div>{text}</div>
+            <div>
+              <div className="tag-container">
+                {tags
+                  ? tags.map((i, idx) => {
+                      return (
+                        <div key={idx} className="tag body-small">
+                          {i}
+                        </div>
+                      )
+                    })
+                  : ""}
+              </div>
+              {text}
+            </div>
           </div>
         </Link>
       </Col>
