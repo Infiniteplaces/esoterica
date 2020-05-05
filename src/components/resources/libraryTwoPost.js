@@ -13,12 +13,15 @@ const LibraryTwoPost = ({ posts, mobile }) => {
         <Col xs="6">
           <div className="post-container">
             <Link to={"/resources/library/" + post_one.slug}>
-              <div
-                className="container-image"
-                style={{
-                  backgroundImage: `url(${post_one.heroImage.fluid.src})`,
-                }}
-              />
+              <div className="wrapper">
+                <div
+                  className="container-image"
+                  style={{
+                    backgroundImage: `url(${post_one.heroImage.fluid.src})`,
+                  }}
+                />
+              </div>
+
               <div className="post-text-container">
                 <div className="tag-container">
                   {post_one.tags.length > 0
@@ -43,12 +46,15 @@ const LibraryTwoPost = ({ posts, mobile }) => {
         <Col xs="6">
           <div className="post-container">
             <Link to={"/resources/library/" + post_two.slug}>
-              <div
-                className="container-image"
-                style={{
-                  backgroundImage: `url(${post_two.heroImage.fluid.src})`,
-                }}
-              />
+              <div className="wrapper">
+                <div
+                  className="container-image"
+                  style={{
+                    backgroundImage: `url(${post_two.heroImage.fluid.src})`,
+                  }}
+                />
+              </div>
+
               <div className="post-text-container">
                 <div className="tag-container">
                   {post_two.tags.length > 0

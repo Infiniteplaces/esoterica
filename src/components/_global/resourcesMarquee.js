@@ -25,34 +25,34 @@ const ResourcesMarquee = ({}) => {
 
   let blockOne = [...Array(50).keys()].map((i, idx) => {
     return (
-      <>
+      <span key={idx}>
         <img src={nodes[0].heroImage.fixed.src} alt="" className="mx-5" />
         {nodes[0].title}
-      </>
+      </span>
     )
   })
   let blockTwo = [...Array(50).keys()].map((i, idx) => {
     return (
-      <>
+      <span key={idx}>
         <img src={nodes[1].heroImage.fixed.src} alt="" className="mx-5" />
         {nodes[1].title}
-      </>
+      </span>
     )
   })
   let blockThree = [...Array(50).keys()].map((i, idx) => {
     return (
-      <>
+      <span key={idx}>
         <img src={nodes[2].heroImage.fixed.src} alt="" className="mx-5" />
         {nodes[2].title}
-      </>
+      </span>
     )
   })
   let blockFour = [...Array(50).keys()].map((i, idx) => {
     return (
-      <>
+      <span key={idx}>
         <img src={nodes[3].heroImage.fixed.src} alt="" className="mx-5" />
         {nodes[3].title}
-      </>
+      </span>
     )
   })
 

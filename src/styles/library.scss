@@ -30,7 +30,7 @@
   .sort-container {
     z-index: 15;
     width: 100%;
-    height: 125px;
+    margin-top: 50px;
     padding: 0px 20px;
     display: flex;
     align-items: center;
@@ -70,39 +70,54 @@
 }
 
 #libraryFourPost {
-  margin: 0px 0px;
+  margin: 50px 0px;
   .post-container {
     height: 50vw;
     min-height: 600px;
     max-height: 850px;
   }
-  .post-container.left {
+  .wrapper {
+    overflow: hidden;
     width: 100%;
     border-radius: 6px;
     position: relative;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    .post-text-container {
-      position: absolute;
-      left: 10px;
-      width: 90%;
-      bottom: 10px;
-      text-align: left;
-      color: $white;
-      ::selection {
-        color: $transparent;
-        text-shadow: 0px 0px 7px $white;
+    .post-container.left {
+      width: 100%;
+      border-radius: 6px;
+      position: relative;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      &:hover {
+        webkit-filter: blur(3px);
+        filter: blur(3px);
+        transition: all 150ms linear;
+        transform: scale(1.01);
       }
-      .tag-container {
-        display: flex;
-        .tag {
-          border: 0.5px solid $white;
-          margin: 0px 10px 0px 0px;
-          padding: 7px 10px 3px;
-          font-size: 12px;
-          border-radius: 50px;
-          text-transform: uppercase;
+      .post-text-container {
+        position: absolute;
+        left: 10px;
+        width: 90%;
+        bottom: 10px;
+        text-align: left;
+        color: $white;
+        ::selection {
+          color: $transparent;
+          text-shadow: 0px 0px 7px $white;
+        }
+        .tag-container {
+          display: flex;
+          .tag {
+            border: 0.5px solid $white;
+            margin: 0px 10px 0px 0px;
+            padding: 7px 10px 3px;
+            font-size: 12px;
+            border-radius: 50px;
+            text-transform: uppercase;
+          }
         }
       }
     }
@@ -113,14 +128,30 @@
     .bottom-container,
     .top-container {
       height: 50%;
-      .container-image {
+      .wrapper {
         height: 60%;
         width: 100%;
         border-radius: 6px;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+        overflow: hidden;
+        .container-image {
+          height: 100%;
+          width: 100%;
+          border-radius: 6px;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          &:hover {
+            webkit-filter: blur(3px);
+            filter: blur(3px);
+            transition: all 150ms linear;
+            transform: scale(1.01);
+          }
+        }
       }
+
       .post-text-container {
         height: 40%;
         width: 75%;
@@ -161,6 +192,13 @@
         &::selection {
           color: $transparent;
           text-shadow: 0px 0px 7px $black;
+        }
+      }
+    }
+    &:hover {
+      .container-image {
+        .description {
+          font-style: italic;
         }
       }
     }
@@ -213,13 +251,29 @@
     height: 40vh;
     min-height: 500px;
     max-height: 750px;
-    .container-image {
+    overflow: hidden;
+    .wrapper {
       height: 75%;
       width: 100%;
       border-radius: 6px;
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
+      overflow: hidden;
+    }
+    .container-image {
+      height: 100%;
+      width: 100%;
+      border-radius: 6px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      &:hover {
+        webkit-filter: blur(3px);
+        filter: blur(3px);
+        transition: all 150ms linear;
+        transform: scale(1.01);
+      }
     }
     .post-text-container {
       height: 25%;

@@ -14,23 +14,25 @@ const LibraryFourPost = ({ posts, color = "#fdfc71" }) => {
       <Row>
         <Col xs="12" md="4">
           <Link to={"/resources/library/" + f1.slug}>
-            <div
-              className="post-container left"
-              style={{ backgroundImage: `url(${f1.heroImage.fluid.src})` }}
-            >
-              <div className="post-text-container">
-                <div className="tag-container">
-                  {f1.tags
-                    ? f1.tags.map((i, idx) => {
-                        return (
-                          <div key={idx} className="tag body-small">
-                            {i}
-                          </div>
-                        )
-                      })
-                    : ""}
+            <div className="wrapper">
+              <div
+                className="post-container left"
+                style={{ backgroundImage: `url(${f1.heroImage.fluid.src})` }}
+              >
+                <div className="post-text-container">
+                  <div className="tag-container">
+                    {f1.tags
+                      ? f1.tags.map((i, idx) => {
+                          return (
+                            <div key={idx} className="tag body-small">
+                              {i}
+                            </div>
+                          )
+                        })
+                      : ""}
+                  </div>
+                  <h2 className="post-title">{f1.title}</h2>
                 </div>
-                <h2 className="post-title">{f1.title}</h2>
               </div>
             </div>
           </Link>
@@ -39,10 +41,15 @@ const LibraryFourPost = ({ posts, color = "#fdfc71" }) => {
           <div className="post-container center">
             <div className="top-container">
               <Link to={"/resources/library/" + f2.slug}>
-                <div
-                  className="container-image"
-                  style={{ backgroundImage: `url(${f2.heroImage.fluid.src})` }}
-                />
+                <div className="wrapper">
+                  <div
+                    className="container-image"
+                    style={{
+                      backgroundImage: `url(${f2.heroImage.fluid.src})`,
+                    }}
+                  />
+                </div>
+
                 <div className="post-text-container">
                   <div className="tag-container">
                     {f2.tags
@@ -61,10 +68,15 @@ const LibraryFourPost = ({ posts, color = "#fdfc71" }) => {
             </div>
             <div className="bottom-container">
               <Link to={"/resources/library/" + f3.slug}>
-                <div
-                  className="container-image"
-                  style={{ backgroundImage: `url(${f3.heroImage.fluid.src})` }}
-                />
+                <div className="wrapper">
+                  <div
+                    className="container-image"
+                    style={{
+                      backgroundImage: `url(${f3.heroImage.fluid.src})`,
+                    }}
+                  />
+                </div>
+
                 <div className="post-text-container">
                   <div className="tag-container">
                     {f3.tags
