@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link } from "gatsby"
 import { connect } from "react-redux"
 import { Container, Row, Col } from "reactstrap"
@@ -13,17 +13,69 @@ import icon_6 from "../../images/icons/heroIcon_6.svg"
 
 const HomeHero = ({}) => {
   const arr = [icon_1, icon_2, icon_3, icon_4, icon_5, icon_6]
-
   function randomInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min
   }
+  let [locations, setLocations] = useState([
+    {
+      top: randomInteger(15, 95),
+      left: randomInteger(5, 95),
+    },
+    {
+      top: randomInteger(15, 95),
+      left: randomInteger(5, 95),
+    },
+    {
+      top: randomInteger(15, 95),
+      left: randomInteger(5, 95),
+    },
+    {
+      top: randomInteger(15, 95),
+      left: randomInteger(5, 95),
+    },
+    {
+      top: randomInteger(15, 95),
+      left: randomInteger(5, 95),
+    },
+    {
+      top: randomInteger(15, 95),
+      left: randomInteger(5, 95),
+    },
+  ])
+
+  setTimeout(() => {
+    setLocations([
+      {
+        top: randomInteger(15, 95),
+        left: randomInteger(5, 95),
+      },
+      {
+        top: randomInteger(15, 95),
+        left: randomInteger(5, 95),
+      },
+      {
+        top: randomInteger(15, 95),
+        left: randomInteger(5, 95),
+      },
+      {
+        top: randomInteger(15, 95),
+        left: randomInteger(5, 95),
+      },
+      {
+        top: randomInteger(15, 95),
+        left: randomInteger(5, 95),
+      },
+      {
+        top: randomInteger(15, 95),
+        left: randomInteger(5, 95),
+      },
+    ])
+  }, 750)
 
   let icons = arr.map((i, idx) => {
-    let top = randomInteger(15, 95)
-    let left = randomInteger(5, 95)
     let style = {
-      top: top + "%",
-      left: left + "%",
+      top: locations[idx].top + "%",
+      left: locations[idx].left + "%",
     }
     return (
       <Draggable key={idx}>
