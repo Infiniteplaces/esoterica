@@ -32,11 +32,7 @@ class InstitutionalInvestorsPage extends React.Component {
               className="hero-img"
               fluid={this.props.data.file.childImageSharp.fluid}
             />
-            <h1 className="title">
-              Institutional
-              <br />
-              Investors
-            </h1>
+            <h1 className="title">Institutional Investors</h1>
           </div>
           <Container fluid>
             <Row className="header-row">

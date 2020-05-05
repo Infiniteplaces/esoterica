@@ -20,7 +20,7 @@ const LibraryFourPost = ({ posts, color = "#fdfc71" }) => {
             >
               <div className="post-text-container">
                 <div className="tag-container">
-                  {f1.tags.length > 0
+                  {f1.tags
                     ? f1.tags.map((i, idx) => {
                         return (
                           <div key={idx} className="tag body-small">
@@ -45,7 +45,7 @@ const LibraryFourPost = ({ posts, color = "#fdfc71" }) => {
                 />
                 <div className="post-text-container">
                   <div className="tag-container">
-                    {f2.tags.length > 0
+                    {f2.tags
                       ? f2.tags.map((i, idx) => {
                           return (
                             <div key={idx} className="tag body-small">
@@ -67,7 +67,7 @@ const LibraryFourPost = ({ posts, color = "#fdfc71" }) => {
                 />
                 <div className="post-text-container">
                   <div className="tag-container">
-                    {f3.tags.length > 0
+                    {f3.tags
                       ? f3.tags.map((i, idx) => {
                           return (
                             <div key={idx} className="tag body-small">
@@ -94,7 +94,7 @@ const LibraryFourPost = ({ posts, color = "#fdfc71" }) => {
               </div>
               <div className="post-text-container">
                 <div className="tag-container">
-                  {f4.tags.length > 0
+                  {f4.tags
                     ? f4.tags.map((i, idx) => {
                         return (
                           <div key={idx} className="tag body-small">

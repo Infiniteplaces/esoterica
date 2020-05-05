@@ -32,11 +32,7 @@ class AdvisorServicesPage extends React.Component {
               className="hero-img"
               fluid={this.props.data.file.childImageSharp.fluid}
             />
-            <h1 className="title">
-              Advisor
-              <br />
-              Services
-            </h1>
+            <h1 className="title">Advisor Services</h1>
           </div>
           <Container fluid>
             <Row className="header-row">
