@@ -21,7 +21,7 @@
       .text-path-one {
         border-bottom: 2px solid $transparent;
         display: inline-block;
-        animation: marquee 10s linear infinite;
+        animation: marquee 360s linear infinite;
       }
       .text-path-two {
         border-bottom: 2px solid $transparent;
@@ -43,7 +43,7 @@
 
 @keyframes marquee {
   from {
-    transform: translateX(100%);
+    transform: translateX(0%);
   }
   to {
     transform: translateX(-100%);

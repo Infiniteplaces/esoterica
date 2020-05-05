@@ -13,6 +13,7 @@ import HomeOurFunds from "../components/home/homeOurFunds"
 import EmailCapture from "../components/_global/emailCapture"
 import ResearchTeam from "../components/_global/researchTeam"
 import HomePress from "../components/home/homePress"
+import HomeFeaturedBlog from "../components/home/homeFeaturedBlog"
 import ResourcesMarquee from "../components/_global/resourcesMarquee"
 import LibraryFourPost from "../components/resources/libraryFourPost"
 
@@ -29,7 +30,7 @@ class IndexPage extends React.Component {
       <Layout>
         <SEO title="Home" />
         <HomeHero />
-        <LibraryFourPost posts={featured} />
+        <HomeFeaturedBlog featured={featured} posts={library} />
         <HomeOurPhilosophy />
         <HomeOurFunds />
         {mobile ? "" : <EmailCapture />}

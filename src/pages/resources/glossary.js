@@ -96,7 +96,7 @@ export const glossaryPageQuery = graphql`
             description
           }
           publishDate(formatString: "MMMM Do, YYYY")
-          tags
+
           heroImage {
             fluid(resizingBehavior: SCALE) {
               ...GatsbyContentfulFluid

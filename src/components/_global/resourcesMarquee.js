@@ -23,22 +23,61 @@ const ResourcesMarquee = ({}) => {
   `)
   let { nodes } = data.allContentfulGlossary
 
-  let p =
-    "WTF is an ETF? Why the future looks bright for traded investments. Why Morgan Stanley’s E*Trade deal means bigger banks"
+  let blockOne = [...Array(50).keys()].map((i, idx) => {
+    return (
+      <>
+        <img src={nodes[0].heroImage.fixed.src} alt="" className="mx-5" />
+        {nodes[0].title}
+      </>
+    )
+  })
+  let blockTwo = [...Array(50).keys()].map((i, idx) => {
+    return (
+      <>
+        <img src={nodes[1].heroImage.fixed.src} alt="" className="mx-5" />
+        {nodes[1].title}
+      </>
+    )
+  })
+  let blockThree = [...Array(50).keys()].map((i, idx) => {
+    return (
+      <>
+        <img src={nodes[2].heroImage.fixed.src} alt="" className="mx-5" />
+        {nodes[2].title}
+      </>
+    )
+  })
+  let blockFour = [...Array(50).keys()].map((i, idx) => {
+    return (
+      <>
+        <img src={nodes[3].heroImage.fixed.src} alt="" className="mx-5" />
+        {nodes[3].title}
+      </>
+    )
+  })
+
   return (
     <Container fluid id="resourcesMarquee">
       <Row className="marquee-row">
         <Col md={{}} className="marquee-container">
           <Link to={"/resources/glossary/" + nodes[0].slug}>
             <div className="marquee">
-              <h1 className="text-path-one">
-                <img
-                  src={nodes[0].heroImage.fixed.src}
-                  alt=""
-                  className="mr-3"
-                />
-                {nodes[0].title}
-              </h1>
+              <h1 className="text-path-one">{blockOne}</h1>
+            </div>
+          </Link>
+          <Link to={"/resources/glossary/" + nodes[1].slug}>
+            <div className="marquee">
+              <h1 className="text-path-one">{blockTwo}</h1>
+            </div>
+          </Link>
+          <Link to={"/resources/glossary/" + nodes[2].slug}>
+            <div className="marquee">
+              <h1 className="text-path-one">{blockThree}</h1>
+            </div>
+          </Link>
+          <Link to={"/resources/glossary/" + nodes[3].slug}>
+            <div className="marquee">
+              <h1 className="text-path-one">{blockFour}</h1>
             </div>
           </Link>
         </Col>
