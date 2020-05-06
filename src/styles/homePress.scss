@@ -22,12 +22,18 @@
     }
     .press-clipping {
       display: flex;
+      height: 100%;
       flex-direction: column;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
       text-align: center;
-      h1 {
+      h1,
+      h2 {
         margin-bottom: 30px;
+      }
+      img {
+        display: flex;
+        margin: 30px auto;
       }
     }
     .arrow {

@@ -13,7 +13,7 @@ const ResearchTeam = ({}) => {
   let [teamModalThree, setTeamModalThree] = useState(false)
   const data = useStaticQuery(graphql`
     query {
-      catherine_wood: file(relativePath: { eq: "team/catherine_wood.png" }) {
+      bruce_liu: file(relativePath: { eq: "team/bruce_liu.png" }) {
         childImageSharp {
           fluid(maxWidth: 1440) {
             ...GatsbyImageSharpFluid
@@ -27,7 +27,7 @@ const ResearchTeam = ({}) => {
           }
         }
       }
-      diana_wang: file(relativePath: { eq: "team/diana_wang.png" }) {
+      karan_trehan: file(relativePath: { eq: "team/karan_trehan.png" }) {
         childImageSharp {
           fluid(maxWidth: 1440) {
             ...GatsbyImageSharpFluid
@@ -42,12 +42,12 @@ const ResearchTeam = ({}) => {
         <div className="img-container">
           <Img
             className="team-img"
-            fluid={data.catherine_wood.childImageSharp.fluid}
+            fluid={data.bruce_liu.childImageSharp.fluid}
           />
         </div>
-        <div className="eyebrow">Position Title</div>
+        <div className="eyebrow">Chief Executive Officer & Co-Founder</div>
         <div className="d-flex justify-content-between align-items-center">
-          <h4>Catherine D. Wood</h4>
+          <h4>Qindong (Bruce) Liu Ph.D., CFA</h4>
           <img src={expand} alt="" width="25" className="expand-icon" />
         </div>
       </div>
@@ -57,63 +57,33 @@ const ResearchTeam = ({}) => {
         className="team-member-modal"
       >
         <Container fluid className="team-member-modal-container">
-          <Row>
+          <Row className="d-flex align-items-center">
             <Col>
               <div className="modal-image-container">
                 <Img
                   className="modal-team-img"
-                  fluid={data.catherine_wood.childImageSharp.fluid}
+                  fluid={data.bruce_liu.childImageSharp.fluid}
                 />
               </div>
             </Col>
             <Col>
               <Row>
                 <Col>
-                  <div className="body-small">Chief Investment Officer</div>
-                  <h3 className="pb-3">Catherine Wood</h3>
+                  <div className="body-small">
+                    Chief Executive Officer & Co-Founder
+                  </div>
+                  <h3 className="pb-3">Qindong (Bruce) Liu Ph.D., CFA</h3>
                   <p className="pb-3">
-                    Don Rich is co-founder and CIO (Chief Investment Officer) of
-                    Esoterica Capital. In addition, he serves as the Chief
-                    Strategist, oversees the asset allocated funds and is
-                    responsible for new product design. Dr. Rich also spearheads
-                    the social media, thought-leadership/intellectual-branding
-                    initiative by providing digital audio, video and text
-                    discussions on the linkage between macroeconomics, capital
-                    markets and investing. Don previously held senior leadership
-                    roles at Harvard Management Company, Wellington Management
-                    Company, State Street Bank, Dow Chemical Pension Fund, and
-                    MFC Global Investment Management.
+                    Bruce manages WUGI, Esoterica's active ETF investing in
+                    5G-enabled digital economy. Prior to Esoterica, he was a
+                    portfolio manager and partner of PhaseCapital. He was an
+                    equity strategist at WisdomTree Asset Management and a
+                    sell-side equity strategist at Sanford Bernstein. Bruce
+                    started his investment career at Dow Chemical Pension Fund.
+                    He received his Ph.D. in Business Administration from
+                    University of Connecticut and holds the Chartered Financial
+                    Analyst (CFA) designation.
                   </p>
-                </Col>
-              </Row>
-              <Row>
-                <Col>
-                  <div className="info-container">
-                    <div className="body-small">Education</div>
-                    <p>Lorem Ipsum</p>
-                  </div>
-                  <div className="info-container">
-                    <div className="body-small">Awards</div>
-                    <p>Lorem Ipsum</p>
-                  </div>
-                  <div className="info-container">
-                    <div className="body-small">Connect</div>
-                    <p>Lorem Ipsum</p>
-                  </div>
-                </Col>
-                <Col>
-                  <div className="info-container">
-                    <div className="body-small">Favorite Resources</div>
-                    <p>Lorem Ipsum</p>
-                  </div>
-                  <div className="info-container">
-                    <div className="body-small">Best Investment Advice</div>
-                    <p>Lorem Ipsum</p>
-                  </div>
-                  <div className="info-container">
-                    <div className="body-small">Dons Writing</div>
-                    <p>Lorem Ipsum</p>
-                  </div>
                 </Col>
               </Row>
             </Col>
@@ -129,12 +99,12 @@ const ResearchTeam = ({}) => {
         <div className="img-container">
           <Img
             className="team-img"
-            fluid={data.don_rich.childImageSharp.fluid}
+            fluid={data.karan_trehan.childImageSharp.fluid}
           />
         </div>
-        <div className="eyebrow">Position Title</div>
+        <div className="eyebrow">Executive Chairman & Co-Founder</div>
         <div className="d-flex justify-content-between align-items-center">
-          <h4>Don Rich, PhD</h4>
+          <h4>Karan Trehan</h4>
           <img src={expand} alt="" width="25" className="expand-icon" />
         </div>
       </div>
@@ -144,63 +114,39 @@ const ResearchTeam = ({}) => {
         className="team-member-modal"
       >
         <Container fluid className="team-member-modal-container">
-          <Row>
+          <Row className="d-flex align-items-center">
             <Col>
               <div className="modal-image-container">
                 <Img
                   className="modal-team-img"
-                  fluid={data.don_rich.childImageSharp.fluid}
+                  fluid={data.karan_trehan.childImageSharp.fluid}
                 />
               </div>
             </Col>
             <Col>
               <Row>
                 <Col>
-                  <div className="body-small">Chief Investment Officer</div>
-                  <h3 className="pb-3">Catherine Wood</h3>
+                  <div className="body-small">
+                    Executive Chairman & Co-Founder
+                  </div>
+                  <h3 className="pb-3">Karan Trehan</h3>
                   <p className="pb-3">
-                    Don Rich is co-founder and CIO (Chief Investment Officer) of
-                    Esoterica Capital. In addition, he serves as the Chief
-                    Strategist, oversees the asset allocated funds and is
-                    responsible for new product design. Dr. Rich also spearheads
-                    the social media, thought-leadership/intellectual-branding
-                    initiative by providing digital audio, video and text
-                    discussions on the linkage between macroeconomics, capital
-                    markets and investing. Don previously held senior leadership
-                    roles at Harvard Management Company, Wellington Management
-                    Company, State Street Bank, Dow Chemical Pension Fund, and
-                    MFC Global Investment Management.
+                    Karan has been in international finance for four decades,
+                    principally based in New York City. After careers at The
+                    World Bank and Goldman Sachs (where was an early member of
+                    the international fixed income group) and AllianceBernstein
+                    (where as President & CEO, International he launched
+                    Alliance's early thrust into offshore funds and strategic
+                    alliances), he established a boutique investment management
+                    company, Ankar Capital, to invest private equity in Asia and
+                    in Asia-centric hedge funds. He was also the Founder and
+                    Managing Partner of Emerging Managers Group, an offshore
+                    fund platform, later sold to a US mutual fund complex. Karan
+                    studied Economics at Delhi University, India followed by an
+                    MBA from IMD, Switzerland. He has served on the boards of
+                    several US-based and international mutual funds and has been
+                    a trustee of the United World Colleges.
                   </p>
-                </Col>
-              </Row>
-              <Row>
-                <Col>
-                  <div className="info-container">
-                    <div className="body-small">Education</div>
-                    <p>Lorem Ipsum</p>
-                  </div>
-                  <div className="info-container">
-                    <div className="body-small">Awards</div>
-                    <p>Lorem Ipsum</p>
-                  </div>
-                  <div className="info-container">
-                    <div className="body-small">Connect</div>
-                    <p>Lorem Ipsum</p>
-                  </div>
-                </Col>
-                <Col>
-                  <div className="info-container">
-                    <div className="body-small">Favorite Resources</div>
-                    <p>Lorem Ipsum</p>
-                  </div>
-                  <div className="info-container">
-                    <div className="body-small">Best Investment Advice</div>
-                    <p>Lorem Ipsum</p>
-                  </div>
-                  <div className="info-container">
-                    <div className="body-small">Dons Writing</div>
-                    <p>Lorem Ipsum</p>
-                  </div>
                 </Col>
               </Row>
             </Col>
@@ -216,12 +162,12 @@ const ResearchTeam = ({}) => {
         <div className="img-container">
           <Img
             className="team-img"
-            fluid={data.diana_wang.childImageSharp.fluid}
+            fluid={data.don_rich.childImageSharp.fluid}
           />
         </div>
-        <div className="eyebrow">Position Title</div>
+        <div className="eyebrow">Chief Investment Officer & Co-Founder</div>
         <div className="d-flex justify-content-between align-items-center">
-          <h4>Diana Wang, MA</h4>
+          <h4>Don Rich Ph.D.</h4>
           <img src={expand} alt="" width="25" className="expand-icon" />
         </div>
       </div>
@@ -231,63 +177,44 @@ const ResearchTeam = ({}) => {
         className="team-member-modal"
       >
         <Container fluid className="team-member-modal-container">
-          <Row>
+          <Row className="d-flex align-items-center">
             <Col>
               <div className="modal-image-container">
                 <Img
                   className="modal-team-img"
-                  fluid={data.diana_wang.childImageSharp.fluid}
+                  fluid={data.don_rich.childImageSharp.fluid}
                 />
               </div>
             </Col>
             <Col>
               <Row>
                 <Col>
-                  <div className="body-small">Chief Investment Officer</div>
-                  <h3 className="pb-3">Catherine Wood</h3>
+                  <div className="body-small">
+                    Chief Investment Officer & Co-Founder
+                  </div>
+                  <h3 className="pb-3">Don Rich Ph.D.</h3>
                   <p className="pb-3">
-                    Don Rich is co-founder and CIO (Chief Investment Officer) of
-                    Esoterica Capital. In addition, he serves as the Chief
-                    Strategist, oversees the asset allocated funds and is
-                    responsible for new product design. Dr. Rich also spearheads
-                    the social media, thought-leadership/intellectual-branding
-                    initiative by providing digital audio, video and text
-                    discussions on the linkage between macroeconomics, capital
-                    markets and investing. Don previously held senior leadership
-                    roles at Harvard Management Company, Wellington Management
-                    Company, State Street Bank, Dow Chemical Pension Fund, and
-                    MFC Global Investment Management.
+                    Don is CIO and portfolio manager of Esoterica's asset
+                    allocation strategies. He is also spearheads new product
+                    design and intellectual-branding. Don brings wide-ranging
+                    experiences in asset management: Endowments: at Harvard
+                    Management Company, he was a portfolio manager and member of
+                    the endowment's prestigious asset allocation committee and
+                    Director of Research. Pension Plans: portfolio manager and
+                    Director of Risk Management for Dow Chemical Company.
+                    Buy-Side: portfolio manager and Director of Research at
+                    Wellington Management Company and MFC Global Investment
+                    Management (Manulife), where he was Head of Tactical Asset
+                    Allocation. Sell-Side & Consulting: designed customized
+                    products and solutions for State Street and for Rich
+                    Consulting. Don graduated from the University of Illinois
+                    with B.S. and M.S. degrees and holds a Ph.D. in Quantitative
+                    Finance from Virginia Tech. During his academic career, he
+                    received early tenure, published over twenty scientific
+                    journal articles, received multiple prestigious research
+                    awards, and served as Associate Editor for academic
+                    journals.
                   </p>
-                </Col>
-              </Row>
-              <Row>
-                <Col>
-                  <div className="info-container">
-                    <div className="body-small">Education</div>
-                    <p>Lorem Ipsum</p>
-                  </div>
-                  <div className="info-container">
-                    <div className="body-small">Awards</div>
-                    <p>Lorem Ipsum</p>
-                  </div>
-                  <div className="info-container">
-                    <div className="body-small">Connect</div>
-                    <p>Lorem Ipsum</p>
-                  </div>
-                </Col>
-                <Col>
-                  <div className="info-container">
-                    <div className="body-small">Favorite Resources</div>
-                    <p>Lorem Ipsum</p>
-                  </div>
-                  <div className="info-container">
-                    <div className="body-small">Best Investment Advice</div>
-                    <p>Lorem Ipsum</p>
-                  </div>
-                  <div className="info-container">
-                    <div className="body-small">Dons Writing</div>
-                    <p>Lorem Ipsum</p>
-                  </div>
                 </Col>
               </Row>
             </Col>
@@ -311,7 +238,7 @@ const ResearchTeam = ({}) => {
       <Row className="py-md-3">
         <Col className="d-flex justify-content-center">
           <Link className="button secondary full-width" to="/about">
-            <span>Learn About Our Team</span>
+            <span>Meet the Team</span>
           </Link>
         </Col>
       </Row>

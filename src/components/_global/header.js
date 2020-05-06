@@ -32,25 +32,25 @@ const LINKMAP = [
     dropdown: false,
   },
   {
-    title: "Advisory Solutions",
-    link: "/advisory-solutions",
+    title: "Investor Solutions",
+    link: "/investor-solutions",
     dropdown: true,
     dropdownLinks: [
       {
         title: "Exchange Traded Funds",
-        link: "/advisory-solutions/exchange-traded-funds",
+        link: "/investor-solutions/exchange-traded-funds",
       },
       {
         title: "Advisor Services",
-        link: "/advisory-solutions/advisor-services",
+        link: "/investor-solutions/advisor-services",
       },
       {
         title: "Individual Investors",
-        link: "/advisory-solutions/individual-investors",
+        link: "/investor-solutions/individual-investors",
       },
       {
         title: "Institutional Investors",
-        link: "/advisory-solutions/institutional-investors",
+        link: "/investor-solutions/institutional-investors",
       },
     ],
   },
@@ -64,8 +64,8 @@ const LINKMAP = [
         link: "/resources/library",
       },
       {
-        title: "Glossary",
-        link: "/resources/glossary",
+        title: "Educational Writing",
+        link: "/resources/educational-writing",
       },
     ],
   },

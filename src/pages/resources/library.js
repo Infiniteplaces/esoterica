@@ -19,7 +19,7 @@ import EmailCapture from "../../components/_global/emailCapture"
 import ResourcesMarquee from "../../components/_global/resourcesMarquee"
 
 import SoftFooterCta from "../../components/_global/softFooterCta"
-import softFooterBg from "../../images/advisorySolutions/advisorySolutionsFooterCta.png"
+import softFooterBg from "../../images/investorSolutions/investorSolutionsFooterCta.png"
 
 import arrow from "../../images/icons/arrow-bent.svg"
 import exit from "../../images/icons/list-exit.svg"
@@ -168,7 +168,7 @@ class LibraryPage extends React.Component {
               text={"How we can work together"}
               ctaLead={"See"}
               cta={"Advisory Solutions"}
-              link={"/advisorySolutions"}
+              link={"/investorSolutions"}
             />
           </div>
         </div>

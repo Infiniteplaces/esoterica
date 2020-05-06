@@ -85,8 +85,8 @@ const ResourcesMarquee = ({}) => {
       <Row className="cta-row">
         <Col className="d-flex justify-content-center align-items-center">
           <div className="cta">
-            <Link to="/" className="underline">
-              View All Resources
+            <Link to="/resources/educational-writing" className="underline">
+              Our Educational Writings
             </Link>
           </div>
         </Col>

@@ -94,8 +94,9 @@ const HomeHero = ({}) => {
             Next-generation <br /> investing
           </h1>
           <h3 className="py-4">
-            Esoterica is redesigning investing for all. Based in future <br />
-            technologies, backed by industry-leading experts.
+            Capturing Opportunities in the New Digital Economy
+            <br />
+             Backed by On-the-Ground Fundamental Research
           </h3>
           <Link className="button primary" to="/about">
             Learn More

@@ -41,11 +41,11 @@ class IndexPage extends React.Component {
         <SoftFooterCta
           background={softFooterBg}
           text={
-            "There’s more to investing than just ones and zeros. Learn what we mean here."
+            "We’re investing in all four sectors of 5G — new semiconductors, cloud computing, software, and enabling technology."
           }
-          ctaLead={"Or,"}
-          cta={"get started"}
-          link={"/advisorySolutions"}
+          ctaLead={"Learn more about "}
+          cta={"our opportunity"}
+          link={"/investorSolutions"}
         />
       </Layout>
     )

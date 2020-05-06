@@ -17,7 +17,7 @@ import EmailCapture from "../../components/_global/emailCapture"
 import ResourcesMarquee from "../../components/_global/resourcesMarquee"
 
 import SoftFooterCta from "../../components/_global/softFooterCta"
-import softFooterBg from "../../images/advisorySolutions/advisorySolutionsFooterCta.png"
+import softFooterBg from "../../images/investorSolutions/investorSolutionsFooterCta.png"
 
 class ArticleTemplate extends React.Component {
   constructor(props) {
@@ -184,7 +184,7 @@ class ArticleTemplate extends React.Component {
           text={"How we can work together"}
           ctaLead={"See"}
           cta={"Advisory Solutions"}
-          link={"/advisorySolutions"}
+          link={"/investorSolutions"}
         />
       </Layout>
     )

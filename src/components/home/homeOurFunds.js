@@ -17,12 +17,11 @@ const HomeOurFunds = ({}) => {
       <Row>
         <Col className="px-0 px-md-2">
           <h1 className="section">
-            Value and growth both serve a purpose in any portfolio. We believe,
-            fundamentally,  in balance.
+            The new digital economy is not a light switch. It’s an evolution.
           </h1>
-          <Link className="button secondary" to="/about">
+          <a className="button secondary" href="https://www.esotericacap.com">
             <span>Explore Our Funds</span>
-          </Link>
+          </a>
         </Col>
       </Row>
     </Container>

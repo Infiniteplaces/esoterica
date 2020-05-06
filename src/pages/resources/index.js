@@ -7,17 +7,16 @@ import { Container, Row, Col } from "reactstrap"
 import ArtcilePreview from "../../components/resources/articlePreview"
 
 import Layout from "../../components/_global/layout"
-import Image from "../../components/_global/image"
 import SEO from "../../components/_global/seo"
 
-class ResourcesIndex extends React.Component {
+class ResourcesPage extends React.Component {
   render() {
     const siteTitle = get(this, "props.data.site.siteMetadata.title")
     const glossary = get(this, "props.data.allContentfulGlossary.edges")
     const library = get(this, "props.data.allContentfulLibrary.edges")
 
     return (
-      <Layout location={this.props.location}>
+      <Layout>
         <SEO title="Resources" />
         <Helmet title={siteTitle} />
         <Container fluid style={{ paddingTop: 150 }}>
@@ -57,10 +56,10 @@ class ResourcesIndex extends React.Component {
   }
 }
 
-export default ResourcesIndex
+export default ResourcesPage
 
-export const pageQuery = graphql`
-  query ResourcesIndexQuery {
+export const ResourcesPageQuery = graphql`
+  query ResourcesPageQuery {
     allContentfulGlossary(sort: { fields: [publishDate], order: DESC }) {
       edges {
         node {
