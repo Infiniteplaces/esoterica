@@ -65,7 +65,7 @@ class InvestorSolutionsPage extends React.Component {
             text={
               "Esoterica is the manager of active, thematic ETFs that capture growth in the new digital economy, enabled by the onset of 5G."
             }
-            bgColor={"#fdfc71"}
+            bgColor={"#F1F1F1"}
             textColor={"#000"}
             link={"/advisory-solutions/exchage-traded-funds"}
           />
@@ -74,8 +74,8 @@ class InvestorSolutionsPage extends React.Component {
             text={
               "We are committed to supporting financial advisors and registered investment advisors through content and accessibility to our investment professionals. "
             }
-            bgColor={"#B620E0"}
-            textColor={"#fff"}
+            bgColor={"#CCCCCC"}
+            textColor={"#000"}
             link={"/advisory-solutions/advisor-services"}
           />
           <PreviewPill
@@ -83,8 +83,8 @@ class InvestorSolutionsPage extends React.Component {
             text={
               "We are an extension of you.  We share the same beliefs and principles that you hold dear and cherish.  We want to help build wealth."
             }
-            bgColor={"#3FFF18"}
-            textColor={"#000"}
+            bgColor={"#8C8C8C"}
+            textColor={"#fff"}
             link={"/advisory-solutions/individual-investors"}
           />
           <PreviewPill
@@ -92,7 +92,7 @@ class InvestorSolutionsPage extends React.Component {
             text={
               "We serve institutional investors through separate accounts as well as investment products (exchange traded funds, mutual funds). "
             }
-            bgColor={"#2c12ff"}
+            bgColor={"#414141"}
             textColor={"#fff"}
             link={"/advisory-solutions/institutional-investors"}
           />

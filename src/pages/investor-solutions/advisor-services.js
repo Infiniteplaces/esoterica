@@ -111,7 +111,7 @@ export const AdvisoryServicesQuery = graphql`
         }
       }
     }
-    file(relativePath: { eq: "investorSolutions/advisorServicesHero.png" }) {
+    file(relativePath: { eq: "investorSolutions/investorSolutionsHero.png" }) {
       childImageSharp {
         fluid(maxWidth: 1440) {
           ...GatsbyImageSharpFluid
