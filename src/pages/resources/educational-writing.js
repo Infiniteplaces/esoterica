@@ -98,6 +98,9 @@ export const glossaryPageQuery = graphql`
             fluid(resizingBehavior: SCALE) {
               ...GatsbyContentfulFluid
             }
+            fixed(width: 250) {
+              src
+            }
           }
         }
       }

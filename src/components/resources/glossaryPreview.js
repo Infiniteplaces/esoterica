@@ -8,11 +8,18 @@ import { Container, Row, Col } from "reactstrap"
 const GlossaryPreview = ({ glossary }) => {
   let display = glossary.map((i, idx) => {
     let { node } = i
-    console.log(node)
+    let article = [...Array(50).keys()].map((i, idx) => {
+      return (
+        <span key={idx}>
+          <img src={node.heroImage.fixed.src} alt="article preview" />
+          <h1>{node.title}</h1>
+        </span>
+      )
+    })
     return (
       <div key={idx} className="glossaryPreviewRow">
         <Link className="previewItem" to={"/resources/glossary/" + node.slug}>
-          <h1 className="">{node.title}</h1>
+          {article}
         </Link>
       </div>
     )
