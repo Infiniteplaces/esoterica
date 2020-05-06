@@ -79,7 +79,7 @@ class ArticleTemplate extends React.Component {
 
     let youtube = post.youtube ? (
       <div className="video-container">
-        <ReactPlayer url={post.youtube} />
+        <ReactPlayer url={post.youtube} controls />
       </div>
     ) : (
       ""
