@@ -69,6 +69,70 @@
   }
 }
 
+#libraryThumbnails {
+  .thumbnail {
+    display: flex;
+    height: 120px;
+    margin-bottom: 15px;
+
+    &.bottom-border {
+      padding-bottom: 15px;
+      border-bottom: 1px solid $black;
+    }
+
+    .wrapper {
+      height: 100%;
+      width: 50%;
+      border-radius: 6px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      overflow: hidden;
+      .container-image {
+        height: 100%;
+        width: 100%;
+        border-radius: 6px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        &:hover {
+          webkit-filter: blur(3px);
+          filter: blur(3px);
+          transition: all 150ms linear;
+          transform: scale(1.01);
+        }
+      }
+    }
+    .text-container {
+      width: 50%;
+      padding: 0px 15px;
+      &.right-border {
+        // padding-bottom: 15px;
+        border-right: 1px solid $black;
+      }
+      .tag-container {
+        display: flex;
+        align-items: center;
+        z-index: 15;
+        .tag {
+          z-index: 15;
+          border-width: 0.5px;
+          border-style: solid;
+          margin: 0px 10px 10px 0px;
+          padding: 7px 10px 3px;
+          font-size: 12px;
+          border-radius: 50px;
+          text-transform: uppercase;
+          cursor: pointer;
+          &.active {
+            background-color: $yellow;
+          }
+        }
+      }
+    }
+  }
+}
+
 #libraryFourPost {
   margin: 50px 0px;
   .post-container {

@@ -11,7 +11,7 @@ const GlossaryPreview = ({ glossary }) => {
     let article = [...Array(50).keys()].map((i, idx) => {
       return (
         <span key={idx}>
-          <img src={node.heroImage.fixed.src} alt="article preview" />
+          <Img fixed={node.heroImage.fixed} alt="article preview" />
           <h1>{node.title}</h1>
         </span>
       )

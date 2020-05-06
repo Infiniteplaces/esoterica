@@ -99,7 +99,7 @@ export const glossaryPageQuery = graphql`
               ...GatsbyContentfulFluid
             }
             fixed(width: 250) {
-              src
+              ...GatsbyContentfulFixed
             }
           }
         }

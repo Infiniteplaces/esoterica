@@ -26,11 +26,12 @@ class IndexPage extends React.Component {
     let { mobile } = this.props
     const library = get(this, "props.data.allContentfulLibrary.edges")
     const featured = library.filter(i => i.node.featured === true)
+    const nonFeatured = library.filter(i => i.node.featured !== true)
     return (
       <Layout>
         <SEO title="Home" />
         <HomeHero />
-        <HomeFeaturedBlog featured={featured} posts={library} />
+        <HomeFeaturedBlog featured={featured} posts={nonFeatured} />
         <HomeOurPhilosophy />
         <HomeOurFunds />
         {mobile ? "" : <EmailCapture />}
@@ -74,7 +75,12 @@ export const featuredBlogQuery = graphql`
           tags
           heroImage {
             fluid(resizingBehavior: SCALE) {
+              src
               ...GatsbyContentfulFluid
+            }
+            fixed(width: 250) {
+              src
+              ...GatsbyContentfulFixed
             }
           }
         }
