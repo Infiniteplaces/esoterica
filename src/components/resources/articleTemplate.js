@@ -7,6 +7,7 @@ import Img from "gatsby-image"
 import Layout from "../_global/layout"
 import { Container, Row, Col } from "reactstrap"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import ReactPlayer from "react-player"
 
 import linkedin_black from "../../images/icons/linkedin.svg"
 import youtube_black from "../../images/icons/youtube.svg"
@@ -65,10 +66,23 @@ class ArticleTemplate extends React.Component {
     const siteTitle = get(this.props, "data.site.siteMetadata.title")
 
     let post = postType === "library" ? libraryPost : glossaryPost
-    let json =
-      postType === "library"
-        ? post.childContentfulLibraryArticleRichTextNode.json
-        : post.childContentfulGlossaryArticleRichTextNode.json
+    let json = ""
+    if (postType === "library") {
+      if (post.childContentfulLibraryArticleRichTextNode) {
+        json = post.childContentfulLibraryArticleRichTextNode.json
+      }
+    } else if (postType === "glossary") {
+      if (post.childContentfulGlossaryArticleRichTextNode) {
+        json = post.childContentfulGlossaryArticleRichTextNode.json
+      }
+    }
+
+    let youtube = post.youtube ? <ReactPlayer url={post.youtube} /> : ""
+    let soundcloud = post.soundcloud ? (
+      <ReactPlayer url={post.soundcloud} />
+    ) : (
+      ""
+    )
 
     let article = documentToReactComponents(json)
 
@@ -164,7 +178,9 @@ class ArticleTemplate extends React.Component {
                   </div>
                 </div>
               </Col>
-              <Col md="8">
+              <Col md="8" className="d-flex flex-column align-items-center">
+                <div className="video-container">{youtube}</div>
+                <div className="audio-container">{soundcloud}</div>
                 <div
                   ref={article_body => {
                     this.article_body = article_body
@@ -202,6 +218,8 @@ export const pageQuery = graphql`
   query ArticleBySlug($slug: String!) {
     contentfulLibrary(slug: { eq: $slug }) {
       title
+      youtube
+      soundcloud
       author {
         name
       }
