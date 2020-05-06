@@ -70,7 +70,7 @@ const HomeHero = ({}) => {
         left: randomInteger(5, 95),
       },
     ])
-  }, 750)
+  }, 1750)
 
   let icons = arr.map((i, idx) => {
     let style = {
@@ -98,7 +98,7 @@ const HomeHero = ({}) => {
             <br />
              Backed by On-the-Ground Fundamental Research
           </h3>
-          <Link className="button primary" to="/about">
+          <Link className="button primary" to="/investor-solutions">
             Learn More
           </Link>
         </Col>

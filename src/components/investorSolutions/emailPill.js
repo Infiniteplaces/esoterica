@@ -10,10 +10,7 @@ const EmailPill = ({}) => {
       <Col>
         <div id="pill">
           <div className="email-container">
-            <h3>
-              More funds coming soon — <br />
-              Sign up to be the first to know.
-            </h3>
+            <h3>More funds coming soon — Sign up to be the first to know.</h3>
             <Email header={false} />
           </div>
         </div>

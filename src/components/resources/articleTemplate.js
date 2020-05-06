@@ -36,27 +36,27 @@ class ArticleTemplate extends React.Component {
   }
 
   _handleScroll() {
-    let currentScrollPos = window.pageYOffset
-    let windowHeight = window.innerHeight
-    let heroHeight = this.hero.clientHeight
-    let articleHeight = this.article_body.clientHeight
-
-    if (currentScrollPos < heroHeight) {
-      this.setState({
-        metaPosition: "top",
-      })
-    } else if (
-      currentScrollPos > heroHeight &&
-      currentScrollPos < articleHeight
-    ) {
-      this.setState({
-        metaPosition: "fixed",
-      })
-    } else if (currentScrollPos > articleHeight + windowHeight - 350) {
-      this.setState({
-        metaPosition: "bottom",
-      })
-    }
+    // let currentScrollPos = window.pageYOffset
+    // let windowHeight = window.innerHeight
+    // let heroHeight = this.hero.clientHeight
+    // let articleHeight = this.article_body.clientHeight
+    //
+    // if (currentScrollPos < heroHeight) {
+    //   this.setState({
+    //     metaPosition: "top",
+    //   })
+    // } else if (
+    //   currentScrollPos > heroHeight &&
+    //   currentScrollPos < articleHeight
+    // ) {
+    //   this.setState({
+    //     metaPosition: "fixed",
+    //   })
+    // } else if (currentScrollPos > articleHeight + windowHeight - 350) {
+    //   this.setState({
+    //     metaPosition: "bottom",
+    //   })
+    // }
   }
   render() {
     //// Handle Rich Text Rendering
@@ -77,9 +77,17 @@ class ArticleTemplate extends React.Component {
       }
     }
 
-    let youtube = post.youtube ? <ReactPlayer url={post.youtube} /> : ""
+    let youtube = post.youtube ? (
+      <div className="video-container">
+        <ReactPlayer url={post.youtube} />
+      </div>
+    ) : (
+      ""
+    )
     let soundcloud = post.soundcloud ? (
-      <ReactPlayer url={post.soundcloud} />
+      <div className="audio-container">
+        <ReactPlayer url={post.soundcloud} />
+      </div>
     ) : (
       ""
     )
@@ -179,8 +187,8 @@ class ArticleTemplate extends React.Component {
                 </div>
               </Col>
               <Col md="8" className="d-flex flex-column align-items-center">
-                <div className="video-container">{youtube}</div>
-                <div className="audio-container">{soundcloud}</div>
+                {youtube}
+                {soundcloud}
                 <div
                   ref={article_body => {
                     this.article_body = article_body

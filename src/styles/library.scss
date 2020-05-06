@@ -70,9 +70,11 @@
 }
 
 #libraryThumbnails {
+  width: calc(100% - 40px);
   .thumbnail {
     display: flex;
     height: 120px;
+
     margin-bottom: 15px;
 
     &.bottom-border {

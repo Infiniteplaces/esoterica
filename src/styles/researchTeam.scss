@@ -5,7 +5,8 @@
   }
   padding: 75px 20px;
   .team-member {
-    padding: 15px;
+    padding: 24px;
+    height: 100%;
     cursor: pointer;
     background-color: $white;
     transition: all 150ms linear;
@@ -13,6 +14,7 @@
     border-radius: 6px;
     .img-container {
       overflow: hidden;
+      margin-bottom: 12px;
       .team-img {
         webkit-filter: blur(0px);
         filter: blur(0px);

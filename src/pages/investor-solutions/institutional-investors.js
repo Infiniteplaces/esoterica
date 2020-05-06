@@ -64,6 +64,21 @@ class InstitutionalInvestorsPage extends React.Component {
                   is 5G, and the companies that are capturing the most value
                   from it.
                 </p>
+                <h3>Contact Us</h3>
+                <p>
+                  <strong>Contact us at: 866-979-1710</strong>
+                </p>
+                <p>
+                  <strong>
+                    Email us at:{" "}
+                    <a
+                      className="underline"
+                      href="mailto:bruce.liu@esotericacap.com"
+                    >
+                      bruce.liu@esotericacap.com
+                    </a>
+                  </strong>
+                </p>
               </Col>
             </Row>
             <Row className="contact-row">

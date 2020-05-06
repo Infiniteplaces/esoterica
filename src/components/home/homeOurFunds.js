@@ -22,7 +22,12 @@ const HomeOurFunds = ({}) => {
           <h1 className="section">
             The new digital economy  is not a light switch. It’s an evolution.
           </h1>
-          <a className="button secondary" href="https://www.esotericacap.com">
+          <a
+            className="button secondary"
+            href="https://www.esotericacap.com"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
             <span>Explore Our Funds</span>
           </a>
         </Col>

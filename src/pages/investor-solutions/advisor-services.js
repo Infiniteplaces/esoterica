@@ -46,6 +46,7 @@ class AdvisorServicesPage extends React.Component {
                   Where desired, we are willing to create bespoke solutions for
                   Advisor platforms.
                 </p>
+                <h3>Contact Us</h3>
                 <p>
                   <strong>Contact us at: 866-979-1710</strong>
                 </p>

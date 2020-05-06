@@ -13,24 +13,28 @@ const Footer = ({}) => {
       <Container fluid className="footer-container">
         <Row className="h-50">
           <Col className="d-flex flex-column">
-            <Link to="">About</Link>
-            <Link to="">Privacy Policy</Link>
-            <Link to="">Legal</Link>
+            <Link to="/about">About</Link>
+            <Link to="/">Privacy Policy</Link>
+            <Link to="/">Legal</Link>
           </Col>
           <Col className="d-flex flex-column">
-            <Link to="">Team</Link>
-            <Link to="">Careers</Link>
-            <Link to="">Contact</Link>
+            <Link to="/">Team</Link>
+            <Link to="/">Careers</Link>
+            <Link to="/">Contact</Link>
           </Col>
           <Col className="d-flex flex-column">
-            <Link to="">Youtube</Link>
-            <Link to="">Twitter</Link>
-            <Link to="">Linkedin</Link>
+            <a href="https://www.youtube.com/channel/UClBaJptKDg9-SkmTNfzaZUw">
+              Youtube
+            </a>
+            <a href="https://twitter.com/esotericacap?lang=en">Twitter</a>
+            <a href="https://www.linkedin.com/company/esoterica-capital/about/">
+              Linkedin
+            </a>
           </Col>
           <Col className="d-flex flex-column text-faded">
-            <p to="">© 2020 Esoterica</p>
-            <p to="">Capital Management</p>
-            <p to="">All Rights Reserved</p>
+            <p>© 2020 Esoterica</p>
+            <p>Capital Management</p>
+            <p>All Rights Reserved</p>
           </Col>
         </Row>
         <Row className="h-50">

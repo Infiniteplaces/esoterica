@@ -41,16 +41,30 @@ class OurNewestFundPage extends React.Component {
                   5G is much more than an upgrade to wireless cellular networks.
                 </h2>
                 <p>
+                  5G is much more than an upgrade to wireless cellular networks.
                   And, we believe that the value capture is not with the
                   carriers – notwithstanding what their public pronouncements
                   may imply. Value resides with the transformative technologies
                   that are creating a new generation of semiconductors that
-                  power 5G, a new cloud computing architecture on the edge,
-                  software to filter and process vast quantities of data in
-                  real-time and enabled technologies for all manner of
+                  power 5G; a new cloud computing architecture that’s moving to
+                  the edge to optimize the benefits of faster speeds, latency,
+                  capacity; software to filter and process vast quantities of
+                  data in real-time; and, enabled technologies such as
                   streaming, smart homes, smart factories, remote healthcare,
                   autonomous vehicles, AR/VR - and applications that have
                   yet-to-be-created.
+                </p>
+                <p>
+                  Our stock selection is underpinned by fundamental research,
+                  conducted by analysts on the ground in the US and Asia – the
+                  two leading regions in the 5G race. Our investment approach is
+                  both “top down” to identify the above-mentioned sectors and
+                  “bottom up”, to identify companies that are attractively
+                  valued and well positioned. Technologies leveraging the next
+                  generation of wireless are fast-evolving, and the perception
+                  of investors ever-changing (and often misunderstood), such
+                  that actively rotating between the sectors (and therefore
+                  companies) is a meaningful source of returns.
                 </p>
                 <ul>
                   <li>

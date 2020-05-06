@@ -27,6 +27,10 @@ p {
   margin: 0;
 }
 
+.tag {
+  font-family: "univers extended" !important;
+}
+
 a,
 link {
   font-family: inherit;
@@ -138,7 +142,6 @@ h3,
   font-size: 1.5rem;
   line-height: 2.5rem;
   letter-spacing: -1px;
-  text-transform: capitalize;
   margin: 0;
   padding: 0;
   @media (max-width: map-get($grid-breakpoints,md)) {

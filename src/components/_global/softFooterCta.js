@@ -29,7 +29,7 @@ const softFooterCta = ({ background, text, ctaLead, cta, link }) => {
               <img
                 src={background ? arrow_white : arrow_black}
                 alt=""
-                className="ml-5"
+                className="ml-4"
               />
             </Link>
           </h2>

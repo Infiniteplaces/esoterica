@@ -67,7 +67,7 @@ class InvestorSolutionsPage extends React.Component {
             }
             bgColor={"#F1F1F1"}
             textColor={"#000"}
-            link={"/advisory-solutions/exchage-traded-funds"}
+            link={"/investor-solutions/exchange-traded-funds"}
           />
           <PreviewPill
             title={"Advisor Services"}
@@ -76,7 +76,7 @@ class InvestorSolutionsPage extends React.Component {
             }
             bgColor={"#CCCCCC"}
             textColor={"#000"}
-            link={"/advisory-solutions/advisor-services"}
+            link={"/investor-solutions/advisor-services"}
           />
           <PreviewPill
             title={"Individual Investors"}
@@ -85,7 +85,7 @@ class InvestorSolutionsPage extends React.Component {
             }
             bgColor={"#8C8C8C"}
             textColor={"#fff"}
-            link={"/advisory-solutions/individual-investors"}
+            link={"/investor-solutions/individual-investors"}
           />
           <PreviewPill
             title={"Institutional Investors"}
@@ -94,7 +94,7 @@ class InvestorSolutionsPage extends React.Component {
             }
             bgColor={"#414141"}
             textColor={"#fff"}
-            link={"/advisory-solutions/institutional-investors"}
+            link={"/investor-solutions/institutional-investors"}
           />
           <EmailPill />
         </Container>

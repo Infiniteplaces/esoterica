@@ -56,14 +56,28 @@ class ExchangeTradedFundsPage extends React.Component {
                   capture will include a host of enabled applications (think
                   gaming), smart cities/factories, telemedicine etc.
                 </p>
+                <h3>Contact Us</h3>
+                <p>
+                  <strong>Contact us at: 866-979-1710</strong>
+                </p>
+                <p>
+                  <strong>
+                    Email us at:{" "}
+                    <a
+                      className="underline"
+                      href="mailto:bruce.liu@esotericacap.com"
+                    >
+                      bruce.liu@esotericacap.com
+                    </a>
+                  </strong>
+                </p>
               </div>
             </Col>
           </Row>
           <PreviewPill
             title={"WUGI ETF"}
-            tags={["technology", "retail"]}
             text={
-              "Tum dicere exorsus est eligendi optio, cumque nihil molestiae non quo aut reiciendis."
+              "WUGI is an actively-managed ETF that will invest in US and non-US equity securities of companies that are meaningfully participating in a digital economy enabled by fifth generation digital cellular network (“5G”) technology."
             }
             bgColor={"#fdfc71"}
             textColor={"#000"}

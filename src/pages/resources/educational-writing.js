@@ -47,7 +47,6 @@ class GlossaryPage extends React.Component {
             <GlossaryPreview glossary={glossary} />
             <LibraryFeatured posts={featured} />
             <EmailCapture />
-            <ResourcesMarquee />
             <SoftFooterCta
               text={"Steady stream of the best financial content"}
               ctaLead={"Check out the"}

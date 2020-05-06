@@ -6,7 +6,7 @@ footer {
     text-shadow: 0px 0px 7px $white;
   }
   .footer-container {
-    padding: 40px;
+    padding: 56px 20px;
     height: 437px;
     width: 100%;
     background-color: $black;
@@ -18,7 +18,7 @@ footer {
   .announcement-bar {
     height: 40px;
     width: 100%;
-    padding: 8px 20px;
+    padding: 10px 20px 5px;
     background-color: $yellow;
     display: flex;
     justify-content: space-between;
@@ -54,11 +54,11 @@ footer {
           border-bottom: 1px solid $white;
           &.email-input {
             padding-bottom: 5px;
-            width: 90%;
+            width: 85%;
           }
           &.submit-button {
             padding-bottom: 5px;
-            width: 10%;
+            width: 15%;
             color: $white;
           }
           &:focus {
