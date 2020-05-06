@@ -14,10 +14,13 @@ const HomeOurFunds = ({}) => {
       className="text-container"
       style={{ backgroundImage: `url(${bg})` }}
     >
-      <Row>
-        <Col className="px-0 px-md-2">
+      <Row className="d-flex justify-content-center">
+        <Col
+          md="10"
+          className="px-0 px-md-2 d-flex flex-column align-items-center justify-content-center"
+        >
           <h1 className="section">
-            The new digital economy is not a light switch. It’s an evolution.
+            The new digital economy  is not a light switch. It’s an evolution.
           </h1>
           <a className="button secondary" href="https://www.esotericacap.com">
             <span>Explore Our Funds</span>

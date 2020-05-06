@@ -1,5 +1,6 @@
 #homeOurFunds {
   padding: 200px 20px;
+  min-height: 800px;
   color: $white;
   text-align: center;
   display: flex;
@@ -12,6 +13,11 @@
   .button {
     color: $white;
     border-color: $white;
+    &.secondary {
+      width: 287px;
+      height: 64px;
+      padding: 0;
+    }
   }
   ::selection {
     color: $transparent;

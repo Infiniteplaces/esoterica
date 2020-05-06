@@ -9,7 +9,6 @@ const LibraryFourPost = ({ posts, color = "#fdfc71", featured = false }) => {
   let f2 = posts[1].node
   let f3 = posts[2].node
   let f4 = posts[3].node
-  console.log(f4)
   if (featured) {
     f4 = {
       title: "Let's Talk 5G",
