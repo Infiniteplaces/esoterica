@@ -14,7 +14,8 @@
 
 #individualInvestors,
 #institutionalInvestors,
-#advisorServices {
+#advisorServices,
+#ourNewestFund {
   .hero {
     position: relative;
     .hero-img {
@@ -33,7 +34,11 @@
     h1 {
       margin-bottom: 50px;
     }
-    p {
+    h2 {
+      margin-bottom: 30px;
+    }
+    p,
+    li {
       margin-bottom: 30px;
       padding: 0px 10px;
     }

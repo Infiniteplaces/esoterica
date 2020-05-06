@@ -6,7 +6,7 @@ import LibraryFourPost from "../../components/resources/libraryFourPost"
 const HomeFeaturedBlog = ({ featured, posts }) => {
   return (
     <div id="homeFeaturedBlog">
-      <LibraryFourPost posts={featured} />
+      <LibraryFourPost posts={featured} featured />
     </div>
   )
 }

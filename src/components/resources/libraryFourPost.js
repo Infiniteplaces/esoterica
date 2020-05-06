@@ -4,11 +4,23 @@ import { connect } from "react-redux"
 import Img from "gatsby-image"
 import { Container, Row, Col } from "reactstrap"
 
-const LibraryFourPost = ({ posts, color = "#fdfc71" }) => {
-  const f1 = posts[0].node
-  const f2 = posts[1].node
-  const f3 = posts[2].node
-  const f4 = posts[3].node
+const LibraryFourPost = ({ posts, color = "#fdfc71", featured = false }) => {
+  let f1 = posts[0].node
+  let f2 = posts[1].node
+  let f3 = posts[2].node
+  let f4 = posts[3].node
+  console.log(f4)
+  if (featured) {
+    f4 = {
+      title: "Let's Talk 5G",
+      description: {
+        description:
+          "The 5th generation in cellular wireless is giving rise to a new digital world - accelerated by COVID-19. Our actively managed ETF invests in a high conviction portfolio of principally US & Asian companies, in sectors that will benefit disproportionately.",
+      },
+      slug: "/investor-solutions/our-newest-fund",
+      tags: ["ARTICLE"],
+    }
+  }
   return (
     <Container fluid id="libraryFourPost">
       <Row>
@@ -96,7 +108,7 @@ const LibraryFourPost = ({ posts, color = "#fdfc71" }) => {
           </div>
         </Col>
         <Col md="4">
-          <Link to={"/resources/library/" + f4.slug}>
+          <Link to={featured ? f4.slug : "/resources/library/" + f4.slug}>
             <div className="post-container right">
               <div
                 className="container-image"
