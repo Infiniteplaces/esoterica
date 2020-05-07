@@ -32,6 +32,16 @@
     img {
       width: 64px;
     }
+    @media (max-width: map-get($grid-breakpoints,md)) {
+      h2 {
+        font-size: 40px;
+        line-height: 45px;
+        letter-spacing: -2.13px;
+      }
+      img {
+        width: 35px;
+      }
+    }
   }
 
   ::selection {

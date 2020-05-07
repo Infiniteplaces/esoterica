@@ -46,7 +46,7 @@ class IndexPage extends React.Component {
           }
           ctaLead={"Learn more about "}
           cta={"our opportunity"}
-          link={"/investorSolutions"}
+          link={"/investor-solutions"}
         />
       </Layout>
     )

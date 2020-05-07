@@ -41,6 +41,17 @@
           &:focus {
             outline: none;
           }
+          @media (max-width: map-get($grid-breakpoints,md)) {
+            &.email-input {
+              padding-bottom: 5px;
+              width: 75%;
+            }
+            &.submit-button {
+              padding-bottom: 5px;
+              width: 25%;
+              color: $white;
+            }
+          }
         }
       }
     }
