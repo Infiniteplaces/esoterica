@@ -116,7 +116,6 @@ class LibraryPage extends React.Component {
     return (
       <Layout navTheme="dark" location={this.props.location}>
         <SEO title="Library" />
-        <Helmet title={siteTitle} />
         <div id="libraryPage">
           <div className="hero">
             <Img className="hero-img" fluid={heroImage} />

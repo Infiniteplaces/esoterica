@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import { connect } from "react-redux"
 
 import LibraryFourPost from "../../components/resources/libraryFourPost"
@@ -9,6 +10,9 @@ const HomeFeaturedBlog = ({ featured, posts }) => {
     <div id="homeFeaturedBlog">
       <LibraryFourPost posts={featured} featured />
       <LibraryThumbnails posts={posts} />
+      <Link className="button secondary" to="/resources/library">
+        <span>Go to Our Library</span>
+      </Link>
     </div>
   )
 }

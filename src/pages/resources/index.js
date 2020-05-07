@@ -18,7 +18,6 @@ class ResourcesPage extends React.Component {
     return (
       <Layout>
         <SEO title="Resources" />
-        <Helmet title={siteTitle} />
         <Container fluid style={{ paddingTop: 150 }}>
           <Row>
             <Col>

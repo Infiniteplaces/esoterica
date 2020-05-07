@@ -182,7 +182,11 @@ const Header = ({
             {navLinks}
           </Col>
           <Col md={{ size: 2, offset: 1 }} className="nav-icons">
-            <a href="" target="_blank" rel="norefferer noopener">
+            <a
+              href="https://twitter.com/esotericacap?lang=en"
+              target="_blank"
+              rel="norefferer noopener"
+            >
               <img
                 src={navColor === "black" ? twitter_white : twitter_black}
                 alt="twitter"
@@ -190,7 +194,11 @@ const Header = ({
                 width="16px"
               />
             </a>
-            <a href="" target="_blank" rel="norefferer noopener">
+            <a
+              href="https://www.linkedin.com/company/esoterica-capital/about/"
+              target="_blank"
+              rel="norefferer noopener"
+            >
               <img
                 src={navColor === "black" ? linkedin_white : linkedin_black}
                 alt="linkedin"
@@ -198,7 +206,11 @@ const Header = ({
                 width="17px"
               />
             </a>
-            <a href="" target="_blank" rel="norefferer noopener">
+            <a
+              href="https://www.youtube.com/channel/UClBaJptKDg9-SkmTNfzaZUw"
+              target="_blank"
+              rel="norefferer noopener"
+            >
               <img
                 src={navColor === "black" ? youtube_white : youtube_black}
                 alt="youtube"
@@ -206,11 +218,7 @@ const Header = ({
                 width="21px"
               />
             </a>
-            <a
-              href="malto:info@esotericacap.com"
-              target="_blank"
-              rel="norefferer noopener"
-            >
+            <a href="mailto:info@esotericacap.com">
               <img
                 src={navColor === "black" ? mail_white : mail_black}
                 alt="mail"

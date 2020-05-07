@@ -12,8 +12,12 @@ const LibraryThumbnails = ({ posts, mobile }) => {
     if (idx === 5 || idx === 2) {
       border_right = false
     }
+
+    mobile ? (border_right = false) : (border_right = border_right)
+    mobile ? (border_bottom = true) : (border_right = border_right)
     return (
       <Col
+        xs="12"
         md="4"
         key={idx}
         className={
@@ -21,28 +25,35 @@ const LibraryThumbnails = ({ posts, mobile }) => {
         }
       >
         <div className="wrapper">
-          <div
-            className="container-image"
-            style={{
-              backgroundImage: `url(${i.node.heroImage.fluid.src})`,
-            }}
-          />
+          <Link to={"/resources/library/" + i.node.slug}>
+            <div
+              className="container-image"
+              style={{
+                backgroundImage: `url(${i.node.heroImage.fluid.src})`,
+              }}
+            />
+          </Link>
         </div>
+
         <div
           className={"text-container " + (border_right ? " right-border " : "")}
         >
-          <div className="tag-container">
-            {i.node.tags
-              ? i.node.tags.slice(0, 1).map((i, idx) => {
-                  return (
-                    <div key={idx} className="tag body-small">
-                      {i}
-                    </div>
-                  )
-                })
-              : ""}
-          </div>
-          <div>{i.node.title}</div>
+          <Link to={"/resources/library/" + i.node.slug}>
+            <div className="tag-container">
+              {i.node.tags
+                ? i.node.tags.slice(0, 1).map((i, idx) => {
+                    return (
+                      <div key={idx} className="tag body-small">
+                        {i}
+                      </div>
+                    )
+                  })
+                : ""}
+            </div>
+          </Link>
+          <Link to={"/resources/library/" + i.node.slug}>
+            <div>{i.node.title}</div>
+          </Link>
         </div>
       </Col>
     )

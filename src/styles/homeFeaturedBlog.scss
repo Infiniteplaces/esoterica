@@ -1,2 +1,12 @@
 #homeFeaturedBlog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .button.secondary {
+    margin: 20px;
+    @media (max-width: map-get($grid-breakpoints,md)) {
+      margin: 0;
+      width: calc(100% - 20px);
+    }
+  }
 }

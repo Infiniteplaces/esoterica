@@ -35,7 +35,6 @@ class GlossaryPage extends React.Component {
     return (
       <Layout location={this.props.location}>
         <SEO title="Educational Writing" />
-        <Helmet title={siteTitle} />
         <div id="glossaryPage">
           <div className="hero">
             <div className="hero-title">
