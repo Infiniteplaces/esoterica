@@ -81,8 +81,6 @@ class ArticleTemplate extends React.Component {
       json = post.childContentfulGlossaryArticleRichTextNode.json
     }
 
-    console.log(json)
-
     let youtube = post.youtube ? (
       <div className="video-container">
         <ReactPlayer url={post.youtube} controls />
