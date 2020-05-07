@@ -5,7 +5,6 @@ import Img from "gatsby-image"
 import { Container, Row, Col } from "reactstrap"
 
 const LibraryThumbnails = ({ posts, mobile }) => {
-  console.log(posts)
   let display = posts.slice(0, 6).map((i, idx) => {
     let border_bottom = idx < 3 ? true : false
     let border_right = true

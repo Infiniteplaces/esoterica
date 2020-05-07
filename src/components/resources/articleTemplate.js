@@ -6,6 +6,7 @@ import get from "lodash/get"
 import Img from "gatsby-image"
 import Layout from "../_global/layout"
 import { Container, Row, Col } from "reactstrap"
+import { BLOCKS } from "@contentful/rich-text-types"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import ReactPlayer from "react-player"
 
@@ -67,15 +68,20 @@ class ArticleTemplate extends React.Component {
 
     let post = postType === "library" ? libraryPost : glossaryPost
     let json = ""
-    if (postType === "library") {
-      if (post.childContentfulLibraryArticleRichTextNode) {
-        json = post.childContentfulLibraryArticleRichTextNode.json
-      }
-    } else if (postType === "glossary") {
-      if (post.childContentfulGlossaryArticleRichTextNode) {
-        json = post.childContentfulGlossaryArticleRichTextNode.json
-      }
+
+    if (
+      postType === "library" &&
+      post.childContentfulLibraryArticleRichTextNode
+    ) {
+      json = post.childContentfulLibraryArticleRichTextNode.json
+    } else if (
+      postType === "glossary" &&
+      post.childContentfulGlossaryArticleRichTextNode
+    ) {
+      json = post.childContentfulGlossaryArticleRichTextNode.json
     }
+
+    console.log(json)
 
     let youtube = post.youtube ? (
       <div className="video-container">
@@ -92,7 +98,20 @@ class ArticleTemplate extends React.Component {
       ""
     )
 
-    let article = documentToReactComponents(json)
+    const options = {
+      renderNode: {
+        [BLOCKS.EMBEDDED_ASSET]: node => {
+          const { url } = node.data.target.fields.file["en-US"]
+          return (
+            <div className="w-100 d-flex justify-content-center my-5">
+              <img src={url} alt="article" />
+            </div>
+          )
+        },
+      },
+    }
+
+    let article = documentToReactComponents(json, options)
 
     //// Handle Scroll Position
     let elStyle = {
