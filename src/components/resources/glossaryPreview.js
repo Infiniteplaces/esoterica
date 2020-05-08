@@ -18,7 +18,10 @@ const GlossaryPreview = ({ glossary }) => {
     })
     return (
       <div key={idx} className="glossaryPreviewRow">
-        <Link className="previewItem" to={"/resources/glossary/" + node.slug}>
+        <Link
+          className="previewItem"
+          to={"/resources/educational-writing/" + node.slug}
+        >
           {article}
         </Link>
       </div>

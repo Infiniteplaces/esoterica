@@ -1,12 +1,12 @@
 import React, { useEffect } from "react"
 import { connect } from "react-redux"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Helmet from "react-helmet"
 import get from "lodash/get"
 import Img from "gatsby-image"
 import Layout from "../_global/layout"
 import { Container, Row, Col } from "reactstrap"
-import { BLOCKS } from "@contentful/rich-text-types"
+import { BLOCKS, INLINES } from "@contentful/rich-text-types"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import ReactPlayer from "react-player"
 
@@ -27,13 +27,13 @@ class ArticleTemplate extends React.Component {
     this.state = {
       metaPosition: "top",
     }
-    this._handleScroll = this._handleScroll.bind(this)
+    // this._handleScroll = this._handleScroll.bind(this)
   }
   componentDidMount() {
-    window.addEventListener("scroll", this._handleScroll)
+    // window.addEventListener("scroll", this._handleScroll)
   }
   componentWillUnmount() {
-    window.removeEventListener("scroll", this._handleScroll)
+    // window.removeEventListener("scroll", this._handleScroll)
   }
 
   _handleScroll() {
@@ -104,6 +104,13 @@ class ArticleTemplate extends React.Component {
             <div className="w-100 d-flex justify-content-center my-5">
               <img src={url} alt="article" />
             </div>
+          )
+        },
+        [INLINES.ENTRY_HYPERLINK]: node => {
+          const link = node.data.target.fields.slug["en-US"]
+          const title = node.data.target.fields.title["en-US"]
+          return (
+            <Link to={"/resources/educational-writing/" + link}>{title}</Link>
           )
         },
       },
@@ -206,14 +213,7 @@ class ArticleTemplate extends React.Component {
               <Col md="8" className="d-flex flex-column align-items-center">
                 {youtube}
                 {soundcloud}
-                <div
-                  ref={article_body => {
-                    this.article_body = article_body
-                  }}
-                  className="article-container"
-                >
-                  {article}
-                </div>
+                <div className="article-container">{article}</div>
               </Col>
             </Row>
           </Container>

@@ -60,22 +60,22 @@ const ResourcesMarquee = ({}) => {
     <Container fluid id="resourcesMarquee">
       <Row className="marquee-row">
         <Col md={{}} className="marquee-container">
-          <Link to={"/resources/glossary/" + nodes[0].slug}>
+          <Link to={"/resources/educational-writing/" + nodes[0].slug}>
             <div className="marquee">
               <h1 className="text-path-one">{blockOne}</h1>
             </div>
           </Link>
-          <Link to={"/resources/glossary/" + nodes[1].slug}>
+          <Link to={"/resources/educational-writing/" + nodes[1].slug}>
             <div className="marquee">
               <h1 className="text-path-one">{blockTwo}</h1>
             </div>
           </Link>
-          <Link to={"/resources/glossary/" + nodes[2].slug}>
+          <Link to={"/resources/educational-writing/" + nodes[2].slug}>
             <div className="marquee">
               <h1 className="text-path-one">{blockThree}</h1>
             </div>
           </Link>
-          <Link to={"/resources/glossary/" + nodes[3].slug}>
+          <Link to={"/resources/educational-writing/" + nodes[3].slug}>
             <div className="marquee">
               <h1 className="text-path-one">{blockFour}</h1>
             </div>
