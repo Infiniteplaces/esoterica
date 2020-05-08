@@ -8,7 +8,7 @@ const HomeHero = ({}) => {
     <Container fluid id="homeHero">
       <Row className="h-100">
         <Col className="d-flex flex-column justify-content-center align-items-center text-center">
-          <h1 className="section">
+          <h1 className="section text-black">
             Next-generation <br /> investing
           </h1>
           <h3 className="py-4">

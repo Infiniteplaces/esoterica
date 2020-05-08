@@ -5,7 +5,6 @@ import Img from "gatsby-image"
 import { Container, Row, Col } from "reactstrap"
 
 const LibraryTwoPost = ({ posts, mobile }) => {
-  console.log(posts)
   if (posts.length === 0) {
     return ""
   }

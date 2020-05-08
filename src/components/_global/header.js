@@ -67,6 +67,12 @@ const LINKMAP = [
         title: "Educational Writing",
         link: "/resources/educational-writing",
       },
+      {
+        title: "Newsletter",
+        link:
+          "https://us20.campaign-archive.com/home/?u=8d8f193b866b9cfa8f79d00df&id=025d3ca8d6",
+        external: true,
+      },
     ],
   },
   {
@@ -126,24 +132,47 @@ const Header = ({
     LINKMAP.map((i, idx) => {
       if (i.link === navHoverCat) {
         hidden_selector_display = i.dropdownLinks.map((i, idx) => {
-          return (
-            <Link
-              onMouseOver={() => {
-                dispatch(setNavHover(true))
-              }}
-              onClick={() => dispatch(setNavHover(false))}
-              key={idx}
-              to={i.link}
-            >
-              <span
+          if (i.external) {
+            return (
+              <a
                 onMouseOver={() => {
                   dispatch(setNavHover(true))
                 }}
+                onClick={() => dispatch(setNavHover(false))}
+                key={idx}
+                href={i.link}
+                target="_blank"
+                rel="norefferer noopener"
               >
-                {i.title}
-              </span>
-            </Link>
-          )
+                <span
+                  onMouseOver={() => {
+                    dispatch(setNavHover(true))
+                  }}
+                >
+                  {i.title}
+                </span>
+              </a>
+            )
+          } else {
+            return (
+              <Link
+                onMouseOver={() => {
+                  dispatch(setNavHover(true))
+                }}
+                onClick={() => dispatch(setNavHover(false))}
+                key={idx}
+                to={i.link}
+              >
+                <span
+                  onMouseOver={() => {
+                    dispatch(setNavHover(true))
+                  }}
+                >
+                  {i.title}
+                </span>
+              </Link>
+            )
+          }
         })
       }
     })
@@ -154,6 +183,9 @@ const Header = ({
       dispatch(setNavHover(false))
     }
   }
+
+  navColor = navTransparent ? navColor : "white"
+
   return (
     <header
       className={(navHover ? "expand " : "") + (hideNav ? " hidden " : "")}

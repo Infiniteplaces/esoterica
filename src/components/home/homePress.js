@@ -17,8 +17,9 @@ class HomePress extends Component {
     this.next = this.next.bind(this)
     this.previous = this.previous.bind(this)
     this.slickSettings = {
-      dots: false,
+      dots: true,
       infinite: true,
+      arrows: false,
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
@@ -26,15 +27,6 @@ class HomePress extends Component {
         {
           breakpoint: 768,
           settings: {
-            arrows: false,
-            centerMode: true,
-            slidesToShow: 1,
-          },
-        },
-        {
-          breakpoint: 480,
-          settings: {
-            arrows: false,
             centerMode: true,
             slidesToShow: 1,
           },
@@ -44,7 +36,6 @@ class HomePress extends Component {
   }
 
   next() {
-    console.log("here")
     this.slider.slickNext()
   }
   previous() {

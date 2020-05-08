@@ -108,7 +108,6 @@ class LibraryIndex extends React.Component {
     let slice_start = pageNumber * limit
     let slice_end = humanPageNumber * limit
     let pageArticles = library.slice(slice_start, slice_end)
-    console.log(pageContext)
 
     let pagination =
       numberOfPages > 1 ? (
@@ -123,11 +122,11 @@ class LibraryIndex extends React.Component {
               )}
             </div>
             {[...Array(numberOfPages).keys()].map((i, idx) => {
-              console.log(i)
               let current = i + 1
               let path = i === 0 ? "" : current
               return (
                 <div
+                  key={idx}
                   className={
                     "page-number " + (i === pageNumber ? "active" : "")
                   }
@@ -209,9 +208,6 @@ class LibraryIndex extends React.Component {
                     Filter by Type
                   </h4>
                 )}
-              </div>
-              <div className="search-container">
-                <h4 className="underline">Search</h4>
               </div>
             </div>
             {pageRender}
