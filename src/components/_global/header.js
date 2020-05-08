@@ -64,7 +64,7 @@ const LINKMAP = [
         link: "/resources/library",
       },
       {
-        title: "Educational Writing",
+        title: "Educational  Writing",
         link: "/resources/educational-writing",
       },
       {

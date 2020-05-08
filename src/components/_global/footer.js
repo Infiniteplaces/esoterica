@@ -15,7 +15,7 @@ const Footer = ({}) => {
           <Col className="d-flex flex-column">
             <Link to="/about">About</Link>
             <Link to="/">Privacy Policy</Link>
-            <Link to="/">Legal</Link>
+            <Link to="/terms-of-service">Terms</Link>
           </Col>
           <Col className="d-flex flex-column">
             <Link to="/">Team</Link>

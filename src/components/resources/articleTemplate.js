@@ -139,16 +139,53 @@ class ArticleTemplate extends React.Component {
     //// Create Share Link
     const shareItem = typeof window !== "undefined" ? window.location : ""
 
+    //// Disclosure Text
+
+    let disclosure = (
+      <div>
+        <p className="border-top border-black pt-4 text-center">
+          Esoterica's statements are not an endorsement of any company or a
+          recommendation to buy, sell or hold any security. For full
+          disclosures, <Link to="/terms-of-service">click here</Link>.
+        </p>
+        <p className="border-top border-black pt-4 ">
+          This Newsletter is for informational purposes only and does not
+          constitute, either explicitly or implicitly, any provision of services
+          or products by Esoterica Capital LLC (“Esoterica”). Investors should
+          determine for themselves whether a particular service or product is
+          suitable for their investment needs or should seek such professional
+          advice for their particular situation. All content is original and has
+          been researched and produced by Esoterica unless otherwise stated
+          therein. No part of the content may be reproduced in any form, or
+          referred to in any other publication, without the express written
+          permission of Esoterica. All statements made regarding companies,
+          securities or other financial information contained in the content or
+          articles relating to Esoterica are strictly beliefs and points of view
+          held by Esoterica and are not endorsements of any company or security
+          or recommendations to buy or sell any security. By visiting and/or
+          otherwise using the Esoterica website in any way, you indicate that
+          you understand and accept the terms of use as set forth on the website
+          and agree to be bound by them. If you do not agree to the terms of use
+          of the website, please do no access the website or any pages thereof.
+          Any descriptions of, references to, or links to other products,
+          publications or services does not constitute an endorsement,
+          authorization, sponsorship by or affiliation with Esoterica with
+          respect to any linked site or its sponsor, unless expressly stated by
+          Esoterica. Any such information, products or sites have not
+          necessarily been reviewed by Esoterica and are provided or maintained
+          by third parties over whom Esoterica exercises no control. Esoterica
+          expressly disclaims any responsibility for the content, the accuracy
+          of the information, and/or quality of products or services provided by
+          or advertised on these third-party sites.
+        </p>
+      </div>
+    )
+
     return (
       <Layout navTheme="dark" location={this.props.location}>
         <div id="articleTemplate">
           <Helmet />
-          <div
-            className="header-container"
-            ref={hero => {
-              this.hero = hero
-            }}
-          >
+          <div className="header-container">
             <Img alt={post.title} fluid={post.heroImage.fluid} />
             <h1 className="section-headline article-title">{post.title}</h1>
           </div>
@@ -213,7 +250,10 @@ class ArticleTemplate extends React.Component {
               <Col md="8" className="d-flex flex-column align-items-center">
                 {youtube}
                 {soundcloud}
-                <div className="article-container">{article}</div>
+                <div className="article-container">
+                  {article}
+                  {disclosure}
+                </div>
               </Col>
             </Row>
           </Container>

@@ -1,0 +1,19 @@
+#termsPage {
+  margin-top: 150px;
+  margin-bottom: 50px;
+  h2 {
+    margin-bottom: 50px;
+  }
+  h3 {
+    margin: 30px 0px 15px;
+  }
+  p {
+    margin-bottom: 15px;
+  }
+  a {
+    text-decoration: underline;
+    &:hover {
+      font-style: italic;
+    }
+  }
+}
