@@ -64,7 +64,12 @@ const LINKMAP = [
         link: "/resources/library",
       },
       {
-        title: "Educational  Writing",
+        title: (
+          <div>
+            <span className="mr-2">Educational</span>
+            <span>Writing</span>
+          </div>
+        ),
         link: "/resources/educational-writing",
       },
       {
@@ -144,13 +149,13 @@ const Header = ({
                 target="_blank"
                 rel="norefferer noopener"
               >
-                <span
+                <div
                   onMouseOver={() => {
                     dispatch(setNavHover(true))
                   }}
                 >
                   {i.title}
-                </span>
+                </div>
               </a>
             )
           } else {
@@ -163,13 +168,13 @@ const Header = ({
                 key={idx}
                 to={i.link}
               >
-                <span
+                <div
                   onMouseOver={() => {
                     dispatch(setNavHover(true))
                   }}
                 >
                   {i.title}
-                </span>
+                </div>
               </Link>
             )
           }

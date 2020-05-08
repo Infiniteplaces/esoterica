@@ -261,7 +261,7 @@ class ArticleTemplate extends React.Component {
         </div>
         <div className="mb-4">
           <h1 className="mb-4 pl-4">Related Articles.</h1>
-          <LibraryThumbnails tags={post} />
+          <LibraryThumbnails related={post} />
         </div>
 
         <EmailCapture />

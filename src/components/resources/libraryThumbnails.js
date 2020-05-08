@@ -5,7 +5,7 @@ import Img from "gatsby-image"
 import get from "lodash/get"
 import { Container, Row, Col } from "reactstrap"
 
-const LibraryThumbnails = ({ mobile, tags = false, recent = false }) => {
+const LibraryThumbnails = ({ mobile, related = false, recent = false }) => {
   const data = useStaticQuery(graphql`
     query {
       allContentfulLibrary {
