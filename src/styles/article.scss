@@ -1,4 +1,8 @@
 #articleTemplate {
+  ::selection {
+    color: $transparent;
+    text-shadow: 0px 0px 7px $black;
+  }
   .header-container {
     position: relative;
     .article-title {
