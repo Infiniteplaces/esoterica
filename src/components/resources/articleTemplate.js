@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
 import { connect } from "react-redux"
-import { graphql, Link } from "gatsby"
+import { graphql, Link, useStaticQuery } from "gatsby"
 import Helmet from "react-helmet"
 import get from "lodash/get"
 import Img from "gatsby-image"
@@ -14,12 +14,13 @@ import linkedin_black from "../../images/icons/linkedin.svg"
 import youtube_black from "../../images/icons/youtube.svg"
 import twitter_black from "../../images/icons/twitter.svg"
 import mail_black from "../../images/icons/mail.svg"
+import softFooterBg from "../../images/investorSolutions/investorSolutionsFooterCta.png"
 
 import EmailCapture from "../../components/_global/emailCapture"
 import ResourcesMarquee from "../../components/_global/resourcesMarquee"
-
 import SoftFooterCta from "../../components/_global/softFooterCta"
-import softFooterBg from "../../images/investorSolutions/investorSolutionsFooterCta.png"
+
+import LibraryThumbnails from "../../components/resources/libraryThumbnails"
 
 class ArticleTemplate extends React.Component {
   constructor(props) {
@@ -142,8 +143,8 @@ class ArticleTemplate extends React.Component {
     //// Disclosure Text
 
     let disclosure = (
-      <div>
-        <p className="border-top border-black pt-4 text-center">
+      <div className="disclosure">
+        <p className="border-top border-black pt-4">
           Esoterica's statements are not an endorsement of any company or a
           recommendation to buy, sell or hold any security. For full
           disclosures, <Link to="/terms-of-service">click here</Link>.
@@ -258,6 +259,11 @@ class ArticleTemplate extends React.Component {
             </Row>
           </Container>
         </div>
+        <div className="mb-4">
+          <h1 className="mb-4 pl-4">Related Articles.</h1>
+          <LibraryThumbnails tags={post} />
+        </div>
+
         <EmailCapture />
         <ResourcesMarquee />
         <SoftFooterCta

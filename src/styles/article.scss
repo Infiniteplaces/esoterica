@@ -63,6 +63,11 @@
       img {
         max-width: 100%;
       }
+      .disclosure {
+        p {
+          font-style: italic;
+        }
+      }
       a {
         text-decoration: underline;
         &:hover {

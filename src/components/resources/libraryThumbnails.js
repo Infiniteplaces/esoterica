@@ -2,9 +2,35 @@ import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import { connect } from "react-redux"
 import Img from "gatsby-image"
+import get from "lodash/get"
 import { Container, Row, Col } from "reactstrap"
 
-const LibraryThumbnails = ({ posts, mobile }) => {
+const LibraryThumbnails = ({ mobile, tags = false, recent = false }) => {
+  const data = useStaticQuery(graphql`
+    query {
+      allContentfulLibrary {
+        nodes {
+          slug
+          title
+          publishDate
+          heroImage {
+            fixed(width: 250) {
+              ...GatsbyContentfulFixed
+            }
+            fluid(resizingBehavior: SCALE) {
+              src
+              ...GatsbyContentfulFluid
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  let { nodes } = data.allContentfulLibrary
+
+  let posts = nodes
+
   let display = posts.slice(0, 6).map((i, idx) => {
     let border_bottom = idx < 3 ? true : false
     let border_right = true
@@ -24,11 +50,11 @@ const LibraryThumbnails = ({ posts, mobile }) => {
         }
       >
         <div className="wrapper">
-          <Link to={"/resources/library/" + i.node.slug}>
+          <Link to={"/resources/library/" + i.slug}>
             <div
               className="container-image"
               style={{
-                backgroundImage: `url(${i.node.heroImage.fluid.src})`,
+                backgroundImage: `url(${i.heroImage.fluid.src})`,
               }}
             />
           </Link>
@@ -37,10 +63,10 @@ const LibraryThumbnails = ({ posts, mobile }) => {
         <div
           className={"text-container " + (border_right ? " right-border " : "")}
         >
-          <Link to={"/resources/library/" + i.node.slug}>
+          <Link to={"/resources/library/" + i.slug}>
             <div className="tag-container">
-              {i.node.tags
-                ? i.node.tags.slice(0, 1).map((i, idx) => {
+              {i.tags
+                ? i.tags.slice(0, 1).map((i, idx) => {
                     return (
                       <div key={idx} className="tag body-small">
                         {i}
@@ -50,8 +76,8 @@ const LibraryThumbnails = ({ posts, mobile }) => {
                 : ""}
             </div>
           </Link>
-          <Link to={"/resources/library/" + i.node.slug}>
-            <div>{i.node.title}</div>
+          <Link to={"/resources/library/" + i.slug}>
+            <div>{i.title}</div>
           </Link>
         </div>
       </Col>
