@@ -1,13 +1,11 @@
 const Promise = require("bluebird")
 const path = require("path")
+const { paginate } = require("gatsby-awesome-pagination")
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
   return new Promise((resolve, reject) => {
-    const articleTemplate = path.resolve(
-      "./src/components/resources/articleTemplate.js"
-    )
     resolve(
       graphql(
         `
@@ -34,14 +32,23 @@ exports.createPages = ({ graphql, actions }) => {
         `
       ).then(result => {
         if (result.errors) {
-          console.log(result.errors)
+          console.log("ERROR" + result.errors)
           reject(result.errors)
         }
         const library = result.data.allContentfulLibrary.edges
+        paginate({
+          createPage,
+          items: library,
+          itemsPerPage: 10,
+          pathPrefix: "/resources/library",
+          component: path.resolve("src/templates/libraryIndex.js"),
+        })
         library.forEach(post => {
           createPage({
             path: `/resources/library/${post.node.slug}/`,
-            component: articleTemplate,
+            component: path.resolve(
+              "src/components/resources/articleTemplate.js"
+            ),
             context: {
               slug: post.node.slug,
               postType: "library",
@@ -52,7 +59,9 @@ exports.createPages = ({ graphql, actions }) => {
         glossary.forEach(post => {
           createPage({
             path: `/resources/glossary/${post.node.slug}/`,
-            component: articleTemplate,
+            component: path.resolve(
+              "src/components/resources/articleTemplate.js"
+            ),
             context: {
               slug: post.node.slug,
               postType: "glossary",

@@ -5,26 +5,23 @@ import Helmet from "react-helmet"
 import Img from "gatsby-image"
 import { Container, Row, Col } from "reactstrap"
 
-import Layout from "../../components/_global/layout"
-import Image from "../../components/_global/image"
-import SEO from "../../components/_global/seo"
+import SEO from "../components/_global/seo"
+import Image from "../components/_global/image"
+import Layout from "../components/_global/layout"
+import EmailCapture from "../components/_global/emailCapture"
+import SoftFooterCta from "../components/_global/softFooterCta"
+import ResourcesMarquee from "../components/_global/resourcesMarquee"
 
-import ArtcilePreview from "../../components/resources/articlePreview"
-import LibraryFourPost from "../../components/resources/libraryFourPost"
-import LibraryTwoPost from "../../components/resources/libraryTwoPost"
-import LibraryFeatured from "../../components/resources/libraryFeatured"
-import LibraryFiltered from "../../components/resources/libraryFiltered"
+import LibraryTwoPost from "../components/resources/libraryTwoPost"
+import ArtcilePreview from "../components/resources/articlePreview"
+import LibraryFourPost from "../components/resources/libraryFourPost"
+import LibraryFeatured from "../components/resources/libraryFeatured"
 
-import EmailCapture from "../../components/_global/emailCapture"
-import ResourcesMarquee from "../../components/_global/resourcesMarquee"
+import exit from "../images/icons/list-exit.svg"
+import arrow from "../images/icons/arrow-bent.svg"
+import softFooterBg from "../images/investorSolutions/investorSolutionsFooterCta.png"
 
-import SoftFooterCta from "../../components/_global/softFooterCta"
-import softFooterBg from "../../images/investorSolutions/investorSolutionsFooterCta.png"
-
-import arrow from "../../images/icons/arrow-bent.svg"
-import exit from "../../images/icons/list-exit.svg"
-
-class LibraryPage extends React.Component {
+class LibraryIndex extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -43,16 +40,26 @@ class LibraryPage extends React.Component {
       this.setState({ filterTags: this.state.filterTags.concat(tag) })
     }
   }
-
   render() {
     //// Import state
     let { filterTags, showFilterTags } = this.state
+    let { pageContext, location } = this.props
+    let {
+      humanPageNumber,
+      pageNumber,
+      limit,
+      numberOfPages,
+      nextPagePath,
+      previousPagePath,
+    } = pageContext
 
     //// Organize content from graphql & filtered data
     const siteTitle = get(this, "props.data.site.siteMetadata.title")
     const library = get(this, "props.data.allContentfulLibrary.edges")
     const heroImage = get(this, "props.data.file.childImageSharp.fluid")
     const featured = library.filter(i => i.node.featured === true)
+
+    let articleCount = library.length
 
     //// Logic to match articles to filter tags
     let filteredPosts
@@ -97,24 +104,71 @@ class LibraryPage extends React.Component {
       )
     })
 
+    //// Create Pagination Logic
+    let slice_start = pageNumber * limit
+    let slice_end = humanPageNumber * limit
+    let pageArticles = library.slice(slice_start, slice_end)
+    console.log(pageContext)
+
+    let pagination =
+      numberOfPages > 1 ? (
+        <div className="pagination">
+          <div className="eyebrow">PAGE</div>
+          <div className="pages body-small">
+            <div className="page-back">
+              {previousPagePath !== "" ? (
+                <Link to={previousPagePath}>Previous</Link>
+              ) : (
+                <div className="disabled">Previous</div>
+              )}
+            </div>
+            {[...Array(numberOfPages).keys()].map((i, idx) => {
+              console.log(i)
+              let current = i + 1
+              let path = i === 0 ? "" : current
+              return (
+                <div
+                  className={
+                    "page-number " + (i === pageNumber ? "active" : "")
+                  }
+                >
+                  <Link to={"/resources/library/" + path}>{current}</Link>
+                </div>
+              )
+            })}
+            <div className="page-next">
+              {nextPagePath !== "" ? (
+                <Link to={nextPagePath}>Next</Link>
+              ) : (
+                <div className="disabled">Next</div>
+              )}
+            </div>
+          </div>
+        </div>
+      ) : (
+        ""
+      )
+
     //// Create unfiltered page view
     let unfiltered = (
       <>
-        <LibraryFourPost posts={featured} color={"#fdfc71"} />
-        <LibraryTwoPost posts={featured} />
+        <LibraryTwoPost posts={pageArticles.slice(0, 2)} />
+        <LibraryTwoPost posts={pageArticles.slice(2, 4)} />
+        <LibraryTwoPost posts={pageArticles.slice(4, 6)} />
         <LibraryFeatured posts={featured} />
         <EmailCapture />
-        <LibraryFourPost posts={featured} color={"#3FFF18"} />
-        <LibraryTwoPost posts={featured} />
+        <LibraryTwoPost posts={pageArticles.slice(6, 8)} />
+        <LibraryTwoPost posts={pageArticles.slice(8, 10)} />
+        {pagination}
       </>
     )
 
-    let filtered = <LibraryFiltered posts={filteredPosts} />
+    let filtered = <LibraryTwoPost posts={filteredPosts} />
 
     let pageRender = filterTags.length ? filtered : unfiltered
 
     return (
-      <Layout navTheme="dark" location={this.props.location}>
+      <Layout navTheme="dark" location={location}>
         <SEO title="Library" />
         <div id="libraryPage">
           <div className="hero">
@@ -176,10 +230,10 @@ class LibraryPage extends React.Component {
   }
 }
 
-export default LibraryPage
+export default LibraryIndex
 
-export const libraryQuery = graphql`
-  query LibraryIndexQuery {
+export const IndexBlogQuery = graphql`
+  query IndexBlogQuery {
     allContentfulLibrary(sort: { fields: [publishDate], order: DESC }) {
       edges {
         node {
