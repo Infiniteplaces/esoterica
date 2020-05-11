@@ -203,7 +203,7 @@ class ArticleTemplate extends React.Component {
                   <div className="date body-small mb-4">{post.publishDate}</div>
                   <div className="author body-small mb-4">
                     <div className="eyebrow">Author</div>
-                    {post.author.name}
+                    {post.author ? post.author.name : ""}
                   </div>
                   <div className="social body-small mb-4">
                     <div className="eyebrow">Share</div>
