@@ -19,7 +19,7 @@ import LibraryFourPost from "../components/resources/libraryFourPost"
 
 import SoftFooterCta from "../components/_global/softFooterCta"
 
-import softFooterBg from "../images/homepage/homepage_getStarted.png"
+import softFooterBg from "../images/homepage/home_softFooter.png"
 
 class IndexPage extends React.Component {
   render() {

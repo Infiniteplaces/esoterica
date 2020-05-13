@@ -1,21 +1,12 @@
 import React from "react"
-import { Link, useStaticQuery, graphql } from "gatsby"
+import { Link } from "gatsby"
 import { connect } from "react-redux"
 import Img from "gatsby-image"
 import { Container, Row, Col } from "reactstrap"
 
+import illustration from "../../images/homepage/homepage_aboutUs.svg"
+
 const HomeOurPhilosophy = ({}) => {
-  const data = useStaticQuery(graphql`
-    query {
-      file(relativePath: { eq: "homepage/homepage_aboutUs.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 1440) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
   return (
     <Container fluid id="homeOurPhilosophy">
       <Row className="d-flex">
@@ -39,7 +30,7 @@ const HomeOurPhilosophy = ({}) => {
           className="d-flex justify-content-center align-items-center img-column"
         >
           <div className="img-container">
-            <Img fluid={data.file.childImageSharp.fluid} />
+            <img src={illustration} />
           </div>
         </Col>
       </Row>

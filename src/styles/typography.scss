@@ -22,6 +22,12 @@
     url("../../static/fonts/UniversLTPro-BoldExt.woff2") format("woff2");
 }
 
+html {
+  font-size: 16px;
+  line-height: 16px;
+  letter-spacing: 1px;
+}
+
 p {
   padding: 0;
   margin: 0;
@@ -59,20 +65,20 @@ link {
 
 .button {
   font-family: "univers extended";
-  font-size: 22px;
-  letter-spacing: -0.5px;
+  font-size: 1.1875rem;
+  letter-spacing: 0rem;
   &:hover {
     font-family: "univers extended";
-    font-size: 22px;
-    letter-spacing: -0.5px;
+    font-size: 1.1875rem;
+    letter-spacing: 0rem;
   }
 }
 
 body {
   font-family: "univers light";
-  font-size: 20px;
-  line-height: 28px;
-  letter-spacing: -0.1px;
+  font-size: 1rem;
+  line-height: 1.4875rem;
+  letter-spacing: 0rem;
   margin: 0;
   padding: 0;
   -webkit-font-smoothing: antialiased;
@@ -84,9 +90,9 @@ body {
 
 footer {
   font-family: "univers extended";
-  font-size: 18px;
-  line-height: 32px;
-  letter-spacing: -0.1px;
+  font-size: 0.95625rem;
+  line-height: 2rem;
+  letter-spacing: 0rem;
   margin: 0;
   padding: 0;
   -webkit-font-smoothing: antialiased;
@@ -99,9 +105,9 @@ footer {
 h1,
 h1.section {
   font-family: "times now extralight";
-  font-size: 8rem;
-  line-height: 8rem;
-  letter-spacing: -7px;
+  font-size: 6.8rem;
+  line-height: 6.8rem;
+  letter-spacing: -0.4rem;
   font-weight: 400;
   margin: 0;
   padding: 0;
@@ -109,17 +115,17 @@ h1.section {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   @media (max-width: map-get($grid-breakpoints,md)) {
-    font-size: 60px;
-    line-height: 60px;
-    letter-spacing: -3.69px;
+    font-size: 3.1875rem;
+    line-height: 3.1875rem;
+    letter-spacing: 0rem;
   }
 }
 
 h1.article {
   font-family: "univers light";
-  font-size: 8rem;
-  line-height: 8rem;
-  letter-spacing: -4px;
+  font-size: 6.8rem;
+  line-height: 6.8rem;
+  letter-spacing: -0.4rem;
   font-weight: 400;
   margin: 0;
   padding: 0;
@@ -127,26 +133,26 @@ h1.article {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   @media (max-width: map-get($grid-breakpoints,md)) {
-    font-size: 55px;
-    line-height: 60px;
+    font-size: 3.1875rem;
+    line-height: 3.1875rem;
   }
 }
 
 h2 {
   font-family: "times now extralight";
   font-weight: 300;
-  font-size: 75px;
-  line-height: 75px;
-  letter-spacing: -4px;
+  font-size: 3.984375rem;
+  line-height: 3.984375rem;
+  letter-spacing: 0rem;
   margin: 0;
   padding: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   @media (max-width: map-get($grid-breakpoints,md)) {
-    font-size: 40px;
-    line-height: 45px;
-    letter-spacing: -2.13px;
+    font-size: 2.125rem;
+    line-height: 2.390625rem;
+    letter-spacing: 0rem;
   }
 }
 
@@ -154,29 +160,29 @@ h3,
 .cta {
   font-family: "univers extended";
   font-weight: 400;
-  font-size: 1.5rem;
-  line-height: 2.5rem;
-  letter-spacing: -1px;
+  font-size: 1.275rem;
+  line-height: 2.125rem;
+  letter-spacing: 0rem;
   margin: 0;
   padding: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   &.post-title {
-    font-size: 2.125rem;
-    line-height: 2.5rem;
+    font-size: 1.5rem;
+    line-height: 2.125rem;
   }
   @media (max-width: map-get($grid-breakpoints,md)) {
-    font-size: 18px;
-    line-height: 24px;
+    font-size: 0.95625rem;
+    line-height: 1.275rem;
   }
 }
 
 h4 {
   font-family: "univers light";
-  font-size: 28px;
-  line-height: 34px;
-  letter-spacing: -0.5px;
+  font-size: 1.4875rem;
+  line-height: 1.80625rem;
+  letter-spacing: 0rem;
   margin: 0;
   padding: 0;
   -webkit-font-smoothing: antialiased;
@@ -189,8 +195,8 @@ h4 {
 header,
 .nav {
   font-family: "univers light";
-  font-size: 21px;
-  letter-spacing: -0.5px;
+  font-size: 1.115625rem;
+  letter-spacing: 0rem;
   margin: 0;
   padding: 0;
   -webkit-font-smoothing: antialiased;
@@ -202,8 +208,8 @@ header,
 
 .eyebrow {
   font-family: "univers bold extended";
-  font-size: 12px;
-  letter-spacing: -0.49px;
+  font-size: 0.6375rem;
+  letter-spacing: 0rem;
   text-transform: uppercase;
   margin: 0;
   padding: 0;
@@ -216,9 +222,9 @@ header,
 
 .body-small {
   font-family: "univers light";
-  font-size: 16px;
-  line-height: 20px;
-  letter-spacing: -0.05px;
+  font-size: 0.85rem;
+  line-height: 1.0625rem;
+  letter-spacing: 0rem;
   margin: 0;
   padding: 0;
   -webkit-font-smoothing: antialiased;

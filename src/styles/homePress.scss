@@ -47,9 +47,41 @@
     }
     .arrow {
       cursor: pointer;
+      // transform: scale(1);
+      // transition: transform 500ms Cubic-bezier(0.33, 1, 0.33, 1);
+      &:hover {
+        // transform: scale(1.25);
+        // transition: transform 500ms Cubic-bezier(0.33, 1, 0.33, 1);
+        animation-name: shake;
+        animation-duration: 1000ms;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        &.back {
+          animation-direction: reverse;
+        }
+      }
+
       @media (max-width: map-get($grid-breakpoints,md)) {
         width: 35px;
       }
     }
+  }
+}
+
+@keyframes shake {
+  0% {
+    margin-left: 0px;
+  }
+  25% {
+    margin-left: 25px;
+  }
+  50% {
+    margin-left: 0px;
+  }
+  75% {
+    margin-left: -25px;
+  }
+  100% {
+    margin-left: 0%;
   }
 }

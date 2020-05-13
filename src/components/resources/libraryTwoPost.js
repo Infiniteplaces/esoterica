@@ -10,6 +10,7 @@ const LibraryTwoPost = ({ posts, mobile }) => {
   }
 
   let display = posts.map((i, idx) => {
+    console.log(i)
     return (
       <Col key={idx} xs="6">
         <div className="post-container">
@@ -26,7 +27,7 @@ const LibraryTwoPost = ({ posts, mobile }) => {
             <div className="post-text-container">
               <div className="tag-container">
                 {i.node.tags
-                  ? i.node.tags.map((i, idx) => {
+                  ? i.node.tags.slice(0, 1).map((i, idx) => {
                       return (
                         <div key={idx} className="tag body-small">
                           {i}
@@ -34,12 +35,15 @@ const LibraryTwoPost = ({ posts, mobile }) => {
                       )
                     })
                   : ""}
+
+                <div className="publishDate">{i.node.publishDate}</div>
               </div>
               {mobile ? (
                 <div className="post-title body-small">{i.node.title}</div>
               ) : (
                 <h3 className="post-title">{i.node.title}</h3>
               )}
+              <div className="underline">Read More</div>
             </div>
           </Link>
         </div>

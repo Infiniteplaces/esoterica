@@ -58,6 +58,11 @@ const ResourcesMarquee = ({}) => {
 
   return (
     <Container fluid id="resourcesMarquee">
+      <Row className="header-row">
+        <Col className="d-flex justify-content-center align-items-center">
+          <h4 className="text-white">Our fundamental writing and thinking</h4>
+        </Col>
+      </Row>
       <Row className="marquee-row">
         <Col md={{}} className="marquee-container">
           <Link to={"/resources/educational-writing/" + nodes[0].slug}>

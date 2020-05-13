@@ -1,5 +1,4 @@
 footer {
-  height: 477px;
   text-transform: uppercase;
   ::selection {
     color: $transparent;
@@ -66,6 +65,16 @@ footer {
           }
         }
       }
+    }
+  }
+  .disclaimer {
+    padding: 20px;
+    background-color: $black;
+    text-transform: capitalize;
+    color: $white;
+    font-style: italic;
+    p {
+      margin: 15px 0px;
     }
   }
 }

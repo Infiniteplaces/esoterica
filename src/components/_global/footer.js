@@ -56,6 +56,48 @@ const Footer = ({}) => {
         <h3>Generation</h3>
         <h3>Investing</h3>
       </div>
+      <div className="disclaimer">
+        <p>
+          ©2020, Esoterica Capital LLC (“ESOTERICA”). All content is original
+          and has been researched and produced by ESOTERICA unless otherwise
+          stated. No part of ESOTERICA’s original content may be reproduced in
+          any form, or referred to in any other publication, without the express
+          written permission of ESOTERICA. The content is for informational and
+          educational purposes only and should not be construed as investment
+          advice or an offer or solicitation in respect to any products or
+          services for any persons who are prohibited from receiving such
+          information under the laws applicable to their place of citizenship,
+          domicile or residence.  
+        </p>
+        <p>
+          Certain of the statements contained on this website may be statements
+          of future expectations and other forward-looking statements that are
+          based on ESOTERICA's current views and assumptions, and involve known
+          and unknown risks and uncertainties that could cause actual results,
+          performance or events to differ materially from those expressed or
+          implied in such statements. All content is subject to change without
+          notice. All statements made regarding companies or securities or other
+          financial information on this site or any sites relating to ESOTERICA
+          are strictly beliefs and points of view held by ESOTERICA or the third
+          party making such statement and are not endorsements by ESOTERICA of
+          any company or security or recommendations by ESOTERICA to buy, sell
+          or hold any security. The content presented does not constitute
+          investment advice, should not be used as the basis for any investment
+          decision, and does not purport to provide any legal, tax or accounting
+          advice. Please remember that there are inherent risks involved with
+          investing in the markets, and your investments may be worth more or
+          less than your initial investment upon redemption. There is no
+          guarantee that ESOTERICA's objectives will be achieved. Further, there
+          is no assurance that any strategies, methods, sectors, or any
+          investment programs herein were or will prove to be profitable, or
+          that any investment recommendations or decisions we make in the future
+          will be profitable for any investor or client. Professional money
+          management is not suitable for all investors. For full disclosures,
+          please go to our{" "}
+          <Link to="/terms-of-service">Terms & Conditions</Link>
+           page.
+        </p>
+      </div>
     </footer>
   )
 }

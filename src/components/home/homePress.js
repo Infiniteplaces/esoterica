@@ -90,7 +90,7 @@ class HomePress extends Component {
         <Row className="carousel-row">
           <Col
             xs="1"
-            className="d-flex justify-content-start align-items-center"
+            className="d-flex justify-content-center align-items-center"
           >
             <img
               onClick={() => this.previous()}
@@ -104,7 +104,10 @@ class HomePress extends Component {
               {display}
             </Slider>
           </Col>
-          <Col xs="1" className="d-flex justify-content-end align-items-center">
+          <Col
+            xs="1"
+            className="d-flex justify-content-center align-items-center"
+          >
             <img
               onClick={() => this.next()}
               src={next_arrow}

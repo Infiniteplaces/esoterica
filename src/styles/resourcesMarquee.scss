@@ -7,6 +7,9 @@
     color: $transparent;
     text-shadow: 0px 0px 7px $white;
   }
+  .header-row {
+    margin: 24px 0px;
+  }
   .cta-row {
     .cta {
       padding: 88px 0px;
@@ -21,7 +24,7 @@
       .text-path-one {
         border-bottom: 2px solid $transparent;
         display: inline-block;
-        animation: marquee 480s linear infinite;
+        animation: marquee 960s linear infinite;
       }
       .text-path-two {
         border-bottom: 2px solid $transparent;

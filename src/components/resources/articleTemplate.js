@@ -1,10 +1,10 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { connect } from "react-redux"
 import { graphql, Link, useStaticQuery } from "gatsby"
-import Helmet from "react-helmet"
 import get from "lodash/get"
 import Img from "gatsby-image"
 import Layout from "../_global/layout"
+import SEO from "../_global/seo"
 import { Container, Row, Col } from "reactstrap"
 import { BLOCKS, INLINES } from "@contentful/rich-text-types"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
@@ -25,12 +25,42 @@ import LibraryThumbnails from "../../components/resources/libraryThumbnails"
 class ArticleTemplate extends React.Component {
   constructor(props) {
     super(props)
+    this.post = null
+    this.json = null
     this.state = {
       metaPosition: "top",
     }
     // this._handleScroll = this._handleScroll.bind(this)
   }
   componentDidMount() {
+    let { pageContext, data } = this.props
+    let { postType } = pageContext
+    let libraryPost = get(this.props, "data.contentfulLibrary")
+    let glossaryPost = get(this.props, "data.contentfulGlossary")
+    this.post = postType === "library" ? libraryPost : glossaryPost
+    if (
+      postType === "library" &&
+      this.post.childContentfulLibraryArticleRichTextNode
+    ) {
+      this.json = this.post.childContentfulLibraryArticleRichTextNode.json
+    } else if (
+      postType === "glossary" &&
+      this.post.childContentfulGlossaryArticleRichTextNode
+    ) {
+      this.json = this.post.childContentfulGlossaryArticleRichTextNode.json
+    }
+
+    if (this.json.content) {
+      this.json.content.forEach(i => {
+        if (i.nodeType === "embedded-asset-block") {
+          console.log(i.data.target.sys.id)
+          this.setState({
+            [i.data.target.sys.id]: false,
+          })
+        }
+      })
+    }
+
     // window.addEventListener("scroll", this._handleScroll)
   }
   componentWillUnmount() {
@@ -61,6 +91,7 @@ class ArticleTemplate extends React.Component {
     // }
   }
   render() {
+    console.log(this.state)
     //// Handle Rich Text Rendering
     let { postType } = this.props.pageContext
     const libraryPost = get(this.props, "data.contentfulLibrary")
@@ -100,12 +131,48 @@ class ArticleTemplate extends React.Component {
     const options = {
       renderNode: {
         [BLOCKS.EMBEDDED_ASSET]: node => {
-          const { url } = node.data.target.fields.file["en-US"]
-          return (
-            <div className="w-100 d-flex justify-content-center my-5">
-              <img src={url} alt="article" />
-            </div>
-          )
+          if (node.data.target.fields) {
+            let { description, title, file } = node.data.target.fields
+            let { id } = node.data.target.sys
+            const { url } = file["en-US"]
+            console.log(this.state[id])
+            return (
+              <div className="w-100 d-flex flex-column align-items-center justify-content-center my-5">
+                <img
+                  src={url}
+                  alt="article"
+                  style={{ cursor: "pointer" }}
+                  onClick={() => this.setState({ [id]: true })}
+                />
+                {description ? (
+                  <div className="eyebrow pt-4">{description["en-US"]}</div>
+                ) : (
+                  ""
+                )}
+                <div
+                  className={
+                    "lightbox-modal " + (this.state[id] === true ? "show" : "")
+                  }
+                  onClick={() => this.setState({ [id]: false })}
+                >
+                  <span
+                    className="close"
+                    onClick={() => this.setState({ [id]: false })}
+                  >
+                    &times;
+                  </span>
+                  <img src={url} className="modal-content " id="img01" />
+                  {description ? (
+                    <div id="caption" className="eyebrow pt-5 text-white">
+                      {description["en-US"]}
+                    </div>
+                  ) : (
+                    ""
+                  )}
+                </div>
+              </div>
+            )
+          }
         },
         [INLINES.ENTRY_HYPERLINK]: node => {
           const link = node.data.target.fields.slug["en-US"]
@@ -149,43 +216,29 @@ class ArticleTemplate extends React.Component {
           recommendation to buy, sell or hold any security. For full
           disclosures, <Link to="/terms-of-service">click here</Link>.
         </p>
-        <p className="border-top border-black pt-4 ">
-          This Newsletter is for informational purposes only and does not
-          constitute, either explicitly or implicitly, any provision of services
-          or products by Esoterica Capital LLC (“Esoterica”). Investors should
-          determine for themselves whether a particular service or product is
-          suitable for their investment needs or should seek such professional
-          advice for their particular situation. All content is original and has
-          been researched and produced by Esoterica unless otherwise stated
-          therein. No part of the content may be reproduced in any form, or
-          referred to in any other publication, without the express written
-          permission of Esoterica. All statements made regarding companies,
-          securities or other financial information contained in the content or
-          articles relating to Esoterica are strictly beliefs and points of view
-          held by Esoterica and are not endorsements of any company or security
-          or recommendations to buy or sell any security. By visiting and/or
-          otherwise using the Esoterica website in any way, you indicate that
-          you understand and accept the terms of use as set forth on the website
-          and agree to be bound by them. If you do not agree to the terms of use
-          of the website, please do no access the website or any pages thereof.
-          Any descriptions of, references to, or links to other products,
-          publications or services does not constitute an endorsement,
-          authorization, sponsorship by or affiliation with Esoterica with
-          respect to any linked site or its sponsor, unless expressly stated by
-          Esoterica. Any such information, products or sites have not
-          necessarily been reviewed by Esoterica and are provided or maintained
-          by third parties over whom Esoterica exercises no control. Esoterica
-          expressly disclaims any responsibility for the content, the accuracy
-          of the information, and/or quality of products or services provided by
-          or advertised on these third-party sites.
-        </p>
+      </div>
+    )
+
+    //// Tag Listing
+
+    let tags = (
+      <div className="tag-container">
+        {post.tags
+          ? post.tags.map((i, idx) => {
+              return (
+                <div key={idx} className="tag body-small">
+                  {i}
+                </div>
+              )
+            })
+          : ""}
       </div>
     )
 
     return (
       <Layout navTheme="dark" location={this.props.location}>
+        <SEO title={post.title} />
         <div id="articleTemplate">
-          <Helmet />
           <div className="header-container">
             <Img alt={post.title} fluid={post.heroImage.fluid} />
             <h1 className="section-headline article-title">{post.title}</h1>
@@ -253,6 +306,7 @@ class ArticleTemplate extends React.Component {
                 {soundcloud}
                 <div className="article-container">
                   {article}
+                  {tags}
                   {disclosure}
                 </div>
               </Col>
@@ -291,6 +345,7 @@ export const pageQuery = graphql`
       title
       youtube
       soundcloud
+      tags
       author {
         name
       }
