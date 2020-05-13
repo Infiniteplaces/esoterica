@@ -17,6 +17,11 @@ import arrow from "../../images/icons/arrow-bent.svg"
 
 import LibraryFeatured from "../../components/resources/libraryFeatured"
 
+import etf_illus from "../../images/investorSolutions/etf_illus.png"
+import as_illus from "../../images/investorSolutions/as_illus.png"
+import ind_illus from "../../images/investorSolutions/ind_illus.png"
+import ins_illus from "../../images/investorSolutions/ins_illus.png"
+
 class InvestorSolutionsPage extends React.Component {
   render() {
     const library = get(this, "props.data.allContentfulLibrary.edges")
@@ -80,36 +85,40 @@ class InvestorSolutionsPage extends React.Component {
               text={
                 "Esoterica is the manager of active, thematic ETFs that capture growth in the new digital economy, enabled by the onset of 5G."
               }
-              bgColor={"#F1F1F1"}
+              bgColor={"#FDFC71"}
               textColor={"#000"}
               link={"/investor-solutions/exchange-traded-funds"}
+              img={etf_illus}
             />
             <PreviewPill
               title={"Advisor Services"}
               text={
                 "We are committed to supporting financial advisors and registered investment advisors through content and accessibility to our investment professionals. "
               }
-              bgColor={"#CCCCCC"}
+              bgColor={"#8BCDFC"}
               textColor={"#000"}
               link={"/investor-solutions/advisor-services"}
+              img={as_illus}
             />
             <PreviewPill
               title={"Individual Investors"}
               text={
                 "We are an extension of you.  We share the same beliefs and principles that you hold dear and cherish.  We want to help build wealth."
               }
-              bgColor={"#8C8C8C"}
-              textColor={"#fff"}
+              bgColor={"#FC5C58"}
+              textColor={"#000"}
               link={"/investor-solutions/individual-investors"}
+              img={ind_illus}
             />
             <PreviewPill
               title={"Institutional Investors"}
               text={
                 "We serve institutional investors through separate accounts as well as investment products (exchange traded funds, mutual funds). "
               }
-              bgColor={"#414141"}
-              textColor={"#fff"}
+              bgColor={"#85C65A"}
+              textColor={"#000"}
               link={"/investor-solutions/institutional-investors"}
+              img={ins_illus}
             />
             <EmailPill />
           </Container>

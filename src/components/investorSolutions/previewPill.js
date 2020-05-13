@@ -8,6 +8,7 @@ const PreviewPill = ({
   bgColor,
   textColor,
   link,
+  img = null,
   externalLink = false,
   tags = null,
 }) => {
@@ -21,8 +22,9 @@ const PreviewPill = ({
               className="h-100 w-100"
               style={{ backgroundColor: bgColor, color: textColor }}
             >
-              <h2>{title}</h2>
-              <div>
+              <div className="text-container">
+                <h2>{title}</h2>
+
                 <div className="tag-container">
                   {tags
                     ? tags.map((i, idx) => {
@@ -36,6 +38,14 @@ const PreviewPill = ({
                 </div>
                 {text}
               </div>
+              {img ? (
+                <div
+                  className="img-container"
+                  style={{ backgroundImage: `url(${img})` }}
+                ></div>
+              ) : (
+                ""
+              )}
             </div>
           </a>
         ) : (
@@ -45,8 +55,8 @@ const PreviewPill = ({
               className="h-100 w-100"
               style={{ backgroundColor: bgColor, color: textColor }}
             >
-              <h2>{title}</h2>
-              <div>
+              <div className="text-container">
+                <h2>{title}</h2>
                 <div className="tag-container">
                   {tags
                     ? tags.map((i, idx) => {
@@ -60,6 +70,14 @@ const PreviewPill = ({
                 </div>
                 {text}
               </div>
+              {img ? (
+                <div
+                  className="img-container"
+                  style={{ backgroundImage: `url(${img})` }}
+                ></div>
+              ) : (
+                ""
+              )}
             </div>
           </Link>
         )}

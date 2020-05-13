@@ -1,4 +1,5 @@
 #investorSolutions {
+  overflow-x: hidden;
   .hero {
     position: relative;
     color: $white;
@@ -93,24 +94,35 @@
   #pill {
     border-radius: 6px;
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
     padding: 15px;
-    * {
+    .text-container {
       width: 40%;
-    }
-    .tag-container {
+      height: 100%;
       display: flex;
-      margin-bottom: 15px;
-      .tag {
-        border: 1px solid $black;
-        margin: 0px 10px 0px 0px;
-        padding: 3px 10px;
-        font-size: 12px;
-        border-radius: 50px;
-        text-align: center;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      .tag-container {
+        display: flex;
+        margin-bottom: 15px;
+        .tag {
+          border: 1px solid $black;
+          margin: 0px 10px 0px 0px;
+          padding: 3px 10px;
+          font-size: 12px;
+          border-radius: 50px;
+          text-align: center;
+        }
       }
+    }
+    .img-container {
+      height: 100%;
+      width: 50%;
+      background-position: right;
+      background-size: contain;
+      background-repeat: no-repeat;
     }
   }
   @media (max-width: map-get($grid-breakpoints,md)) {
