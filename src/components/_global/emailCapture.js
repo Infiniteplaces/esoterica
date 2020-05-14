@@ -17,8 +17,8 @@ const EmailCapture = ({}) => {
           className="d-flex flex-column justify-content-center align-items-center"
         >
           <h3>
-            Keep up with how we’re doing, and get weekly market takeaways from
-            our in-house expert, Don Rich.
+            Get breakdowns of investment strategy, market takeaways, and the
+            most lucid takes on where things are headed.
           </h3>
 
           <Email header={false} />

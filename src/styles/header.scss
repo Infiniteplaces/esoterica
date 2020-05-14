@@ -7,10 +7,10 @@
   height: 80px;
   width: 100%;
   border-bottom: 1px solid $black;
-  transition: top 250ms Cubic-bezier(0.33, 1, 0.33, 1);
+  transition: top 500ms Cubic-bezier(0.33, 1, 0.33, 1);
   &.hidden {
     top: -80px;
-    transition: top 250ms Cubic-bezier(0.33, 1, 0.33, 1);
+    transition: top 500ms Cubic-bezier(0.33, 1, 0.33, 1);
   }
   &.white {
     background-color: $white;
@@ -49,7 +49,7 @@
   }
   &.transparent {
     background-color: $transparent !important;
-    transition: background-color 150ms Cubic-bezier(0.33, 1, 0.33, 1);
+    transition: background-color 250ms Cubic-bezier(0.33, 1, 0.33, 1);
   }
 
   .logo-container {
@@ -107,7 +107,7 @@
   height: 81px;
   border-bottom: none;
   transition-property: height, opacity, border-bottom;
-  transition-duration: 150ms, 150ms, 0ms;
+  transition-duration: 250ms, 250ms, 0ms;
   transition-delay: 0ms, 0ms 0ms;
   &.hidden {
     height: -80px;
@@ -118,7 +118,7 @@
     opacity: 1;
     border-bottom: 1px solid $black;
     transition-property: height, opacity, border-bottom;
-    transition-duration: 150ms, 150ms, 0ms;
+    transition-duration: 250ms, 250ms, 0ms;
     transition-delay: 0ms, 50ms, 0ms;
   }
   &.white {

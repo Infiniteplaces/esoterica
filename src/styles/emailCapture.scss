@@ -2,7 +2,6 @@
   padding: 150px 20px;
   background-color: $black;
   color: $white;
-  border-bottom: 1px solid $white;
   ::selection {
     color: $transparent;
     text-shadow: 0px 0px 7px $white;
@@ -36,6 +35,8 @@
           &.submit-button {
             padding-bottom: 5px;
             width: 15%;
+            text-align: right;
+            padding-right: 0;
             color: $white;
           }
           &:focus {
@@ -48,6 +49,8 @@
             }
             &.submit-button {
               padding-bottom: 5px;
+              text-align: right;
+              padding-right: 0;
               width: 25%;
               color: $white;
             }

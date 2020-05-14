@@ -35,17 +35,17 @@ class IndexPage extends React.Component {
         <HomeOurPhilosophy />
         <HomeOurFunds />
         {mobile ? "" : <EmailCapture />}
-        <ResearchTeam />
+        <ResearchTeam homepage />
         <HomePress />
         {mobile ? <EmailCapture /> : ""}
         <ResourcesMarquee />
         <SoftFooterCta
           background={softFooterBg}
           text={
-            "We’re investing in all four sectors of 5G — new semiconductors, cloud computing, software, and enabling technology."
+            "The world is changing. We’re here to help you make the most of your financial future by getting ahead of it."
           }
-          ctaLead={"Learn more about "}
-          cta={"our opportunity"}
+          ctaLead={""}
+          cta={"Learn More"}
           link={"/investor-solutions"}
         />
       </Layout>

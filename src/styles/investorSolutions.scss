@@ -90,13 +90,13 @@
 }
 #previewPill {
   height: 410px;
-  margin-bottom: 30px;
+  margin-bottom: 16px;
   #pill {
     border-radius: 6px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    padding: 15px;
+    padding: 24px 24px 24px 16px;
     .text-container {
       width: 40%;
       height: 100%;

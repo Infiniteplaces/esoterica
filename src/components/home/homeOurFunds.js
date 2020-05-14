@@ -16,7 +16,7 @@ const HomeOurFunds = ({}) => {
     >
       <Row className="d-flex justify-content-center">
         <Col
-          md="10"
+          md="8"
           className="px-0 px-md-2 d-flex flex-column align-items-center justify-content-center"
         >
           <h1 className="section">
@@ -28,7 +28,7 @@ const HomeOurFunds = ({}) => {
             target="_blank"
             rel="noreferrer noopener"
           >
-            <span>Explore Our Funds</span>
+            <span>Explore Our Fund</span>
           </a>
         </Col>
       </Row>

@@ -25,7 +25,14 @@ const Email = ({ mobile, header }) => {
   }
   return (
     <div className="email-signup-container">
-      {header ? <div className="email-header">{msg}</div> : ""}
+      {header ? (
+        <div className="email-header">
+          <div className="indicator"></div>
+          {msg}
+        </div>
+      ) : (
+        ""
+      )}
       <div className="email-form">
         <form action="" onSubmit={e => _submit(e)}>
           <input

@@ -13,7 +13,7 @@ const ResourcesMarquee = ({}) => {
           slug
           title
           heroImage {
-            fixed(width: 250) {
+            fixed(width: 200) {
               ...GatsbyContentfulFixed
             }
           }
@@ -60,7 +60,9 @@ const ResourcesMarquee = ({}) => {
     <Container fluid id="resourcesMarquee">
       <Row className="header-row">
         <Col className="d-flex justify-content-center align-items-center">
-          <h4 className="text-white">Our fundamental writing and thinking</h4>
+          <h4 className="text-white">
+            Articles & educational writing for smarter investing.
+          </h4>
         </Col>
       </Row>
       <Row className="marquee-row">

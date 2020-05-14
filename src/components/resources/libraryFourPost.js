@@ -14,7 +14,7 @@ const LibraryFourPost = ({ posts, color = "#fdfc71", featured = false }) => {
       title: "Let's Talk 5G",
       description: {
         description:
-          "The 5th generation in cellular wireless is giving rise to a new digital world - accelerated by COVID-19. Our actively managed ETF invests in a high conviction portfolio of principally US & Asian companies, in sectors that will benefit disproportionately.",
+          "The 5th generation in cellular wireless technology will create a new economic ecosystem. We’re capturing that growth.",
       },
       slug: "/investor-solutions/our-newest-fund",
       tags: ["ARTICLE"],

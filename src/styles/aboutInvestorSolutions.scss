@@ -1,0 +1,26 @@
+#aboutInvestorSolutions {
+  background-color: $black;
+  color: $white;
+  padding: 100px 20px;
+  .title-row {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    h3 {
+      padding-bottom: 15px;
+    }
+  }
+  .icon-row {
+    margin: 100px 0px;
+    a:hover {
+      .body-small {
+        font-style: italic;
+      }
+    }
+  }
+  .cta-row {
+    .button.secondary {
+      border: 1px solid $white;
+    }
+  }
+}

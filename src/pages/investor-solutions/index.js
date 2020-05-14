@@ -44,38 +44,11 @@ class InvestorSolutionsPage extends React.Component {
               <Col>
                 <div>
                   <p>
-                    Esoterica is the manager of active, thematic ETFs that
-                    capture growth in the new digital economy, enabled by the
-                    onset of 5G.
-                  </p>
-                  <p>
-                    The first ETF launched on the Esoterica trust is WUGI,
-                    listed on Cboe, which invests in companies that are
-                    foundational to 5G and which are capturing the greatest
-                    value.
-                  </p>
-
-                  <p>
-                    With 10-100X greater speed, latency and capacity (depending
-                    on the radio frequency of the infrastructure in place), 5G
-                    has been likened to electricity in the era of steam: it will
-                    be transformational, with big winners and losers. Our team
-                    of investment professionals (based in the US and China) have
-                    selected high conviction companies in the US and
-                    internationally (principally in Asia: China, Taiwan, Korea,
-                    Japan), that are capturing the most value in the 5G
-                    ecosystem.
-                  </p>
-                  <p>
-                    These are companies that are reconfiguring computing
-                    architecture to bring the cloud closer to the edge so as to
-                    optimize the power of 5G, and those that are creating new
-                    SaaS to extract and manipulate the data (think AI
-                    applications), as well as those that are creating new
-                    semi-conductors to power data centers and smartphones.
-                    Subsequent waves of value capture will include a host of
-                    enabled applications (think gaming), smart cities/factories,
-                    telemedicine etc.
+                    We offer a range of investor solutions, with an actively
+                    managed ETF at the center of our line-up. For each of these
+                    offerings, we operate as an extension of you, making
+                    ourselves available to our clients and providing personal
+                    service.
                   </p>
                 </div>
               </Col>
@@ -83,7 +56,7 @@ class InvestorSolutionsPage extends React.Component {
             <PreviewPill
               title={"Exchange Traded Funds"}
               text={
-                "Esoterica is the manager of active, thematic ETFs that capture growth in the new digital economy, enabled by the onset of 5G."
+                "We manage active, thematic ETFs that capture growth in the new digital economy enabled by the onset of 5G."
               }
               bgColor={"#FDFC71"}
               textColor={"#000"}
@@ -93,7 +66,7 @@ class InvestorSolutionsPage extends React.Component {
             <PreviewPill
               title={"Advisor Services"}
               text={
-                "We are committed to supporting financial advisors and registered investment advisors through content and accessibility to our investment professionals. "
+                "We’re committed to supporting financial advisors and registered investment advisors through content and accessibility to our investment professionals."
               }
               bgColor={"#8BCDFC"}
               textColor={"#000"}
@@ -103,7 +76,7 @@ class InvestorSolutionsPage extends React.Component {
             <PreviewPill
               title={"Individual Investors"}
               text={
-                "We are an extension of you.  We share the same beliefs and principles that you hold dear and cherish.  We want to help build wealth."
+                "Quite simply, we help you build wealth. We help you invest intelligently with educational content and relevant, timely market takeaways."
               }
               bgColor={"#FC5C58"}
               textColor={"#000"}
@@ -113,7 +86,7 @@ class InvestorSolutionsPage extends React.Component {
             <PreviewPill
               title={"Institutional Investors"}
               text={
-                "We serve institutional investors through separate accounts as well as investment products (exchange traded funds, mutual funds). "
+                "We serve institutional investors through separate accounts as well as investment products like exchange traded funds and mutual funds."
               }
               bgColor={"#85C65A"}
               textColor={"#000"}
@@ -130,7 +103,7 @@ class InvestorSolutionsPage extends React.Component {
           />
           <SoftFooterCta
             background={softFooterBg}
-            text={"Steady stream of the best financial content"}
+            text={"For timely, relevant financial content"}
             ctaLead={"Check out the"}
             cta={"Library"}
             link={"/resources/library"}

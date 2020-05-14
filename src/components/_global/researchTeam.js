@@ -56,7 +56,7 @@ const TEAM = [
   },
 ]
 
-const ResearchTeam = ({}) => {
+const ResearchTeam = ({ homepage }) => {
   let [modal, setModal] = useState(null)
 
   const data = useStaticQuery(graphql`
@@ -206,13 +206,17 @@ const ResearchTeam = ({}) => {
         </Col>
       </Row>
       <Row className="py-3">{modules}</Row>
-      <Row className="py-md-3">
-        <Col className="d-flex justify-content-center">
-          <Link className="button secondary full-width" to="/about">
-            <span>Meet the Team</span>
-          </Link>
-        </Col>
-      </Row>
+      {homepage ? (
+        <Row className="py-md-3">
+          <Col className="d-flex justify-content-center">
+            <Link className="button secondary full-width" to="/about">
+              <span>Meet the Team</span>
+            </Link>
+          </Col>
+        </Row>
+      ) : (
+        ""
+      )}
     </Container>
   )
 }

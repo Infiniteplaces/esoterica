@@ -38,6 +38,16 @@ footer {
     width: 100%;
     .email-header {
       margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      .indicator {
+        width: 10px;
+        height: 10px;
+        margin-right: 10px;
+        border-radius: 50px;
+        margin-bottom: 5px;
+        background-color: $yellow;
+      }
     }
     .email-form {
       display: flex;
@@ -57,6 +67,8 @@ footer {
           }
           &.submit-button {
             padding-bottom: 5px;
+            text-align: right;
+            padding-right: 0px;
             width: 15%;
             color: $white;
           }
@@ -68,11 +80,12 @@ footer {
     }
   }
   .disclaimer {
-    padding: 20px;
+    padding: 4px 20px;
+    font-size: 0.75rem !important;
+    line-height: 1.25rem !important;
     background-color: $black;
     text-transform: capitalize;
     color: $white;
-    font-style: italic;
     p {
       margin: 15px 0px;
     }
