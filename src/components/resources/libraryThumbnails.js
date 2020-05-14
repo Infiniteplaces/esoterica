@@ -13,6 +13,7 @@ const LibraryThumbnails = ({ mobile, related = false, recent = false }) => {
           slug
           title
           publishDate
+          tags
           heroImage {
             fixed(width: 250) {
               ...GatsbyContentfulFixed
@@ -40,6 +41,8 @@ const LibraryThumbnails = ({ mobile, related = false, recent = false }) => {
 
     mobile ? (border_right = false) : (border_right = border_right)
     mobile ? (border_bottom = true) : (border_right = border_right)
+
+    console.log(i)
     return (
       <Col
         xs="12"
