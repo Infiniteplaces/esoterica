@@ -48,7 +48,6 @@ module.exports = {
         credentials: {
           apiKey: "AIzaSyDeAp-RVU8Rq5mzeANpV5169tYHJzmzXKY",
           authDomain: "esoterica-capital.netlify.app",
-          databaseURL: "<YOUR_FIREBASE_DATABASE_URL>",
           projectId: "esotericawebsite",
           storageBucket: "esotericawebsite.appspot.com",
           messagingSenderId: "118569009688",
