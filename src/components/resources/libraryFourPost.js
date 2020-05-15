@@ -5,6 +5,7 @@ import Img from "gatsby-image"
 import { Container, Row, Col } from "reactstrap"
 
 import hero from "../../images/investorSolutions/assetAllocationHero.jpg"
+import illustration from "../../images/homepage/world_illus.png"
 
 const LibraryFourPost = ({ posts, color = "#fdfc71", featured = false }) => {
   let f2 = posts[1].node
@@ -108,6 +109,11 @@ const LibraryFourPost = ({ posts, color = "#fdfc71", featured = false }) => {
                 style={{ backgroundColor: color }}
               >
                 <h3 className="description">{f4.description.description}</h3>
+                <img
+                  src={illustration}
+                  alt=""
+                  className="w-75 align-self-center"
+                />
                 <div className="post-text-container">
                   <h2 className="post-title">{f4.title}</h2>
                 </div>

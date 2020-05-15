@@ -4,7 +4,7 @@ import { connect } from "react-redux"
 import Img from "gatsby-image"
 import { Container, Row, Col } from "reactstrap"
 
-import illustration from "../../images/homepage/homepage_aboutUs.svg"
+import illustration from "../../images/homepage/homepage_aboutUs.jpg"
 
 const HomeOurPhilosophy = ({}) => {
   return (
