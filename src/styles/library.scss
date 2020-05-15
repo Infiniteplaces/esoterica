@@ -299,7 +299,7 @@
     &:hover {
       .container-image {
         .description {
-          font-style: italic;
+          font-weight: bold;
         }
       }
     }
@@ -416,12 +416,13 @@
         transform: scale(1.01);
       }
       .post-text-container {
-        font-style: italic;
+        font-weight: bold;
         .post-title {
           text-decoration: underline;
         }
         .tag-container {
           font-style: normal;
+          font-weight: normal;
           text-decoration: none;
         }
       }

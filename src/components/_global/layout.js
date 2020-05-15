@@ -25,7 +25,7 @@ const Layout = ({ children, dispatch, mobile, navTheme }) => {
     }
   }
 
-  const path = typeof window !== "undefined" ? window.location.pathname : ""
+  const path = typeof window !== "undefined" ? window.location.pathname : "/"
 
   dispatch(setNavColor(navTheme === "dark" ? "black" : "white"))
 
