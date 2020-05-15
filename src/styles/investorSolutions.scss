@@ -55,7 +55,8 @@
 #individualInvestors,
 #institutionalInvestors,
 #advisorServices,
-#ourNewestFund {
+#ourNewestFund,
+#assetAllocation {
   .hero {
     position: relative;
     .hero-img {
@@ -68,7 +69,9 @@
       color: $white;
     }
   }
-
+  a:hover {
+    font-weight: bold;
+  }
   .header-row {
     margin: 50px 0px 20px;
     h1 {
