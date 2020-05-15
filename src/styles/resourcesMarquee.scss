@@ -25,11 +25,7 @@
         border-bottom: 2px solid $transparent;
         display: inline-block;
         animation: marquee 960s linear infinite;
-      }
-      .text-path-two {
-        border-bottom: 2px solid $transparent;
-        display: inline-block;
-        animation: marquee2 30s linear infinite;
+        font-size: 88px;
       }
       &:hover {
         .text-path-one,

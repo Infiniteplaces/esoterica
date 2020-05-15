@@ -35,7 +35,6 @@ class IndexPage extends React.Component {
         <HomeOurPhilosophy />
         <HomeOurFunds />
         {mobile ? "" : <EmailCapture />}
-        <ResearchTeam homepage />
         <HomePress />
         {mobile ? <EmailCapture /> : ""}
         <ResourcesMarquee />

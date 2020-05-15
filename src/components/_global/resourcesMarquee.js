@@ -13,7 +13,7 @@ const ResourcesMarquee = ({}) => {
           slug
           title
           heroImage {
-            fixed(width: 200) {
+            fixed(width: 175) {
               ...GatsbyContentfulFixed
             }
           }

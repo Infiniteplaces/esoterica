@@ -131,10 +131,10 @@ class OurNewestFundPage extends React.Component {
             <Row className="contact-row">
               <Col>
                 <a
-                  href="mailto:info@esotericacap.com"
+                  href="https://www.esotericacap.com"
                   className="button secondary"
                 >
-                  Start The Conversation
+                  Our Fund
                 </a>
               </Col>
             </Row>

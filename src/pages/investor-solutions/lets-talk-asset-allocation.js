@@ -87,10 +87,10 @@ class LetsTalkAssetAllocation extends React.Component {
             <Row className="contact-row">
               <Col>
                 <a
-                  href="https://www.esotericacap.com"
+                  href="mailto:info@esotericacap.com"
                   className="button secondary"
                 >
-                  Our Fund
+                  Start The Conversation
                 </a>
               </Col>
             </Row>
