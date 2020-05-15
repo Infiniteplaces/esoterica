@@ -3,17 +3,16 @@ import { Link } from "gatsby"
 import get from "lodash/get"
 import { Container, Row, Col } from "reactstrap"
 
-import Layout from "../../components/_global/layout"
-import Image from "../../components/_global/image"
-import SEO from "../../components/_global/seo"
+import Layout from "../../../components/_global/layout"
+import SEO from "../../../components/_global/seo"
 
-import PreviewPill from "../../components/investorSolutions/previewPill"
-import EmailPill from "../../components/investorSolutions/emailPill"
+import PreviewPill from "../../../components/investorSolutions/previewPill"
+import EmailPill from "../../../components/investorSolutions/emailPill"
 
-import SoftFooterCta from "../../components/_global/softFooterCta"
-import softFooterBg from "../../images/investorSolutions/investorSolutionsFooterCta_2.png"
+import SoftFooterCta from "../../../components/_global/softFooterCta"
+import softFooterBg from "../../../images/investorSolutions/investorSolutionsFooterCta_2.png"
 
-import LibraryFeatured from "../../components/resources/libraryFeatured"
+import LibraryFeatured from "../../../components/resources/libraryFeatured"
 
 class ExchangeTradedFundsPage extends React.Component {
   render() {

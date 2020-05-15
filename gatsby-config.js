@@ -42,6 +42,19 @@ module.exports = {
           "https://esotericacap.us20.list-manage.com/subscribe/post?u=8d8f193b866b9cfa8f79d00df&amp;id=025d3ca8d6", // add your MC list endpoint here; see instructions below
       },
     },
+    {
+      resolve: "gatsby-plugin-firebase",
+      options: {
+        credentials: {
+          apiKey: "AIzaSyDeAp-RVU8Rq5mzeANpV5169tYHJzmzXKY",
+          authDomain: "esoterica-capital.netlify.app",
+          databaseURL: "<YOUR_FIREBASE_DATABASE_URL>",
+          projectId: "esotericawebsite",
+          storageBucket: "esotericawebsite.appspot.com",
+          messagingSenderId: "118569009688",
+        },
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
