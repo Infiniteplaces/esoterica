@@ -22,7 +22,7 @@ const LibraryFeatured = ({
   return (
     <div id="libraryFeatured" style={style} className={"text-" + textColor}>
       <div className="tag-container">
-        {featured.tags.length > 0
+        {featured.tags
           ? featured.tags.map((i, idx) => {
               return (
                 <div

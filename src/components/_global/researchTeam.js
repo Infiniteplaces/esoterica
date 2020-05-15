@@ -19,6 +19,7 @@ const TEAM = [
     name: "Qindong (Bruce) Liu Ph.D., CFA",
     title: "Chief Executive Officer & Co-Founder",
     img: "bruce_liu",
+    homepage: true,
     bio:
       "Bruce manages WUGI, Esoterica's active ETF investing in 5G-enabled digital economy. Prior to Esoterica, he was a portfolio manager and partner of PhaseCapital. He was an equity strategist at WisdomTree Asset Management and a sell-side equity strategist at Sanford Bernstein. Bruce started his investment career at Dow Chemical Pension Fund. He received his Ph.D. in Business Administration from University of Connecticut and holds the Chartered Financial Analyst (CFA) designation.",
     social: {
@@ -32,6 +33,7 @@ const TEAM = [
     name: "Karan Trehan",
     title: "Executive Chairman & Co-Founder",
     img: "karan_trehan",
+    homepage: true,
     bio:
       "Karan has been in international finance for four decades, principally based in New York City. After careers at The World Bank and Goldman Sachs (where was an early member of the international fixed income group) and AllianceBernstein (where as President & CEO, International he launched Alliance's early thrust into offshore funds and strategic alliances), he established a boutique investment management company, Ankar Capital, to invest private equity in Asia and in Asia-centric hedge funds. He was also the Founder and Managing Partner of Emerging Managers Group, an offshore fund platform, later sold to a US mutual fund complex. Karan studied Economics at Delhi University, India followed by an MBA from IMD, Switzerland. He has served on the boards of several US-based and international mutual funds and has been a trustee of the United World Colleges.",
     social: {
@@ -45,6 +47,7 @@ const TEAM = [
     name: "Don Rich Ph.D.",
     title: "Chief Investment Officer & Co-Founder",
     img: "don_rich",
+    homepage: true,
     bio:
       "Don is CIO and portfolio manager of Esoterica's asset allocation strategies. He is also spearheads new product design and intellectual-branding. Don brings wide-ranging experiences in asset management: Endowments: at Harvard Management Company, he was a portfolio manager and member of the endowment's prestigious asset allocation committee and Director of Research. Pension Plans: portfolio manager and Director of Risk Management for Dow Chemical Company. Buy-Side: portfolio manager and Director of Research at Wellington Management Company and MFC Global Investment Management (Manulife), where he was Head of Tactical Asset Allocation. Sell-Side & Consulting: designed customized products and solutions for State Street and for Rich Consulting. Don graduated from the University of Illinois with B.S. and M.S. degrees and holds a Ph.D. in Quantitative Finance from Virginia Tech. During his academic career, he received early tenure, published over twenty scientific journal articles, received multiple prestigious research awards, and served as Associate Editor for academic journals.",
     social: {

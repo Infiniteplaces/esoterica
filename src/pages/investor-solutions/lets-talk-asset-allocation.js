@@ -26,7 +26,7 @@ class LetsTalkAssetAllocation extends React.Component {
     return (
       <Layout navTheme="dark">
         <SEO title="Let's Talk Asset Allocation" />
-        <div id="ourNewestFund">
+        <div id="assetAllocation">
           <div className="hero">
             <Img
               className="hero-img"
