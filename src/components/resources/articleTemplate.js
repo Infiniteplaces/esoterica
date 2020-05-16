@@ -344,7 +344,7 @@ export const pageQuery = graphql`
     contentfulLibrary(slug: { eq: $slug }) {
       title
       youtube
-      soundcloud
+
       tags
       author {
         name
