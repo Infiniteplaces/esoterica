@@ -10,7 +10,7 @@ import SoftFooterCta from "../components/_global/softFooterCta"
 import OurValues from "../components/about/about_ourValues"
 import AboutInvestorSolutions from "../components/about/about_investorSolutions"
 import CorporatePartners from "../components/about/corporatePartners"
-import AboutCarousel from "../components/about/AboutCarousel"
+import AboutCarousel from "../components/about/aboutCarousel"
 
 import softFooterBg from "../images/homepage/home_softFooter.png"
 import split_hero from "../images/about/split-hero.png"
