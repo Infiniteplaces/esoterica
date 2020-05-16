@@ -18,7 +18,6 @@ import ResourcesMarquee from "../components/_global/resourcesMarquee"
 import LibraryFourPost from "../components/resources/libraryFourPost"
 
 import SoftFooterCta from "../components/_global/softFooterCta"
-
 import softFooterBg from "../images/homepage/home_softFooter.png"
 
 class IndexPage extends React.Component {

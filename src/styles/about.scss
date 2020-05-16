@@ -1,4 +1,8 @@
 #aboutPage {
+  ::selection {
+    color: $transparent;
+    text-shadow: 0px 0px 7px $black;
+  }
   #parallax-container {
   }
 }
@@ -8,6 +12,10 @@
   z-index: 10;
   // position: fixed;
   top: 0;
+  ::selection {
+    color: $transparent;
+    text-shadow: 0px 0px 7px $white;
+  }
   #hero-container {
     display: flex;
     height: 100%;
@@ -19,6 +27,21 @@
       background-repeat: no-repeat;
       background-size: cover;
       pointer-events: none;
+
+      overflow: hidden;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      .about_marquee {
+        margin: 15px 0px;
+        width: 100vw;
+        .marquee_path {
+          color: $white;
+          display: inline-block;
+          animation: marquee 1920s linear infinite;
+          font-size: 88px;
+        }
+      }
     }
     #hero-right {
       background-color: $black;
@@ -31,6 +54,25 @@
       .text {
         margin-top: 100vh;
       }
+    }
+  }
+}
+
+#aboutTextBlock {
+  .title {
+    width: 75%;
+  }
+  .body-copy {
+    width: 50%;
+    margin-top: 50px;
+  }
+  @media (max-width: map-get($grid-breakpoints,md)) {
+    .title {
+      width: 100%;
+    }
+    .body-copy {
+      width: 100%;
+      margin-top: 50px;
     }
   }
 }

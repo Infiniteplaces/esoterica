@@ -3,7 +3,11 @@
     color: $transparent;
     text-shadow: 0px 0px 7px $black;
   }
-  padding: 75px 20px;
+  padding: 0px 20px;
+  .header-row {
+    margin-bottom: 50px;
+    margin-top: 50px;
+  }
   .team-member {
     padding: 24px;
     height: 100%;
@@ -82,6 +86,10 @@
 @media (max-width: map-get($grid-breakpoints,md)) {
   #researchTeam {
     padding: 50px 10px;
+    .header-row {
+      margin-bottom: 15px;
+      margin-top: 15px;
+    }
     .team-member {
       margin: 15px 0px;
     }

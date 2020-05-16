@@ -1,0 +1,83 @@
+#aboutCarousel {
+  ::selection {
+    color: $transparent;
+    text-shadow: 0px 0px 7px $white;
+  }
+  padding: 0px 20px;
+  background-color: $black;
+  color: $white;
+  .title-row {
+    padding: 50px 0px;
+  }
+  .carousel-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 88px 0px;
+    .slick-slider {
+      width: 100%;
+      height: 90%;
+      overflow: hidden;
+    }
+    .press-clipping {
+      display: flex;
+      height: 100%;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      h1,
+      h2 {
+        font-size: 72px;
+        line-height: 72px;
+        margin-bottom: 104px;
+      }
+      img {
+        display: flex;
+        margin: 30px auto;
+      }
+      @media (max-width: map-get($grid-breakpoints,md)) {
+        h1,
+        h2 {
+          font-size: 40px;
+          line-height: 45px;
+          margin-bottom: 50px;
+        }
+      }
+    }
+    .arrow {
+      cursor: pointer;
+      &:hover {
+        animation-name: shake;
+        animation-duration: 1000ms;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        &.back {
+          animation-direction: reverse;
+        }
+      }
+
+      @media (max-width: map-get($grid-breakpoints,md)) {
+        width: 35px;
+      }
+    }
+  }
+}
+
+@keyframes shake {
+  0% {
+    margin-left: 0px;
+  }
+  25% {
+    margin-left: 25px;
+  }
+  50% {
+    margin-left: 0px;
+  }
+  75% {
+    margin-left: -25px;
+  }
+  100% {
+    margin-left: 0%;
+  }
+}

@@ -4,10 +4,10 @@ import { connect } from "react-redux"
 import Img from "gatsby-image"
 import { Container, Row, Col } from "reactstrap"
 
-import as_icon from "../../images/about/as_icon.svg"
-import ind_icon from "../../images/about/ind_icon.svg"
-import ins_icon from "../../images/about/ins_icon.svg"
-import etf_icon_hover from "../../images/about/etf_icon_hover.svg"
+import as_icon from "../../images/about/as_icon.png"
+import ind_icon from "../../images/about/ind_icon.png"
+import ins_icon from "../../images/about/ins_icon.png"
+import etf_icon from "../../images/about/etf_icon.png"
 
 const AboutInvestorSolutions = ({}) => {
   return (
@@ -25,8 +25,11 @@ const AboutInvestorSolutions = ({}) => {
               md="6"
               className="d-flex justify-content-center align-items-center text-center mb-5"
             >
-              <Link to="/investor-solutions/exchange-traded-funds">
-                <img src={etf_icon_hover} alt="" />
+              <Link
+                to="/investor-solutions/exchange-traded-funds"
+                className="d-flex flex-column justify-content-between h-100"
+              >
+                <img src={etf_icon} alt="" className="pt-0 pt-md-5" />
                 <div className="body-small mt-4">Exchange Traded Funds</div>
               </Link>
             </Col>
@@ -34,7 +37,10 @@ const AboutInvestorSolutions = ({}) => {
               md="6"
               className="d-flex justify-content-center align-items-center text-center mb-5"
             >
-              <Link to="/investor-solutions/exchange-traded-funds">
+              <Link
+                to="/investor-solutions/exchange-traded-funds"
+                className="d-flex flex-column justify-content-between h-100"
+              >
                 <img src={as_icon} alt="" />
                 <div className="body-small mt-4">Advisor Services</div>
               </Link>
@@ -43,8 +49,11 @@ const AboutInvestorSolutions = ({}) => {
               md="6"
               className="d-flex justify-content-center align-items-center text-center"
             >
-              <Link to="/investor-solutions/exchange-traded-funds">
-                <img src={ins_icon} alt="" />
+              <Link
+                to="/investor-solutions/exchange-traded-funds"
+                className="d-flex flex-column justify-content-between h-100"
+              >
+                <img src={ins_icon} alt="" className="pt-0 pt-md-4" />
                 <div className="body-small mt-4">Institutional Investors</div>
               </Link>
             </Col>
@@ -52,7 +61,10 @@ const AboutInvestorSolutions = ({}) => {
               md="6"
               className="d-flex justify-content-center align-items-center text-center"
             >
-              <Link to="/investor-solutions/exchange-traded-funds">
+              <Link
+                to="/investor-solutions/exchange-traded-funds"
+                className="d-flex flex-column justify-content-between h-100 mt-5 mt-md-0"
+              >
                 <img src={ind_icon} alt="" />
                 <div className="body-small mt-4">Individual Investors</div>
               </Link>
