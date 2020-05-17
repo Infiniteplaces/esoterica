@@ -13,11 +13,11 @@ const AboutInvestorSolutions = ({}) => {
   return (
     <Container fluid id="aboutInvestorSolutions">
       <Row className="d-flex justify-content-center">
-        <Col md="6">
+        <Col md="7">
           <Row className="title-row">
             <Col>
               <h3>Investor Solutions</h3>
-              <h1>Products, asset management, you name it</h1>
+              <h1>We take your growth personally.</h1>
             </Col>
           </Row>
           <Row className="icon-row">
@@ -30,7 +30,7 @@ const AboutInvestorSolutions = ({}) => {
                 className="d-flex flex-column justify-content-between h-100"
               >
                 <img src={etf_icon} alt="" className="pt-0 pt-md-5" />
-                <div className="body-small mt-4">Exchange Traded Funds</div>
+                <div className="mt-4">Exchange Traded Funds</div>
               </Link>
             </Col>
             <Col
@@ -38,11 +38,11 @@ const AboutInvestorSolutions = ({}) => {
               className="d-flex justify-content-center align-items-center text-center mb-5"
             >
               <Link
-                to="/investor-solutions/exchange-traded-funds"
+                to="/investor-solutions/advisor-services"
                 className="d-flex flex-column justify-content-between h-100"
               >
                 <img src={as_icon} alt="" />
-                <div className="body-small mt-4">Advisor Services</div>
+                <div className="mt-4">Advisor Services</div>
               </Link>
             </Col>
             <Col
@@ -50,11 +50,11 @@ const AboutInvestorSolutions = ({}) => {
               className="d-flex justify-content-center align-items-center text-center"
             >
               <Link
-                to="/investor-solutions/exchange-traded-funds"
+                to="/investor-solutions/institutional-investors"
                 className="d-flex flex-column justify-content-between h-100"
               >
                 <img src={ins_icon} alt="" className="pt-0 pt-md-4" />
-                <div className="body-small mt-4">Institutional Investors</div>
+                <div className="mt-4">Institutional Investors</div>
               </Link>
             </Col>
             <Col
@@ -62,19 +62,22 @@ const AboutInvestorSolutions = ({}) => {
               className="d-flex justify-content-center align-items-center text-center"
             >
               <Link
-                to="/investor-solutions/exchange-traded-funds"
+                to="/investor-solutions/individual-investors"
                 className="d-flex flex-column justify-content-between h-100 mt-5 mt-md-0"
               >
                 <img src={ind_icon} alt="" />
-                <div className="body-small mt-4">Individual Investors</div>
+                <div className="mt-4">Individual Investors</div>
               </Link>
             </Col>
           </Row>
           <Row className="cta-row">
-            <Col>
-              <Link to="/investor-solutions" className="button secondary">
+            <Col className="d-flex justify-content-center">
+              <a
+                href="mailto:info@esotericacap.com"
+                className="button secondary"
+              >
                 <span>Start the Conversation</span>
-              </Link>
+              </a>
             </Col>
           </Row>
         </Col>

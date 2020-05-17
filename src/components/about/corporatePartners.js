@@ -11,7 +11,7 @@ const CorporatePartners = ({}) => {
     <Container fluid id="corporatePartners">
       <Row className="header">
         <Col className="d-flex justify-content-center">
-          <h3>Corporate Partners</h3>
+          <h2>Corporate Partners</h2>
         </Col>
       </Row>
       <Row>
@@ -20,32 +20,32 @@ const CorporatePartners = ({}) => {
           xs="6"
           md="3"
         >
-          <img src={bbh_logo} alt="" width="100" />
-          <div className="eyebrow mt-3">LOREM</div>
+          <img src={bbh_logo} alt="" width="136" />
+          <h3 className="mt-5">LOREM</h3>
         </Col>
         <Col
           className="d-flex flex-column align-items-center justify-content-between mb-5 mb-md-0"
           xs="6"
           md="3"
         >
-          <img src={via_logo} alt="" width="100" />
-          <div className="eyebrow mt-3">IPSUM</div>
+          <img src={via_logo} alt="" width="136" />
+          <h3 className="mt-5">IPSUM</h3>
         </Col>
         <Col
           className="d-flex flex-column align-items-center justify-content-between"
           xs="6"
           md="3"
         >
-          <img src={cc_logo} alt="" width="100" />
-          <div className="eyebrow mt-3">AUDIT</div>
+          <img src={cc_logo} alt="" width="136" />
+          <h3 className="mt-5">AUDIT</h3>
         </Col>
         <Col
           className="d-flex flex-column align-items-center justify-content-between"
           xs="6"
           md="3"
         >
-          <img src={th_logo} alt="" width="100" />
-          <div className="eyebrow mt-3">LEGAL COUNSEL</div>
+          <img src={th_logo} alt="" width="136" />
+          <h3 className="mt-5">LEGAL COUNSEL</h3>
         </Col>
       </Row>
     </Container>

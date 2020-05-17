@@ -47,17 +47,13 @@ class AboutCarousel extends Component {
       {
         quote:
           "BBH is excited and humbled to be a partner for Esoterica Capital and we are confident in their ability to build an innovative and distinctive ETF business",
-        attribution: "Ryan Sullivan, Senior Vice President",
+        attribution:
+          "Ryan Sullivan, Senior Vice President, Brown Brothers Harriman & Co.",
       },
       {
         quote:
-          "BBH is excited and humbled to be a partner for Esoterica Capital and we are confident in their ability to build an innovative and distinctive ETF business",
-        attribution: "Ryan Sullivan, Senior Vice President",
-      },
-      {
-        quote:
-          "BBH is excited and humbled to be a partner for Esoterica Capital and we are confident in their ability to build an innovative and distinctive ETF business",
-        attribution: "Ryan Sullivan, Senior Vice President",
+          "Vident Investment Advisory … enjoys a close working relationship with Esoterica … VIA brings their expertise in ETF sub-advisory and combines that with Esoterica’s expertise in 5G related securities to offer a highly efficient ETF.",
+        attribution: "Denise Krisko, President, Vident Investment Advisory",
       },
     ]
 

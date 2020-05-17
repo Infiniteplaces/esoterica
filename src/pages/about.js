@@ -15,6 +15,8 @@ import AboutCarousel from "../components/about/aboutCarousel"
 import softFooterBg from "../images/homepage/home_softFooter.png"
 import split_hero from "../images/about/split-hero.png"
 
+import about_page_illus from "../images/about/about_page_illus.png"
+
 const AboutPage = () => {
   let marqueeText = [...Array(50).keys()].map((i, idx) => {
     return (
@@ -40,48 +42,20 @@ const AboutPage = () => {
                 </div>
               </div>
               <div id="hero-right">
-                <div className="text">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-                  sed placerat orci, ut interdum magna. Fusce viverra ex vel
-                  tempus volutpat. Praesent pellentesque ipsum quis placerat
-                  malesuada. Pellentesque ultricies laoreet nisi, suscipit
-                  consectetur tellus ullamcorper in. Donec lobortis, sapien ut
-                  egestas volutpat, augue urna fringilla turpis, ut pellentesque
-                  sem orci. Lorem ipsum dolor sit amet, consectetur adipiscing
-                  elit. Duis sed placerat orci, ut interdum magna. Fusce viverra
-                  ex vel tempus volutpat. Praesent pellentesque ipsum quis
-                  placerat malesuada. Pellentesque ultricies laoreet nisi,
-                  suscipit consectetur tellus ullamcorper in. Donec lobortis,
-                  sapien ut egestas volutpat, augue urna fringilla turpis, ut
-                  pellentesque sem orci. Lorem ipsum dolor sit amet, consectetur
-                  adipiscing elit. Duis sed placerat orci, ut interdum magna.
-                  Fusce viverra ex vel tempus volutpat. Praesent pellentesque
-                  ipsum quis placerat malesuada. Pellentesque ultricies laoreet
-                  nisi, suscipit consectetur tellus ullamcorper in. Donec
-                  lobortis, sapien ut egestas volutpat, augue urna fringilla
-                  turpis, ut pellentesque sem orci. Lorem ipsum dolor sit amet,
-                  consectetur adipiscing elit. Duis sed placerat orci, ut
-                  interdum magna. Fusce viverra ex vel tempus volutpat. Praesent
-                  pellentesque ipsum quis placerat malesuada. Pellentesque
-                  ultricies laoreet nisi, suscipit consectetur tellus
-                  ullamcorper in. Donec lobortis, sapien ut egestas volutpat,
-                  augue urna fringilla turpis, ut pellentesque sem orci. Lorem
-                  ipsum dolor sit amet, consectetur adipiscing elit. Duis sed
-                  placerat orci, ut interdum magna. Fusce viverra ex vel tempus
-                  volutpat. Praesent pellentesque ipsum quis placerat malesuada.
-                  Pellentesque ultricies laoreet nisi, suscipit consectetur
-                  tellus ullamcorper in. Donec lobortis, sapien ut egestas
-                  volutpat, augue urna fringilla turpis, ut pellentesque sem
-                  orci.
-                </div>
+                <h2 className="text">
+                  We’re sharing our experience to help others invest more
+                  intelligently, from the institutional investor to those just
+                  starting out. Through asset management, our goal is to make
+                  investing simple.
+                </h2>
               </div>
             </Col>
           </Row>
         </Container>
         <div>
-          <Container id="aboutTextBlock" fluid className="py-5 bg-yellow">
-            <Row className="d-flex justify-content-center">
-              <Col xs="12" md="10">
+          <Container fluid id="aboutTextBlock" className="bg-yellow">
+            <Row className="d-flex">
+              <Col xs="12" md={{ size: 5, offset: 1 }}>
                 <h1 className="title">
                   Leveraging decades of experience for a new world.
                 </h1>
@@ -95,6 +69,9 @@ const AboutPage = () => {
                   that rotates between stocks and bonds, to better returns with
                   less downside risk.
                 </div>
+              </Col>
+              <Col xs="12" md="5" className="img-container">
+                <img src={about_page_illus} alt="" />
               </Col>
             </Row>
           </Container>

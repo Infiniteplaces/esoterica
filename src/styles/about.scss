@@ -39,7 +39,6 @@
           color: $white;
           display: inline-block;
           animation: marquee 1920s linear infinite;
-          font-size: 88px;
         }
       }
     }
@@ -51,20 +50,30 @@
       padding-left: calc(50% + 20px);
       padding-right: 20px;
       overflow-y: scroll;
+      display: flex;
+      align-items: center;
+      text-align: center;
       .text {
-        margin-top: 100vh;
       }
     }
   }
 }
 
 #aboutTextBlock {
+  padding-top: 104px;
+  padding-bottom: 104px;
   .title {
-    width: 75%;
   }
   .body-copy {
-    width: 50%;
     margin-top: 50px;
+  }
+  .img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 90%;
+    }
   }
   @media (max-width: map-get($grid-breakpoints,md)) {
     .title {

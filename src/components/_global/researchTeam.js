@@ -12,7 +12,7 @@ import youtube_black from "../../images/icons/youtube.svg"
 import twitter_black from "../../images/icons/twitter.svg"
 import mail_black from "../../images/icons/mail.svg"
 
-import modal_close from "../../images/icons/modal_close.svg"
+import modal_close from "../../images/icons/modal_close_white.svg"
 
 const ResearchTeam = ({ team }) => {
   let [modal, setModal] = useState(null)
@@ -89,13 +89,20 @@ const ResearchTeam = ({ team }) => {
           }
         }
       }
+      monique_labbe: file(relativePath: { eq: "team/monique_labbe.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 1440) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `)
 
   let teamMembers = [
     {
       name: "Qindong (Bruce) Liu Ph.D., CFA",
-      title: "Chief Executive Officer & Co-Founder",
+      title: "Chief Executive Officer",
       img: "bruce_liu",
       leadership_team: true,
       board_of_trustees: false,
@@ -111,7 +118,7 @@ const ResearchTeam = ({ team }) => {
     },
     {
       name: "Karan Trehan",
-      title: "Executive Chairman & Co-Founder",
+      title: "Executive Chairman",
       img: "karan_trehan",
       leadership_team: false,
       board_of_trustees: false,
@@ -127,7 +134,7 @@ const ResearchTeam = ({ team }) => {
     },
     {
       name: "Don Rich Ph.D.",
-      title: "Chief Investment Officer & Co-Founder",
+      title: "Chief Investment Officer",
       img: "don_rich",
       leadership_team: false,
       board_of_trustees: false,
@@ -221,6 +228,38 @@ const ResearchTeam = ({ team }) => {
         email: "",
       },
     },
+    {
+      name: "Yang Ren",
+      title: "Portfolio Manager/Senior Analyst",
+      img: "placeholder",
+      leadership_team: false,
+      board_of_trustees: false,
+      management_team: true,
+      bio:
+        "Yang is Portfolio Manager/Senior Analyst of Esoterica Capital, focusing on equity fundamental research. Yang graduated from Peking University followed by master in Financial engineering from University of Michigan. He joined Sanford Bernstein covering US semiconductors in 2014 and the team ranked #1 by Institution Investors for 4 consecutive years from 2015 to 2018.",
+      social: {
+        linkedin: "",
+        twitter: "",
+        youtube: "",
+        email: "",
+      },
+    },
+    {
+      name: "Monique Labbe",
+      title: "Lorem Ipsum",
+      img: "monique_labbe",
+      leadership_team: false,
+      board_of_trustees: false,
+      management_team: true,
+      bio:
+        "Yang is Portfolio Manager/Senior Analyst of Esoterica Capital, focusing on equity fundamental research. Yang graduated from Peking University followed by master in Financial engineering from University of Michigan. He joined Sanford Bernstein covering US semiconductors in 2014 and the team ranked #1 by Institution Investors for 4 consecutive years from 2015 to 2018.",
+      social: {
+        linkedin: "",
+        twitter: "",
+        youtube: "",
+        email: "",
+      },
+    },
   ]
 
   let board = [
@@ -281,22 +320,6 @@ const ResearchTeam = ({ team }) => {
       management_team: false,
       bio:
         "Jack was Managing Director and CFO/Treasurer of U.S. iShares at BlackRock from 2004 to 2019. Prior to BlackRock, he was Controller at Paul Capital Partners, responsible for the oversight of the financial, operational and accounting activities of the investments acquired in the secondary market. Jack also served as SVP and CFO/Treasurer at Fremont Investment Advisors, managing all aspects of finance and operations for the firm. Jack graduated from California State University with a Bachelor degree in Accounting and was also a Certified Public Accountant.",
-      social: {
-        linkedin: "",
-        twitter: "",
-        youtube: "",
-        email: "",
-      },
-    },
-    {
-      name: "Yang Ren",
-      title: "Portfolio Manager/Senior Analyst",
-      img: "placeholder",
-      leadership_team: false,
-      board_of_trustees: false,
-      management_team: true,
-      bio:
-        "Yang is Portfolio Manager/Senior Analyst of Esoterica Capital, focusing on equity fundamental research. Yang graduated from Peking University followed by master in Financial engineering from University of Michigan. He joined Sanford Bernstein covering US semiconductors in 2014 and the team ranked #1 by Institution Investors for 4 consecutive years from 2015 to 2018.",
       social: {
         linkedin: "",
         twitter: "",
@@ -542,7 +565,7 @@ const ResearchTeam = ({ team }) => {
       <Row className="py-3">{ourTeam}</Row>
       <Row className="header-row">
         <Col className="d-flex justify-content-center mt-0 mt-md-5">
-          <h1 className="section">Board of Truestees</h1>
+          <h1 className="section">Board of Trustees</h1>
         </Col>
       </Row>
       <Row className="py-3">{boardOfTrustees}</Row>
