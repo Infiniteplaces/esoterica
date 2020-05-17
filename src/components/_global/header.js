@@ -105,8 +105,14 @@ const Header = ({
 
   function _handleScroll() {
     let currentScrollPos = window.pageYOffset
-    let hidden = prevScrollPos < currentScrollPos
-    dispatch(setNavTransparent(currentScrollPos < 5))
+    let hidden
+    if (prevScrollPos < currentScrollPos && currentScrollPos > 50) {
+      hidden = true
+    } else {
+      hidden = false
+    }
+
+    dispatch(setNavTransparent(currentScrollPos < 50))
     dispatch(setPrevScrollPos(currentScrollPos))
     dispatch(setHideNav(hidden))
   }
