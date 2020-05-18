@@ -9,15 +9,16 @@ import SEO from "../../components/_global/seo"
 
 import PreviewPill from "../../components/investorSolutions/previewPill"
 import EmailCapture from "../../components/_global/emailCapture"
-import ResourcesMarquee from "../../components/_global/resourcesMarquee"
-
-import SoftFooterCta from "../../components/_global/softFooterCta"
-import softFooterBg from "../../images/investorSolutions/investorSolutionsFooterCta_2.png"
 
 import LibraryFeatured from "../../components/resources/libraryFeatured"
 
 import arrow_black from "../../images/icons/arrow-diag-black.svg"
 import arrow_white from "../../images/icons/arrow-diag.svg"
+
+import phone_black from "../../images/icons/phone.svg"
+import phone_white from "../../images/icons/phone-white.svg"
+import mail_black from "../../images/icons/mail.svg"
+import mail_white from "../../images/icons/mail-white.svg"
 
 class IndividualInvestorsPage extends React.Component {
   render() {
@@ -60,43 +61,45 @@ class IndividualInvestorsPage extends React.Component {
                   video form. Never feel intimidated, overwhelmed, or bewildered
                   again!
                 </p>
-                <h3>Contact Us</h3>
-                <p>
-                  <strong>Contact us at: 866-979-1710</strong>
-                </p>
-                <p>
-                  <strong>
-                    Email us at:{" "}
-                    <a
-                      className="underline"
-                      href="mailto:bruce.liu@esotericacap.com"
-                    >
-                      bruce.liu@esotericacap.com
-                    </a>
-                  </strong>
-                </p>
               </Col>
             </Row>
             <Row className="contact-row">
-              <Col>
+              <Col className="call-cta">
+                <a href="tel:866-979-1710" className="button secondary">
+                  Call Us
+                  <img
+                    src={phone_black}
+                    className="ml-4 pb-1 icon-black"
+                    alt=""
+                  />
+                  <img
+                    src={phone_white}
+                    className="ml-4 pb-1 icon-white"
+                    alt=""
+                  />
+                </a>
+              </Col>
+              <Col className="mail-cta">
                 <a
                   href="mailto:info@esotericacap.com"
                   className="button secondary"
                 >
-                  Start The Conversation
+                  Email Us
+                  <img
+                    src={mail_black}
+                    className="ml-4 pb-1 icon-black"
+                    alt=""
+                  />
+                  <img
+                    src={mail_white}
+                    className="ml-4 pb-1 icon-white"
+                    alt=""
+                  />
                 </a>
               </Col>
             </Row>
           </Container>
           <EmailCapture />
-          <ResourcesMarquee />
-          <SoftFooterCta
-            background={softFooterBg}
-            text={"Steady stream of the best financial content"}
-            ctaLead={"Check out the"}
-            cta={"Library"}
-            link={"/resources/library"}
-          />
         </div>
       </Layout>
     )

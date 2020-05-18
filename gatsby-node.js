@@ -58,7 +58,7 @@ exports.createPages = ({ graphql, actions }) => {
         const glossary = result.data.allContentfulGlossary.edges
         glossary.forEach(post => {
           createPage({
-            path: `/resources/educational-writing/${post.node.slug}/`,
+            path: `/resources/white-papers/${post.node.slug}/`,
             component: path.resolve(
               "src/components/resources/articleTemplate.js"
             ),

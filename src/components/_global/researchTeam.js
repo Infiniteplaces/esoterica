@@ -96,6 +96,20 @@ const ResearchTeam = ({ team }) => {
           }
         }
       }
+      wei_wang: file(relativePath: { eq: "team/wei_wang.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 1440) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      yue_sai_kan: file(relativePath: { eq: "team/yue_sai_kan.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 1440) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `)
 
@@ -104,54 +118,45 @@ const ResearchTeam = ({ team }) => {
       name: "Qindong (Bruce) Liu Ph.D., CFA",
       title: "Chief Executive Officer",
       img: "bruce_liu",
-      leadership_team: true,
-      board_of_trustees: false,
-      management_team: false,
       bio:
         "Bruce manages WUGI, Esoterica's active ETF investing in 5G-enabled digital economy. Prior to Esoterica, he was a portfolio manager and partner of PhaseCapital. He was an equity strategist at WisdomTree Asset Management and a sell-side equity strategist at Sanford Bernstein. Bruce started his investment career at Dow Chemical Pension Fund. He received his Ph.D. in Business Administration from University of Connecticut and holds the Chartered Financial Analyst (CFA) designation.",
       social: {
-        linkedin: "",
-        twitter: "",
-        youtube: "",
-        email: "",
+        linkedin: "https://www.linkedin.com/in/qindong-bruce-liu-bb44919/",
+        twitter: "https://twitter.com/tausagi",
+        youtube: "https://www.youtube.com/channel/UClBaJptKDg9-SkmTNfzaZUw",
+        email: "bruce.liu@esotericacap.com",
       },
     },
     {
       name: "Karan Trehan",
       title: "Executive Chairman",
       img: "karan_trehan",
-      leadership_team: false,
-      board_of_trustees: false,
-      management_team: true,
       bio:
         "Karan has been in international finance for four decades, principally based in New York City. After careers at The World Bank and Goldman Sachs (where was an early member of the international fixed income group) and AllianceBernstein (where as President & CEO, International he launched Alliance's early thrust into offshore funds and strategic alliances), he established a boutique investment management company, Ankar Capital, to invest private equity in Asia and in Asia-centric hedge funds. He was also the Founder and Managing Partner of Emerging Managers Group, an offshore fund platform, later sold to a US mutual fund complex. Karan studied Economics at Delhi University, India followed by an MBA from IMD, Switzerland. He has served on the boards of several US-based and international mutual funds and has been a trustee of the United World Colleges.",
       social: {
-        linkedin: "",
-        twitter: "",
-        youtube: "",
-        email: "",
+        linkedin: "https://www.linkedin.com/in/karan-trehan-4876a5a1/",
+        twitter: "https://twitter.com/InsightsRich",
+        youtube: "https://www.youtube.com/channel/UClBaJptKDg9-SkmTNfzaZUw",
+        email: "karan.trehan@esotericacap.com",
       },
     },
     {
       name: "Don Rich Ph.D.",
       title: "Chief Investment Officer",
       img: "don_rich",
-      leadership_team: false,
-      board_of_trustees: false,
-      management_team: true,
       bio:
         "Don is CIO and portfolio manager of Esoterica's asset allocation strategies. He is also spearheads new product design and intellectual-branding. Don brings wide-ranging experiences in asset management: Endowments: at Harvard Management Company, he was a portfolio manager and member of the endowment's prestigious asset allocation committee and Director of Research. Pension Plans: portfolio manager and Director of Risk Management for Dow Chemical Company. Buy-Side: portfolio manager and Director of Research at Wellington Management Company and MFC Global Investment Management (Manulife), where he was Head of Tactical Asset Allocation. Sell-Side & Consulting: designed customized products and solutions for State Street and for Rich Consulting. Don graduated from the University of Illinois with B.S. and M.S. degrees and holds a Ph.D. in Quantitative Finance from Virginia Tech. During his academic career, he received early tenure, published over twenty scientific journal articles, received multiple prestigious research awards, and served as Associate Editor for academic journals.",
       social: {
-        linkedin: "",
-        twitter: "",
-        youtube: "",
-        email: "",
+        linkedin: "https://www.linkedin.com/in/don-rich-7886b611/",
+        twitter: "https://twitter.com/InsightsRich",
+        youtube: "https://www.youtube.com/channel/UClBaJptKDg9-SkmTNfzaZUw",
+        email: "don.rich@esotericacap.com",
       },
     },
     {
       name: "Wei Wang",
       title: "Portfolio Manager/Senior Analyst",
-      img: "placeholder",
+      img: "wei_wang",
       leadership_team: true,
       board_of_trustees: false,
       management_team: false,
@@ -160,14 +165,14 @@ const ResearchTeam = ({ team }) => {
       social: {
         linkedin: "",
         twitter: "",
-        youtube: "",
-        email: "",
+        youtube: "https://www.youtube.com/channel/UClBaJptKDg9-SkmTNfzaZUw",
+        email: "wei.wang@esotericacap.com",
       },
     },
     {
       name: "Diana Wang",
       title: "Chief Operating Officer",
-      img: "placeholder",
+      img: "diana_wang",
       leadership_team: false,
       board_of_trustees: false,
       management_team: true,
@@ -176,8 +181,8 @@ const ResearchTeam = ({ team }) => {
       social: {
         linkedin: "",
         twitter: "",
-        youtube: "",
-        email: "",
+        youtube: "https://www.youtube.com/channel/UClBaJptKDg9-SkmTNfzaZUw",
+        email: "diana.wang@esotericacap.com",
       },
     },
     {
@@ -192,93 +197,66 @@ const ResearchTeam = ({ team }) => {
       social: {
         linkedin: "",
         twitter: "",
-        youtube: "",
-        email: "",
+        youtube: "https://www.youtube.com/channel/UClBaJptKDg9-SkmTNfzaZUw",
+        email: "wenjie.chen@esotericacap.com",
       },
     },
     {
       name: "Spencer Joynt",
       title: "Creative Director",
       img: "spencer_joynt",
-      leadership_team: false,
-      board_of_trustees: false,
-      management_team: true,
       bio:
         "Spencer is leading Esoterica’s branding strategy and direct-to-consumer initiative. Previously he was focused on brand and experience building. Specifically, creating delight where information and technology come together. Past clients of note have included: Volkswagen, The Washington Post, Tribeca Film Festival, hims, hers, Jetty, Gin Lane, and RCA. Spencer graduated from The University of Texas at Austin.",
       social: {
         linkedin: "",
         twitter: "",
-        youtube: "",
-        email: "",
+        youtube: "https://www.youtube.com/channel/UClBaJptKDg9-SkmTNfzaZUw",
+        email: "spencer.joynt@esotericacap.com",
       },
     },
     {
       name: "James Morton, Ph.D.",
       title: "Chief Scientist, Artificial Intelligence and Big Data",
       img: "james_morton",
-      leadership_team: false,
-      board_of_trustees: false,
-      management_team: true,
       bio:
         "Jamie is Research Fellow at Simons Foundation. His research interest is developing algorithms for performing Bayesian inference on high dimensional datasets commonly obtained for biological and financial applications. Jamie has completed his PhD in Computer Science at the University of California San Diego where he developed software and statistical techniques to study microbial systems. He also has a quadruple major from Miami University with bachelor degrees in Mathematics/Statistics, Computer Science, Engineering Physics and Electrical Engineering.",
       social: {
         linkedin: "",
         twitter: "",
-        youtube: "",
-        email: "",
-      },
-    },
-    {
-      name: "Yang Ren",
-      title: "Portfolio Manager/Senior Analyst",
-      img: "placeholder",
-      leadership_team: false,
-      board_of_trustees: false,
-      management_team: true,
-      bio:
-        "Yang is Portfolio Manager/Senior Analyst of Esoterica Capital, focusing on equity fundamental research. Yang graduated from Peking University followed by master in Financial engineering from University of Michigan. He joined Sanford Bernstein covering US semiconductors in 2014 and the team ranked #1 by Institution Investors for 4 consecutive years from 2015 to 2018.",
-      social: {
-        linkedin: "",
-        twitter: "",
-        youtube: "",
-        email: "",
+        youtube: "https://www.youtube.com/channel/UClBaJptKDg9-SkmTNfzaZUw",
+        email: "james.morton@esotericacap.com",
       },
     },
     {
       name: "Monique Labbe",
-      title: "Lorem Ipsum",
+      title: "Treasurer & Principal Financial Officer, Esoterica Trust",
       img: "monique_labbe",
-      leadership_team: false,
-      board_of_trustees: false,
-      management_team: true,
       bio:
-        "Yang is Portfolio Manager/Senior Analyst of Esoterica Capital, focusing on equity fundamental research. Yang graduated from Peking University followed by master in Financial engineering from University of Michigan. He joined Sanford Bernstein covering US semiconductors in 2014 and the team ranked #1 by Institution Investors for 4 consecutive years from 2015 to 2018.",
+        "Monique provides outsourced treasurer and principal financial officer solutions to Esoterica. Prior to joining Foreside, she held leadership positions at State Street Global Advisors and State Street Bank and Trust which included fund administration, fund accounting, mutual fund operations and product development. She received her BS in Accounting from the University of Massachusetts-Dartmouth and an MBA from Boston College.",
       social: {
         linkedin: "",
         twitter: "",
-        youtube: "",
-        email: "",
+        youtube: "https://www.youtube.com/channel/UClBaJptKDg9-SkmTNfzaZUw",
+        email: "monique.labbe@esotericacap.com",
+      },
+    },
+    {
+      name: "Nancy Tyminski",
+      title:
+        "Chief Compliance Officer & Anti-Money Laundering Officer, Esoterica Trust",
+      img: "placeholder",
+      bio:
+        "Nancy provides outsourced compliance solutions to registered funds. Prior to joining Foreside in 2015, she held various senior compliance roles including Deputy Chief Compliance Officer at PNC Bank (Funds Group), Director of Corporate Compliance at Nationwide Funds Group, and Chief Compliance Officer at Nikko Asset Management, LTD.  Additionally, Nancy held leadership positions in the program trading division of BNP Paribas Asset Management (formerly known as CooperNeff Advisors, Inc.).  She received a BA in English from the University of Pennsylvania.",
+      social: {
+        linkedin: "",
+        twitter: "",
+        youtube: "https://www.youtube.com/channel/UClBaJptKDg9-SkmTNfzaZUw",
+        email: "nancy.tyminski@esotericacap.com",
       },
     },
   ]
 
   let board = [
-    {
-      name: "Frank Savage",
-      title: "Director, Board of Advisors",
-      img: "placeholder",
-      leadership_team: true,
-      board_of_trustees: false,
-      management_team: false,
-      bio:
-        "Frank is Chief Executive Officer of Savage Holdings LLC, a global financial services company. Prior to forming Savage Holdings, he was Chairman of Alliance Capital Management International, a division of Alliance Capital Management, a $700 billion asset management subsidiary of AXA Equitable Life Assurance Company. He has a distinguished career in international banking, corporate finance, and global investment management. He has served on the boards of several corporations and not-for-profit organizations, including Bloomberg LP, Lockheed Martin, Qualcomm, and the New York Philharmonic, and as a Trustee Emeritus of the Johns Hopkins University Board. He earned a Bachelor of Arts degree from Howard University, a Master of Arts degree from the Johns Hopkins Nitze School of Advanced International Studies, and was the recipient of an Honorary Doctorate of Humane Letters from Hofstra University and an honorary Doctor of Humanities degree from Howard University.",
-      social: {
-        linkedin: "",
-        twitter: "",
-        youtube: "",
-        email: "",
-      },
-    },
     {
       name: "Darlene DeRemer",
       title: "Chairwoman of Esoterica Thematic Trust",
@@ -291,8 +269,8 @@ const ResearchTeam = ({ team }) => {
       social: {
         linkedin: "",
         twitter: "",
-        youtube: "",
-        email: "",
+        youtube: "https://www.youtube.com/channel/UClBaJptKDg9-SkmTNfzaZUw",
+        email: "dtderemer@gmail.com",
       },
     },
     {
@@ -307,8 +285,8 @@ const ResearchTeam = ({ team }) => {
       social: {
         linkedin: "",
         twitter: "",
-        youtube: "",
-        email: "",
+        youtube: "https://www.youtube.com/channel/UClBaJptKDg9-SkmTNfzaZUw",
+        email: "mcredmond1@gmail.com",
       },
     },
     {
@@ -323,8 +301,43 @@ const ResearchTeam = ({ team }) => {
       social: {
         linkedin: "",
         twitter: "",
-        youtube: "",
-        email: "",
+        youtube: "https://www.youtube.com/channel/UClBaJptKDg9-SkmTNfzaZUw",
+        email: "j-gee@sbcglobal.net",
+      },
+    },
+  ]
+
+  let advisors = [
+    {
+      name: "Frank Savage",
+      title: "Director, Board of Advisors",
+      img: "placeholder",
+      leadership_team: true,
+      board_of_trustees: false,
+      management_team: false,
+      bio:
+        "Frank is Chief Executive Officer of Savage Holdings LLC, a global financial services company. Prior to forming Savage Holdings, he was Chairman of Alliance Capital Management International, a division of Alliance Capital Management, a $700 billion asset management subsidiary of AXA Equitable Life Assurance Company. He has a distinguished career in international banking, corporate finance, and global investment management. He has served on the boards of several corporations and not-for-profit organizations, including Bloomberg LP, Lockheed Martin, Qualcomm, and the New York Philharmonic, and as a Trustee Emeritus of the Johns Hopkins University Board. He earned a Bachelor of Arts degree from Howard University, a Master of Arts degree from the Johns Hopkins Nitze School of Advanced International Studies, and was the recipient of an Honorary Doctorate of Humane Letters from Hofstra University and an honorary Doctor of Humanities degree from Howard University.",
+      social: {
+        linkedin: "",
+        twitter: "",
+        youtube: "https://www.youtube.com/channel/UClBaJptKDg9-SkmTNfzaZUw",
+        email: "fsavage@savageholdings.com",
+      },
+    },
+    {
+      name: "Yue-Sai Kan",
+      title: "Co-Chairman of the China Institute",
+      img: "yue_sai_kan",
+      leadership_team: false,
+      board_of_trustees: true,
+      management_team: false,
+      bio:
+        "Yue-Sai Kan is an Emmy-winning television host and producer, successful entrepreneur, fashion icon, bestselling author and humanitarian.  People magazine called her 'the most famous woman in China' and Time magazine proclaimed her 'the Queen of the Middle Kingdom.' Yue-Sai’s weekly television series 'Looking East', was the first of its kind to introduce Asian cultures and customs to a growing and receptive American audience and later shows amassed a weekly viewership of 300 million. Yue-Sai’s other TV credits include the ABC documentary 'China Walls and Bridges', which earned her a Emmy Award. Yue-Sai founded Yue-Sai Cosmetics which grew into China’s leading Cosmetics Company, later purchased by L'Oreal.  Additionally, she has written 9 best-selling books, and in 2000, became the first and only living American featured on a Chinese government-issued postage stamp.  Yue-Sai has been deeply involved in charities and has served on the boards of prominent charitable organizations in China and the United States.",
+      social: {
+        linkedin: "",
+        twitter: "",
+        youtube: "https://www.youtube.com/channel/UClBaJptKDg9-SkmTNfzaZUw",
+        email: "ny@yuesaikan.net",
       },
     },
   ]
@@ -555,6 +568,119 @@ const ResearchTeam = ({ team }) => {
     )
   })
 
+  let boardOfAdvisors = advisors.map((i, idx) => {
+    let preview = i.bio.substring(0, 150)
+    preview = preview.substr(
+      0,
+      Math.min(preview.length, preview.lastIndexOf(" "))
+    )
+    return (
+      <Col key={idx} sm="12" md="4" className="mb-4">
+        <div className="team-member" onClick={() => setModal(i.img)}>
+          <div className="img-container">
+            <Img
+              className="team-img"
+              fluid={data[i.img].childImageSharp.fluid}
+            />
+          </div>
+          <div className="eyebrow">{i.title}</div>
+          <div className="d-flex justify-content-between align-items-center">
+            <h4>{i.name}</h4>
+          </div>
+          <div className="about pt-4">
+            {preview}... <span className="eyebrow underline">Read More</span>
+          </div>
+        </div>
+        <Modal
+          toggle={() => setModal(null)}
+          isOpen={modal === i.img}
+          className="team-member-modal"
+        >
+          <div className="close" onClick={() => setModal(null)}>
+            <img src={modal_close} alt="" />
+          </div>
+          <Container fluid className="team-member-modal-container">
+            <Row className="d-flex flex-column flex-md-row align-items-start">
+              <Col>
+                <div className="modal-image-container mb-3 mb-md-0">
+                  <Img
+                    className="modal-team-img"
+                    fluid={data[i.img].childImageSharp.fluid}
+                  />
+                </div>
+              </Col>
+              <Col>
+                <Row>
+                  <Col>
+                    <div className="body-small">{i.title}</div>
+                    <h3 className="pb-3">{i.name}</h3>
+                    <p className="pb-3">{i.bio}</p>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col className="social-container">
+                    <div className="eyebrow">Connect</div>
+                    <div className="social">
+                      <a
+                        href={"https://twitter.com/" + i.social.twitter}
+                        target="_blank"
+                        rel="norefferer noopener"
+                      >
+                        <img
+                          src={twitter_black}
+                          alt="twitter"
+                          className="twitter-icon"
+                          width="16px"
+                        />
+                      </a>
+                      <a
+                        href={
+                          "https://www.linkedin.com/company/" +
+                          i.social.linkedin
+                        }
+                        target="_blank"
+                        rel="norefferer noopener"
+                      >
+                        <img
+                          src={linkedin_black}
+                          alt="linkedin"
+                          className="linkedin-icon"
+                          width="17px"
+                        />
+                      </a>
+                      <a
+                        href={
+                          "https://www.youtube.com/channel/" + i.social.youtube
+                        }
+                        target="_blank"
+                        rel="norefferer noopener"
+                      >
+                        <img
+                          src={youtube_black}
+                          alt="youtube"
+                          className="youtube-icon"
+                          width="21px"
+                        />
+                      </a>
+                      <a href={"mailto:" + i.social.email}>
+                        <img
+                          src={mail_black}
+                          alt="mail"
+                          className="mail-icon"
+                          width="19"
+                        />
+                      </a>
+                    </div>
+                  </Col>
+                </Row>
+              </Col>
+            </Row>
+          </Container>
+        </Modal>
+      </Col>
+    )
+  })
+
   return (
     <Container id="researchTeam" fluid>
       <Row className="header-row">
@@ -569,6 +695,12 @@ const ResearchTeam = ({ team }) => {
         </Col>
       </Row>
       <Row className="py-3">{boardOfTrustees}</Row>
+      <Row className="header-row">
+        <Col className="d-flex justify-content-center mt-0 mt-md-5">
+          <h1 className="section">Board of Advisors</h1>
+        </Col>
+      </Row>
+      <Row className="py-3">{boardOfAdvisors}</Row>
     </Container>
   )
 }

@@ -13,10 +13,15 @@
   .button {
     color: $white;
     border-color: $white;
+    transition: 250ms Cubic-bezier(0.33, 1, 0.33, 1);
     &.secondary {
       width: 320px;
       height: 72px;
       padding: 0;
+      &:hover {
+        border-color: $black;
+        transition: 250ms Cubic-bezier(0.33, 1, 0.33, 1);
+      }
     }
   }
   ::selection {

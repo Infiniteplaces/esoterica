@@ -177,9 +177,7 @@ class ArticleTemplate extends React.Component {
         [INLINES.ENTRY_HYPERLINK]: node => {
           const link = node.data.target.fields.slug["en-US"]
           const title = node.data.target.fields.title["en-US"]
-          return (
-            <Link to={"/resources/educational-writing/" + link}>{title}</Link>
-          )
+          return <Link to={"/resources/white-papers/" + link}>{title}</Link>
         },
       },
     }
@@ -241,6 +239,7 @@ class ArticleTemplate extends React.Component {
         <div id="articleTemplate">
           <div className="header-container">
             <Img alt={post.title} fluid={post.heroImage.fluid} />
+            <div className="header-overlay" />
             <h1 className="section-headline article-title">{post.title}</h1>
           </div>
           <Container fluid>
@@ -318,7 +317,7 @@ class ArticleTemplate extends React.Component {
           <LibraryThumbnails related={post} />
         </div>
 
-        <EmailCapture />
+        <EmailCapture color={"#fdfc71"} text={"#000"} />
         <ResourcesMarquee />
         <SoftFooterCta
           background={softFooterBg}

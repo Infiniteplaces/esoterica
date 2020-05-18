@@ -46,11 +46,11 @@ module.exports = {
       resolve: "gatsby-plugin-firebase",
       options: {
         credentials: {
-          apiKey: "AIzaSyDeAp-RVU8Rq5mzeANpV5169tYHJzmzXKY",
+          apiKey: "AIzaSyAaGS6kL9ofgW25lKpU19qjyHcZJpufROU",
           authDomain: "esoterica-capital.netlify.app",
-          projectId: "esotericawebsite",
-          storageBucket: "esotericawebsite.appspot.com",
-          messagingSenderId: "118569009688",
+          databaseURL: "https://esoweb.firebaseio.com",
+          projectId: "esoweb",
+          messagingSenderId: "1068499925024",
         },
       },
     },

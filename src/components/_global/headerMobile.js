@@ -35,7 +35,7 @@ const LINKMAP = [
     dropdownLinks: [
       {
         title: "Exchange Traded Funds",
-        link: "/investor-solutions/exchange-traded-funds",
+        link: "/investor-solutions/exchange-traded-funds/wugi",
       },
       {
         title: "Advisor Services",
@@ -61,8 +61,8 @@ const LINKMAP = [
         link: "/resources/library",
       },
       {
-        title: "Educational Writing",
-        link: "/resources/educational-writing",
+        title: "White Papers",
+        link: "/resources/white-papers",
       },
     ],
   },

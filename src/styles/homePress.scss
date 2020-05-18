@@ -36,6 +36,16 @@
         display: flex;
         margin: 30px auto;
       }
+      a {
+        background-color: $transparent;
+        color: $black;
+        transition: all 250ms Cubic-bezier(0.33, 1, 0.33, 1);
+        &:hover {
+          background-color: $black;
+          color: $yellow;
+          transition: all 250ms Cubic-bezier(0.33, 1, 0.33, 1);
+        }
+      }
       @media (max-width: map-get($grid-breakpoints,md)) {
         h1,
         h2 {

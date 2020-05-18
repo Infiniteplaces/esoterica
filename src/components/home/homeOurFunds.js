@@ -19,9 +19,8 @@ const HomeOurFunds = ({}) => {
           md="8"
           className="px-0 px-md-2 d-flex flex-column align-items-center justify-content-center"
         >
-          <h1 className="section">
-            The new digital economy  is not a light switch. It’s an evolution.
-          </h1>
+          <h3>A Wave of Growth in the Digital Economy is Coming</h3>
+          <h1 className="section">We got you. You got this.</h1>
           <a
             className="button secondary"
             href="https://www.esotericacap.com"

@@ -9,9 +9,6 @@ import SEO from "../../../components/_global/seo"
 import PreviewPill from "../../../components/investorSolutions/previewPill"
 import EmailPill from "../../../components/investorSolutions/emailPill"
 
-import SoftFooterCta from "../../../components/_global/softFooterCta"
-import softFooterBg from "../../../images/investorSolutions/investorSolutionsFooterCta_2.png"
-
 import LibraryFeatured from "../../../components/resources/libraryFeatured"
 
 class ExchangeTradedFundsPage extends React.Component {
@@ -91,13 +88,6 @@ class ExchangeTradedFundsPage extends React.Component {
           backgroundColor={"#fdfc71"}
           textColor={"black"}
           borderColor={"black"}
-        />
-        <SoftFooterCta
-          background={softFooterBg}
-          text={"Steady stream of the best financial content"}
-          ctaLead={"Check out the"}
-          cta={"Library"}
-          link={"/resources/library"}
         />
       </Layout>
     )

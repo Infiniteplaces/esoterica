@@ -16,7 +16,7 @@ const LibraryFourPost = ({ posts, color = "#fdfc71", featured = false }) => {
       title: "Let's Talk 5G",
       description: {
         description:
-          "The 5th generation in cellular wireless will create a new digital economy. We’re capturing the growth.",
+          "The world is on a fast track to a 5G-enabled digital economy. We are capturing the growth.",
       },
       slug: "/investor-solutions/our-newest-fund",
     }
@@ -68,7 +68,7 @@ const LibraryFourPost = ({ posts, color = "#fdfc71", featured = false }) => {
                         })
                       : ""}
                   </div>
-                  <h4 className="post-title">{f2.title}</h4>
+                  <span className="post-title">{f2.title}</span>
                 </div>
               </Link>
             </div>
@@ -95,7 +95,7 @@ const LibraryFourPost = ({ posts, color = "#fdfc71", featured = false }) => {
                         })
                       : ""}
                   </div>
-                  <h4 className="post-title">{f3.title}</h4>
+                  <span className="post-title">{f3.title}</span>
                 </div>
               </Link>
             </div>

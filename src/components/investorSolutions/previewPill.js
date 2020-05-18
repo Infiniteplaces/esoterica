@@ -13,8 +13,8 @@ const PreviewPill = ({
   tags = null,
 }) => {
   return (
-    <Row id="previewPill">
-      <Col>
+    <Row id="previewPill" className="px-0">
+      <Col className="px-0">
         {externalLink ? (
           <a href={link}>
             <div

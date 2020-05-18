@@ -45,8 +45,8 @@ const AboutPage = () => {
                 <h2 className="text">
                   We’re sharing our experience to help others invest more
                   intelligently, from the institutional investor to those just
-                  starting out. Through asset management, our goal is to make
-                  investing simple.
+                  starting out. Through our asset management products and
+                  solutions, our goal is to make investing simple.
                 </h2>
               </div>
             </Col>
@@ -61,12 +61,12 @@ const AboutPage = () => {
                 </h1>
                 <div className="body-copy">
                   The world is changing quickly. We have the experience to help
-                  make sure you’re on the right side of that. Our investments
-                  are based in the 5th generation of wireless technology, the
-                  need for which has become even more apparent in 2020. And we
-                  know that the first step towards building wealth is wealth
-                  preservation. Our core product is an asset allocation solution
-                  that rotates between stocks and bonds, to better returns with
+                  make sure you’re on the right side of that. Our investment
+                  themes revolve around the digital economy which is manifesting
+                  itself even more in our lives in 2020. And we know that the
+                  first step towards building wealth is wealth preservation. Our
+                  core product is an asset allocation solution that rotates
+                  between global major asset classes, to better returns with
                   less downside risk.
                 </div>
               </Col>

@@ -34,33 +34,33 @@ class InvestorSolutionsPage extends React.Component {
         <div id="investorSolutions">
           <div className="hero">
             <Img className="hero-img" fluid={heroImage} />
+            <div className="overlay" />
             <div className="hero-title">
-              <h1 className="section">Investor Solutions</h1>
-              <img src={arrow} alt="" className="arrow" />
+              <div className="d-flex">
+                <h1 className="section">Investor Solutions</h1>
+                <img src={arrow} alt="" className="arrow" />
+              </div>
+              <div className="my-5 w-75">
+                <h2>
+                  We operate as an extension of you.
+                  <br />
+                  Offering a range of investment solutions.
+                  <br />
+                  We’re here to help make the most of your financial future by
+                  getting ahead of it.
+                </h2>
+              </div>
             </div>
           </div>
-          <Container fluid>
-            <Row className="header-row">
-              <Col>
-                <div>
-                  <p>
-                    We offer a range of investor solutions, with an actively
-                    managed ETF at the center of our line-up. For each of these
-                    offerings, we operate as an extension of you, making
-                    ourselves available to our clients and providing personal
-                    service.
-                  </p>
-                </div>
-              </Col>
-            </Row>
+          <Container fluid className="px-0">
             <PreviewPill
               title={"Exchange Traded Funds"}
               text={
                 "We manage active, thematic ETFs that capture growth in the new digital economy enabled by the onset of 5G."
               }
-              bgColor={"#FDFC71"}
+              bgColor={"#FAEEAC"}
               textColor={"#000"}
-              link={"/investor-solutions/exchange-traded-funds"}
+              link={"/investor-solutions/exchange-traded-funds/wugi"}
               img={etf_illus}
             />
             <PreviewPill
@@ -68,7 +68,7 @@ class InvestorSolutionsPage extends React.Component {
               text={
                 "We’re committed to supporting financial advisors and registered investment advisors through content and accessibility to our investment professionals."
               }
-              bgColor={"#8BCDFC"}
+              bgColor={"#F9D879"}
               textColor={"#000"}
               link={"/investor-solutions/advisor-services"}
               img={as_illus}
@@ -78,7 +78,7 @@ class InvestorSolutionsPage extends React.Component {
               text={
                 "Quite simply, we help you build wealth. We help you invest intelligently with educational content and relevant, timely market takeaways."
               }
-              bgColor={"#FC5C58"}
+              bgColor={"#F6C651"}
               textColor={"#000"}
               link={"/investor-solutions/individual-investors"}
               img={ind_illus}
@@ -88,26 +88,14 @@ class InvestorSolutionsPage extends React.Component {
               text={
                 "We serve institutional investors through separate accounts as well as investment products like exchange traded funds and mutual funds."
               }
-              bgColor={"#85C65A"}
+              bgColor={"#FDFB86"}
               textColor={"#000"}
               link={"/investor-solutions/institutional-investors"}
               img={ins_illus}
             />
             <EmailPill />
           </Container>
-          <LibraryFeatured
-            posts={featured}
-            backgroundColor={"#fdfc71"}
-            textColor={"black"}
-            borderColor={"black"}
-          />
-          <SoftFooterCta
-            background={softFooterBg}
-            text={"For timely, relevant financial content"}
-            ctaLead={"Check out the"}
-            cta={"Library"}
-            link={"/resources/library"}
-          />
+          <LibraryFeatured posts={featured} />
         </div>
       </Layout>
     )

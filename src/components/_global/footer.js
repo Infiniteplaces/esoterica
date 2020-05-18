@@ -13,27 +13,46 @@ const Footer = ({}) => {
       <Container fluid className="footer-container">
         <Row className="h-50">
           <Col className="d-flex flex-column">
-            <Link to="/about">About</Link>
-            <Link to="/">Privacy Policy</Link>
-            <Link to="/terms-of-service">Terms</Link>
+            <span>
+              <Link to="/contact">Contact</Link>
+            </span>
+
+            <span>
+              <Link to="/">Privacy Policy</Link>
+            </span>
+            <span>
+              <Link to="/terms-of-service">Terms and Conditions</Link>
+            </span>
           </Col>
           <Col className="d-flex flex-column">
-            <Link to="/">Team</Link>
-            <Link to="/">Careers</Link>
-            <Link to="/">Contact</Link>
+            <span>
+              <Link to="/resources/library">Library</Link>
+            </span>
+            <span>
+              <Link to="/">White Papers</Link>
+            </span>
+            <span>
+              <Link to="/">Site Credit</Link>
+            </span>
           </Col>
           <Col className="d-flex flex-column">
-            <a href="https://www.youtube.com/channel/UClBaJptKDg9-SkmTNfzaZUw">
-              Youtube
-            </a>
-            <a href="https://twitter.com/esotericacap?lang=en">Twitter</a>
-            <a href="https://www.linkedin.com/company/esoterica-capital/about/">
-              Linkedin
-            </a>
+            <span>
+              <a href="https://www.youtube.com/channel/UClBaJptKDg9-SkmTNfzaZUw">
+                Youtube
+              </a>
+            </span>
+            <span>
+              <a href="https://twitter.com/esotericacap?lang=en">Twitter</a>
+            </span>
+            <span>
+              <a href="https://www.linkedin.com/company/esoterica-capital/about/">
+                Linkedin
+              </a>
+            </span>
           </Col>
           <Col className="d-flex flex-column text-faded">
             <p>© 2020 Esoterica</p>
-            <p>Capital Management</p>
+            <p>Capital LLC</p>
             <p>All Rights Reserved</p>
           </Col>
         </Row>

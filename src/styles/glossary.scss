@@ -1,13 +1,20 @@
 #glossaryPage {
+  ::selection {
+    color: $transparent;
+    text-shadow: 0px 0px 7px $black;
+  }
   .hero-title {
     height: 250px;
+    h1 {
+      font-size: 88px;
+    }
     display: flex;
     align-items: flex-end;
-    padding: 0px 20px;
+    padding: 0px 46px;
     margin-bottom: 50px;
     img {
-      margin-left: 45px;
-      padding-bottom: 20px;
+      margin-left: 48px;
+      padding-bottom: 8px;
       display: flex;
       align-items: center;
     }
@@ -18,7 +25,7 @@
   .glossaryPreviewRow {
     overflow: hidden;
     white-space: nowrap;
-    padding: 16px 20px;
+    padding: 16px 32px;
     margin: 16px 0px;
     border-bottom: 1px solid $black;
     transition: all 150ms linear;
@@ -36,6 +43,7 @@
       span {
         display: flex;
         h1 {
+          font-size: 88px;
           margin: 0px 24px;
         }
       }

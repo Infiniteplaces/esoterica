@@ -80,7 +80,7 @@ const LibraryThumbnails = ({ mobile, related = false, recent = false }) => {
             </div>
           </Link>
           <Link to={"/resources/library/" + i.slug}>
-            <div>{i.title}</div>
+            <span className="thumbnail-title">{i.title}</span>
           </Link>
         </div>
       </Col>

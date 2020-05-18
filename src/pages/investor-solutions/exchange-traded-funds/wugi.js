@@ -24,31 +24,30 @@ const WUGI = ({}) => {
     // storageRef.getDownloadURL().then(function(url) {
     //   console.log(url)
     // })
-    firebase
-      .storage()
-      .ref("/Esoterica_NXTG_ECONOMY_ETF_WUGI_HOLDINGS_20200514.csv")
-      .getDownloadURL()
-      .then(url => {
-        console.log(url)
-        fetch(url, {
-          method: "GET", // *GET, POST, PUT, DELETE, etc.
-          mode: "no-cors", // no-cors, *cors, same-origin
-          headers: {
-            "Content-Type": "text/csv",
-          },
-        }).then(response => {
-          console.log(response)
-          console.log(response.headers.get("Content-Type"))
-          console.log(response.headers.get("Date"))
-          console.log(response.status)
-          console.log(response.statusText)
-          console.log(response.type)
-          console.log(response.url)
-        })
+    let daily = firebase
+      .firestore()
+      .collection("01-APR-20")
+      .doc("BBH_Position")
+      .collection("data")
+      .doc("1")
+
+    daily
+      .get()
+      .then(
+        function(doc) {
+          if (doc.exists) {
+            console.log(doc.data())
+            // this.props.setData(doc.data().doc)
+          } else {
+            console.log("Data not in Firebase")
+          }
+        }.bind(this)
+      )
+      .catch(function(error) {
+        console.log("Error getting document:", error)
       })
   }, [])
 
-  console.log(data)
   return (
     <Layout>
       <SEO title="WUGI 5G" />

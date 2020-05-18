@@ -5,7 +5,7 @@ footer {
     text-shadow: 0px 0px 7px $white;
   }
   .footer-container {
-    padding: 56px 20px;
+    padding: 56px 46px;
     height: 437px;
     width: 100%;
     background-color: $black;
@@ -17,7 +17,7 @@ footer {
   .announcement-bar {
     height: 40px;
     width: 100%;
-    padding: 10px 20px 5px;
+    padding: 10px 46px 5px;
     background-color: $yellow;
     display: flex;
     justify-content: space-between;
@@ -80,7 +80,7 @@ footer {
     }
   }
   .disclaimer {
-    padding: 4px 20px;
+    padding: 4px 46px;
     font-size: 0.75rem !important;
     line-height: 1.25rem !important;
     background-color: $black;
@@ -88,6 +88,16 @@ footer {
     color: $white;
     p {
       margin: 15px 0px;
+    }
+  }
+  a {
+    background-color: $transparent;
+    color: $white;
+    transition: all 250ms Cubic-bezier(0.33, 1, 0.33, 1);
+    &:hover {
+      background-color: $yellow;
+      color: $black;
+      transition: all 250ms Cubic-bezier(0.33, 1, 0.33, 1);
     }
   }
 }

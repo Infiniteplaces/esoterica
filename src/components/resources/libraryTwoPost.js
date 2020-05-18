@@ -10,7 +10,6 @@ const LibraryTwoPost = ({ posts, mobile }) => {
   }
 
   let display = posts.map((i, idx) => {
-    console.log(i)
     return (
       <Col key={idx} xs="6">
         <div className="post-container">
@@ -41,7 +40,7 @@ const LibraryTwoPost = ({ posts, mobile }) => {
               {mobile ? (
                 <div className="post-title body-small">{i.node.title}</div>
               ) : (
-                <h3 className="post-title">{i.node.title}</h3>
+                <span className="cta post-title">{i.node.title}</span>
               )}
               <div className="underline">Read More</div>
             </div>

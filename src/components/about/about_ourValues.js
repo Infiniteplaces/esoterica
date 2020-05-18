@@ -17,11 +17,12 @@ const OurValues = ({}) => {
           <h3>Our Values</h3>
           <h1 className="section">Let’s make the future bright.</h1>
           <div>
-            Our leadership team has managed some of the world’s most prominent
-            funds. We’re now shifting our focus to ensure that the opportunity
-            to create a better future gets passed along. It’s our goal to level
-            the playing field by sharing our knowledge, the insights and tools
-            previously reserved for large, institutional investors.
+            Our leadership team has worked at some of the world’s most prominent
+            asset management companies and institutional investors. We’re now
+            shifting our focus to ensure that the opportunity to create a better
+            future gets passed along. It’s our goal to level the playing field
+            by sharing our knowledge, insights and tools previously reserved for
+            large institutional investors.
           </div>
           <Link className="button secondary" to="/about">
             <span>Join our Team</span>

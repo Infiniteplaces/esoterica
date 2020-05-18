@@ -67,22 +67,22 @@ const ResourcesMarquee = ({}) => {
       </Row>
       <Row className="marquee-row">
         <Col md={{}} className="marquee-container">
-          <Link to={"/resources/educational-writing/" + nodes[0].slug}>
+          <Link to={"/resources/white-papers/" + nodes[0].slug}>
             <div className="marquee">
               <h1 className="text-path-one">{blockOne}</h1>
             </div>
           </Link>
-          <Link to={"/resources/educational-writing/" + nodes[1].slug}>
+          <Link to={"/resources/white-papers/" + nodes[1].slug}>
             <div className="marquee">
               <h1 className="text-path-one">{blockTwo}</h1>
             </div>
           </Link>
-          <Link to={"/resources/educational-writing/" + nodes[2].slug}>
+          <Link to={"/resources/white-papers/" + nodes[2].slug}>
             <div className="marquee">
               <h1 className="text-path-one">{blockThree}</h1>
             </div>
           </Link>
-          <Link to={"/resources/educational-writing/" + nodes[3].slug}>
+          <Link to={"/resources/white-papers/" + nodes[3].slug}>
             <div className="marquee">
               <h1 className="text-path-one">{blockFour}</h1>
             </div>
@@ -92,8 +92,8 @@ const ResourcesMarquee = ({}) => {
       <Row className="cta-row">
         <Col className="d-flex justify-content-center align-items-center">
           <div className="cta">
-            <Link to="/resources/educational-writing" className="underline">
-              Our Educational Writings
+            <Link to="/resources/white-papers" className="underline">
+              Our White Papers
             </Link>
           </div>
         </Col>

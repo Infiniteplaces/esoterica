@@ -38,7 +38,7 @@ const LINKMAP = [
     dropdownLinks: [
       {
         title: "Exchange Traded Funds",
-        link: "/investor-solutions/exchange-traded-funds",
+        link: "/investor-solutions/exchange-traded-funds/wugi",
       },
       {
         title: "Advisor Services",
@@ -64,19 +64,8 @@ const LINKMAP = [
         link: "/resources/library",
       },
       {
-        title: (
-          <div>
-            <span className="mr-2">Educational</span>
-            <span>Writing</span>
-          </div>
-        ),
-        link: "/resources/educational-writing",
-      },
-      {
-        title: "Newsletter",
-        link:
-          "https://us20.campaign-archive.com/home/?u=8d8f193b866b9cfa8f79d00df&id=025d3ca8d6",
-        external: true,
+        title: "White Papers",
+        link: "/resources/white-papers",
       },
     ],
   },

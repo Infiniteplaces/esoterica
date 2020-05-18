@@ -34,11 +34,11 @@ class GlossaryPage extends React.Component {
 
     return (
       <Layout location={this.props.location}>
-        <SEO title="Educational Writing" />
+        <SEO title="White Papers" />
         <div id="glossaryPage">
           <div className="hero">
             <div className="hero-title">
-              <h1 className="section">Educational Writing</h1>
+              <h1 className="section">White Papers</h1>
               <img src={arrow} alt="" className="arrow" />
             </div>
           </div>
@@ -96,7 +96,7 @@ export const glossaryPageQuery = graphql`
             fluid(resizingBehavior: SCALE) {
               ...GatsbyContentfulFluid
             }
-            fixed(width: 250) {
+            fixed(width: 200) {
               ...GatsbyContentfulFixed
             }
           }

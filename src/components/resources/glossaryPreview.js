@@ -20,7 +20,7 @@ const GlossaryPreview = ({ glossary }) => {
       <div key={idx} className="glossaryPreviewRow">
         <Link
           className="previewItem"
-          to={"/resources/educational-writing/" + node.slug}
+          to={"/resources/white-papers/" + node.slug}
         >
           {article}
         </Link>

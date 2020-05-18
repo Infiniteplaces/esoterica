@@ -37,15 +37,6 @@ class IndexPage extends React.Component {
         <HomePress />
         {mobile ? <EmailCapture /> : ""}
         <ResourcesMarquee />
-        <SoftFooterCta
-          background={softFooterBg}
-          text={
-            "The world is changing. We’re here to help you make the most of your financial future by getting ahead of it."
-          }
-          ctaLead={""}
-          cta={"Learn More"}
-          link={"/investor-solutions"}
-        />
       </Layout>
     )
   }

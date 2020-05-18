@@ -19,6 +19,9 @@ import LibraryFeatured from "../components/resources/libraryFeatured"
 
 import exit from "../images/icons/list-exit.svg"
 import arrow from "../images/icons/arrow-bent.svg"
+import arrow_right from "../images/icons/arrow-right.svg"
+import arrow_left from "../images/icons/arrow-left.svg"
+import search from "../images/icons/search.svg"
 import softFooterBg from "../images/investorSolutions/investorSolutionsFooterCta.png"
 
 class LibraryIndex extends React.Component {
@@ -113,7 +116,7 @@ class LibraryIndex extends React.Component {
       numberOfPages > 1 ? (
         <div className="pagination">
           <div className="eyebrow">PAGE</div>
-          <div className="pages body-small">
+          <div className="pages">
             <div className="page-back">
               {previousPagePath !== "" ? (
                 <Link to={previousPagePath}>Previous</Link>
@@ -154,11 +157,11 @@ class LibraryIndex extends React.Component {
         <LibraryTwoPost posts={pageArticles.slice(0, 2)} />
         <LibraryTwoPost posts={pageArticles.slice(2, 4)} />
         <LibraryTwoPost posts={pageArticles.slice(4, 6)} />
-        <LibraryFeatured posts={featured} />
-        <EmailCapture />
         <LibraryTwoPost posts={pageArticles.slice(6, 8)} />
         <LibraryTwoPost posts={pageArticles.slice(8, 10)} />
         {pagination}
+        <LibraryFeatured posts={featured} />
+        <EmailCapture />
       </>
     )
 
@@ -171,10 +174,22 @@ class LibraryIndex extends React.Component {
         <SEO title="Library" />
         <div id="libraryPage">
           <div className="hero">
+            <div className="overlay" />
             <Img className="hero-img" fluid={heroImage} />
             <div className="hero-title">
-              <h1 className="section">Library</h1>
-              <img src={arrow} alt="" className="arrow" />
+              <div className="d-flex">
+                <h1 className="section">Library</h1>
+                <img src={arrow} alt="" className="arrow" />
+              </div>
+              <div className="my-5">
+                <h2>
+                  Original research is our DNA.
+                  <br />
+                  Sharing it with you betters us.
+                  <br />
+                  Let’s have a conversation…
+                </h2>
+              </div>
             </div>
           </div>
           <div className="body-container">
@@ -185,7 +200,7 @@ class LibraryIndex extends React.Component {
                     <img
                       src={exit}
                       alt=""
-                      className="mr-2"
+                      className="mr-2 mb-2"
                       style={{
                         cursor: "pointer",
                       }}
@@ -199,14 +214,17 @@ class LibraryIndex extends React.Component {
                     {tagOptions}
                   </div>
                 ) : (
-                  <h4
-                    className="underline"
-                    onClick={() =>
-                      this.setState({ showFilterTags: !showFilterTags })
-                    }
-                  >
-                    Filter by Type
-                  </h4>
+                  <>
+                    <h4
+                      className="underline"
+                      onClick={() =>
+                        this.setState({ showFilterTags: !showFilterTags })
+                      }
+                    >
+                      Filter by Type
+                      <img src={search} alt="" width="24" className="ml-3" />
+                    </h4>
+                  </>
                 )}
               </div>
             </div>

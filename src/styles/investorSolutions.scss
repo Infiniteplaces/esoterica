@@ -7,6 +7,15 @@
       color: $transparent;
       text-shadow: 0px 0px 7px $white;
     }
+    .overlay {
+      position: absolute;
+      z-index: 15;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.25);
+    }
     .hero-img {
       position: absolute;
       top: 0;
@@ -14,12 +23,13 @@
       width: 100%;
     }
     .hero-title {
+      z-index: 20;
       position: absolute;
-      padding: 150px 20px 0px;
+      padding: 150px 46px 0px;
       top: 0;
       left: 0;
       display: flex;
-      align-items: center;
+      flex-direction: column;
       .arrow {
         margin-left: 45px;
         padding-top: 20px;
@@ -64,13 +74,10 @@
     }
     .title {
       position: absolute;
-      bottom: 20px;
-      left: 20px;
+      bottom: 46px;
+      left: 46px;
       color: $white;
     }
-  }
-  a:hover {
-    font-weight: bold;
   }
   .header-row {
     margin: 50px 0px 20px;
@@ -86,16 +93,47 @@
       margin-bottom: 30px;
       padding: 0px 10px;
     }
+    a {
+      background-color: $transparent;
+      color: $black;
+      transition: all 250ms Cubic-bezier(0.33, 1, 0.33, 1);
+      &:hover {
+        background-color: $yellow;
+        color: $black;
+        transition: all 250ms Cubic-bezier(0.33, 1, 0.33, 1);
+      }
+    }
   }
   .contact-row {
+    padding-left: 26px;
+    padding-right: 26px;
     margin-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+    .call-cta,
+    .mail-cta {
+      .icon-white {
+        display: none;
+      }
+      .icon-black {
+        display: block;
+      }
+      &:hover {
+        .icon-white {
+          display: block;
+        }
+        .icon-black {
+          display: none;
+        }
+      }
+    }
   }
 }
 #previewPill {
   height: 410px;
-  margin-bottom: 16px;
+
   #pill {
-    border-radius: 6px;
+    border-radius: 0px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -132,7 +170,7 @@
     height: 320px;
     margin-bottom: 15px;
     #pill {
-      border-radius: 6px;
+      border-radius: 0px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -148,9 +186,9 @@
   height: 410px;
   margin-bottom: 30px;
   #pill {
-    border-radius: 6px;
+    border-radius: 0px;
     height: 100%;
-    border: 1px solid $black;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
