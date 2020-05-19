@@ -18,11 +18,11 @@ const LibraryFourPost = ({ posts, color = "#fdfc71", featured = false }) => {
         description:
           "The world is on a fast track to a 5G-enabled digital economy. We are capturing the growth.",
       },
-      slug: "/investor-solutions/our-newest-fund",
+      slug: "/our-solutions/our-newest-fund",
     }
     f1 = {
       title: "Let's Talk Asset Allocation",
-      slug: "/investor-solutions/lets-talk-asset-allocation",
+      slug: "/our-solutions/lets-talk-asset-allocation",
     }
   }
   return (

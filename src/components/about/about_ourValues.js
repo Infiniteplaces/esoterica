@@ -24,9 +24,12 @@ const OurValues = ({}) => {
             by sharing our knowledge, insights and tools previously reserved for
             large institutional investors.
           </div>
-          <Link className="button secondary" to="/about">
+          <a
+            className="button secondary"
+            href="mailto:careers@esotericacap.com"
+          >
             <span>Join our Team</span>
-          </Link>
+          </a>
         </Col>
         <Col
           md={{ size: 5 }}

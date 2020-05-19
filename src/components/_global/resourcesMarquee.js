@@ -13,7 +13,7 @@ const ResourcesMarquee = ({}) => {
           slug
           title
           heroImage {
-            fixed(width: 175) {
+            fixed(width: 165) {
               ...GatsbyContentfulFixed
             }
           }
@@ -61,7 +61,7 @@ const ResourcesMarquee = ({}) => {
       <Row className="header-row">
         <Col className="d-flex justify-content-center align-items-center">
           <h4 className="text-white">
-            Articles & educational writing for smarter investing.
+            Articles and educational writing for smarter investing.
           </h4>
         </Col>
       </Row>

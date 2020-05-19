@@ -18,7 +18,7 @@ const HomeHero = ({}) => {
             <br />
             investment solutions rooted in a new digital economy.
           </h3>
-          <Link className="button primary" to="/investor-solutions">
+          <Link className="button primary" to="/our-solutions">
             Learn More
           </Link>
         </Col>

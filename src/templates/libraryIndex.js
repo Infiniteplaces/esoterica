@@ -151,14 +151,16 @@ class LibraryIndex extends React.Component {
         ""
       )
 
+    console.log(pageArticles)
+
     //// Create unfiltered page view
     let unfiltered = (
       <>
-        <LibraryTwoPost posts={pageArticles.slice(0, 2)} />
-        <LibraryTwoPost posts={pageArticles.slice(2, 4)} />
-        <LibraryTwoPost posts={pageArticles.slice(4, 6)} />
-        <LibraryTwoPost posts={pageArticles.slice(6, 8)} />
-        <LibraryTwoPost posts={pageArticles.slice(8, 10)} />
+        <LibraryTwoPost posts={pageArticles.slice(0, 3)} />
+        <LibraryTwoPost posts={pageArticles.slice(3, 6)} />
+        <LibraryTwoPost posts={pageArticles.slice(6, 9)} />
+        <LibraryTwoPost posts={pageArticles.slice(9, 12)} />
+        <LibraryTwoPost posts={pageArticles.slice(12, 15)} />
         {pagination}
         <LibraryFeatured posts={featured} />
         <EmailCapture color={"#fdfc71"} text={"#000"} />

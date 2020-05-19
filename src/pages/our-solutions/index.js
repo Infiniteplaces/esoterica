@@ -37,15 +37,11 @@ class InvestorSolutionsPage extends React.Component {
             <div className="overlay" />
             <div className="hero-title">
               <div className="d-flex">
-                <h1 className="section">Investor Solutions</h1>
+                <h1 className="section">Our Solutions</h1>
                 <img src={arrow} alt="" className="arrow" />
               </div>
               <div className="my-5 w-75">
                 <h2>
-                  We operate as an extension of you.
-                  <br />
-                  Offering a range of investment solutions.
-                  <br />
                   We’re here to help make the most of your financial future by
                   getting ahead of it.
                 </h2>
@@ -63,6 +59,7 @@ class InvestorSolutionsPage extends React.Component {
               externalLink
               link={"https://www.esotericacap.com"}
               img={etf_illus}
+              cta="Learn More"
             />
             <PreviewPill
               title={"Advisor Services"}
@@ -71,8 +68,9 @@ class InvestorSolutionsPage extends React.Component {
               }
               bgColor={"#F9D879"}
               textColor={"#000"}
-              link={"/investor-solutions/advisor-services"}
+              link={"/our-solutions/advisor-services"}
               img={as_illus}
+              cta="Learn More"
             />
             <PreviewPill
               title={"Individual Investors"}
@@ -81,8 +79,9 @@ class InvestorSolutionsPage extends React.Component {
               }
               bgColor={"#F6C651"}
               textColor={"#000"}
-              link={"/investor-solutions/individual-investors"}
+              link={"/our-solutions/individual-investors"}
               img={ind_illus}
+              cta="Learn More"
             />
             <PreviewPill
               title={"Institutional Investors"}
@@ -91,8 +90,9 @@ class InvestorSolutionsPage extends React.Component {
               }
               bgColor={"#FDFB86"}
               textColor={"#000"}
-              link={"/investor-solutions/institutional-investors"}
+              link={"/our-solutions/institutional-investors"}
               img={ins_illus}
+              cta="Learn More"
             />
             <EmailPill />
           </Container>

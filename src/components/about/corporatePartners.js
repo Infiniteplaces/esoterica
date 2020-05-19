@@ -22,21 +22,21 @@ const CorporatePartners = ({}) => {
           xs="6"
           md="4"
         >
-          <img src={bbh_logo} alt="" width="136" />
+          <img src={bbh_logo} alt="" width="100" />
         </Col>
         <Col
           className="d-flex flex-column align-items-center justify-content-between mb-5"
           xs="6"
           md="4"
         >
-          <img src={via_logo} alt="" width="136" />
+          <img src={via_logo} alt="" width="156" />
         </Col>
         <Col
           className="d-flex flex-column align-items-center justify-content-between mb-5"
           xs="6"
           md="4"
         >
-          <img src={cc_logo} alt="" width="136" />
+          <img src={cc_logo} alt="" width="156" />
         </Col>
         <Col
           className="d-flex flex-column align-items-center justify-content-between mb-5"
@@ -50,7 +50,7 @@ const CorporatePartners = ({}) => {
           xs="6"
           md="4"
         >
-          <img src={foreside_logo} alt="" width="136" />
+          <img src={foreside_logo} alt="" width="156" />
         </Col>
         <Col
           className="d-flex flex-column align-items-center justify-content-between mb-5"

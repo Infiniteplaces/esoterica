@@ -16,7 +16,6 @@ const AboutInvestorSolutions = ({}) => {
         <Col md="7">
           <Row className="title-row">
             <Col>
-              <h3>Investor Solutions</h3>
               <h1>We take your growth personally.</h1>
             </Col>
           </Row>
@@ -26,7 +25,7 @@ const AboutInvestorSolutions = ({}) => {
               className="d-flex justify-content-center align-items-center text-center mb-5"
             >
               <Link
-                to="/investor-solutions/exchange-traded-funds"
+                to="/our-solutions/exchange-traded-funds"
                 className="d-flex flex-column justify-content-between h-100"
               >
                 <img src={etf_icon} alt="" className="pt-0 pt-md-5" />
@@ -38,7 +37,7 @@ const AboutInvestorSolutions = ({}) => {
               className="d-flex justify-content-center align-items-center text-center mb-5"
             >
               <Link
-                to="/investor-solutions/advisor-services"
+                to="/our-solutions/advisor-services"
                 className="d-flex flex-column justify-content-between h-100"
               >
                 <img src={as_icon} alt="" />
@@ -50,7 +49,7 @@ const AboutInvestorSolutions = ({}) => {
               className="d-flex justify-content-center align-items-center text-center"
             >
               <Link
-                to="/investor-solutions/institutional-investors"
+                to="/our-solutions/institutional-investors"
                 className="d-flex flex-column justify-content-between h-100"
               >
                 <img src={ins_icon} alt="" className="pt-0 pt-md-4" />
@@ -62,7 +61,7 @@ const AboutInvestorSolutions = ({}) => {
               className="d-flex justify-content-center align-items-center text-center"
             >
               <Link
-                to="/investor-solutions/individual-investors"
+                to="/our-solutions/individual-investors"
                 className="d-flex flex-column justify-content-between h-100 mt-5 mt-md-0"
               >
                 <img src={ind_icon} alt="" />

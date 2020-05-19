@@ -47,10 +47,13 @@ class GlossaryPage extends React.Component {
             <LibraryFeatured posts={featured} />
             <EmailCapture />
             <SoftFooterCta
-              text={"Steady stream of the best financial content"}
-              ctaLead={"Check out the"}
-              cta={"Library"}
-              link={"/resources/library"}
+              background={softFooterBg}
+              text={
+                "The world is changing. We’re here to help you make the most of your financial future by getting ahead of it."
+              }
+              ctaLead={""}
+              cta={"Learn More"}
+              link={"/our-solutions"}
             />
           </div>
         </div>

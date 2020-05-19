@@ -46,7 +46,7 @@ class HomePress extends Component {
     let pressClippings = [
       {
         quote:
-          "WUGI takes high-conviction positions in companies …. selected based on a combination of top-down and bottom-up research",
+          "WUGI takes high-conviction positions in companies … based on a combination of top-down and bottom-up research",
         cta_label: "Read the Article",
         cta_link:
           "https://www.etf.com/sections/daily-etf-watch/new-issuer-debuts-active-5g-etf?nopaging=1",

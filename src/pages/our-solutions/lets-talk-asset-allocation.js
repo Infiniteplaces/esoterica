@@ -43,8 +43,8 @@ class LetsTalkAssetAllocation extends React.Component {
                   managed accounts and investment products (funds, ETFs).
                 </h2>
                 <p>
-                  Our asset allocation solution rotates between stocks and
-                  bonds, as market conditions suggest. There is always some
+                  Our asset allocation solution rotates between global asset
+                  classes, as market conditions suggest. There is always some
                   segment of the market that is outperforming, and our asset
                   allocation investment solution seeks to identify and capture
                   this outperformance by dynamically adapting the risk profile
@@ -54,16 +54,16 @@ class LetsTalkAssetAllocation extends React.Component {
                   through the dynamic allocation process.
                 </p>
                 <p>
-                  We use monthly re-balancing to assess the current macro
+                  We use a systematic approach to assessing the current macro
                   environment from a variety of perspectives: both fundamental
                   and technical. We focus on the behavior of high beta equities
-                  versus low beta, equal weighted indices relative to
-                  capitalization weighted indices, the activity within the
+                  versus low beta, equal-weighted indices relative to
+                  capitalization-weighted indices, the activity within the
                   credit markets, the conduct of interest rates, exchange rates,
                   commodities, etc. We are looking for reinforcing “risk-on/off”
                   signals. The investment philosophy is simple and intuitive:
                   the more reinforcing the signal, the more aggressive our risk
-                  profile.
+                  profile
                 </p>
                 <h3>Learn More:</h3>
                 <ul>

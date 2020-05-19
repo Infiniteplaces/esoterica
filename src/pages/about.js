@@ -21,7 +21,7 @@ const AboutPage = () => {
   let marqueeText = [...Array(50).keys()].map((i, idx) => {
     return (
       <span key={idx}>
-        INVESTING SHOULD BE EASIER $ EVERYONE DESERVES A FINANCIAL FUTURE $ THIS
+        INVESTING SHOULD BE EASIER • EVERYONE DESERVES A FINANCIAL FUTURE • THIS
         IS NEXT GENERATION INVESTING
       </span>
     )
@@ -45,8 +45,8 @@ const AboutPage = () => {
                 <h2 className="text">
                   We’re sharing our experience to help others invest more
                   intelligently, from the institutional investor to those just
-                  starting out. Through our asset management products and
-                  solutions, our goal is to make investing simple.
+                  starting out. Through our asset management and solutions, our
+                  goal is to make investing simple.
                 </h2>
               </div>
             </Col>
@@ -60,13 +60,13 @@ const AboutPage = () => {
                   Leveraging decades of experience for a new world.
                 </h1>
                 <div className="body-copy">
-                  The world is changing quickly. We have the experience to help
+                  The world is changing rapidly. We have the experience to help
                   make sure you’re on the right side of that. Our investment
-                  themes revolve around the digital economy which is manifesting
-                  itself even more in our lives in 2020. And we know that the
-                  first step towards building wealth is wealth preservation. Our
-                  core product is an asset allocation solution that rotates
-                  between global major asset classes, to better returns with
+                  themes revolve around the digital economy which is now even
+                  more present in our lives. And, we also know that the first
+                  step towards building wealth is wealth preservation. So, a
+                  core product of ours is an asset allocation solution that
+                  rotates between major asset classes to better returns with
                   less downside risk.
                 </div>
               </Col>
@@ -87,7 +87,7 @@ const AboutPage = () => {
             }
             ctaLead={""}
             cta={"Learn More"}
-            link={"/investor-solutions"}
+            link={"/our-solutions"}
           />
         </div>
       </div>

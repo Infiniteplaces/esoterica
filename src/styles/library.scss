@@ -91,14 +91,14 @@
   .pagination {
     width: 100%;
     height: 100px;
-    margin: 96px 0px;
-    font-size: 2rem;
+    margin: 80px 0px;
+    font-size: 1.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     .eyebrow {
-      font-size: 1rem;
+      font-size: 0.8rem;
     }
     .pages {
       display: flex;
@@ -109,12 +109,12 @@
       .page-back {
         margin: 0px 30px;
         .disabled {
-          opacity: 0.7;
+          opacity: 0.35;
           cursor: default;
         }
       }
       .page-number {
-        opacity: 0.7;
+        opacity: 0.35;
         margin: 0px 8px;
         &.active {
           opacity: 1;
@@ -139,7 +139,7 @@
     .wrapper {
       height: 100%;
       width: 40%;
-      border-radius: 0px;
+      border-radius: 4px;
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
@@ -149,7 +149,7 @@
         width: 100%;
         // margin: auto;
         max-width: 200px;
-        border-radius: 0px;
+        border-radius: 4px;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -218,7 +218,7 @@
   }
   .container-image {
     height: 100%;
-    border-radius: 0px;
+    border-radius: 4px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -237,14 +237,14 @@
   .wrapper {
     overflow: hidden;
     width: 100%;
-    border-radius: 0px;
+    border-radius: 4px;
     position: relative;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     .post-container.tall {
       width: 100%;
-      border-radius: 0px;
+      border-radius: 4px;
       position: relative;
       background-position: center;
       background-repeat: no-repeat;
@@ -289,7 +289,7 @@
       .wrapper {
         height: 60%;
         width: 100%;
-        border-radius: 0px;
+        border-radius: 4px;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -297,7 +297,7 @@
         .container-image {
           height: 100%;
           width: 100%;
-          border-radius: 0px;
+          border-radius: 4px;
           background-position: center;
           background-repeat: no-repeat;
           background-size: cover;
@@ -383,13 +383,13 @@
   padding-right: 48px;
   .post-container {
     height: 40vh;
-    min-height: 450px;
+    min-height: 400px;
     max-height: 750px;
     overflow: hidden;
     .wrapper {
-      height: 75%;
+      height: 60%;
       width: 100%;
-      border-radius: 0px;
+      border-radius: 4px;
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
@@ -398,13 +398,13 @@
     .container-image {
       height: 100%;
       width: 100%;
-      border-radius: 0px;
+      border-radius: 4px;
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
     }
     .post-text-container {
-      height: 25%;
+      height: 40%;
       width: 100%;
       text-align: left;
       color: $black;
@@ -417,12 +417,13 @@
         justify-content: space-between;
         align-items: center;
         margin-top: 8px;
+        margin-bottom: 8px;
         .tag {
           width: auto;
           border: 1px solid $black;
           margin: 7px 7px 7px 0px;
-          padding: 4px 15px 2px;
-          font-size: 12px;
+          padding: 5px 12px 1px;
+          font-size: 10px;
           border-radius: 50px;
         }
         .publishDate {
@@ -432,8 +433,8 @@
           color: $white;
           border: 1px solid $black;
           margin: 7px 7px 7px 0px;
-          padding: 2px 15px 0px;
-          font-size: 12px;
+          padding: 5px 12px 1px;
+          font-size: 10px;
           border-radius: 50px;
         }
       }
@@ -468,7 +469,7 @@
       .container-image {
         height: 100px;
         width: 100%;
-        border-radius: 0px;
+        border-radius: 4px;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;

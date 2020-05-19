@@ -17,8 +17,7 @@ const EmailCapture = ({ color = "#000", text = "#fff" }) => {
           className="d-flex flex-column justify-content-center align-items-center"
         >
           <h3 style={{ color: text }}>
-            Get breakdowns of investment strategy, market takeaways, and the
-            most lucid takes on where things are headed.
+            Get the most lucid takes on where things are headed
           </h3>
 
           <Email header={false} color={color} text={text} />

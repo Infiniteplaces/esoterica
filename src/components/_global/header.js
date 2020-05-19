@@ -32,25 +32,25 @@ const LINKMAP = [
     dropdown: false,
   },
   {
-    title: "Investor Solutions",
-    link: "/investor-solutions",
+    title: "Our Solutions",
+    link: "/our-solutions",
     dropdown: true,
     dropdownLinks: [
       {
         title: "Exchange Traded Funds",
-        link: "/investor-solutions/exchange-traded-funds/wugi",
+        link: "/our-solutions/exchange-traded-funds/wugi",
       },
       {
         title: "Advisor Services",
-        link: "/investor-solutions/advisor-services",
+        link: "/our-solutions/advisor-services",
       },
       {
         title: "Individual Investors",
-        link: "/investor-solutions/individual-investors",
+        link: "/our-solutions/individual-investors",
       },
       {
         title: "Institutional Investors",
-        link: "/investor-solutions/institutional-investors",
+        link: "/our-solutions/institutional-investors",
       },
     ],
   },

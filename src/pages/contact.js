@@ -30,9 +30,9 @@ const ContactPage = () => (
           <div className="nav">
             Please contact us at
             <br />
-            866-979-1710 for
+            866-979-1710 or
             <br />
-            questions regarding funds.
+            <a href="mailto:sales@esotericacap.com">sales@esotericacap.com</a>
           </div>
           <div className="eyebrow">PRESS INQUIRIES</div>
           <div className="nav">
@@ -45,13 +45,11 @@ const ContactPage = () => (
         >
           <div className="eyebrow">GENERAL INQUIRIES</div>
           <div className="nav">
-            <a href="mailto:hi@esotericacap.com">hi@esotericacap.com</a>
+            <a href="mailto:info@esotericacap.com">info@esotericacap.com</a>
           </div>
           <div className="eyebrow">CAREER INQUIRIES</div>
           <div className="nav">
-            <a href="mailto:careers@esotericacap.com">
-              careers@esotericacap.com
-            </a>
+            <a href="mailto:career@esotericacap.com">career@esotericacap.com</a>
           </div>
         </Col>
         <Col
@@ -60,9 +58,11 @@ const ContactPage = () => (
         >
           <div className="eyebrow">ADDRESS</div>
           <div className="nav">
-            158 Ludlow Street,
+            675 W 59th Street,
             <br />
-            New York, NY 10002
+            Suite 903
+            <br />
+            New York, NY 10069
           </div>
           <div className="eyebrow">SOCIAL</div>
           <div className="nav">

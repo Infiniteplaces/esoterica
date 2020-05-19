@@ -20,6 +20,13 @@
       img {
         width: 192px;
       }
+      &:hover {
+        webkit-filter: blur(3px);
+        filter: blur(3px);
+        transition: all 150ms linear;
+        transform: scale(1.01);
+        transition: all 250ms Cubic-bezier(0.33, 1, 0.33, 1);
+      }
     }
     a:hover {
       .body-small {

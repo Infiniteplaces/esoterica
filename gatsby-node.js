@@ -39,7 +39,7 @@ exports.createPages = ({ graphql, actions }) => {
         paginate({
           createPage,
           items: library,
-          itemsPerPage: 10,
+          itemsPerPage: 12,
           pathPrefix: "/resources/library",
           component: path.resolve("src/templates/libraryIndex.js"),
         })

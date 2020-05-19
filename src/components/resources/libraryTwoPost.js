@@ -11,7 +11,7 @@ const LibraryTwoPost = ({ posts, mobile }) => {
 
   let display = posts.map((i, idx) => {
     return (
-      <Col key={idx} xs="6">
+      <Col key={idx} xs="4">
         <div className="post-container">
           <Link to={"/resources/library/" + i.node.slug}>
             <div className="wrapper">
@@ -35,7 +35,9 @@ const LibraryTwoPost = ({ posts, mobile }) => {
                     })
                   : ""}
 
-                <div className="publishDate">{i.node.publishDate}</div>
+                <div className="publishDate body-small">
+                  {i.node.publishDate}
+                </div>
               </div>
               {mobile ? (
                 <div className="post-title body-small">{i.node.title}</div>

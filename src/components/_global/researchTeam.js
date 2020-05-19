@@ -110,6 +110,13 @@ const ResearchTeam = ({ team }) => {
           }
         }
       }
+      nancy_tyminski: file(relativePath: { eq: "team/nancy_tyminski.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 1440) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `)
 
@@ -134,8 +141,8 @@ const ResearchTeam = ({ team }) => {
       bio:
         "Karan has been in international finance for four decades, principally based in New York City. After careers at The World Bank and Goldman Sachs (where was an early member of the international fixed income group) and AllianceBernstein (where as President & CEO, International he launched Alliance's early thrust into offshore funds and strategic alliances), he established a boutique investment management company, Ankar Capital, to invest private equity in Asia and in Asia-centric hedge funds. He was also the Founder and Managing Partner of Emerging Managers Group, an offshore fund platform, later sold to a US mutual fund complex. Karan studied Economics at Delhi University, India followed by an MBA from IMD, Switzerland. He has served on the boards of several US-based and international mutual funds and has been a trustee of the United World Colleges.",
       social: {
-        linkedin: "https://www.linkedin.com/in/karan-trehan-4876a5a1/",
-        twitter: "https://twitter.com/InsightsRich",
+        linkedin: "http://linkedin.com/in/karan-trehan-4876a5a1",
+        twitter: "https://twitter.com/Trehan5Karan",
         youtube: "https://www.youtube.com/channel/UClBaJptKDg9-SkmTNfzaZUw",
         email: "karan.trehan@esotericacap.com",
       },
@@ -145,7 +152,7 @@ const ResearchTeam = ({ team }) => {
       title: "Chief Investment Officer",
       img: "don_rich",
       bio:
-        "Don is CIO and portfolio manager of Esoterica's asset allocation strategies. He is also spearheads new product design and intellectual-branding. Don brings wide-ranging experiences in asset management: Endowments: at Harvard Management Company, he was a portfolio manager and member of the endowment's prestigious asset allocation committee and Director of Research. Pension Plans: portfolio manager and Director of Risk Management for Dow Chemical Company. Buy-Side: portfolio manager and Director of Research at Wellington Management Company and MFC Global Investment Management (Manulife), where he was Head of Tactical Asset Allocation. Sell-Side & Consulting: designed customized products and solutions for State Street and for Rich Consulting. Don graduated from the University of Illinois with B.S. and M.S. degrees and holds a Ph.D. in Quantitative Finance from Virginia Tech. During his academic career, he received early tenure, published over twenty scientific journal articles, received multiple prestigious research awards, and served as Associate Editor for academic journals.",
+        "Don brings wide-ranging experiences in asset management: Harvard Management Company, where he was a portfolio manager and member of the endowment’s prestigious asset allocation committee and Director of Research; Dow Pension, where he was portfolio manager and Director of Research; Wellington Management Company and MFC Global Investment Management (Manulife), where he was Head of Tactical Asset Allocation; State Street, where he designed customized products and solutions and for Rich Consulting. Don graduated from the University of Illinois with B.S. and M.S. degrees and holds a Ph.D. in Quantitative Finance from Virginia Tech. During his academic career, he received early tenure, published over twenty scientific journal articles, received multiple prestigious research awards, and served as Associate Editor for academic journals.",
       social: {
         linkedin: "https://www.linkedin.com/in/don-rich-7886b611/",
         twitter: "https://twitter.com/InsightsRich",
@@ -242,9 +249,8 @@ const ResearchTeam = ({ team }) => {
     },
     {
       name: "Nancy Tyminski",
-      title:
-        "Chief Compliance Officer & Anti-Money Laundering Officer, Esoterica Trust",
-      img: "placeholder",
+      title: "Chief Compliance Officer, Esoterica Trust",
+      img: "nancy_tyminski",
       bio:
         "Nancy provides outsourced compliance solutions to registered funds. Prior to joining Foreside in 2015, she held various senior compliance roles including Deputy Chief Compliance Officer at PNC Bank (Funds Group), Director of Corporate Compliance at Nationwide Funds Group, and Chief Compliance Officer at Nikko Asset Management, LTD.  Additionally, Nancy held leadership positions in the program trading division of BNP Paribas Asset Management (formerly known as CooperNeff Advisors, Inc.).  She received a BA in English from the University of Pennsylvania.",
       social: {
