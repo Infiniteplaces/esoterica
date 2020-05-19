@@ -18,7 +18,7 @@ const Footer = ({}) => {
             </span>
 
             <span>
-              <Link to="/">Privacy Policy</Link>
+              <Link to="/privacy-policy">Privacy Policy</Link>
             </span>
             <span>
               <Link to="/terms-of-service">Terms and Conditions</Link>
