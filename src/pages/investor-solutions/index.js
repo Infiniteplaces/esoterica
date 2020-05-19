@@ -60,7 +60,8 @@ class InvestorSolutionsPage extends React.Component {
               }
               bgColor={"#FAEEAC"}
               textColor={"#000"}
-              link={"/investor-solutions/exchange-traded-funds/wugi"}
+              externalLink
+              link={"https://www.esotericacap.com"}
               img={etf_illus}
             />
             <PreviewPill

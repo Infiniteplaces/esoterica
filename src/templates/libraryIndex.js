@@ -161,7 +161,7 @@ class LibraryIndex extends React.Component {
         <LibraryTwoPost posts={pageArticles.slice(8, 10)} />
         {pagination}
         <LibraryFeatured posts={featured} />
-        <EmailCapture />
+        <EmailCapture color={"#fdfc71"} text={"#000"} />
       </>
     )
 
