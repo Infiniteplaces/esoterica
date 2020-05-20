@@ -342,7 +342,7 @@ const TermsPage = () => (
       background={softFooterBg}
       text={"How we can work together"}
       ctaLead={"See"}
-      cta={"Advisory Solutions"}
+      cta={"Our Solutions"}
       link={"/investorSolutions"}
     />
   </Layout>

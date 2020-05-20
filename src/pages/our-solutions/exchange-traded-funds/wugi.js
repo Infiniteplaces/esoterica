@@ -11,27 +11,12 @@ const WUGI = ({}) => {
   const [data, setData] = React.useState(null)
 
   useEffect(() => {
-    // firebase.initializeApp({
-    //   apiKey: "AIzaSyDeAp-RVU8Rq5mzeANpV5169tYHJzmzXKY",
-    //   authDomain: "esoterica-capital.netlify.app",
-    //   projectId: "esotericawebsite",
-    //   storageBucket: "esotericawebsite.appspot.com",
-    //   messagingSenderId: "118569009688",
-    // })
-    // var storageRef = firebase
-    //   .storage()
-    //   .ref("esoterica_data_storage/BBH_ESO_ETF_PERF_WEB.20200511.CSV")
-    // storageRef.getDownloadURL().then(function(url) {
-    //   console.log(url)
-    // })
     let daily = firebase
       .firestore()
       .collection("01-APR-20")
       .doc("BBH_Position")
       .collection("data")
       .doc("1")
-
-    daily
       .get()
       .then(
         function(doc) {
