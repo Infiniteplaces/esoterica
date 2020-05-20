@@ -486,7 +486,7 @@ const WUGI = ({}) => {
           </Row>
           <h1 className="py-5">Disclosures</h1>
           <Row className="disclosure-row ">
-            <Col md="6">
+            <Col md="12">
               <p>
                 <strong>
                   Before investing you should carefully consider the Fund’s
