@@ -312,8 +312,8 @@ class ArticleTemplate extends React.Component {
             </Row>
           </Container>
         </div>
-        <div className="mb-4">
-          <h1 className="mb-4 pl-4">Related Articles.</h1>
+        <div className="mb-4 related-container">
+          <h1 className="mb-4 related-article-title">Related Articles.</h1>
           <LibraryThumbnails related={post} />
         </div>
 

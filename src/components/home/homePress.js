@@ -66,7 +66,8 @@ class HomePress extends Component {
         quote:
           "Amid a global pandemic ... the issuer of an exchange-traded fund is going ahead with a plan",
         cta_label: "Read the Article",
-        cta_link: "https://www.bloomberg.com",
+        cta_link:
+          "https://www.bloomberg.com/news/articles/2020-03-31/only-three-etfs-debuted-this-month-in-volatility-fueled-drought?sref=9I4LeZtA",
         icon: bloomberg,
         iconWidth: "150",
       },
