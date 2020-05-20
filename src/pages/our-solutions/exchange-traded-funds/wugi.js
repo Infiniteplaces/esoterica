@@ -488,74 +488,51 @@ const WUGI = ({}) => {
           <Row className="disclosure-row ">
             <Col md="6">
               <p>
-                Before investing you should carefully consider the Fund’s
-                investment objectives, risks, charges and expenses. This and
-                other information are contained in the prospectus. Please read
-                the prospectus carefully before investing.
+                <strong>
+                  Before investing you should carefully consider the Fund’s
+                  investment objectives, risks, charges and expenses. This and
+                  other information are contained in the prospectus. Click the
+                  prospectus link above for a copy. Please read the prospectus
+                  carefully before investing.
+                </strong>
               </p>
               <p>
-                The principal risks of investing in the ARKK include: Equity
-                Securities Risk. The value of the equity securities the Fund
-                holds may fall due to general market and economic conditions.
-                Health Care Sector Risk. The health care sector may be adversely
-                affected by government regulations and government health care
-                programs. Industrials Sector Risk. Companies in the industrials
-                sector may be adversely affected by changes in government
-                regulation, world events, economic conditions, environmental
-                damages, product liability claims and exchange rates.
-                Information Technology Sector Risk. Information technology
-                companies face intense competition, both domestically and
-                internationally, which may have an adverse effect on profit
-                margins. Cryptocurrency Risk. Cryptocurrency (notably, bitcoin),
-                often referred to as ‘‘virtual currency’’ or ‘‘digital
-                currency,’’ operates as a decentralized, peer-to-peer financial
-                exchange and value storage that is used like money. The Fund may
-                have exposure to bitcoin, a cryptocurrency, indirectly through
-                an investment in the Bitcoin Investment Trust (‘‘GBTC’’), a
-                privately offered, open-end investment vehicle. Cryptocurrency
-                operates without central authority or banks and is not backed by
-                any government. Even indirectly, cryptocurrencies may experience
-                very high volatility and related investment vehicles like GBTC
-                may be affected by such volatility. As a result of holding
-                cryptocurrency, the Fund may also trade at a significant premium
-                to NAV. Cryptocurrency is also not legal tender. Federal, state
-                or foreign governments may restrict the use and exchange of
-                cryptocurrency, and regulation in the U.S. is still developing.
-                Cryptocurrency exchanges may stop operating or permanently shut
-                down due to fraud, technical glitches, hackers or malware.
-                Additional risks of investing in ARKK include foreign
-                securities, market, management and non-diversification risks.
-                Detailed information regarding the specific risks of ARKK can be
-                found in the ETF’s prospectus.
+                Investing involves risk including possible loss of principal.
+                The principal risks of investing in the Fund include: 5G
+                Companies and Emerging Technologies Investment Risk. Currently,
+                there are few public companies for which 5G technologies
+                represent an attributable and significant revenue or profit
+                stream, and such technologies may not ultimately have a material
+                effect on the economic returns of companies in which the Fund
+                invests. The extent of such technologies’ versatility has not
+                yet been fully explored. Communication Services Companies Risk.
+                Communication services companies may be subject to specific
+                risks associated with legislative or regulatory changes, adverse
+                market conditions, intellectual property use and/or increased
+                competition. Limited History of Operations Risk and New Adviser
+                Risk. The Fund and the Adviser are each newly-formed and have no
+                history of operations for investors to evaluate.
               </p>
               <p>
-                Portfolio holdings will change and should not be considered as
-                investment advice or a recommendation to buy, sell or hold any
-                particular security.
+                Non-Diversification and Sector Concentration Risk. The Fund is
+                considered non-diversified and as a result, may be more exposed
+                to the risks associated with and developments affecting a
+                certain sector, individual issuer or smaller number of issuers.
+                Cyber Security Risk. The Fund and its service providers may be
+                prone to operational and information security risks resulting
+                from breaches in cyber security. Foreign Securities Risk.
+                Investments in foreign securities and emerging markets may
+                involve risks such as social and political instability, market
+                illiquidity, exchange-rate fluctuations, a high level of
+                volatility and limited regulation. Active Management Risk. There
+                is no guarantee that the investment views will produce the
+                desired results or expected returns. Small and Medium
+                Capitalization Stock Risk. The earnings and prospects of small
+                and medium sized companies are more volatile than larger
+                companies and may experience higher failure rates than larger
+                companies.
               </p>
-            </Col>
-            <Col md="6">
-              <p>Award Disclosure</p>
-              <p>
-                [1] Other Finalists Other Finalists “Active ETF of the Year”
-                2018: TrimTabs All Cap U.S. Free-Cash-Flow ETF (TTAC), WBI
-                BullBear Yield 1000 ETF (WBIG), WisdomTree U.S. Quality
-                Shareholder Yield Fund (QSY); | Methodology: Ranking Entity:
-                Fund Intelligence; Length of the period: 12 Months; Criteria on
-                which the ranking is based: The winners are comprised of the
-                individuals and firms who have been nominated via the online
-                submission process and through recommendations from market
-                participants. Judges will use the submitted application
-                material, as well as any uploaded supplemental information, to
-                make a determination on the firm, individual or product they
-                believe to be the most suitable and deserving winners for each
-                category. The Judges’ Choice Awards are adjudicated by a panel
-                of industry experts convened by the Fund Action and Fund
-                Directions editorial teams. The industry judges contribute their
-                sector expertise to debate the merits of shortlist candidates to
-                come to a decision on the winners. (Award Page:
-                mutualfundindustryawards.awardstage.com/)
-              </p>
+              <p>Distributed by Foreside Fund Services, LLC</p>
             </Col>
           </Row>
         </Container>
