@@ -185,11 +185,9 @@ class LibraryIndex extends React.Component {
               </div>
               <div className="my-5">
                 <h2>
-                  Original research is our DNA.
+                  Original research is in our DNA.
                   <br />
-                  Sharing it with you betters us.
-                  <br />
-                  Let’s have a conversation…
+                  Sharing it, betters us.
                 </h2>
               </div>
             </div>
@@ -236,8 +234,8 @@ class LibraryIndex extends React.Component {
               background={softFooterBg}
               text={"How we can work together"}
               ctaLead={"See"}
-              cta={"Advisory Solutions"}
-              link={"/investorSolutions"}
+              cta={"Our Solutions"}
+              link={"/our-solutions"}
             />
           </div>
         </div>

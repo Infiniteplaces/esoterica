@@ -21,8 +21,9 @@ const AboutPage = () => {
   let marqueeText = [...Array(50).keys()].map((i, idx) => {
     return (
       <span key={idx}>
+        {" "}
         INVESTING SHOULD BE EASIER • EVERYONE DESERVES A FINANCIAL FUTURE • THIS
-        IS NEXT GENERATION INVESTING
+        IS NEXT GENERATION INVESTING •
       </span>
     )
   })

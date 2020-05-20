@@ -19,7 +19,7 @@ const HomeOurPhilosophy = ({}) => {
           <div>
             Investing wasn’t designed with today’s investor in mind. So we’re
             recreating the experience from the ground up, making it more
-            accessible, enjoyable, and rewarding. All while providing astute
+            accessible, enjoyable, and rewarding. All the while providing astute
             investment solutions backed by a core team with decades of
             experience.
           </div>

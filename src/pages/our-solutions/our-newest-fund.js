@@ -32,7 +32,7 @@ class OurNewestFundPage extends React.Component {
               className="hero-img"
               fluid={this.props.data.file.childImageSharp.fluid}
             />
-            <h1 className="title">How Esoterica captures the 5G Opportunity</h1>
+            <h1 className="title">How Esoterica Captures the 5G Opportunity</h1>
           </div>
           <Container fluid>
             <Row className="header-row">

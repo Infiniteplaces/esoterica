@@ -24,7 +24,7 @@ const ContactPage = () => (
       <Row className="contact-info-row">
         <Col
           md="4"
-          className="d-flex flex-column justify-content-center align-items-start"
+          className="d-flex flex-column justify-content-between align-items-start"
         >
           <div className="eyebrow">FUND INQUIRIES</div>
           <div className="nav">
@@ -41,7 +41,7 @@ const ContactPage = () => (
         </Col>
         <Col
           md="4"
-          className="d-flex flex-column justify-content-center align-items-start"
+          className="d-flex flex-column justify-content-between align-items-start"
         >
           <div className="eyebrow">GENERAL INQUIRIES</div>
           <div className="nav">

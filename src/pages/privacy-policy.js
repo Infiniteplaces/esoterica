@@ -11,12 +11,14 @@ import ResourcesMarquee from "../components/_global/resourcesMarquee"
 import SoftFooterCta from "../components/_global/softFooterCta"
 import softFooterBg from "../images/investorSolutions/investorSolutionsFooterCta.png"
 
+import table from "../images/privacy/privacy-policy-table.png"
+
 const TermsPage = () => (
   <Layout>
     <SEO title="Terms of Service" />
     <Container fluid id="privacyPolicy">
       <Row className="d-flex justify-content-center">
-        <Col md="11">
+        <Col md="11" className="d-flex flex-column">
           <h2>Privacy Policy</h2>
           <p>This Privacy Notice was last updated May 08, 2020</p>
           <p>
@@ -81,6 +83,7 @@ const TermsPage = () => (
             personal data. You have the right to withdraw consent at any time by
             contacting us at the details given at the beginning of this notice.
           </p>
+          <img src={table} alt="" />
           <p>
             We also collect, use and share aggregated data such as statistical
             or demographic data for any purpose. Aggregated data may be derived
@@ -382,8 +385,8 @@ const TermsPage = () => (
       background={softFooterBg}
       text={"How we can work together"}
       ctaLead={"See"}
-      cta={"Advisory Solutions"}
-      link={"/investorSolutions"}
+      cta={"Our Solutions"}
+      link={"/our-solutions"}
     />
   </Layout>
 )

@@ -42,22 +42,30 @@ class LetsTalkAssetAllocation extends React.Component {
                   Esoterica offers asset allocation solutions through separately
                   managed accounts and investment products.
                 </h2>
-                <p>
-                  Esoterica’s core offering is an asset allocation solution that
-                  rotates between global asset classes. There is always some
-                  segment of the marketplace that is outperforming, and our
-                  asset allocation solution seeks to identify and capture this
-                  outperformance by dynamically adapting the risk profile to
-                  changing market conditions.
+                <p className="pl-0">
+                  Our asset allocation solution rotates between global major
+                  asset classes, as market conditions suggest. There is always
+                  some segment of the market that is outperforming, and our
+                  asset allocation investment solution seeks to identify and
+                  capture this outperformance by dynamically adapting the risk
+                  profile to changing market conditions. The asset allocation
+                  solution seeks to generate S&P 500 equity-like returns, with
+                  less downside risk, where improved capital preservation is
+                  achieved through the dynamic allocation process.
                 </p>
-                <p>
-                  The asset allocation solution not only seeks to outperform the
-                  60/40 benchmark but also to generate S&P 500 equity-like
-                  returns, with less downside risk, where the improved capital
-                  preservation is achieved through the dynamic allocation
-                  process.
+                <p className="pl-0">
+                  We use a systematic approach to assessing the current macro
+                  environment from a variety of perspectives: both fundamental
+                  and technical. We focus on the behavior of high beta equities
+                  versus low beta, equal-weighted indices relative to
+                  capitalization-weighted indices, the activity within the
+                  credit markets, the conduct of interest rates, exchange rates,
+                  commodities, etc. We are looking for reinforcing “risk-on/off”
+                  signals. The investment philosophy is simple and intuitive:
+                  the more reinforcing the signal, the more aggressive our risk
+                  profile.
                 </p>
-                <h3>Learn More:</h3>
+                <h3 className="pl-0">Learn More:</h3>
                 <ul>
                   <li>
                     <Link to="/resources/white-papers/asset-allocation-diversification">

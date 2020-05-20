@@ -29,10 +29,10 @@ const Footer = ({}) => {
               <Link to="/resources/library">Library</Link>
             </span>
             <span>
-              <Link to="/">White Papers</Link>
+              <Link to="/resources/white-papers">White Papers</Link>
             </span>
             <span>
-              <Link to="/">Site Credit</Link>
+              <a href="https://alright.studio">Site Credit</a>
             </span>
           </Col>
           <Col className="d-flex flex-column">
