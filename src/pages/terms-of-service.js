@@ -343,7 +343,7 @@ const TermsPage = () => (
       text={"How we can work together"}
       ctaLead={"See"}
       cta={"Our Solutions"}
-      link={"/investorSolutions"}
+      link={"/ourSolutions"}
     />
   </Layout>
 )

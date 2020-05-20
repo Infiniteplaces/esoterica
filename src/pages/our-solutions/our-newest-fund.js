@@ -78,7 +78,7 @@ class OurNewestFundPage extends React.Component {
                   </li>
                   <li>
                     <strong>
-                      5G is not a light-switch; it is an evolution.
+                      5G is not a light-switch; it is an evolution.{" "}
                     </strong>
                     We categorize the impact of 5G technology in four main
                     categories/sectors: (1) New Semiconductors, (2) Cloud & Edge
@@ -87,14 +87,14 @@ class OurNewestFundPage extends React.Component {
                     the development of the 5G cycle.
                   </li>
                   <li>
-                    <strong>Semis are the nucleus of the 5G ecosystem.</strong>
+                    <strong>Semis are the nucleus of the 5G ecosystem. </strong>
                     Every existing device and every facet of the 5G cycle has to
                     be upgraded with new semiconductor technology to run faster
                     and smarter, all while being more energy-efficient. 5G will
                     require a massive expansion of semiconductor content.
                   </li>
                   <li>
-                    <strong>Cloud giants push into Edge Computing.</strong>
+                    <strong>Cloud giants push into Edge Computing. </strong>
                     Edge computing and 5G are interlinked technologies as both
                     are poised to significantly improve the performance of
                     applications (faster speed) and enable huge amounts of data
@@ -114,7 +114,7 @@ class OurNewestFundPage extends React.Component {
                     5G/edge computing.
                   </li>
                   <li>
-                    <strong>Enabling technologies.</strong>
+                    <strong>Enabling technologies. </strong>
                     Eventually, once all of the 5G building blocks are in place,
                     the big winners will be the enabling technologies (think of
                     Instagram and Netflix in the 4G cycle), giving rise to a
