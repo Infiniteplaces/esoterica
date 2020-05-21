@@ -361,6 +361,10 @@ const WUGI = ({}) => {
                   </a>
                   <img src={modal_arrow} alt="" />
                 </h2>
+                <h2>
+                  <a href="www.bbae.com">BBAE</a>
+                  <img src={modal_arrow} alt="" />
+                </h2>
               </Col>
             </Row>
           </Container>
