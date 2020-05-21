@@ -3,7 +3,18 @@ import { Link } from "gatsby"
 import { connect } from "react-redux"
 import firebase from "gatsby-plugin-firebase"
 import { Container, Row, Col, Modal } from "reactstrap"
-import { moment } from "moment"
+import {
+  ResponsiveContainer,
+  LineChart,
+  BarChart,
+  Bar,
+  Line,
+  XAxis,
+  YAxis,
+  Legend,
+  Tooltip,
+} from "recharts"
+
 import Layout from "../../../components/_global/layout"
 import SEO from "../../../components/_global/seo"
 
@@ -14,6 +25,10 @@ const WUGI = ({}) => {
   let [performance, setPerformance] = useState(null)
   let [positions, setPositions] = useState(null)
   let [historical, setHistorical] = useState(null)
+  let [downloads, setDownloads] = useState(null)
+  let [navHistory, setNavHistory] = useState(null)
+  let [marketHistory, setMarketHistory] = useState(null)
+  let [premiumDiscount, setPremiumDiscount] = useState(null)
   let [modal, setModal] = useState(false)
 
   useEffect(() => {
@@ -31,7 +46,7 @@ const WUGI = ({}) => {
 
     let yesterday = new Date(today)
 
-    yesterday = yesterday
+    let dashDate = yesterday
       .toLocaleDateString("en-GB", {
         day: "2-digit",
         month: "short",
@@ -39,11 +54,22 @@ const WUGI = ({}) => {
       })
       .split(" ")
 
-    yesterday = yesterday[0] + "-" + yesterday[1] + "-" + yesterday[2]
+    let noDashDate = yesterday
+      .toLocaleDateString("en-GB", {
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric",
+      })
+      .split("/")
 
-    _getDailyPositions(yesterday)
-    _getDailyPerformance(yesterday)
+    dashDate = dashDate[0] + "-" + dashDate[1] + "-" + dashDate[2]
+    noDashDate = noDashDate[1] + noDashDate[0] + noDashDate[2]
+
+    _getDailyPositions(dashDate)
+    _getDailyPerformance(dashDate)
+    _getETFG()
     _getHistoricalData()
+    _getDownloadUrl(noDashDate)
   }, [])
 
   async function _getHistoricalData() {
@@ -52,7 +78,15 @@ const WUGI = ({}) => {
       .collection("historical")
       .get()
 
-    setHistorical(historical.docs.map(doc => doc.data()))
+    let data = historical.docs.map(doc => doc.data())
+
+    let x = data.map(i => {
+      i["p/d"] = (i["p/d"] * 100).toFixed(2)
+      return i
+    })
+
+    setHistorical(data)
+    _processHistoricalData(data)
   }
 
   async function _getDailyPositions(date) {
@@ -64,6 +98,20 @@ const WUGI = ({}) => {
       .get()
 
     setPositions(positions.docs.map(doc => doc.data()))
+  }
+
+  async function _getETFG() {
+    let url = "http://public.etfg.com/v2/public_disclosures"
+    let etfg = await fetch(url, {
+      method: "GET",
+      Authorization: "Basic " + btoa("esoterica1:573de09fe3a1"),
+      mode: "no-cors",
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Credentials": true,
+      "Content-Type": "application/json",
+    })
+      .then(response => response.json)
+      .then(data => console.log(data))
   }
 
   function _getDailyPerformance(date) {
@@ -86,7 +134,156 @@ const WUGI = ({}) => {
       })
   }
 
-  if (!performance || !positions) {
+  function _getDownloadUrl(date) {
+    let prospectus = firebase
+      .storage()
+      .ref("Esoterica+NextG+Economy+ETF+Prospectus.pdf")
+      .getDownloadURL()
+    let sai = firebase
+      .storage()
+      .ref("Esoterica+NextG+Economy+ETF+SAI.pdf")
+      .getDownloadURL()
+
+    let holdingsDate =
+      "Esoterica_NXTG_ECONOMY_ETF_WUGI_HOLDINGS_" + date + ".csv"
+    let holdings = firebase
+      .storage()
+      .ref(holdingsDate)
+      .getDownloadURL()
+
+    setDownloads({
+      prospectus: prospectus,
+      sai: sai,
+      holdings: holdings,
+    })
+  }
+
+  function pct_change(a, b) {
+    return (((a - b) / b) * 100).toFixed(2) + "%"
+  }
+
+  function _processHistoricalData(data) {
+    //// Order data by date
+    let current_nav = data[0]["NAV"]
+    let current_market = data[0]["MARKET"]
+
+    //// 3 Month
+    let three_month_nav = data[30]["NAV"]
+    let three_month_market = data[30]["MARKET"]
+
+    let three_month_nav_performance = pct_change(current_nav, three_month_nav)
+    let three_month_market_performance = pct_change(
+      current_market,
+      three_month_market
+    )
+
+    //// 1 Year
+    let one_year_nav_performance,
+      one_year_market_performance,
+      one_year_nav,
+      one_year_market
+
+    if (data.length > 356) {
+      one_year_nav = data[356]["NAV"]
+      one_year_market = data[356]["MARKET"]
+      one_year_nav_performance = pct_change(current_nav, one_year_nav)
+      one_year_market_performance = pct_change(current_market, one_year_market)
+    } else {
+      one_year_nav_performance = "N/A"
+      one_year_market_performance = "N/A"
+    }
+
+    //// YTD
+    let now = new Date()
+    let start = new Date(now.getFullYear(), 0, 0)
+    let diff =
+      now -
+      start +
+      (start.getTimezoneOffset() - now.getTimezoneOffset()) * 60 * 1000
+    let oneDay = 1000 * 60 * 60 * 24
+    let dayOfYear = Math.floor(diff / oneDay)
+
+    let ytd_nav =
+      data.length > dayOfYear
+        ? data[dayOfYear]["NAV"]
+        : data[data.length - 1]["NAV"]
+    let ytd_market =
+      data.length > dayOfYear
+        ? data[dayOfYear]["MARKET"]
+        : data[data.length - 1]["MARKET"]
+
+    let ytd_nav_performance = pct_change(current_nav, ytd_nav)
+    let ytd_market_performance = pct_change(current_market, ytd_market)
+
+    //// Three Year
+    let threeYearDayCount = 1068
+
+    let three_year_nav_performance,
+      three_year_market_performance,
+      three_year_nav,
+      three_year_market
+
+    if (data.length > threeYearDayCount) {
+      three_year_nav = data[threeYearDayCount]["NAV"]
+      three_year_market = data[threeYearDayCount]["MARKET"]
+      three_year_nav_performance = pct_change(current_nav, three_year_nav)
+      three_year_market_performance = pct_change(
+        current_market,
+        three_year_market
+      )
+    } else {
+      three_year_nav_performance = "N/A"
+      three_year_market_performance = "N/A"
+    }
+
+    //// Five Year
+    let fiveYearDayCount = 1780
+
+    let five_year_nav_performance,
+      five_year_market_performance,
+      five_year_nav,
+      five_year_market
+
+    if (data.length > fiveYearDayCount) {
+      five_year_nav = data[fiveYearDayCount]["NAV"]
+      five_year_market = data[fiveYearDayCount]["MARKET"]
+      five_year_nav_performance = pct_change(current_nav, five_year_nav)
+      five_year_market_performance = pct_change(
+        current_market,
+        three_year_market
+      )
+    } else {
+      five_year_nav_performance = "N/A"
+      five_year_market_performance = "N/A"
+    }
+
+    //// Premium Discount Data
+
+    //// Set State
+
+    setNavHistory({
+      three_month: three_month_nav_performance,
+      ytd: ytd_nav_performance,
+      one_year: one_year_nav_performance,
+      three_year: three_year_nav_performance,
+      five_year: five_year_nav_performance,
+    })
+    setMarketHistory({
+      three_month: three_month_market_performance,
+      ytd: ytd_market_performance,
+      one_year: one_year_market_performance,
+      three_year: three_year_market_performance,
+      five_year: five_year_market_performance,
+    })
+  }
+
+  if (
+    !performance ||
+    !positions ||
+    !downloads ||
+    !navHistory ||
+    !marketHistory
+  ) {
     return ""
   }
 
@@ -149,15 +346,19 @@ const WUGI = ({}) => {
                   <img src={modal_arrow} alt="" />
                 </h2>
                 <h2>
-                  <a href="">Trade Station</a>
+                  <a href="https://research.tdameritrade.com/grid/public/etfs/profile/profile.asp?symbol=WUGI">
+                    TD Ameritrade
+                  </a>
                   <img src={modal_arrow} alt="" />
                 </h2>
                 <h2>
-                  <a href="">Ally Invest</a>
+                  <a href="https://www.schwab.com/">Charles Schwab</a>
                   <img src={modal_arrow} alt="" />
                 </h2>
                 <h2>
-                  <a href="">Tradier Brokerage</a>
+                  <a href="https://www.interactivebrokers.com/en/home.php">
+                    IBKR
+                  </a>
                   <img src={modal_arrow} alt="" />
                 </h2>
               </Col>
@@ -207,6 +408,12 @@ const WUGI = ({}) => {
                   <div className="d-flex justify-content-between pb-1">
                     <div className="eyebrow">NET EXPENSE RATIO</div>
                     <div>0.75%</div>
+                  </div>
+                  <div className="d-flex justify-content-between pb-1">
+                    <div className="eyebrow">
+                      30 Day Median Mid Bid-Ask Spread
+                    </div>
+                    <div>TBD</div>
                   </div>
                   <div className="d-flex justify-content-between pb-1">
                     <div className="eyebrow">TYPICAL # OF HOLDINGS</div>
@@ -265,26 +472,52 @@ const WUGI = ({}) => {
               <div className="py-5 document-container">
                 <div className="py-1 d-flex justify-content-between">
                   <div className="">
-                    <a href="/" className="underline">
+                    <a href={downloads.prospectus.i} className="underline">
                       Prospectus
                     </a>
                   </div>
                 </div>
                 <div className="py-1 d-flex justify-content-between">
                   <div className="">
-                    <a href="/" className="underline">
+                    <a href={downloads.sai.i} className="underline">
                       SAI
                     </a>
                   </div>
                 </div>
                 <div className="py-1 d-flex justify-content-between">
                   <div className="">
-                    <a href="/" className="underline">
+                    <a href={downloads.holdings.i} className="underline">
                       Fund Holding CSV
                     </a>
                   </div>
                 </div>
               </div>
+            </Col>
+          </Row>
+          <Row className="fund-navMarket-row">
+            <Col
+              md={{ size: 9, offset: 3 }}
+              className="border-top border-black pl-0 pt-3"
+            >
+              <h1>Nav & Market Price</h1>
+              <ResponsiveContainer width="80%" aspect={2}>
+                <LineChart
+                  height={400}
+                  data={historical}
+                  margin={{ top: 48, right: 0, bottom: 48, left: 0 }}
+                >
+                  <Line type="natural" dataKey="MARKET" stroke="#000" />
+                  <Line type="natural" dataKey="NAV" stroke="#00ff42" />
+                  <XAxis dataKey="name" />
+                  <YAxis />
+                  <Tooltip
+                    itemStyle={{ padding: 0 }}
+                    wrapperStyle={{ padding: 8 }}
+                    labelStyle={{ padding: 3 }}
+                    contentStyle={{ padding: 8 }}
+                  />
+                </LineChart>
+              </ResponsiveContainer>
             </Col>
           </Row>
           <Row className="fund-performance-row">
@@ -310,10 +543,10 @@ const WUGI = ({}) => {
                     <Col>3 Months</Col>
                   </Row>
                   <Row className="nav-row">
-                    <Col>00.00%</Col>
+                    <Col>{navHistory.three_month}</Col>
                   </Row>
                   <Row className="mp-row">
-                    <Col>00.00%</Col>
+                    <Col>{marketHistory.three_month}</Col>
                   </Row>
                 </Col>
                 <Col>
@@ -321,10 +554,10 @@ const WUGI = ({}) => {
                     <Col>YTD</Col>
                   </Row>
                   <Row className="nav-row">
-                    <Col>00.00%</Col>
+                    <Col>{navHistory.ytd}</Col>
                   </Row>
                   <Row className="mp-row">
-                    <Col>00.00%</Col>
+                    <Col>{marketHistory.ytd}</Col>
                   </Row>
                 </Col>
                 <Col>
@@ -332,10 +565,10 @@ const WUGI = ({}) => {
                     <Col>1 Year</Col>
                   </Row>
                   <Row className="nav-row">
-                    <Col>00.00%</Col>
+                    <Col>{navHistory.one_year}</Col>
                   </Row>
                   <Row className="mp-row">
-                    <Col>00.00%</Col>
+                    <Col>{marketHistory.one_year}</Col>
                   </Row>
                 </Col>
                 <Col>
@@ -343,10 +576,10 @@ const WUGI = ({}) => {
                     <Col>3 Years (Annualized)</Col>
                   </Row>
                   <Row className="nav-row">
-                    <Col>00.00%</Col>
+                    <Col>{navHistory.three_year}</Col>
                   </Row>
                   <Row className="mp-row">
-                    <Col>00.00%</Col>
+                    <Col>{marketHistory.three_year}</Col>
                   </Row>
                 </Col>
                 <Col>
@@ -354,24 +587,14 @@ const WUGI = ({}) => {
                     <Col>5 Years (Annualized)</Col>
                   </Row>
                   <Row className="nav-row">
-                    <Col>00.00%</Col>
+                    <Col>{navHistory.five_year}</Col>
                   </Row>
                   <Row className="mp-row">
-                    <Col>00.00%</Col>
-                  </Row>
-                </Col>
-                <Col>
-                  <Row className="header-row">
-                    <Col>Since (Annualized)</Col>
-                  </Row>
-                  <Row className="nav-row">
-                    <Col>00.00%</Col>
-                  </Row>
-                  <Row className="mp-row">
-                    <Col>00.00%</Col>
+                    <Col>{marketHistory.five_year}</Col>
                   </Row>
                 </Col>
               </Row>
+
               <Row>
                 <Col>
                   <div className="body-small mt-2 mb-5 w-75">
@@ -400,6 +623,37 @@ const WUGI = ({}) => {
                   </div>
                 </Col>
               </Row>
+            </Col>
+          </Row>
+          <Row className="fund-premiumDiscount-row">
+            <Col
+              md={{ size: 9, offset: 3 }}
+              className="border-top border-black pl-0 pt-3"
+            >
+              <h1>Premium / Discount</h1>
+              <ResponsiveContainer width="80%" aspect={2}>
+                <LineChart
+                  data={historical}
+                  margin={{ top: 48, right: 0, bottom: 48, left: 0 }}
+                >
+                  <Line
+                    type="natural"
+                    dataKey="p/d"
+                    name="Premium / Discount"
+                    stroke="#000"
+                    dot={{ stroke: "#fdfc71" }}
+                    activeDot={{ stroke: "000" }}
+                  />
+                  <XAxis dataKey="name" />
+                  <YAxis />
+                  <Tooltip
+                    itemStyle={{ padding: 0 }}
+                    wrapperStyle={{ padding: 8 }}
+                    labelStyle={{ padding: 3 }}
+                    contentStyle={{ padding: 8 }}
+                  />
+                </LineChart>
+              </ResponsiveContainer>
             </Col>
           </Row>
           <Row className="fund-holdings-row">

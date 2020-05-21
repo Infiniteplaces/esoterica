@@ -50,6 +50,7 @@ module.exports = {
           authDomain: "esoterica-capital.netlify.app",
           databaseURL: "https://esoweb.firebaseio.com",
           projectId: "esoweb",
+          storageBucket: "position_files",
           messagingSenderId: "1068499925024",
         },
       },
