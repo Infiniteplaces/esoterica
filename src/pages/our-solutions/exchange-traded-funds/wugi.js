@@ -742,9 +742,10 @@ const WUGI = ({}) => {
               </Row>
             </Col>
           </Row>
-          <h1 className="py-5">Disclosures</h1>
+
           <Row className="disclosure-row ">
-            <Col md="12">
+            <Col md={{ size: 9, offset: 3 }} className="pl-0">
+              <h1 className="py-5">Disclosures</h1>
               <p>
                 <strong>
                   Before investing you should carefully consider the Fund’s
