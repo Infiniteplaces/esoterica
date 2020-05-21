@@ -47,7 +47,7 @@ const ResearchTeam = ({ team }) => {
           }
         }
       }
-      placeholder2: file(relativePath: { eq: "team/placeholder.png" }) {
+      ed_mcredmond: file(relativePath: { eq: "team/ed_mcredmond.png" }) {
         childImageSharp {
           fluid(maxWidth: 1440) {
             ...GatsbyImageSharpFluid
@@ -274,7 +274,7 @@ const ResearchTeam = ({ team }) => {
     {
       name: "Ed McRedmond",
       title: "Trustee of Esoterica Thematic Trust",
-      img: "placeholder2",
+      img: "ed_mcredmond",
       bio:
         "Ed has over 20 years of experience in the ETF industry in a variety of roles including key accounts and institutional sales/relationship management, platform development, research and model portfolio management. Extensive industry contacts globally among professional buyers, COI’s and gatekeepers across the Broker-Dealer, Global Bank, ETF Strategist and Institutional channels, along with Capital Markets, Index Providers and Exchanges. He was SVP, Director of ETF Institutional & Portfolio Strategies at Invesco US. Ed graduated from Quincy University with a Bachelor degree in Economics.",
       social: {
