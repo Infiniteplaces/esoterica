@@ -103,7 +103,7 @@ const LibraryFourPost = ({ posts, color = "#fdfc71", featured = false }) => {
         </Col>
         <Col md="4">
           <Link to={featured ? f4.slug : "/resources/library/" + f4.slug}>
-            <div className="post-container tall">
+            <div className="post-container tall right">
               <div
                 className="container-image"
                 style={{ backgroundColor: color }}

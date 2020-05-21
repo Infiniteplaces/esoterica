@@ -99,10 +99,26 @@ class LibraryIndex extends React.Component {
       return (
         <div
           key={idx}
-          className={"tag body-small " + (active ? "active" : "")}
+          className={
+            "position-relative tag body-small " + (active ? "active" : "")
+          }
           onClick={() => this._editFilterTags(i)}
         >
           {i}
+          {active ? (
+            <img
+              src={exit}
+              alt=""
+              style={{
+                position: "absolute",
+                width: "15px",
+                top: "-5px",
+                right: "0px",
+              }}
+            />
+          ) : (
+            ""
+          )}
         </div>
       )
     })

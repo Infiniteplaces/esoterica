@@ -125,6 +125,10 @@
 }
 
 #libraryThumbnails {
+  ::selection {
+    color: $transparent;
+    text-shadow: 0px 0px 7px $black;
+  }
   width: calc(100% - 96px);
   .thumbnail {
     display: flex;
@@ -212,6 +216,12 @@
   padding-left: 48px;
   padding-right: 48px;
   .post-container {
+    &.right {
+      ::selection {
+        color: $transparent;
+        text-shadow: 0px 0px 7px $black;
+      }
+    }
     height: 50vw;
     min-height: 600px;
     max-height: 850px;
@@ -502,6 +512,10 @@
 }
 
 #libraryFeatured {
+  ::selection {
+    color: $transparent;
+    text-shadow: 0px 0px 7px $white;
+  }
   height: 700px;
   background-position: center;
   background-repeat: no-repeat;

@@ -97,6 +97,10 @@
 }
 
 .nav-hover-container {
+  ::selection {
+    color: $transparent;
+    text-shadow: 0px 0px 7px $black;
+  }
   position: fixed;
   padding: 0px 20px;
   pointer-events: none;
@@ -136,7 +140,7 @@
     color: $black;
     ::selection {
       color: $transparent;
-      text-shadow: 0px 0px 7px $white;
+      text-shadow: 0px 0px 7px $black;
     }
   }
   .nav-links {

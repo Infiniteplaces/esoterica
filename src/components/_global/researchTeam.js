@@ -47,6 +47,13 @@ const ResearchTeam = ({ team }) => {
           }
         }
       }
+      placeholder2: file(relativePath: { eq: "team/placeholder.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 1440) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
       darlene_deremer: file(relativePath: { eq: "team/darlene_deremer.png" }) {
         childImageSharp {
           fluid(maxWidth: 1440) {
@@ -164,14 +171,11 @@ const ResearchTeam = ({ team }) => {
       name: "Wei Wang",
       title: "Portfolio Manager/Senior Analyst",
       img: "wei_wang",
-      leadership_team: true,
-      board_of_trustees: false,
-      management_team: false,
       bio:
         "Wei is Portfolio Manager/Senior Analyst of Esoterica Capital, focusing on equity fundamental research. Wei was a senior technology sector equity analyst at Maytech Global Innovation Fund from 2014 to 2015. He founded Bogaya Capital in 2015 and invested in global software, semiconductors and financial technology sectors. Wei graduated from University of Southern California.",
       social: {
-        linkedin: "",
-        twitter: "",
+        linkedin: "https://www.linkedin.com/company/esoterica-capital/about/",
+        twitter: "https://twitter.com/esotericacap?lang=en",
         youtube: "https://www.youtube.com/channel/UClBaJptKDg9-SkmTNfzaZUw",
         email: "wei.wang@esotericacap.com",
       },
@@ -180,14 +184,11 @@ const ResearchTeam = ({ team }) => {
       name: "Diana Wang",
       title: "Chief Operating Officer",
       img: "diana_wang",
-      leadership_team: false,
-      board_of_trustees: false,
-      management_team: true,
       bio:
         "Diana is COO of Esoterica Capital. She was a private equity investor in real estate in New York, from 2013 to 2017, working with JD Capital to co-invest in AC hotels at Dallas and long-term rental apartments at Edison, Texas. She received her B.A & Fine Art from College of Mount Saint Vincent in 2012.",
       social: {
-        linkedin: "",
-        twitter: "",
+        linkedin: "https://www.linkedin.com/company/esoterica-capital/about/",
+        twitter: "https://twitter.com/esotericacap?lang=en",
         youtube: "https://www.youtube.com/channel/UClBaJptKDg9-SkmTNfzaZUw",
         email: "diana.wang@esotericacap.com",
       },
@@ -196,14 +197,11 @@ const ResearchTeam = ({ team }) => {
       name: "Wenjie Chen",
       title: "Marketing Director",
       img: "wenjie_chen",
-      leadership_team: false,
-      board_of_trustees: true,
-      management_team: false,
       bio:
         "Wenjie is leading Esoterica’s social media marketing strategy. She started her career as a breaking news reporter in XMG (Xiamen, China) TVB (Hong Kong), and Eastern Broadcasting Company (Taipei). She worked as an editor and videographer in PBS Montana and then joined Foreign Policy Association as an editor. Later she became a Finance News Anchor for Sina Corp Wenjie graduated from The University of Montana with a M.S. degree.",
       social: {
-        linkedin: "",
-        twitter: "",
+        linkedin: "https://www.linkedin.com/company/esoterica-capital/about/",
+        twitter: "https://twitter.com/esotericacap?lang=en",
         youtube: "https://www.youtube.com/channel/UClBaJptKDg9-SkmTNfzaZUw",
         email: "wenjie.chen@esotericacap.com",
       },
@@ -215,8 +213,8 @@ const ResearchTeam = ({ team }) => {
       bio:
         "Spencer is leading Esoterica’s branding strategy and direct-to-consumer initiative. Previously he was focused on brand and experience building. Specifically, creating delight where information and technology come together. Past clients of note have included: Volkswagen, The Washington Post, Tribeca Film Festival, hims, hers, Jetty, Gin Lane, and RCA. Spencer graduated from The University of Texas at Austin.",
       social: {
-        linkedin: "",
-        twitter: "",
+        linkedin: "https://www.linkedin.com/company/esoterica-capital/about/",
+        twitter: "https://twitter.com/esotericacap?lang=en",
         youtube: "https://www.youtube.com/channel/UClBaJptKDg9-SkmTNfzaZUw",
         email: "spencer.joynt@esotericacap.com",
       },
@@ -228,8 +226,8 @@ const ResearchTeam = ({ team }) => {
       bio:
         "Jamie is Research Fellow at Simons Foundation. His research interest is developing algorithms for performing Bayesian inference on high dimensional datasets commonly obtained for biological and financial applications. Jamie has completed his PhD in Computer Science at the University of California San Diego where he developed software and statistical techniques to study microbial systems. He also has a quadruple major from Miami University with bachelor degrees in Mathematics/Statistics, Computer Science, Engineering Physics and Electrical Engineering.",
       social: {
-        linkedin: "",
-        twitter: "",
+        linkedin: "https://www.linkedin.com/company/esoterica-capital/about/",
+        twitter: "https://twitter.com/esotericacap?lang=en",
         youtube: "https://www.youtube.com/channel/UClBaJptKDg9-SkmTNfzaZUw",
         email: "james.morton@esotericacap.com",
       },
@@ -241,8 +239,8 @@ const ResearchTeam = ({ team }) => {
       bio:
         "Monique provides outsourced treasurer and principal financial officer solutions to Esoterica. Prior to joining Foreside, she held leadership positions at State Street Global Advisors and State Street Bank and Trust which included fund administration, fund accounting, mutual fund operations and product development. She received her BS in Accounting from the University of Massachusetts-Dartmouth and an MBA from Boston College.",
       social: {
-        linkedin: "",
-        twitter: "",
+        linkedin: "https://www.linkedin.com/company/esoterica-capital/about/",
+        twitter: "https://twitter.com/esotericacap?lang=en",
         youtube: "https://www.youtube.com/channel/UClBaJptKDg9-SkmTNfzaZUw",
         email: "monique.labbe@esotericacap.com",
       },
@@ -254,8 +252,8 @@ const ResearchTeam = ({ team }) => {
       bio:
         "Nancy provides outsourced compliance solutions to registered funds. Prior to joining Foreside in 2015, she held various senior compliance roles including Deputy Chief Compliance Officer at PNC Bank (Funds Group), Director of Corporate Compliance at Nationwide Funds Group, and Chief Compliance Officer at Nikko Asset Management, LTD.  Additionally, Nancy held leadership positions in the program trading division of BNP Paribas Asset Management (formerly known as CooperNeff Advisors, Inc.).  She received a BA in English from the University of Pennsylvania.",
       social: {
-        linkedin: "",
-        twitter: "",
+        linkedin: "https://www.linkedin.com/company/esoterica-capital/about/",
+        twitter: "https://twitter.com/esotericacap?lang=en",
         youtube: "https://www.youtube.com/channel/UClBaJptKDg9-SkmTNfzaZUw",
         email: "nancy.tyminski@esotericacap.com",
       },
@@ -267,31 +265,19 @@ const ResearchTeam = ({ team }) => {
       name: "Darlene DeRemer",
       title: "Chairwoman of Esoterica Thematic Trust",
       img: "darlene_deremer",
-      leadership_team: false,
-      board_of_trustees: true,
-      management_team: false,
       bio:
         "Darlene has over 35 years of experience in diverse roles within financial services including the last 13 years at Grail Partners. Over the course of her career in financial services, she has advised over 250 money management firms with an interesting combination of progressive experiences and significant accomplishments in areas that include mutual funds, ETF's, SMA's, CIT's, product development, strategic planning, defined contribution, operational efficiencies and mergers and acquisitions. Darlene has been an active leader in the fund industry and has served as chair of the Independent Directors’ Council Education Committee and on the IDC's Executive Committee for six years.",
       social: {
-        linkedin: "",
-        twitter: "",
-        youtube: "https://www.youtube.com/channel/UClBaJptKDg9-SkmTNfzaZUw",
         email: "dtderemer@gmail.com",
       },
     },
     {
       name: "Ed McRedmond",
       title: "Trustee of Esoterica Thematic Trust",
-      img: "placeholder",
-      leadership_team: false,
-      board_of_trustees: true,
-      management_team: false,
+      img: "placeholder2",
       bio:
         "Ed has over 20 years of experience in the ETF industry in a variety of roles including key accounts and institutional sales/relationship management, platform development, research and model portfolio management. Extensive industry contacts globally among professional buyers, COI’s and gatekeepers across the Broker-Dealer, Global Bank, ETF Strategist and Institutional channels, along with Capital Markets, Index Providers and Exchanges. He was SVP, Director of ETF Institutional & Portfolio Strategies at Invesco US. Ed graduated from Quincy University with a Bachelor degree in Economics.",
       social: {
-        linkedin: "",
-        twitter: "",
-        youtube: "https://www.youtube.com/channel/UClBaJptKDg9-SkmTNfzaZUw",
         email: "mcredmond1@gmail.com",
       },
     },
@@ -299,15 +285,9 @@ const ResearchTeam = ({ team }) => {
       name: "Jack Gee",
       title: "Trustee of Esoterica Thematic Trust",
       img: "jack_gee",
-      leadership_team: true,
-      board_of_trustees: false,
-      management_team: false,
       bio:
         "Jack was Managing Director and CFO/Treasurer of U.S. iShares at BlackRock from 2004 to 2019. Prior to BlackRock, he was Controller at Paul Capital Partners, responsible for the oversight of the financial, operational and accounting activities of the investments acquired in the secondary market. Jack also served as SVP and CFO/Treasurer at Fremont Investment Advisors, managing all aspects of finance and operations for the firm. Jack graduated from California State University with a Bachelor degree in Accounting and was also a Certified Public Accountant.",
       social: {
-        linkedin: "",
-        twitter: "",
-        youtube: "https://www.youtube.com/channel/UClBaJptKDg9-SkmTNfzaZUw",
         email: "j-gee@sbcglobal.net",
       },
     },
@@ -318,15 +298,9 @@ const ResearchTeam = ({ team }) => {
       name: "Frank Savage",
       title: "Director, Board of Advisors",
       img: "placeholder",
-      leadership_team: true,
-      board_of_trustees: false,
-      management_team: false,
       bio:
         "Frank is Chief Executive Officer of Savage Holdings LLC, a global financial services company. Prior to forming Savage Holdings, he was Chairman of Alliance Capital Management International, a division of Alliance Capital Management, a $700 billion asset management subsidiary of AXA Equitable Life Assurance Company. He has a distinguished career in international banking, corporate finance, and global investment management. He has served on the boards of several corporations and not-for-profit organizations, including Bloomberg LP, Lockheed Martin, Qualcomm, and the New York Philharmonic, and as a Trustee Emeritus of the Johns Hopkins University Board. He earned a Bachelor of Arts degree from Howard University, a Master of Arts degree from the Johns Hopkins Nitze School of Advanced International Studies, and was the recipient of an Honorary Doctorate of Humane Letters from Hofstra University and an honorary Doctor of Humanities degree from Howard University.",
       social: {
-        linkedin: "",
-        twitter: "",
-        youtube: "https://www.youtube.com/channel/UClBaJptKDg9-SkmTNfzaZUw",
         email: "fsavage@savageholdings.com",
       },
     },
@@ -334,15 +308,9 @@ const ResearchTeam = ({ team }) => {
       name: "Yue-Sai Kan",
       title: "Co-Chairman of the China Institute",
       img: "yue_sai_kan",
-      leadership_team: false,
-      board_of_trustees: true,
-      management_team: false,
       bio:
         "Yue-Sai Kan is an Emmy-winning television host and producer, successful entrepreneur, fashion icon, bestselling author and humanitarian.  People magazine called her 'the most famous woman in China' and Time magazine proclaimed her 'the Queen of the Middle Kingdom.' Yue-Sai’s weekly television series 'Looking East', was the first of its kind to introduce Asian cultures and customs to a growing and receptive American audience and later shows amassed a weekly viewership of 300 million. Yue-Sai’s other TV credits include the ABC documentary 'China Walls and Bridges', which earned her a Emmy Award. Yue-Sai founded Yue-Sai Cosmetics which grew into China’s leading Cosmetics Company, later purchased by L'Oreal.  Additionally, she has written 9 best-selling books, and in 2000, became the first and only living American featured on a Chinese government-issued postage stamp.  Yue-Sai has been deeply involved in charities and has served on the boards of prominent charitable organizations in China and the United States.",
       social: {
-        linkedin: "",
-        twitter: "",
-        youtube: "https://www.youtube.com/channel/UClBaJptKDg9-SkmTNfzaZUw",
         email: "ny@yuesaikan.net",
       },
     },
@@ -514,47 +482,6 @@ const ResearchTeam = ({ team }) => {
                   <Col className="social-container">
                     <div className="eyebrow">Connect</div>
                     <div className="social">
-                      <a
-                        href={"https://twitter.com/" + i.social.twitter}
-                        target="_blank"
-                        rel="norefferer noopener"
-                      >
-                        <img
-                          src={twitter_black}
-                          alt="twitter"
-                          className="twitter-icon"
-                          width="16px"
-                        />
-                      </a>
-                      <a
-                        href={
-                          "https://www.linkedin.com/company/" +
-                          i.social.linkedin
-                        }
-                        target="_blank"
-                        rel="norefferer noopener"
-                      >
-                        <img
-                          src={linkedin_black}
-                          alt="linkedin"
-                          className="linkedin-icon"
-                          width="17px"
-                        />
-                      </a>
-                      <a
-                        href={
-                          "https://www.youtube.com/channel/" + i.social.youtube
-                        }
-                        target="_blank"
-                        rel="norefferer noopener"
-                      >
-                        <img
-                          src={youtube_black}
-                          alt="youtube"
-                          className="youtube-icon"
-                          width="21px"
-                        />
-                      </a>
                       <a href={"mailto:" + i.social.email}>
                         <img
                           src={mail_black}
@@ -627,47 +554,6 @@ const ResearchTeam = ({ team }) => {
                   <Col className="social-container">
                     <div className="eyebrow">Connect</div>
                     <div className="social">
-                      <a
-                        href={"https://twitter.com/" + i.social.twitter}
-                        target="_blank"
-                        rel="norefferer noopener"
-                      >
-                        <img
-                          src={twitter_black}
-                          alt="twitter"
-                          className="twitter-icon"
-                          width="16px"
-                        />
-                      </a>
-                      <a
-                        href={
-                          "https://www.linkedin.com/company/" +
-                          i.social.linkedin
-                        }
-                        target="_blank"
-                        rel="norefferer noopener"
-                      >
-                        <img
-                          src={linkedin_black}
-                          alt="linkedin"
-                          className="linkedin-icon"
-                          width="17px"
-                        />
-                      </a>
-                      <a
-                        href={
-                          "https://www.youtube.com/channel/" + i.social.youtube
-                        }
-                        target="_blank"
-                        rel="norefferer noopener"
-                      >
-                        <img
-                          src={youtube_black}
-                          alt="youtube"
-                          className="youtube-icon"
-                          width="21px"
-                        />
-                      </a>
                       <a href={"mailto:" + i.social.email}>
                         <img
                           src={mail_black}

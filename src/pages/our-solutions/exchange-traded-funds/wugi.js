@@ -13,6 +13,7 @@ import {
   YAxis,
   Legend,
   Tooltip,
+  CartesianGrid,
 } from "recharts"
 
 import Layout from "../../../components/_global/layout"
@@ -29,6 +30,7 @@ const WUGI = ({}) => {
   let [navHistory, setNavHistory] = useState(null)
   let [marketHistory, setMarketHistory] = useState(null)
   let [premiumDiscount, setPremiumDiscount] = useState(null)
+  let [date, setDate] = useState(null)
   let [modal, setModal] = useState(false)
 
   useEffect(() => {
@@ -64,6 +66,8 @@ const WUGI = ({}) => {
 
     dashDate = dashDate[0] + "-" + dashDate[1] + "-" + dashDate[2]
     noDashDate = noDashDate[1] + noDashDate[0] + noDashDate[2]
+    let cleanDate = dashDate[1] + " " + dashDate[0] + " " + dashDate[2]
+    setDate(cleanDate)
 
     _getDailyPositions(dashDate)
     _getDailyPerformance(dashDate)
@@ -101,17 +105,17 @@ const WUGI = ({}) => {
   }
 
   async function _getETFG() {
-    let url = "http://public.etfg.com/v2/public_disclosures"
-    let etfg = await fetch(url, {
-      method: "GET",
-      Authorization: "Basic " + btoa("esoterica1:573de09fe3a1"),
-      mode: "no-cors",
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Credentials": true,
-      "Content-Type": "application/json",
-    })
-      .then(response => response.json)
-      .then(data => console.log(data))
+    // let url = "http://public.etfg.com/v2/public_disclosures"
+    // let etfg = await fetch(url, {
+    //   method: "GET",
+    //   Authorization: "Basic " + btoa("esoterica1:573de09fe3a1"),
+    //   mode: "no-cors",
+    //   "Access-Control-Allow-Origin": "*",
+    //   "Access-Control-Allow-Credentials": true,
+    //   "Content-Type": "application/json",
+    // })
+    //   .then(response => response.json)
+    //   .then(data => console.log(data))
   }
 
   function _getDailyPerformance(date) {
@@ -296,16 +300,17 @@ const WUGI = ({}) => {
     })
     .slice(0, 10)
 
+  console.log(performance)
+
   return (
     <Layout>
       <SEO title="WUGI 5G" />
       <div id="wugi" className="productPage">
         <div className="hero">
-          <h1 className="pb-4">Esoterica WUGI ETF</h1>
+          <h1 className="pb-4">WUGI</h1>
           <div className="w-100 d-flex justify-content-between">
             <h3 className="d-flex align-items-end w-75">
-              Esoterica’s signature ETF for all. Based in future technologies,
-              backed by industry-leading experts.
+              Esoterica NextG Economy ETF
             </h3>
             <div className="button secondary" onClick={() => setModal(true)}>
               Buy Funds
@@ -365,6 +370,10 @@ const WUGI = ({}) => {
                   <a href="www.bbae.com">BBAE</a>
                   <img src={modal_arrow} alt="" />
                 </h2>
+                <h2>
+                  <a href="https://www.etq-amsterdam.com/">ETQ Amsterdam</a>
+                  <img src={modal_arrow} alt="" />
+                </h2>
               </Col>
             </Row>
           </Container>
@@ -376,7 +385,13 @@ const WUGI = ({}) => {
               md={{ size: 9, offset: 3 }}
               className="border-top border-black pl-0 pt-3"
             >
-              <h1>Fund Details</h1>
+              <div className="d-flex align-items-end">
+                <h1>Fund Details</h1>
+                <span className="ml-5 pb-2">
+                  As of {performance["Accounting Date"]}
+                </span>
+              </div>
+
               <div className="py-5 d-flex">
                 <div className="left-col d-flex flex-column">
                   <div className="d-flex justify-content-between pb-1">
@@ -392,12 +407,16 @@ const WUGI = ({}) => {
                     <div>{performance["CUSIP"]}</div>
                   </div>
                   <div className="d-flex justify-content-between pb-1">
+                    <div className="eyebrow">ISIN</div>
+                    <div>{performance["ISIN"]}</div>
+                  </div>
+                  <div className="d-flex justify-content-between pb-1">
                     <div className="eyebrow">Primary Exchange</div>
                     <div>Cboe BZX Exchange</div>
                   </div>
                   <div className="d-flex justify-content-between pb-1">
                     <div className="eyebrow">Inception Date</div>
-                    <div>{performance["Inception Date (Fund)"]}</div>
+                    <div>3/31/20</div>
                   </div>
                   <div className="d-flex justify-content-between pb-1">
                     <div className="eyebrow">Net Assets</div>
@@ -410,7 +429,7 @@ const WUGI = ({}) => {
                 </div>
                 <div className="right-col d-flex flex-column">
                   <div className="d-flex justify-content-between pb-1">
-                    <div className="eyebrow">NET EXPENSE RATIO</div>
+                    <div className="eyebrow">NET EXPENSE RATIO*</div>
                     <div>0.75%</div>
                   </div>
                   <div className="d-flex justify-content-between pb-1">
@@ -420,24 +439,42 @@ const WUGI = ({}) => {
                     <div>TBD</div>
                   </div>
                   <div className="d-flex justify-content-between pb-1">
+                    <div className="eyebrow">Assets Under Management</div>
+                    <div>
+                      {performance["Relative Net Asset"].substr(
+                        0,
+                        performance["Relative Net Asset"].length - 7
+                      )}
+                    </div>
+                  </div>
+                  <div className="d-flex justify-content-between pb-1">
                     <div className="eyebrow">TYPICAL # OF HOLDINGS</div>
                     <div>25-45</div>
                   </div>
                   <div className="d-flex justify-content-between pb-1">
                     <div className="eyebrow">SHARES OUTSTANDING</div>
-                    <div>{performance["Shares Outstanding"]}</div>
+                    <div>
+                      {performance["Shares Outstanding"].substr(
+                        0,
+                        performance["Shares Outstanding"].length - 2
+                      )}
+                    </div>
                   </div>
-                  <div className="d-flex justify-content-between pb-1">
-                    <div className="eyebrow">30 DAY MEDIAN</div>
-                    <div>N/A</div>
-                  </div>
+
                   <div className="d-flex justify-content-between pb-1">
                     <div className="eyebrow">IOPV TICKER</div>
                     <div>WUGIIV</div>
                   </div>
                   <div className="d-flex justify-content-between pb-1">
                     <div className="eyebrow">PORTFOLIO MANAGERS</div>
-                    <div>Qingdong Liu</div>
+                    <div>Qingdong (Bruce) Liu Ph.D., CFA</div>
+                  </div>
+                  <div className="d-flex justify-content-between pb-1">
+                    <div className="body-small pt-3">
+                      *The Advisor has contractually agreed to reduce its fees
+                      and/or absorb expenses of the Fund from the Fund's
+                      effective date through its first year of operation.{" "}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -503,7 +540,8 @@ const WUGI = ({}) => {
               md={{ size: 9, offset: 3 }}
               className="border-top border-black pl-0 pt-3"
             >
-              <h1>Nav & Market Price</h1>
+              <h1>NAV & Market Price</h1>
+              <div className="my-4">As of {performance["Accounting Date"]}</div>
               <ResponsiveContainer width="80%" aspect={2}>
                 <LineChart
                   height={400}
@@ -513,6 +551,7 @@ const WUGI = ({}) => {
                   <Line type="natural" dataKey="MARKET" stroke="#000" />
                   <Line type="natural" dataKey="NAV" stroke="#00ff42" />
                   <XAxis dataKey="name" />
+                  <CartesianGrid stroke="#d8d8d8" />
                   <YAxis />
                   <Tooltip
                     itemStyle={{ padding: 0 }}
@@ -523,6 +562,60 @@ const WUGI = ({}) => {
                 </LineChart>
               </ResponsiveContainer>
             </Col>
+            <Col md={{ size: 9, offset: 3 }}>
+              <Row className="mb-5">
+                <Col md="6">
+                  <h2 className="pb-3">NAV Price</h2>
+                  <div className="w-75 py-1 d-flex justify-content-between">
+                    <div>Closing Price</div>
+                    <div>{parseFloat(performance["NAV"]).toFixed(2)}</div>
+                  </div>
+                  <div className="w-75 py-1 d-flex justify-content-between">
+                    <div>Change ($)</div>
+                    <div>
+                      {parseFloat(performance["NAV Change"]).toFixed(2)}
+                    </div>
+                  </div>
+                  <div className="w-75 py-1 d-flex justify-content-between">
+                    <div>Change (%)</div>
+                    <div>
+                      {parseFloat(performance["NAV Percent Change"]).toFixed(2)}
+                    </div>
+                  </div>
+                </Col>
+                <Col md="6">
+                  <h2 className="pb-3">Market Price</h2>
+                  <div className="w-75 py-1 d-flex justify-content-between">
+                    <div>Closing Price</div>
+                    <div>
+                      {parseFloat(performance["Closing Market Price"]).toFixed(
+                        2
+                      )}
+                    </div>
+                  </div>
+                  <div className="w-75 py-1 d-flex justify-content-between">
+                    <div>Change ($)</div>
+                    <div>
+                      {(
+                        parseFloat(performance["Closing Market Price"]) -
+                        parseFloat(performance["Previous Market Price"])
+                      ).toFixed(2)}
+                    </div>
+                  </div>
+                  <div className="w-75 py-1 d-flex justify-content-between">
+                    <div>Change (%)</div>
+                    <div>
+                      {(
+                        ((parseFloat(performance["Closing Market Price"]) -
+                          parseFloat(performance["Previous Market Price"])) /
+                          parseFloat(performance["Previous Market Price"])) *
+                        100
+                      ).toFixed(2)}
+                    </div>
+                  </div>
+                </Col>
+              </Row>
+            </Col>
           </Row>
           <Row className="fund-performance-row">
             <Col
@@ -530,7 +623,8 @@ const WUGI = ({}) => {
               className="border-top border-black pl-0 pt-3"
             >
               <h1>WUGI Performance</h1>
-              <Row className="w-100 m-0 py-5">
+              <div className="py-4 pl-2">As of 3/31/2020</div>
+              <Row className="w-100 m-0 py-1">
                 <Col className="">
                   <Row className="header-row">
                     <Col>WUGI ETF</Col>
@@ -547,10 +641,10 @@ const WUGI = ({}) => {
                     <Col>3 Months</Col>
                   </Row>
                   <Row className="nav-row">
-                    <Col>{navHistory.three_month}</Col>
+                    <Col>N/A</Col>
                   </Row>
                   <Row className="mp-row">
-                    <Col>{marketHistory.three_month}</Col>
+                    <Col>N/A</Col>
                   </Row>
                 </Col>
                 <Col>
@@ -558,10 +652,10 @@ const WUGI = ({}) => {
                     <Col>YTD</Col>
                   </Row>
                   <Row className="nav-row">
-                    <Col>{navHistory.ytd}</Col>
+                    <Col>N/A</Col>
                   </Row>
                   <Row className="mp-row">
-                    <Col>{marketHistory.ytd}</Col>
+                    <Col>N/A</Col>
                   </Row>
                 </Col>
                 <Col>
@@ -569,10 +663,10 @@ const WUGI = ({}) => {
                     <Col>1 Year</Col>
                   </Row>
                   <Row className="nav-row">
-                    <Col>{navHistory.one_year}</Col>
+                    <Col>N/A</Col>
                   </Row>
                   <Row className="mp-row">
-                    <Col>{marketHistory.one_year}</Col>
+                    <Col>N/A</Col>
                   </Row>
                 </Col>
                 <Col>
@@ -580,10 +674,10 @@ const WUGI = ({}) => {
                     <Col>3 Years (Annualized)</Col>
                   </Row>
                   <Row className="nav-row">
-                    <Col>{navHistory.three_year}</Col>
+                    <Col>N/A</Col>
                   </Row>
                   <Row className="mp-row">
-                    <Col>{marketHistory.three_year}</Col>
+                    <Col>N/A</Col>
                   </Row>
                 </Col>
                 <Col>
@@ -591,73 +685,47 @@ const WUGI = ({}) => {
                     <Col>5 Years (Annualized)</Col>
                   </Row>
                   <Row className="nav-row">
-                    <Col>{navHistory.five_year}</Col>
+                    <Col>N/A</Col>
                   </Row>
                   <Row className="mp-row">
-                    <Col>{marketHistory.five_year}</Col>
+                    <Col>N/A</Col>
                   </Row>
                 </Col>
               </Row>
 
               <Row>
                 <Col>
-                  <div className="body-small mt-2 mb-5 w-75">
-                    *Past performance does not guarantee future results.The
-                    performance data quoted represents past performance and
-                    current returns may be lower or higher.The investment return
-                    and principal will fluctuate so that an investor’s shares
-                    when redeemed may be worth more or less than the original
-                    cost.The Fund’s most recent month-end performance can be
-                    found in the fund material section. Returns for less than
-                    one year are not annualized. Net asset value (“NAV”) returns
-                    are based on the dollar value of a single share of the ETF,
-                    calculated using the value of the underlying assets of the
-                    ETF minus its liabilities, divided by the number of shares
-                    outstanding.The NAV is typically calculated at 4:00 pm
-                    Eastern time on each business day the NewYork Stock Exchange
-                    is open for trading. Market returns are based on the trade
-                    price at which shares are bought and sold on the NYSE Arca,
-                    Inc. using the last share trade. Market performance does not
-                    represent the returns you would receive if you traded shares
-                    at other times.Total Return reflects reinvestment of
-                    distributions on ex-date for NAV returns and payment date
-                    for Market Price returns.The market price of the ETF’s
-                    shares may differ significantly from their NAV during
-                    periods of market volatility.
+                  <div className="body-small mt-3 mb-5">
+                    <i>
+                      *Past performance does not guarantee future results. The
+                      performance data quoted represents past performance and
+                      current returns may be lower or higher. The investment
+                      return and principal will fluctuate so that an investor’s
+                      shares when redeemed may be worth more or less than the
+                      original cost. The Fund's most recent month-end
+                      performance can be obtained by calling 1-866-979-1710.
+                      Returns for less than one year are not annualized.
+                    </i>
+                    <p>
+                      Net asset value (“NAV”) returns are based on the dollar
+                      value of a single share of the ETF, calculated using the
+                      value of the underlying assets of the ETF minus its
+                      liabilities, divided by the number of shares outstanding.
+                      The NAV is typically calculated at 4:00 pm Eastern time on
+                      each business day the Cboe BZX Exchange is open for
+                      trading. Market returns are based on the trade price at
+                      which shares are bought and sold on the Cboe BZX Exchange,
+                      Inc. using the last share trade. Market performance does
+                      not represent the returns you would receive if you traded
+                      shares at other times. Total Return reflects reinvestment
+                      of distributions on ex-date for NAV returns and payment
+                      date for Market Price returns. The market price of the
+                      ETF’s shares may differ significantly from their NAV
+                      during periods of market volatility.
+                    </p>
                   </div>
                 </Col>
               </Row>
-            </Col>
-          </Row>
-          <Row className="fund-premiumDiscount-row">
-            <Col
-              md={{ size: 9, offset: 3 }}
-              className="border-top border-black pl-0 pt-3"
-            >
-              <h1>Premium / Discount</h1>
-              <ResponsiveContainer width="80%" aspect={2}>
-                <LineChart
-                  data={historical}
-                  margin={{ top: 48, right: 0, bottom: 48, left: 0 }}
-                >
-                  <Line
-                    type="natural"
-                    dataKey="p/d"
-                    name="Premium / Discount"
-                    stroke="#000"
-                    dot={{ stroke: "#fdfc71" }}
-                    activeDot={{ stroke: "000" }}
-                  />
-                  <XAxis dataKey="name" />
-                  <YAxis />
-                  <Tooltip
-                    itemStyle={{ padding: 0 }}
-                    wrapperStyle={{ padding: 8 }}
-                    labelStyle={{ padding: 3 }}
-                    contentStyle={{ padding: 8 }}
-                  />
-                </LineChart>
-              </ResponsiveContainer>
             </Col>
           </Row>
           <Row className="fund-holdings-row">
@@ -665,7 +733,15 @@ const WUGI = ({}) => {
               md={{ size: 9, offset: 3 }}
               className="border-top border-black pl-0 pt-3"
             >
-              <h1>Top 10 Holdings</h1>
+              <div className="d-flex align-items-end">
+                <h1>
+                  Performance of <br />
+                  Top 10 Holdings
+                </h1>
+                <span className="ml-5 pb-2">
+                  As of {performance["Accounting Date"]}
+                </span>
+              </div>
               <Row className="w-100 m-0 py-5">
                 <Col className="">
                   <Row className="header-row">
@@ -699,6 +775,18 @@ const WUGI = ({}) => {
                     return (
                       <Row key={idx} className="holdings-row">
                         <Col>{i["Ticker"]}</Col>
+                      </Row>
+                    )
+                  })}
+                </Col>
+                <Col>
+                  <Row className="header-row">
+                    <Col>Currency</Col>
+                  </Row>
+                  {topTenPositions.map((i, idx) => {
+                    return (
+                      <Row key={idx} className="holdings-row">
+                        <Col>{i["Asset Currency"]}</Col>
                       </Row>
                     )
                   })}
@@ -740,6 +828,39 @@ const WUGI = ({}) => {
                   })}
                 </Col>
               </Row>
+            </Col>
+          </Row>
+
+          <Row className="fund-premiumDiscount-row">
+            <Col
+              md={{ size: 9, offset: 3 }}
+              className="border-top border-black pl-0 pt-3"
+            >
+              <h1>Premium / Discount</h1>
+              <ResponsiveContainer width="80%" aspect={2}>
+                <LineChart
+                  data={historical}
+                  margin={{ top: 48, right: 0, bottom: 48, left: 0 }}
+                >
+                  <Line
+                    type="natural"
+                    dataKey="p/d"
+                    name="Premium / Discount"
+                    stroke="#000"
+                    dot={{ stroke: "#fdfc71" }}
+                    activeDot={{ stroke: "000" }}
+                  />
+                  <XAxis dataKey="name" />
+                  <YAxis />
+                  <CartesianGrid stroke="#d8d8d8" />
+                  <Tooltip
+                    itemStyle={{ padding: 0 }}
+                    wrapperStyle={{ padding: 8 }}
+                    labelStyle={{ padding: 3 }}
+                    contentStyle={{ padding: 8 }}
+                  />
+                </LineChart>
+              </ResponsiveContainer>
             </Col>
           </Row>
 

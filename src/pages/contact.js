@@ -47,9 +47,11 @@ const ContactPage = () => (
           <div className="nav">
             <a href="mailto:info@esotericacap.com">info@esotericacap.com</a>
           </div>
-          <div className="eyebrow">CAREER INQUIRIES</div>
+          <div className="eyebrow mt-5">CAREER INQUIRIES</div>
           <div className="nav">
-            <a href="mailto:career@esotericacap.com">career@esotericacap.com</a>
+            <a href="mailto:careers@esotericacap.com">
+              careers@esotericacap.com
+            </a>
           </div>
         </Col>
         <Col

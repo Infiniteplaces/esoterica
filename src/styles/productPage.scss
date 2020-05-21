@@ -1,4 +1,7 @@
 .productPage {
+  h1 {
+    font-size: 88px;
+  }
   ::selection {
     color: $transparent;
     text-shadow: 0px 0px 7px $black;
@@ -7,6 +10,9 @@
     padding: 15px 0px;
   }
   .hero {
+    h1 {
+      font-size: 120px;
+    }
     height: 420px;
     width: 100%;
     background-color: $yellow;
@@ -25,11 +31,11 @@
 
   .fund-details-row {
     .left-col {
-      width: 35%;
+      width: 50%;
       min-width: 350px;
     }
     .right-col {
-      width: 35%;
+      width: 50%;
       min-width: 350px;
       margin-left: 72px;
     }

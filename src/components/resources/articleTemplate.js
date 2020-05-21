@@ -273,7 +273,11 @@ class ArticleTemplate extends React.Component {
                         width="15px"
                       />
                     </a>
-                    <a href="" target="_blank" rel="norefferer noopener">
+                    <a
+                      href="https://linkedin.com"
+                      target="_blank"
+                      rel="norefferer noopener"
+                    >
                       <img
                         src={linkedin_black}
                         alt="linkedin"
@@ -281,15 +285,13 @@ class ArticleTemplate extends React.Component {
                         width="16px"
                       />
                     </a>
-                    <a href="" target="_blank" rel="norefferer noopener">
-                      <img
-                        src={youtube_black}
-                        alt="youtube"
-                        className="youtube-icon"
-                        width="20px"
-                      />
-                    </a>
-                    <a href="malto:" target="_blank" rel="norefferer noopener">
+
+                    <a
+                      href={
+                        "mailto:?subject=Esoterica Capital&body=Check out this article: " +
+                        shareItem
+                      }
+                    >
                       <img
                         src={mail_black}
                         alt="mail"
@@ -323,8 +325,8 @@ class ArticleTemplate extends React.Component {
           background={softFooterBg}
           text={"How we can work together"}
           ctaLead={"See"}
-          cta={"Advisory Solutions"}
-          link={"/investorSolutions"}
+          cta={"Our Solutions"}
+          link={"/our-solutions"}
         />
       </Layout>
     )

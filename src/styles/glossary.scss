@@ -33,6 +33,9 @@
       border-bottom: none;
       padding-bottom: 0;
       margin-bottom: 16px;
+      &:hover {
+        border-bottom: none;
+      }
     }
     .previewItem {
       width: 100%;

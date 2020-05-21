@@ -46,8 +46,8 @@ const AboutPage = () => {
                 <h2 className="text">
                   We’re sharing our experience to help others invest more
                   intelligently, from the institutional investor to those just
-                  starting out. Through our asset management and solutions, our
-                  goal is to make investing simple.
+                  starting out. Through our asset management solutions, our goal
+                  is to make investing simple.
                 </h2>
               </div>
             </Col>

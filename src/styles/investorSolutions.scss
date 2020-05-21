@@ -67,7 +67,15 @@
 #advisorServices,
 #ourNewestFund,
 #assetAllocation {
+  ::selection {
+    color: $transparent;
+    text-shadow: 0px 0px 7px $black;
+  }
   .hero {
+    ::selection {
+      color: $transparent;
+      text-shadow: 0px 0px 7px $white;
+    }
     position: relative;
     .hero-img {
       position: absolute;
@@ -131,7 +139,10 @@
 }
 #previewPill {
   height: 410px;
-
+  ::selection {
+    color: $transparent;
+    text-shadow: 0px 0px 7px $black;
+  }
   #pill {
     border-radius: 4px;
     display: flex;

@@ -30,7 +30,7 @@ class InvestorSolutionsPage extends React.Component {
 
     return (
       <Layout navTheme="dark">
-        <SEO title="Investor Solutions" />
+        <SEO title="Our Solutions" />
         <div id="investorSolutions">
           <div className="hero">
             <Img className="hero-img" fluid={heroImage} />

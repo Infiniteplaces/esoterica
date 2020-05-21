@@ -2,10 +2,16 @@
   padding-top: 75px;
   padding-bottom: 75px;
   background-color: $black;
+  h4 {
+    ::selection {
+      color: $transparent;
+      text-shadow: 0px 0px 7px $white !important;
+    }
+  }
   color: $white;
   ::selection {
     color: $transparent;
-    text-shadow: 0px 0px 7px $white;
+    text-shadow: 0px 0px 7px $white !important;
   }
   .header-row {
     margin: 24px 0px;
@@ -26,6 +32,10 @@
     }
   }
   .marquee-container {
+    ::selection {
+      color: $transparent;
+      text-shadow: 0px 0px 7px $white;
+    }
     overflow: hidden;
     white-space: nowrap;
     .marquee {
