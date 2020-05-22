@@ -19,7 +19,7 @@ const Layout = ({ children, dispatch, mobile, cookies, navTheme }) => {
   })
 
   function _onWindowResize() {
-    if (window.innerWidth <= 768) {
+    if (window.innerWidth <= 1024) {
       dispatch(setMobile(true))
     } else {
       dispatch(setMobile(false))
