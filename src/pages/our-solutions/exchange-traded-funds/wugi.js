@@ -94,6 +94,9 @@ const WUGI = ({ mobile }) => {
     let data = historical.docs.map(doc => doc.data())
 
     data.map(i => {
+      console.log(i)
+      i["MARKET"] = i["MARKET"].toFixed(2)
+      i["NAV"] = i["NAV"].toFixed(2)
       i["date_readable"] = new Date(i["DATE"].seconds * 1000)
 
       let date =
@@ -348,7 +351,7 @@ const WUGI = ({ mobile }) => {
         <div className="hero">
           <h1 className="pb-4">WUGI</h1>
           <div className="w-100 d-flex flex-column flex-md-row justify-content-md-between">
-            <h2 className="d-flex align-items-end w-75 mb-5 mb-md-0">
+            <h2 className="d-flex align-items-end mb-5 mb-md-0">
               Esoterica NextG Economy ETF
             </h2>
             <div className="button secondary" onClick={() => setModal(true)}>
@@ -1033,8 +1036,10 @@ const WUGI = ({ mobile }) => {
                     return (
                       <Row key={idx} className="holdings-row text-center">
                         <Col>{i["Security Price"]}</Col>
-                        <Col>{i["Shares"].split(".")[0]}</Col>
-                        <Col>{i["Market Value"].split(".")[0]}</Col>
+                        <Col>{numberWithCommas(i["Shares"]).split(".")[0]}</Col>
+                        <Col>
+                          {numberWithCommas(i["Market Value"]).split(".")[0]}
+                        </Col>
                       </Row>
                     )
                   })}

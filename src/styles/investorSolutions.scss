@@ -144,11 +144,9 @@
     padding-right: 26px;
     margin-bottom: 50px;
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
     .call-cta,
     .mail-cta {
-      margin-bottom: 16px;
       .icon-white {
         display: none;
       }
@@ -168,6 +166,12 @@
       padding-left: 0px;
       padding-right: 0px;
       margin-bottom: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .call-cta {
+        margin-bottom: 16px;
+      }
     }
   }
 }

@@ -1,8 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: `Esoterica`,
-    description: `Placeholder copy for site description`,
+    title: `Esoterica Capital`,
+    description: `The world is changing rapidly. At Esoterica we have the experience to help make sure you're on the right side of that. Our investment themes revolve around the digital economy, which is now even more present in our lives than ever before.`,
     author: `Tucker Schoos`,
+    url: "https://www.esotericacap.com",
+    image: "/logos/share.png",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
