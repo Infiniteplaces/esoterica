@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import PropTypes from "prop-types"
 import { connect } from "react-redux"
 import { useStaticQuery, graphql } from "gatsby"
@@ -19,7 +19,7 @@ const Layout = ({ children, dispatch, mobile, cookies, navTheme }) => {
   })
 
   function _onWindowResize() {
-    if (window.innerWidth < 768) {
+    if (window.innerWidth <= 768) {
       dispatch(setMobile(true))
     } else {
       dispatch(setMobile(false))
