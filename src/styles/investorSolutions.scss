@@ -67,6 +67,12 @@
 #advisorServices,
 #ourNewestFund,
 #assetAllocation {
+  @media (max-width: map-get($grid-breakpoints,md)) {
+    .container-fluid {
+      padding-left: 16px !important;
+      padding-right: 16px !important;
+    }
+  }
   ::selection {
     color: $transparent;
     text-shadow: 0px 0px 7px $black;
@@ -86,14 +92,27 @@
       left: 46px;
       color: $white;
     }
+    @media (max-width: map-get($grid-breakpoints,md)) {
+      .hero-img {
+        height: 250px;
+      }
+      .title {
+        bottom: 16px;
+        left: 16px;
+      }
+    }
   }
   .header-row {
     @media (max-width: map-get($grid-breakpoints,md)) {
       .container-fluid {
-        padding: 0px 16px !important;
+        padding-left: 16px !important;
+        padding-right: 16px !important;
       }
       .col {
         padding: 0;
+        p {
+          padding: 0;
+        }
       }
     }
     margin: 50px 0px 20px;
@@ -142,6 +161,11 @@
           display: none;
         }
       }
+    }
+    @media (max-width: map-get($grid-breakpoints,md)) {
+      padding-left: 0px;
+      padding-right: 0px;
+      margin-bottom: 50px;
     }
   }
 }

@@ -41,3 +41,35 @@
     }
   }
 }
+
+@media (max-width: map-get($grid-breakpoints,md)) {
+  #aboutInvestorSolutions {
+    padding: 48px 16px;
+    .icon-row {
+      margin: 100px 0px;
+      a {
+        img {
+          width: 192px;
+        }
+        &:hover {
+          webkit-filter: blur(3px);
+          filter: blur(3px);
+          transition: all 150ms linear;
+          transform: scale(1.01);
+          transition: all 250ms Cubic-bezier(0.33, 1, 0.33, 1);
+        }
+      }
+      a:hover {
+        .body-small {
+          font-style: italic;
+        }
+      }
+    }
+    .cta-row {
+      .button.secondary {
+        width: 100%;
+        border: 1px solid $black;
+      }
+    }
+  }
+}

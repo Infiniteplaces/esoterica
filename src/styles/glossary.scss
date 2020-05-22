@@ -50,6 +50,9 @@
           margin: 0px 24px;
         }
       }
+      @media (max-width: map-get($grid-breakpoints,md)) {
+        animation-play-state: running;
+      }
     }
     &:hover {
       cursor: pointer;

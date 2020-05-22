@@ -11,8 +11,9 @@ const OurValues = ({}) => {
     <Container fluid id="aboutOurValues">
       <Row className="d-flex">
         <Col
+          xs="12"
           md={{ size: 5, offset: 1 }}
-          className="text-container px-0 px-md-2"
+          className="text-container px-md-2"
         >
           <h3>Our Values</h3>
           <h1 className="section">Let’s make the future bright.</h1>
@@ -32,6 +33,7 @@ const OurValues = ({}) => {
           </a>
         </Col>
         <Col
+          xs="12"
           md={{ size: 5 }}
           className="d-flex justify-content-center align-items-center img-column"
         >

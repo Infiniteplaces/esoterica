@@ -62,8 +62,8 @@
 }
 
 @media (max-width: map-get($grid-breakpoints,md)) {
-  #homeEmailCapture {
-    padding: 75px 10px;
+  #emailCapture {
+    padding: 75px 16px !important;
     background-color: $black;
     color: $white;
     h3 {
@@ -74,6 +74,7 @@
   .email-signup-container {
     display: flex;
     flex-direction: column;
+    width: 80%;
     .email-header {
       margin-bottom: 10px;
     }

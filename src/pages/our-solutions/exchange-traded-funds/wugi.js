@@ -325,10 +325,10 @@ const WUGI = ({}) => {
   console.log(historical)
 
   return (
-    <Layout navTheme="dark">
+    <Layout>
       <SEO title="WUGI 5G" />
       <div id="wugi" className="productPage">
-        <div className="hero" style={{ backgroundImage: `url(${hero})` }}>
+        <div className="hero">
           <h1 className="pb-4">WUGI</h1>
           <div className="w-100 d-flex justify-content-between">
             <h3 className="d-flex align-items-end w-75">
@@ -399,7 +399,10 @@ const WUGI = ({}) => {
 
         <Container fluid id="product-body">
           <Row className="fund-details-row">
-            <Col md={{ size: 12 }} className="border-top border-black pt-3">
+            <Col
+              md={{ size: 9, offset: 3 }}
+              className="border-top border-black pl-0 pt-3"
+            >
               <div className="d-flex align-items-end">
                 <h1>Fund Details</h1>
                 <span className="ml-5 pb-2">
@@ -492,7 +495,10 @@ const WUGI = ({}) => {
             </Col>
           </Row>
           <Row className="fund-description-row">
-            <Col md={{ size: 12 }} className="border-top border-black pt-3">
+            <Col
+              md={{ size: 9, offset: 3 }}
+              className="border-top border-black pt-3 pl-0"
+            >
               <h1>Fund Description</h1>
               <p className="d-flex pt-5 w-75">
                 WUGI is an actively-managed ETF that will invest in US and
@@ -513,7 +519,10 @@ const WUGI = ({}) => {
             </Col>
           </Row>
           <Row className="fund-documents-row">
-            <Col md={{ size: 12 }} className="border-top border-black pt-3">
+            <Col
+              md={{ size: 9, offset: 3 }}
+              className="border-top border-black pt-3 pl-0"
+            >
               <h1>Fund Documents</h1>
               <div className="py-5 document-container">
                 <div className="py-1 d-flex justify-content-between">
@@ -541,7 +550,10 @@ const WUGI = ({}) => {
             </Col>
           </Row>
           <Row className="fund-navMarket-row">
-            <Col md="12" className="border-top border-black pt-3">
+            <Col
+              md={{ size: 9, offset: 3 }}
+              className="border-top border-black pl-0 pt-3"
+            >
               <h1>NAV & Market Price</h1>
               <div className="my-4">
                 <strong> As of {performance["Accounting Date"]}</strong>
@@ -566,7 +578,7 @@ const WUGI = ({}) => {
                 </LineChart>
               </ResponsiveContainer>
             </Col>
-            <Col md={{ size: 12 }}>
+            <Col md={{ size: 9, offset: 3 }}>
               <Row className="mb-5">
                 <Col md="6">
                   <h3 className="pb-3">NAV</h3>
@@ -622,7 +634,10 @@ const WUGI = ({}) => {
             </Col>
           </Row>
           <Row className="fund-performance-row">
-            <Col md={{ size: 12 }} className="border-top border-black pt-3">
+            <Col
+              md={{ size: 9, offset: 3 }}
+              className="border-top border-black pl-0 pt-3"
+            >
               <h1>WUGI Performance</h1>
               <div className="py-4 pl-2">
                 <strong>As of 3/31/2020</strong>
@@ -640,57 +655,57 @@ const WUGI = ({}) => {
                   </Row>
                 </Col>
                 <Col>
-                  <Row className="header-row">
+                  <Row className="header-row text-center">
                     <Col>3 Months</Col>
                   </Row>
-                  <Row className="nav-row">
-                    <Col>-</Col>
+                  <Row className="nav-row text-center">
+                    <Col className="body-small">0.00%</Col>
                   </Row>
-                  <Row className="mp-row">
-                    <Col>-</Col>
+                  <Row className="mp-row text-center">
+                    <Col className="body-small">0.00%</Col>
                   </Row>
                 </Col>
                 <Col>
-                  <Row className="header-row">
+                  <Row className="header-row text-center">
                     <Col>YTD</Col>
                   </Row>
-                  <Row className="nav-row">
+                  <Row className="nav-row text-center">
                     <Col>-</Col>
                   </Row>
-                  <Row className="mp-row">
+                  <Row className="mp-row text-center">
                     <Col>-</Col>
                   </Row>
                 </Col>
                 <Col>
-                  <Row className="header-row">
+                  <Row className="header-row text-center">
                     <Col>1 Year</Col>
                   </Row>
-                  <Row className="nav-row">
+                  <Row className="nav-row text-center">
                     <Col>-</Col>
                   </Row>
-                  <Row className="mp-row">
+                  <Row className="mp-row text-center">
                     <Col>-</Col>
                   </Row>
                 </Col>
                 <Col>
-                  <Row className="header-row">
+                  <Row className="header-row text-center">
                     <Col>3 Years (Annualized)</Col>
                   </Row>
-                  <Row className="nav-row">
+                  <Row className="nav-row text-center">
                     <Col>-</Col>
                   </Row>
-                  <Row className="mp-row">
+                  <Row className="mp-row text-center">
                     <Col>-</Col>
                   </Row>
                 </Col>
                 <Col>
-                  <Row className="header-row">
+                  <Row className="header-row text-center">
                     <Col>5 Years (Annualized)</Col>
                   </Row>
-                  <Row className="nav-row">
+                  <Row className="nav-row text-center">
                     <Col>-</Col>
                   </Row>
-                  <Row className="mp-row">
+                  <Row className="mp-row text-center">
                     <Col>-</Col>
                   </Row>
                 </Col>
@@ -732,7 +747,10 @@ const WUGI = ({}) => {
             </Col>
           </Row>
           <Row className="fund-holdings-row">
-            <Col md={{ size: 12 }} className="border-top border-black pt-3">
+            <Col
+              md={{ size: 9, offset: 3 }}
+              className="border-top border-black pl-0 pt-3"
+            >
               <div className="d-flex align-items-end">
                 <h1>
                   Performance of <br />
@@ -755,7 +773,7 @@ const WUGI = ({}) => {
                     )
                   })}
                 </Col>
-                <Col>
+                <Col md="3">
                   <Row className="header-row">
                     <Col>Company</Col>
                   </Row>
@@ -832,7 +850,10 @@ const WUGI = ({}) => {
           </Row>
 
           <Row className="fund-premiumDiscount-row">
-            <Col md={{ size: 12 }} className="border-top border-black  pt-3">
+            <Col
+              md={{ size: 9, offset: 3 }}
+              className="border-top border-black pl-0 pt-3"
+            >
               <h1>Premium / Discount</h1>
               <ResponsiveContainer width="90%" aspect={2}>
                 <LineChart
@@ -862,7 +883,7 @@ const WUGI = ({}) => {
           </Row>
 
           <Row className="disclosure-row ">
-            <Col md={{ size: 12 }} className="mb-5">
+            <Col md={{ size: 9, offset: 3 }} className="mb-5 pl-0">
               <h1 className="py-5">Disclosures</h1>
               <p>
                 <strong>

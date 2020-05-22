@@ -11,7 +11,7 @@ const LibraryTwoPost = ({ posts, mobile }) => {
 
   let display = posts.map((i, idx) => {
     return (
-      <Col key={idx} xs="4">
+      <Col key={idx} xs="12" md="4">
         <div className="post-container">
           <Link to={"/resources/library/" + i.node.slug}>
             <div className="wrapper">

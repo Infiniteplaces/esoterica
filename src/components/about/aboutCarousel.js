@@ -46,14 +46,14 @@ class AboutCarousel extends Component {
     let pressClippings = [
       {
         quote:
-          "BBH is excited and humbled to be a partner for Esoterica Capital and we are confident in their ability to build an innovative and distinctive ETF business",
-        attribution:
-          "Ryan Sullivan, Senior Vice President, Brown Brothers Harriman & Co.",
+          "Vident Investment Advisory … enjoys a close working relationship with Esoterica … VIA brings their expertise in ETF sub-advisory and combines that with Esoterica’s expertise in 5G related securities to offer a highly efficient ETF.",
+        attribution: "Denise Krisko, President, Vident Investment Advisory",
       },
       {
         quote:
-          "Vident Investment Advisory … enjoys a close working relationship with Esoterica … VIA brings their expertise in ETF sub-advisory and combines that with Esoterica’s expertise in 5G related securities to offer a highly efficient ETF.",
-        attribution: "Denise Krisko, President, Vident Investment Advisory",
+          "BBH is excited and humbled to be a partner for Esoterica Capital and we are confident in their ability to build an innovative and distinctive ETF business",
+        attribution:
+          "Ryan Sullivan, Senior Vice President, Brown Brothers Harriman & Co.",
       },
     ]
 
@@ -67,8 +67,8 @@ class AboutCarousel extends Component {
     })
     return (
       <Container fluid id="aboutCarousel">
-        <Row className="d-flex justify-content-center align-items-center pt-5">
-          <Col className="d-flex justify-content-center align-items-center pt-5">
+        <Row className="d-flex justify-content-center align-items-center pt-4 pt-md-5">
+          <Col className="d-flex justify-content-center align-items-center pt-4 pt-md-5">
             <h3>Words from our partners</h3>
           </Col>
         </Row>
@@ -84,7 +84,7 @@ class AboutCarousel extends Component {
               className="arrow back"
             />
           </Col>
-          <Col xs="10" className="d-flex align-items-between">
+          <Col xs="12" md="10" className="d-flex align-items-between">
             <Slider ref={c => (this.slider = c)} {...this.slickSettings}>
               {display}
             </Slider>

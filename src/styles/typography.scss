@@ -115,8 +115,8 @@ h1.section {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   @media (max-width: map-get($grid-breakpoints,md)) {
-    font-size: 3.1875rem;
-    line-height: 3.1875rem;
+    font-size: 3rem;
+    line-height: 3.125rem;
     letter-spacing: 0rem;
   }
 }
@@ -133,8 +133,8 @@ h1.article {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   @media (max-width: map-get($grid-breakpoints,md)) {
-    font-size: 3.1875rem;
-    line-height: 3.1875rem;
+    font-size: 3rem;
+    line-height: 3.125rem;
   }
 }
 

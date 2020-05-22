@@ -238,13 +238,18 @@ class ArticleTemplate extends React.Component {
         <SEO title={post.title} />
         <div id="articleTemplate">
           <div className="header-container">
-            <Img alt={post.title} fluid={post.heroImage.fluid} />
+            <Img
+              alt={post.title}
+              fluid={post.heroImage.fluid}
+              className="hero_img"
+            />
             <div className="header-overlay" />
             <h1 className="section-headline article-title">{post.title}</h1>
           </div>
           <Container fluid>
             <Row className="article-row">
               <Col
+                xs="12"
                 md="2"
                 style={this.state.metaPosition === "fixed" ? {} : colStyle}
               >
@@ -302,7 +307,11 @@ class ArticleTemplate extends React.Component {
                   </div>
                 </div>
               </Col>
-              <Col md="8" className="d-flex flex-column align-items-center">
+              <Col
+                xs="12"
+                md="8"
+                className="d-flex flex-column align-items-center"
+              >
                 {youtube}
                 {soundcloud}
                 <div className="article-container">

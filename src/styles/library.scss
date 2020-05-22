@@ -36,6 +36,24 @@
         align-items: center;
       }
     }
+    @media (max-width: map-get($grid-breakpoints,md)) {
+      .hero-img {
+        height: 387px;
+      }
+      .hero-title {
+        z-index: 20;
+        position: absolute;
+        padding: 125px 16px 0px;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        .arrow {
+          width: 32px;
+          margin-left: 16px;
+        }
+      }
+    }
   }
   .sort-container {
     z-index: 15;
@@ -118,6 +136,40 @@
         margin: 0px 8px;
         &.active {
           opacity: 1;
+        }
+      }
+    }
+    @media (max-width: map-get($grid-breakpoints,md)) {
+      padding: 0px 16px;
+      height: 100px;
+      margin: 32px 0px;
+      font-size: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .eyebrow {
+        font-size: 0.8rem;
+      }
+      .pages {
+        display: flex;
+        margin-top: 24px;
+        align-items: center;
+        margin-left: -30px;
+        .page-next,
+        .page-back {
+          margin: 0px 30px;
+          .disabled {
+            opacity: 0.35;
+            cursor: default;
+          }
+        }
+        .page-number {
+          opacity: 0.35;
+          margin: 0px 8px;
+          &.active {
+            opacity: 1;
+          }
         }
       }
     }
@@ -482,16 +534,23 @@
   }
   @media (max-width: map-get($grid-breakpoints,md)) {
     margin: 50px 0px;
+    .col-12 {
+      padding: 0 !important;
+    }
     .post-container {
-      height: auto;
-      .container-image {
-        height: 100px;
-        width: 100%;
-        border-radius: 4px;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+      height: 300px;
+      .wrapper {
+        height: 60%;
+        .container-image {
+          height: 100%;
+          width: 100%;
+          border-radius: 4px;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
       }
+
       .post-text-container {
         width: 100%;
         text-align: left;
@@ -503,9 +562,17 @@
         .tag-container {
           display: flex;
 
-          justify-content: flex-start;
+          justify-content: space-between;
           align-items: flex-start;
           .tag {
+            width: auto;
+            border: 1px solid $black;
+            margin: 10px 7px 10px 0px;
+            padding: 7px 10px 3px;
+            font-size: 12px;
+            border-radius: 50px;
+          }
+          .publishDate {
             width: auto;
             border: 1px solid $black;
             margin: 10px 7px 10px 0px;

@@ -58,6 +58,39 @@
       }
     }
   }
+  @media (max-width: map-get($grid-breakpoints,md)) {
+    height: 100vh;
+    min-height: 800px;
+    z-index: 10;
+    top: 0;
+    ::selection {
+      color: $transparent;
+      text-shadow: 0px 0px 7px $white;
+    }
+    #hero-container {
+      display: flex;
+      position: relative;
+      height: 100%;
+      flex-direction: column;
+      #hero-left {
+        height: 50%;
+        width: 100%;
+      }
+      #hero-right {
+        background-color: $black;
+        color: $white;
+        width: 100%;
+        margin-top: 100%;
+        padding: 16px;
+        overflow-y: scroll;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        .text {
+        }
+      }
+    }
+  }
 }
 
 #aboutTextBlock {
@@ -77,6 +110,8 @@
     }
   }
   @media (max-width: map-get($grid-breakpoints,md)) {
+    padding-top: 48px;
+    padding-bottom: 48px;
     .title {
       width: 100%;
     }
