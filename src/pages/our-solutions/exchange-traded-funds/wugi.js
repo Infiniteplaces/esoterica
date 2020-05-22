@@ -386,7 +386,7 @@ const WUGI = ({}) => {
               <div className="d-flex align-items-end">
                 <h1>Fund Details</h1>
                 <span className="ml-5 pb-2">
-                  As of {performance["Accounting Date"]}
+                  <strong> As of {performance["Accounting Date"]}</strong>
                 </span>
               </div>
 
@@ -535,7 +535,30 @@ const WUGI = ({}) => {
               className="border-top border-black pl-0 pt-3"
             >
               <h1>NAV & Market Price</h1>
-              <div className="my-4">As of {performance["Accounting Date"]}</div>
+              <div className="my-4">
+                <strong> As of {performance["Accounting Date"]}</strong>
+              </div>
+              <ResponsiveContainer width="80%" aspect={2}>
+                <LineChart
+                  height={400}
+                  data={historical}
+                  margin={{ top: 48, right: 0, bottom: 48, left: 0 }}
+                >
+                  <Line type="natural" dataKey="MARKET" stroke="#000" />
+                  <Line type="natural" dataKey="NAV" stroke="#00ff42" />
+                  <XAxis dataKey="name" />
+                  <CartesianGrid stroke="#d8d8d8" />
+                  <YAxis />
+                  <Tooltip
+                    itemStyle={{ padding: 0 }}
+                    wrapperStyle={{ padding: 8 }}
+                    labelStyle={{ padding: 3 }}
+                    contentStyle={{ padding: 8 }}
+                  />
+                </LineChart>
+              </ResponsiveContainer>
+            </Col>
+            <Col md={{ size: 9, offset: 3 }}>
               <Row className="mb-5">
                 <Col md="6">
                   <h2 className="pb-3">NAV Price</h2>
@@ -589,27 +612,6 @@ const WUGI = ({}) => {
                 </Col>
               </Row>
             </Col>
-            <Col md={{ size: 9, offset: 3 }}>
-              <ResponsiveContainer width="80%" aspect={2}>
-                <LineChart
-                  height={400}
-                  data={historical}
-                  margin={{ top: 48, right: 0, bottom: 48, left: 0 }}
-                >
-                  <Line type="natural" dataKey="MARKET" stroke="#000" />
-                  <Line type="natural" dataKey="NAV" stroke="#00ff42" />
-                  <XAxis dataKey="name" />
-                  <CartesianGrid stroke="#d8d8d8" />
-                  <YAxis />
-                  <Tooltip
-                    itemStyle={{ padding: 0 }}
-                    wrapperStyle={{ padding: 8 }}
-                    labelStyle={{ padding: 3 }}
-                    contentStyle={{ padding: 8 }}
-                  />
-                </LineChart>
-              </ResponsiveContainer>
-            </Col>
           </Row>
           <Row className="fund-performance-row">
             <Col
@@ -617,7 +619,9 @@ const WUGI = ({}) => {
               className="border-top border-black pl-0 pt-3"
             >
               <h1>WUGI Performance</h1>
-              <div className="py-4 pl-2">As of 3/31/2020</div>
+              <div className="py-4 pl-2">
+                <strong>As of 3/31/2020</strong>
+              </div>
               <Row className="w-100 m-0 py-1">
                 <Col className="">
                   <Row className="header-row">
@@ -733,7 +737,7 @@ const WUGI = ({}) => {
                   Top 10 Holdings
                 </h1>
                 <span className="ml-5 pb-2">
-                  As of {performance["Accounting Date"]}
+                  <strong> As of {performance["Accounting Date"]}</strong>
                 </span>
               </div>
               <Row className="w-100 m-0 py-5">
