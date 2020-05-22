@@ -52,6 +52,54 @@ a:hover {
   }
 }
 
+#cookies {
+  position: fixed;
+  z-index: 999999;
+  bottom: 48px;
+  width: calc(100% - 96px);
+  left: 48px;
+  height: 50px;
+  border: 1px solid $black;
+  background-color: $white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 48px;
+  h3 {
+    padding-top: 5px;
+  }
+  .cookie-button {
+    cursor: pointer;
+    width: 20%;
+    background-color: $black;
+    color: $white;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .eyebrow {
+      padding-top: 3px;
+    }
+  }
+  @media (max-width: map-get($grid-breakpoints,md)) {
+    height: 100px;
+    width: calc(100% - 32px);
+    left: 16px;
+    padding-left: 16px;
+    .cookie-button {
+      margin-left: 16px;
+      width: 100%;
+      padding: 5px;
+      .eyebrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+    }
+  }
+}
+
 .header-gap {
   padding-top: 150px;
 }

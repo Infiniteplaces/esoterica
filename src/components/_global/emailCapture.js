@@ -12,6 +12,7 @@ const EmailCapture = ({ color = "#000", text = "#fff" }) => {
     <Container id="emailCapture" fluid style={{ backgroundColor: color }}>
       <Row className="d-flex justify-content-center align-items-center text-center">
         <Col
+          xs={{ size: 11 }}
           md={{ size: 8 }}
           lg={{ size: 6 }}
           className="d-flex flex-column justify-content-center align-items-center"

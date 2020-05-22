@@ -1,4 +1,8 @@
 .productPage {
+  #product-body {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
   h1 {
     font-size: 88px;
   }
@@ -10,6 +14,11 @@
     padding: 15px 0px;
   }
   .hero {
+    color: $white;
+    ::selection {
+      color: $transparent;
+      text-shadow: 0px 0px 7px $white;
+    }
     h1 {
       font-size: 120px;
     }
@@ -25,7 +34,11 @@
     .button.secondary {
       padding: 20px 40px 14px;
       min-width: 200px;
+      border-color: $white;
       cursor: pointer;
+      &:hover {
+        border-color: $black;
+      }
     }
   }
 

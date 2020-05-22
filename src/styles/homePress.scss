@@ -57,11 +57,7 @@
     }
     .arrow {
       cursor: pointer;
-      // transform: scale(1);
-      // transition: transform 500ms Cubic-bezier(0.33, 1, 0.33, 1);
       &:hover {
-        // transform: scale(1.25);
-        // transition: transform 500ms Cubic-bezier(0.33, 1, 0.33, 1);
         animation-name: shake;
         animation-duration: 1000ms;
         animation-iteration-count: infinite;
@@ -72,7 +68,7 @@
       }
 
       @media (max-width: map-get($grid-breakpoints,md)) {
-        width: 35px;
+        display: none;
       }
     }
   }

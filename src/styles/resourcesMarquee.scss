@@ -60,6 +60,12 @@
   }
 }
 
+@media (max-width: map-get($grid-breakpoints,md)) {
+  #resourcesMarquee {
+    padding: 16px;
+  }
+}
+
 @keyframes marquee {
   from {
     transform: translateX(0%);

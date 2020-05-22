@@ -6,12 +6,14 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import HeaderMobile from "./headerMobile"
 import Footer from "./footer"
+import Cookies from "./cookies"
 import "../../styles/index.scss"
 
 import { setMobile } from "../../state/global"
 import { setNavHover, setNavColor } from "../../state/header"
 
-const Layout = ({ children, dispatch, mobile, navTheme }) => {
+const Layout = ({ children, dispatch, mobile, cookies, navTheme }) => {
+  console.log(cookies)
   useEffect(() => {
     _onWindowResize()
     window.addEventListener("resize", _onWindowResize)
@@ -45,6 +47,8 @@ const Layout = ({ children, dispatch, mobile, navTheme }) => {
       {mobile ? <HeaderMobile path={path} /> : <Header path={path} />}
 
       <main onMouseOver={() => dispatch(setNavHover(false))}>{children}</main>
+      {cookies ? <Cookies /> : ""}
+
       <Footer />
     </>
   )
@@ -54,4 +58,7 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default connect(state => ({ mobile: state.global.mobile }), null)(Layout)
+export default connect(
+  state => ({ mobile: state.global.mobile, cookies: state.global.cookies }),
+  null
+)(Layout)

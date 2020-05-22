@@ -10,10 +10,7 @@ const HomeOurPhilosophy = ({}) => {
   return (
     <Container fluid id="homeOurPhilosophy">
       <Row className="d-flex ">
-        <Col
-          md={{ size: 5, offset: 1 }}
-          className="text-container px-0 px-md-2"
-        >
+        <Col md={{ size: 5, offset: 1 }} className="text-container px-md-2">
           <h3>Our Philosophy</h3>
           <h1 className="section">Experienced investors with new ideas</h1>
           <div>

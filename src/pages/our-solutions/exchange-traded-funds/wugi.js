@@ -23,6 +23,8 @@ import SEO from "../../../components/_global/seo"
 import modal_close from "../../../images/icons/modal_close.svg"
 import modal_arrow from "../../../images/icons/arrow-diag-black.svg"
 
+import hero from "../../../images/product/wugi_hero.png"
+
 const WUGI = ({}) => {
   let [performance, setPerformance] = useState(null)
   let [positions, setPositions] = useState(null)
@@ -89,7 +91,7 @@ const WUGI = ({}) => {
     data.map(i => {
       i["date_readable"] = new Date(i["DATE"] * 1000)
       let date =
-        i["date_readable"].getMonth() + "/" + i["date_readable"].getDate()
+        i["date_readable"].getMonth() + 1 + "/" + i["date_readable"].getDate()
       i.date = date
       i["seconds"] = i["DATE"]["seconds"]
       i["p/d"] = (i["p/d"] * 100).toFixed(2)
@@ -97,7 +99,7 @@ const WUGI = ({}) => {
     })
 
     data = data.sort((a, b) => {
-      return b["DATE"] - a["DATE"]
+      return a["DATE"] - b["DATE"]
     })
 
     setHistorical(data)
@@ -323,10 +325,10 @@ const WUGI = ({}) => {
   console.log(historical)
 
   return (
-    <Layout>
+    <Layout navTheme="dark">
       <SEO title="WUGI 5G" />
       <div id="wugi" className="productPage">
-        <div className="hero">
+        <div className="hero" style={{ backgroundImage: `url(${hero})` }}>
           <h1 className="pb-4">WUGI</h1>
           <div className="w-100 d-flex justify-content-between">
             <h3 className="d-flex align-items-end w-75">
@@ -390,21 +392,14 @@ const WUGI = ({}) => {
                   <a href="www.bbae.com">BBAE</a>
                   <img src={modal_arrow} alt="" />
                 </h2>
-                <h2>
-                  <a href="https://www.etq-amsterdam.com/">ETQ Amsterdam</a>
-                  <img src={modal_arrow} alt="" />
-                </h2>
               </Col>
             </Row>
           </Container>
         </Modal>
 
-        <Container fluid>
+        <Container fluid id="product-body">
           <Row className="fund-details-row">
-            <Col
-              md={{ size: 9, offset: 3 }}
-              className="border-top border-black pl-0 pt-3"
-            >
+            <Col md={{ size: 12 }} className="border-top border-black pt-3">
               <div className="d-flex align-items-end">
                 <h1>Fund Details</h1>
                 <span className="ml-5 pb-2">
@@ -497,10 +492,7 @@ const WUGI = ({}) => {
             </Col>
           </Row>
           <Row className="fund-description-row">
-            <Col
-              md={{ size: 9, offset: 3 }}
-              className="border-top border-black pl-0 pt-3"
-            >
+            <Col md={{ size: 12 }} className="border-top border-black pt-3">
               <h1>Fund Description</h1>
               <p className="d-flex pt-5 w-75">
                 WUGI is an actively-managed ETF that will invest in US and
@@ -521,10 +513,7 @@ const WUGI = ({}) => {
             </Col>
           </Row>
           <Row className="fund-documents-row">
-            <Col
-              md={{ size: 9, offset: 3 }}
-              className="border-top border-black pl-0 pt-3"
-            >
+            <Col md={{ size: 12 }} className="border-top border-black pt-3">
               <h1>Fund Documents</h1>
               <div className="py-5 document-container">
                 <div className="py-1 d-flex justify-content-between">
@@ -552,24 +541,19 @@ const WUGI = ({}) => {
             </Col>
           </Row>
           <Row className="fund-navMarket-row">
-            <Col
-              md={{ size: 9, offset: 3 }}
-              className="border-top border-black pl-0 pt-3"
-            >
+            <Col md="12" className="border-top border-black pt-3">
               <h1>NAV & Market Price</h1>
               <div className="my-4">
                 <strong> As of {performance["Accounting Date"]}</strong>
               </div>
-              <ResponsiveContainer width="80%" aspect={2}>
+              <ResponsiveContainer width="90%" aspect={2.5}>
                 <LineChart
                   height={400}
                   data={historical}
                   margin={{ top: 48, right: 0, bottom: 48, left: 0 }}
                 >
-                  <Line type="natural" dataKey="MARKET" stroke="#000" />
-                  <Line type="natural" dataKey="NAV" stroke="#00ff42" />
-                  <XAxis />
-                  <YAxis />
+                  <XAxis dataKey="date" />
+                  <YAxis type="number" />
                   <CartesianGrid stroke="#d8d8d8" strokeDasharray="3 3" />
                   <Tooltip
                     itemStyle={{ padding: 0 }}
@@ -577,13 +561,15 @@ const WUGI = ({}) => {
                     labelStyle={{ padding: 3 }}
                     contentStyle={{ padding: 8 }}
                   />
+                  <Line type="natural" dataKey="MARKET" stroke="#000" />
+                  <Line type="natural" dataKey="NAV" stroke="#00DEFF" />
                 </LineChart>
               </ResponsiveContainer>
             </Col>
-            <Col md={{ size: 9, offset: 3 }}>
+            <Col md={{ size: 12 }}>
               <Row className="mb-5">
                 <Col md="6">
-                  <h2 className="pb-3">NAV</h2>
+                  <h3 className="pb-3">NAV</h3>
                   <div className="w-75 py-1 d-flex justify-content-between">
                     <div>Net Asset Value</div>
                     <div>{parseFloat(performance["NAV"]).toFixed(2)}</div>
@@ -602,7 +588,7 @@ const WUGI = ({}) => {
                   </div>
                 </Col>
                 <Col md="6">
-                  <h2 className="pb-3">Market Price</h2>
+                  <h3 className="pb-3">Market Price</h3>
                   <div className="w-75 py-1 d-flex justify-content-between">
                     <div>Closing Price</div>
                     <div>
@@ -636,10 +622,7 @@ const WUGI = ({}) => {
             </Col>
           </Row>
           <Row className="fund-performance-row">
-            <Col
-              md={{ size: 9, offset: 3 }}
-              className="border-top border-black pl-0 pt-3"
-            >
+            <Col md={{ size: 12 }} className="border-top border-black pt-3">
               <h1>WUGI Performance</h1>
               <div className="py-4 pl-2">
                 <strong>As of 3/31/2020</strong>
@@ -749,10 +732,7 @@ const WUGI = ({}) => {
             </Col>
           </Row>
           <Row className="fund-holdings-row">
-            <Col
-              md={{ size: 9, offset: 3 }}
-              className="border-top border-black pl-0 pt-3"
-            >
+            <Col md={{ size: 12 }} className="border-top border-black pt-3">
               <div className="d-flex align-items-end">
                 <h1>
                   Performance of <br />
@@ -852,16 +832,22 @@ const WUGI = ({}) => {
           </Row>
 
           <Row className="fund-premiumDiscount-row">
-            <Col
-              md={{ size: 9, offset: 3 }}
-              className="border-top border-black pl-0 pt-3"
-            >
+            <Col md={{ size: 12 }} className="border-top border-black  pt-3">
               <h1>Premium / Discount</h1>
-              <ResponsiveContainer width="80%" aspect={1.7}>
+              <ResponsiveContainer width="90%" aspect={2}>
                 <LineChart
                   data={historical}
                   margin={{ top: 48, right: 0, bottom: 48, left: 0 }}
                 >
+                  <XAxis dataKey="date" />
+                  <YAxis type="number" />
+                  <CartesianGrid stroke="#d8d8d8" strokeDasharray="3 3" />
+                  <Tooltip
+                    itemStyle={{ padding: 0 }}
+                    wrapperStyle={{ padding: 8 }}
+                    labelStyle={{ padding: 3 }}
+                    contentStyle={{ padding: 8 }}
+                  />
                   <Line
                     type="natural"
                     dataKey="p/d"
@@ -870,22 +856,13 @@ const WUGI = ({}) => {
                     dot={{ stroke: "#fdfc71" }}
                     activeDot={{ stroke: "000" }}
                   />
-                  <XAxis />
-                  <YAxis />
-                  <CartesianGrid stroke="#d8d8d8" strokeDasharray="3 3" />
-                  <Tooltip
-                    itemStyle={{ padding: 0 }}
-                    wrapperStyle={{ padding: 8 }}
-                    labelStyle={{ padding: 3 }}
-                    contentStyle={{ padding: 8 }}
-                  />
                 </LineChart>
               </ResponsiveContainer>
             </Col>
           </Row>
 
           <Row className="disclosure-row ">
-            <Col md={{ size: 9, offset: 3 }} className="pl-0">
+            <Col md={{ size: 12 }} className="mb-5">
               <h1 className="py-5">Disclosures</h1>
               <p>
                 <strong>

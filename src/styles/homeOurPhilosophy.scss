@@ -33,6 +33,7 @@
 
 @media (max-width: map-get($grid-breakpoints,md)) {
   #homeOurPhilosophy {
+    padding: 80px 16px;
     .img-column {
       order: 1;
       .img-container {

@@ -100,7 +100,7 @@ class HomePress extends Component {
               className="arrow back"
             />
           </Col>
-          <Col xs="10" className="d-flex align-items-between">
+          <Col xs="12" md="10" className="d-flex align-items-between">
             <Slider ref={c => (this.slider = c)} {...this.slickSettings}>
               {display}
             </Slider>
