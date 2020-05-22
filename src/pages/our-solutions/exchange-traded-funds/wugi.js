@@ -400,7 +400,7 @@ const WUGI = ({ mobile }) => {
           <Row className="fund-details-row">
             <Col
               xs={{ size: 12 }}
-              md={{ size: 9, offset: 3 }}
+              md={{ size: 10, offset: 2 }}
               className="border-top border-black pl-md-0 pt-3"
             >
               <div className="d-flex flex-column flex-md-row align-items-md-end">
@@ -498,7 +498,7 @@ const WUGI = ({ mobile }) => {
           </Row>
           <Row className="fund-description-row">
             <Col
-              md={{ size: 9, offset: 3 }}
+              md={{ size: 10, offset: 2 }}
               className="border-top border-black pt-3 pl-md-0"
             >
               <h1>Fund Description</h1>
@@ -522,7 +522,7 @@ const WUGI = ({ mobile }) => {
           </Row>
           <Row className="fund-documents-row">
             <Col
-              md={{ size: 9, offset: 3 }}
+              md={{ size: 10, offset: 2 }}
               className="border-top border-black pt-3 pl-md-0"
             >
               <h1>Fund Documents</h1>
@@ -553,7 +553,7 @@ const WUGI = ({ mobile }) => {
           </Row>
           <Row className="fund-navMarket-row">
             <Col
-              md={{ size: 9, offset: 3 }}
+              md={{ size: 10, offset: 2 }}
               className="border-top border-black pl-md-0 pt-3"
             >
               <h1>NAV & Market Price</h1>
@@ -637,7 +637,7 @@ const WUGI = ({ mobile }) => {
           </Row>
           <Row className="fund-performance-row">
             <Col
-              md={{ size: 9, offset: 3 }}
+              md={{ size: 10, offset: 2 }}
               className="border-top border-black pl-md-0 pt-3 desktop-performance"
             >
               <h1>WUGI Performance</h1>
@@ -848,7 +848,7 @@ const WUGI = ({ mobile }) => {
           </Row>
           <Row className="fund-holdings-row">
             <Col
-              md={{ size: 9, offset: 3 }}
+              md={{ size: 10, offset: 2 }}
               className="border-top border-black pl-md-0 pt-3 desktop-holdings"
             >
               <div className="d-flex flex-column flex-md-row align-items-md-end">
@@ -949,7 +949,7 @@ const WUGI = ({ mobile }) => {
             </Col>
 
             <Col
-              md={{ size: 9, offset: 3 }}
+              md={{ size: 10, offset: 2 }}
               className="border-top border-black pl-md-0 pt-3 mobile-holdings"
               style={{ paddingBottom: 50 }}
             >
@@ -1023,7 +1023,7 @@ const WUGI = ({ mobile }) => {
 
           <Row className="fund-premiumDiscount-row">
             <Col
-              md={{ size: 9, offset: 3 }}
+              md={{ size: 10, offset: 2 }}
               className="border-top border-black pl-md-0 pt-3"
             >
               <h1>Premium / Discount</h1>
@@ -1055,7 +1055,7 @@ const WUGI = ({ mobile }) => {
           </Row>
 
           <Row className="disclosure-row ">
-            <Col md={{ size: 9, offset: 3 }} className="mb-5 pl-md-0">
+            <Col md={{ size: 10, offset: 2 }} className="mb-5 pl-md-0">
               <h1 className="py-md-5 py-4">Disclosures</h1>
               <p>
                 <strong>

@@ -56,8 +56,7 @@ class InvestorSolutionsPage extends React.Component {
               }
               bgColor={"#FAEEAC"}
               textColor={"#000"}
-              externalLink
-              link={"https://www.esotericacap.com"}
+              link={"/our-solutions/exchange-traded-funds/wugi"}
               img={etf_illus}
               cta="Learn More"
             />

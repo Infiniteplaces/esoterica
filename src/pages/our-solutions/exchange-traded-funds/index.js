@@ -77,8 +77,7 @@ class ExchangeTradedFundsPage extends React.Component {
             }
             bgColor={"#fdfc71"}
             textColor={"#000"}
-            link={"https://www.esotericacap.com"}
-            externalLink={true}
+            link={"/our-solutions/exchange-traded-funds/wugi"}
           />
 
           <EmailPill />

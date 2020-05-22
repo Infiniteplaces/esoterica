@@ -21,14 +21,12 @@ const HomeOurFunds = ({}) => {
         >
           <h3>A Wave of Growth in the Digital Economy is Coming</h3>
           <h1 className="section">We got you. You got this.</h1>
-          <a
+          <Link
             className="button secondary"
-            href="https://www.esotericacap.com"
-            target="_blank"
-            rel="noreferrer noopener"
+            to="/our-solutions/exchange-traded-funds/wugi"
           >
             <span>Explore Our Fund</span>
-          </a>
+          </Link>
         </Col>
       </Row>
     </Container>
