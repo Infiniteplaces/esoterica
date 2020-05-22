@@ -300,8 +300,6 @@ const WUGI = ({}) => {
     })
     .slice(0, 10)
 
-  console.log(performance)
-
   return (
     <Layout>
       <SEO title="WUGI 5G" />
@@ -418,10 +416,6 @@ const WUGI = ({}) => {
                     <div className="eyebrow">Inception Date</div>
                     <div>3/31/20</div>
                   </div>
-                  <div className="d-flex justify-content-between pb-1">
-                    <div className="eyebrow">Net Assets</div>
-                    <div>{performance["Total Net Assets"]}</div>
-                  </div>
                   <div className="d-flex justify-content-between">
                     <div className="eyebrow">GROSS EXPENSE RATIO</div>
                     <div>0.98%</div>
@@ -456,7 +450,7 @@ const WUGI = ({}) => {
                     <div>
                       {performance["Shares Outstanding"].substr(
                         0,
-                        performance["Shares Outstanding"].length - 2
+                        performance["Shares Outstanding"].length - 5
                       )}
                     </div>
                   </div>
@@ -542,27 +536,6 @@ const WUGI = ({}) => {
             >
               <h1>NAV & Market Price</h1>
               <div className="my-4">As of {performance["Accounting Date"]}</div>
-              <ResponsiveContainer width="80%" aspect={2}>
-                <LineChart
-                  height={400}
-                  data={historical}
-                  margin={{ top: 48, right: 0, bottom: 48, left: 0 }}
-                >
-                  <Line type="natural" dataKey="MARKET" stroke="#000" />
-                  <Line type="natural" dataKey="NAV" stroke="#00ff42" />
-                  <XAxis dataKey="name" />
-                  <CartesianGrid stroke="#d8d8d8" />
-                  <YAxis />
-                  <Tooltip
-                    itemStyle={{ padding: 0 }}
-                    wrapperStyle={{ padding: 8 }}
-                    labelStyle={{ padding: 3 }}
-                    contentStyle={{ padding: 8 }}
-                  />
-                </LineChart>
-              </ResponsiveContainer>
-            </Col>
-            <Col md={{ size: 9, offset: 3 }}>
               <Row className="mb-5">
                 <Col md="6">
                   <h2 className="pb-3">NAV Price</h2>
@@ -616,6 +589,27 @@ const WUGI = ({}) => {
                 </Col>
               </Row>
             </Col>
+            <Col md={{ size: 9, offset: 3 }}>
+              <ResponsiveContainer width="80%" aspect={2}>
+                <LineChart
+                  height={400}
+                  data={historical}
+                  margin={{ top: 48, right: 0, bottom: 48, left: 0 }}
+                >
+                  <Line type="natural" dataKey="MARKET" stroke="#000" />
+                  <Line type="natural" dataKey="NAV" stroke="#00ff42" />
+                  <XAxis dataKey="name" />
+                  <CartesianGrid stroke="#d8d8d8" />
+                  <YAxis />
+                  <Tooltip
+                    itemStyle={{ padding: 0 }}
+                    wrapperStyle={{ padding: 8 }}
+                    labelStyle={{ padding: 3 }}
+                    contentStyle={{ padding: 8 }}
+                  />
+                </LineChart>
+              </ResponsiveContainer>
+            </Col>
           </Row>
           <Row className="fund-performance-row">
             <Col
@@ -641,10 +635,10 @@ const WUGI = ({}) => {
                     <Col>3 Months</Col>
                   </Row>
                   <Row className="nav-row">
-                    <Col>N/A</Col>
+                    <Col>-</Col>
                   </Row>
                   <Row className="mp-row">
-                    <Col>N/A</Col>
+                    <Col>-</Col>
                   </Row>
                 </Col>
                 <Col>
@@ -652,10 +646,10 @@ const WUGI = ({}) => {
                     <Col>YTD</Col>
                   </Row>
                   <Row className="nav-row">
-                    <Col>N/A</Col>
+                    <Col>-</Col>
                   </Row>
                   <Row className="mp-row">
-                    <Col>N/A</Col>
+                    <Col>-</Col>
                   </Row>
                 </Col>
                 <Col>
@@ -663,10 +657,10 @@ const WUGI = ({}) => {
                     <Col>1 Year</Col>
                   </Row>
                   <Row className="nav-row">
-                    <Col>N/A</Col>
+                    <Col>-</Col>
                   </Row>
                   <Row className="mp-row">
-                    <Col>N/A</Col>
+                    <Col>-</Col>
                   </Row>
                 </Col>
                 <Col>
@@ -674,10 +668,10 @@ const WUGI = ({}) => {
                     <Col>3 Years (Annualized)</Col>
                   </Row>
                   <Row className="nav-row">
-                    <Col>N/A</Col>
+                    <Col>-</Col>
                   </Row>
                   <Row className="mp-row">
-                    <Col>N/A</Col>
+                    <Col>-</Col>
                   </Row>
                 </Col>
                 <Col>
@@ -685,10 +679,10 @@ const WUGI = ({}) => {
                     <Col>5 Years (Annualized)</Col>
                   </Row>
                   <Row className="nav-row">
-                    <Col>N/A</Col>
+                    <Col>-</Col>
                   </Row>
                   <Row className="mp-row">
-                    <Col>N/A</Col>
+                    <Col>-</Col>
                   </Row>
                 </Col>
               </Row>
