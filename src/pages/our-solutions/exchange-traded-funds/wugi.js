@@ -7,6 +7,7 @@ import {
   ResponsiveContainer,
   LineChart,
   BarChart,
+  Label,
   Bar,
   Line,
   XAxis,
@@ -26,6 +27,7 @@ const WUGI = ({}) => {
   let [performance, setPerformance] = useState(null)
   let [positions, setPositions] = useState(null)
   let [historical, setHistorical] = useState(null)
+  let [etfg, setEtfg] = useState(null)
   let [downloads, setDownloads] = useState(null)
   let [navHistory, setNavHistory] = useState(null)
   let [marketHistory, setMarketHistory] = useState(null)
@@ -71,7 +73,7 @@ const WUGI = ({}) => {
 
     _getDailyPositions(dashDate)
     _getDailyPerformance(dashDate)
-    _getETFG()
+    _getETFG(dashDate)
     _getHistoricalData()
     _getDownloadUrl(noDashDate)
   }, [])
@@ -84,9 +86,18 @@ const WUGI = ({}) => {
 
     let data = historical.docs.map(doc => doc.data())
 
-    let x = data.map(i => {
+    data.map(i => {
+      i["date_readable"] = new Date(i["DATE"] * 1000)
+      let date =
+        i["date_readable"].getMonth() + "/" + i["date_readable"].getDate()
+      i.date = date
+      i["seconds"] = i["DATE"]["seconds"]
       i["p/d"] = (i["p/d"] * 100).toFixed(2)
       return i
+    })
+
+    data = data.sort((a, b) => {
+      return b["DATE"] - a["DATE"]
     })
 
     setHistorical(data)
@@ -104,18 +115,24 @@ const WUGI = ({}) => {
     setPositions(positions.docs.map(doc => doc.data()))
   }
 
-  async function _getETFG() {
-    // let url = "http://public.etfg.com/v2/public_disclosures"
-    // let etfg = await fetch(url, {
-    //   method: "GET",
-    //   Authorization: "Basic " + btoa("esoterica1:573de09fe3a1"),
-    //   mode: "no-cors",
-    //   "Access-Control-Allow-Origin": "*",
-    //   "Access-Control-Allow-Credentials": true,
-    //   "Content-Type": "application/json",
-    // })
-    //   .then(response => response.json)
-    //   .then(data => console.log(data))
+  function _getETFG(date) {
+    let daily = firebase
+      .firestore()
+      .collection(date.toUpperCase())
+      .doc("ETFG")
+      .get()
+      .then(
+        function(doc) {
+          if (doc.exists) {
+            setEtfg(doc.data())
+          } else {
+            console.log("Daily performance data not in Firebase")
+          }
+        }.bind(this)
+      )
+      .catch(function(error) {
+        console.log("Error getting document:", error)
+      })
   }
 
   function _getDailyPerformance(date) {
@@ -150,6 +167,8 @@ const WUGI = ({}) => {
 
     let holdingsDate =
       "Esoterica_NXTG_ECONOMY_ETF_WUGI_HOLDINGS_" + date + ".csv"
+
+    console.log(holdingsDate)
     let holdings = firebase
       .storage()
       .ref(holdingsDate)
@@ -284,6 +303,7 @@ const WUGI = ({}) => {
   if (
     !performance ||
     !positions ||
+    !etfg ||
     !downloads ||
     !navHistory ||
     !marketHistory
@@ -299,6 +319,8 @@ const WUGI = ({}) => {
       )
     })
     .slice(0, 10)
+
+  console.log(historical)
 
   return (
     <Layout>
@@ -430,7 +452,7 @@ const WUGI = ({}) => {
                     <div className="eyebrow">
                       30 Day Median Mid Bid-Ask Spread
                     </div>
-                    <div>TBD</div>
+                    <div>{etfg["30-Day Median Bid-Ask Price"]}</div>
                   </div>
                   <div className="d-flex justify-content-between pb-1">
                     <div className="eyebrow">Assets Under Management</div>
@@ -546,9 +568,9 @@ const WUGI = ({}) => {
                 >
                   <Line type="natural" dataKey="MARKET" stroke="#000" />
                   <Line type="natural" dataKey="NAV" stroke="#00ff42" />
-                  <XAxis dataKey="name" />
-                  <CartesianGrid stroke="#d8d8d8" />
+                  <XAxis />
                   <YAxis />
+                  <CartesianGrid stroke="#d8d8d8" strokeDasharray="3 3" />
                   <Tooltip
                     itemStyle={{ padding: 0 }}
                     wrapperStyle={{ padding: 8 }}
@@ -561,9 +583,9 @@ const WUGI = ({}) => {
             <Col md={{ size: 9, offset: 3 }}>
               <Row className="mb-5">
                 <Col md="6">
-                  <h2 className="pb-3">NAV Price</h2>
+                  <h2 className="pb-3">NAV</h2>
                   <div className="w-75 py-1 d-flex justify-content-between">
-                    <div>Closing Price</div>
+                    <div>Net Asset Value</div>
                     <div>{parseFloat(performance["NAV"]).toFixed(2)}</div>
                   </div>
                   <div className="w-75 py-1 d-flex justify-content-between">
@@ -835,7 +857,7 @@ const WUGI = ({}) => {
               className="border-top border-black pl-0 pt-3"
             >
               <h1>Premium / Discount</h1>
-              <ResponsiveContainer width="80%" aspect={2}>
+              <ResponsiveContainer width="80%" aspect={1.7}>
                 <LineChart
                   data={historical}
                   margin={{ top: 48, right: 0, bottom: 48, left: 0 }}
@@ -848,9 +870,9 @@ const WUGI = ({}) => {
                     dot={{ stroke: "#fdfc71" }}
                     activeDot={{ stroke: "000" }}
                   />
-                  <XAxis dataKey="name" />
+                  <XAxis />
                   <YAxis />
-                  <CartesianGrid stroke="#d8d8d8" />
+                  <CartesianGrid stroke="#d8d8d8" strokeDasharray="3 3" />
                   <Tooltip
                     itemStyle={{ padding: 0 }}
                     wrapperStyle={{ padding: 8 }}
