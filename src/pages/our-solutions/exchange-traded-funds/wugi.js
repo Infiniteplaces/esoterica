@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import { connect } from "react-redux"
 import firebase from "gatsby-plugin-firebase"
 import { Container, Row, Col, Modal } from "reactstrap"
+import Slider from "react-slick"
 import {
   ResponsiveContainer,
   LineChart,
@@ -25,7 +26,7 @@ import modal_arrow from "../../../images/icons/arrow-diag-black.svg"
 
 import hero from "../../../images/product/wugi_hero.png"
 
-const WUGI = ({}) => {
+const WUGI = ({ mobile }) => {
   let [performance, setPerformance] = useState(null)
   let [positions, setPositions] = useState(null)
   let [historical, setHistorical] = useState(null)
@@ -322,16 +323,14 @@ const WUGI = ({}) => {
     })
     .slice(0, 10)
 
-  console.log(historical)
-
   return (
     <Layout>
       <SEO title="WUGI 5G" />
       <div id="wugi" className="productPage">
         <div className="hero">
           <h1 className="pb-4">WUGI</h1>
-          <div className="w-100 d-flex justify-content-between">
-            <h3 className="d-flex align-items-end w-75">
+          <div className="w-100 d-flex flex-column flex-md-row justify-content-md-between">
+            <h3 className="d-flex align-items-end w-75 mb-5 mb-md-0">
               Esoterica NextG Economy ETF
             </h3>
             <div className="button secondary" onClick={() => setModal(true)}>
@@ -400,17 +399,18 @@ const WUGI = ({}) => {
         <Container fluid id="product-body">
           <Row className="fund-details-row">
             <Col
+              xs={{ size: 12 }}
               md={{ size: 9, offset: 3 }}
-              className="border-top border-black pl-0 pt-3"
+              className="border-top border-black pl-md-0 pt-3"
             >
-              <div className="d-flex align-items-end">
+              <div className="d-flex flex-column flex-md-row align-items-md-end">
                 <h1>Fund Details</h1>
-                <span className="ml-5 pb-2">
+                <span className="ml-md-5 pt-4 pt-md-0 pb-2">
                   <strong> As of {performance["Accounting Date"]}</strong>
                 </span>
               </div>
 
-              <div className="py-5 d-flex">
+              <div className="py-5 d-flex flex-column flex-md-row">
                 <div className="left-col d-flex flex-column">
                   <div className="d-flex justify-content-between pb-1">
                     <div className="eyebrow">Ticker</div>
@@ -481,7 +481,9 @@ const WUGI = ({}) => {
                   </div>
                   <div className="d-flex justify-content-between pb-1">
                     <div className="eyebrow">PORTFOLIO MANAGERS</div>
-                    <div>Qingdong (Bruce) Liu Ph.D., CFA</div>
+                    <div className="text-right">
+                      Qingdong (Bruce) Liu Ph.D., CFA
+                    </div>
                   </div>
                   <div className="d-flex justify-content-between pb-1">
                     <div className="body-small pt-3">
@@ -497,17 +499,17 @@ const WUGI = ({}) => {
           <Row className="fund-description-row">
             <Col
               md={{ size: 9, offset: 3 }}
-              className="border-top border-black pt-3 pl-0"
+              className="border-top border-black pt-3 pl-md-0"
             >
               <h1>Fund Description</h1>
-              <p className="d-flex pt-5 w-75">
+              <p className="d-flex pt-5">
                 WUGI is an actively-managed ETF that will invest in US and
                 non-US equity securities of companies that are meaningfully
                 participating in a digital economy enabled by fifth generation
                 digital cellular network (“5G”) technology. The investment
                 objective of the Fund is to seek capital appreciation.
               </p>
-              <p className="d-flex pb-5 w-75">
+              <p className="d-flex pb-5">
                 Esoterica believes that 5G will empower the next generation of
                 technology that will give rise to a global digital economy. WUGI
                 invests in companies that are exposed to, and benefit from,
@@ -521,7 +523,7 @@ const WUGI = ({}) => {
           <Row className="fund-documents-row">
             <Col
               md={{ size: 9, offset: 3 }}
-              className="border-top border-black pt-3 pl-0"
+              className="border-top border-black pt-3 pl-md-0"
             >
               <h1>Fund Documents</h1>
               <div className="py-5 document-container">
@@ -552,13 +554,13 @@ const WUGI = ({}) => {
           <Row className="fund-navMarket-row">
             <Col
               md={{ size: 9, offset: 3 }}
-              className="border-top border-black pl-0 pt-3"
+              className="border-top border-black pl-md-0 pt-3"
             >
               <h1>NAV & Market Price</h1>
               <div className="my-4">
                 <strong> As of {performance["Accounting Date"]}</strong>
               </div>
-              <ResponsiveContainer width="90%" aspect={2.5}>
+              <ResponsiveContainer width="90%" aspect={mobile ? 1 : 2.5}>
                 <LineChart
                   height={400}
                   data={historical}
@@ -582,17 +584,17 @@ const WUGI = ({}) => {
               <Row className="mb-5">
                 <Col md="6">
                   <h3 className="pb-3">NAV</h3>
-                  <div className="w-75 py-1 d-flex justify-content-between">
+                  <div className="nav-details py-1 d-flex justify-content-between">
                     <div>Net Asset Value</div>
                     <div>{parseFloat(performance["NAV"]).toFixed(2)}</div>
                   </div>
-                  <div className="w-75 py-1 d-flex justify-content-between">
+                  <div className="nav-details py-1 d-flex justify-content-between">
                     <div>Change ($)</div>
                     <div>
                       {parseFloat(performance["NAV Change"]).toFixed(2)}
                     </div>
                   </div>
-                  <div className="w-75 py-1 d-flex justify-content-between">
+                  <div className="nav-details py-1 d-flex justify-content-between">
                     <div>Change (%)</div>
                     <div>
                       {parseFloat(performance["NAV Percent Change"]).toFixed(2)}
@@ -600,8 +602,8 @@ const WUGI = ({}) => {
                   </div>
                 </Col>
                 <Col md="6">
-                  <h3 className="pb-3">Market Price</h3>
-                  <div className="w-75 py-1 d-flex justify-content-between">
+                  <h3 className="pb-3 mt-4 mt-md-0">Market Price</h3>
+                  <div className="market-details py-1 d-flex justify-content-between">
                     <div>Closing Price</div>
                     <div>
                       {parseFloat(performance["Closing Market Price"]).toFixed(
@@ -609,7 +611,7 @@ const WUGI = ({}) => {
                       )}
                     </div>
                   </div>
-                  <div className="w-75 py-1 d-flex justify-content-between">
+                  <div className="market-details py-1 d-flex justify-content-between">
                     <div>Change ($)</div>
                     <div>
                       {(
@@ -618,7 +620,7 @@ const WUGI = ({}) => {
                       ).toFixed(2)}
                     </div>
                   </div>
-                  <div className="w-75 py-1 d-flex justify-content-between">
+                  <div className="market-details py-1 d-flex justify-content-between">
                     <div>Change (%)</div>
                     <div>
                       {(
@@ -636,7 +638,7 @@ const WUGI = ({}) => {
           <Row className="fund-performance-row">
             <Col
               md={{ size: 9, offset: 3 }}
-              className="border-top border-black pl-0 pt-3"
+              className="border-top border-black pl-md-0 pt-3 desktop-performance"
             >
               <h1>WUGI Performance</h1>
               <div className="py-4 pl-2">
@@ -745,18 +747,116 @@ const WUGI = ({}) => {
                 </Col>
               </Row>
             </Col>
+
+            <Col
+              xs="12"
+              className="border-top border-black pt-3 mobile-performance"
+              style={{ paddingBottom: 50 }}
+            >
+              <h1>WUGI Performance</h1>
+              <div className="py-4 pl-2">
+                <strong>As of 3/31/2020</strong>
+              </div>
+              <Slider
+                {...{
+                  dots: true,
+                  infinite: true,
+                  arrows: false,
+                  speed: 500,
+                  slidesToShow: 1,
+                  slidesToScroll: 1,
+                }}
+              >
+                <Col className="">
+                  <Row className="header-row">
+                    <Col className="text-center">WUGI ETF</Col>
+                    <Col className="text-center">3 Months</Col>
+                    <Col className="text-center">YTD</Col>
+                  </Row>
+                  <Row className="nav-row">
+                    <Col className="text-center">NAV</Col>
+                    <Col className="text-center">-</Col>
+                    <Col className="text-center">-</Col>
+                  </Row>
+                  <Row className="mp-row">
+                    <Col className="text-center">Market Price</Col>
+                    <Col className="text-center">-</Col>
+                    <Col className="text-center">-</Col>
+                  </Row>
+                </Col>
+
+                <Col className="">
+                  <Row className="header-row">
+                    <Col className="px-0 text-center">1 Year</Col>
+                    <Col className="px-0 text-center">
+                      3 Years
+                      <br />
+                      (Annualized)
+                    </Col>
+                    <Col className="px-0 text-center">
+                      5 Years
+                      <br />
+                      (Annualized)
+                    </Col>
+                  </Row>
+                  <Row className="nav-row">
+                    <Col className="text-center">-</Col>
+                    <Col className="text-center">-</Col>
+                    <Col className="text-center">-</Col>
+                  </Row>
+                  <Row className="mp-row">
+                    <Col className="text-center">-</Col>
+                    <Col className="text-center">-</Col>
+                    <Col className="text-center">-</Col>
+                  </Row>
+                </Col>
+              </Slider>
+              <Row>
+                <Col>
+                  <div className="body-small mt-5 mb-5">
+                    <i>
+                      *Past performance does not guarantee future results. The
+                      performance data quoted represents past performance and
+                      current returns may be lower or higher. The investment
+                      return and principal will fluctuate so that an investor’s
+                      shares when redeemed may be worth more or less than the
+                      original cost. The Fund's most recent month-end
+                      performance can be obtained by calling 1-866-979-1710.
+                      Returns for less than one year are not annualized.
+                    </i>
+                    <p>
+                      Net asset value (“NAV”) returns are based on the dollar
+                      value of a single share of the ETF, calculated using the
+                      value of the underlying assets of the ETF minus its
+                      liabilities, divided by the number of shares outstanding.
+                      The NAV is typically calculated at 4:00 pm Eastern time on
+                      each business day the Cboe BZX Exchange is open for
+                      trading. Market returns are based on the trade price at
+                      which shares are bought and sold on the Cboe BZX Exchange,
+                      Inc. using the last share trade. Market performance does
+                      not represent the returns you would receive if you traded
+                      shares at other times. Total Return reflects reinvestment
+                      of distributions on ex-date for NAV returns and payment
+                      date for Market Price returns. The market price of the
+                      ETF’s shares may differ significantly from their NAV
+                      during periods of market volatility.
+                    </p>
+                  </div>
+                </Col>
+              </Row>
+            </Col>
           </Row>
           <Row className="fund-holdings-row">
             <Col
               md={{ size: 9, offset: 3 }}
-              className="border-top border-black pl-0 pt-3"
+              className="border-top border-black pl-md-0 pt-3 desktop-holdings"
             >
-              <div className="d-flex align-items-end">
+              <div className="d-flex flex-column flex-md-row align-items-md-end">
                 <h1>
                   Performance of <br />
                   Top 10 Holdings
                 </h1>
-                <span className="ml-5 pb-2">
+                <span className="ml-md-5 mt-4 mt-md-0 pb-2">
                   <strong> As of {performance["Accounting Date"]}</strong>
                 </span>
               </div>
@@ -847,15 +947,87 @@ const WUGI = ({}) => {
                 </Col>
               </Row>
             </Col>
+
+            <Col
+              md={{ size: 9, offset: 3 }}
+              className="border-top border-black pl-md-0 pt-3 mobile-holdings"
+              style={{ paddingBottom: 50 }}
+            >
+              <div className="d-flex flex-column flex-md-row align-items-md-end">
+                <h1>
+                  Performance of <br />
+                  Top 10 Holdings
+                </h1>
+                <span className="ml-md-5 mt-4 mt-md-0 pb-2">
+                  <strong> As of {performance["Accounting Date"]}</strong>
+                </span>
+              </div>
+
+              <Slider
+                {...{
+                  dots: true,
+                  infinite: true,
+                  arrows: false,
+                  speed: 500,
+                  slidesToShow: 1,
+                  slidesToScroll: 1,
+                }}
+              >
+                <Col className="">
+                  <Row className="header-row text-center">
+                    <Col>Weight</Col>
+                    <Col>Company</Col>
+                  </Row>
+                  {topTenPositions.map((i, idx) => {
+                    return (
+                      <Row className="holdings-row text-center">
+                        <Col>{i["Market Value Weight"]}</Col>
+                        <Col>{i["Description"]}</Col>
+                      </Row>
+                    )
+                  })}
+                </Col>
+                <Col className="">
+                  <Row className="header-row text-center">
+                    <Col>Ticker</Col>
+                    <Col>Currency</Col>
+                  </Row>
+                  {topTenPositions.map((i, idx) => {
+                    return (
+                      <Row className="holdings-row text-center">
+                        <Col>{i["Ticker"]}</Col>
+                        <Col>{i["Asset Currency"]}</Col>
+                      </Row>
+                    )
+                  })}
+                </Col>
+                <Col className="">
+                  <Row className="header-row text-center">
+                    <Col>Market Price</Col>
+                    <Col>Shares Held</Col>
+                    <Col>Market Value</Col>
+                  </Row>
+                  {topTenPositions.map((i, idx) => {
+                    return (
+                      <Row className="holdings-row text-center">
+                        <Col>{i["Security Price"]}</Col>
+                        <Col>{i["Shares"]}</Col>
+                        <Col>{i["Market Value"]}</Col>
+                      </Row>
+                    )
+                  })}
+                </Col>
+              </Slider>
+            </Col>
           </Row>
 
           <Row className="fund-premiumDiscount-row">
             <Col
               md={{ size: 9, offset: 3 }}
-              className="border-top border-black pl-0 pt-3"
+              className="border-top border-black pl-md-0 pt-3"
             >
               <h1>Premium / Discount</h1>
-              <ResponsiveContainer width="90%" aspect={2}>
+              <ResponsiveContainer width="90%" aspect={mobile ? 1 : 2}>
                 <LineChart
                   data={historical}
                   margin={{ top: 48, right: 0, bottom: 48, left: 0 }}
@@ -883,8 +1055,8 @@ const WUGI = ({}) => {
           </Row>
 
           <Row className="disclosure-row ">
-            <Col md={{ size: 9, offset: 3 }} className="mb-5 pl-0">
-              <h1 className="py-5">Disclosures</h1>
+            <Col md={{ size: 9, offset: 3 }} className="mb-5 pl-md-0">
+              <h1 className="py-md-5 py-4">Disclosures</h1>
               <p>
                 <strong>
                   Before investing you should carefully consider the Fund’s

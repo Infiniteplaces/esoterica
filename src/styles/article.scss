@@ -183,6 +183,7 @@
 .related-container {
   .related-article-title {
     font-size: 88px;
+    line-height: 88px;
     padding-left: 48px;
   }
 }
@@ -378,8 +379,9 @@
 
   .related-container {
     .related-article-title {
-      font-size: 88px;
-      padding-left: 48px;
+      font-size: 56px;
+      line-height: 56px;
+      padding-left: 16px;
     }
   }
 }
