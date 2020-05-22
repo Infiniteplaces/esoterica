@@ -63,6 +63,53 @@
 @media (max-width: map-get($grid-breakpoints,md)) {
   #resourcesMarquee {
     padding: 16px;
+    color: $white;
+    .header-row {
+      margin: 16px 0px;
+      text-align: center;
+    }
+    .cta-row {
+      .cta {
+        padding: 88px 0px;
+        a {
+          background-color: transparent;
+          color: $white;
+          transition: all 350ms Cubic-bezier(0.33, 1, 0.33, 1);
+        }
+        a:hover {
+          background-color: $yellow;
+          color: $black;
+          transition: all 350ms Cubic-bezier(0.33, 1, 0.33, 1);
+        }
+      }
+    }
+    .marquee-container {
+      ::selection {
+        color: $transparent;
+        text-shadow: 0px 0px 7px $white;
+      }
+      overflow: hidden;
+      white-space: nowrap;
+      .marquee {
+        margin: 15px 0px;
+        width: 100vw;
+        .text-path-one {
+          border-bottom: 2px solid $transparent;
+          display: inline-block;
+          animation: marquee 960s linear infinite;
+          font-size: 72px;
+        }
+        &:hover {
+          .text-path-one,
+          .text-path-two {
+            animation-play-state: paused;
+            cursor: pointer;
+            color: $yellow;
+            border-bottom: 2px solid $yellow;
+          }
+        }
+      }
+    }
   }
 }
 

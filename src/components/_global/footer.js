@@ -56,16 +56,11 @@ const Footer = ({}) => {
             <p>All Rights Reserved</p>
           </Col>
         </Row>
-        <Row className="h-50">
-          <Col className="d-flex align-items-end">
-            <img
-              src={logo_white}
-              alt="footer logo"
-              className="footer-logo"
-              width="467"
-            />
+        <Row className="h-50 d-flex flex-column flex-md-row">
+          <Col className="d-flex align-items-end order-2 order-md-1">
+            <img src={logo_white} alt="footer logo" className="footer-logo" />
           </Col>
-          <Col className="d-flex justify-content-end align-items-end">
+          <Col className="d-flex justify-content-end align-items-end order-1 order-md-2">
             <Email header={true} />
           </Col>
         </Row>

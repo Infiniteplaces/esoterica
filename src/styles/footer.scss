@@ -14,6 +14,9 @@ footer {
       color: rgba(250, 250, 250, 0.5);
     }
   }
+  .footer-logo {
+    width: 467px;
+  }
   .announcement-bar {
     height: 40px;
     width: 100%;
@@ -110,6 +113,17 @@ footer {
       width: 100%;
       background-color: $black;
       color: $white;
+      span {
+        padding: 5px 0px;
+        line-height: 24px;
+      }
+      .text-faded {
+        margin-top: -23px;
+        line-height: 24px;
+      }
+    }
+    .footer-logo {
+      width: 100%;
     }
     .announcement-bar {
       height: 40px;

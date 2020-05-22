@@ -13,7 +13,6 @@ import { setMobile } from "../../state/global"
 import { setNavHover, setNavColor } from "../../state/header"
 
 const Layout = ({ children, dispatch, mobile, cookies, navTheme }) => {
-  console.log(cookies)
   useEffect(() => {
     _onWindowResize()
     window.addEventListener("resize", _onWindowResize)

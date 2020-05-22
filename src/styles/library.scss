@@ -264,7 +264,11 @@
   @media (max-width: map-get($grid-breakpoints,md)) {
     width: calc(100% - 32px);
     .thumbnail {
+      height: 150px;
       padding-right: 0;
+      margin-bottom: 24px;
+      padding-left: 0;
+      padding-bottom: 24px;
     }
   }
 }

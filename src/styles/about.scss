@@ -73,16 +73,21 @@
       height: 100%;
       flex-direction: column;
       #hero-left {
-        height: 50%;
+        height: 40%;
         width: 100%;
       }
       #hero-right {
         background-color: $black;
+        height: 61%;
         color: $white;
         width: 100%;
-        margin-top: 100%;
+        margin-top: 86%;
         padding: 16px;
-        overflow-y: scroll;
+        h2 {
+          font-size: 36px;
+          line-height: 36px;
+          letter-spacing: -1px;
+        }
         display: flex;
         align-items: center;
         text-align: center;

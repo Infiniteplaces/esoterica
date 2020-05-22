@@ -85,6 +85,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   @media (max-width: map-get($grid-breakpoints,md)) {
+    font-size: 1.15rem;
+    line-height: 1.75rem;
+    letter-spacing: -1px;
   }
 }
 
@@ -115,9 +118,9 @@ h1.section {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   @media (max-width: map-get($grid-breakpoints,md)) {
-    font-size: 3rem;
-    line-height: 3.125rem;
-    letter-spacing: 0rem;
+    font-size: 60px;
+    line-height: 64px;
+    letter-spacing: -4px;
   }
 }
 
@@ -133,8 +136,9 @@ h1.article {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   @media (max-width: map-get($grid-breakpoints,md)) {
-    font-size: 3rem;
-    line-height: 3.125rem;
+    font-size: 64px;
+    line-height: 67px;
+    letter-spacing: -4px;
   }
 }
 
@@ -150,9 +154,9 @@ h2 {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   @media (max-width: map-get($grid-breakpoints,md)) {
-    font-size: 2.125rem;
-    line-height: 2.390625rem;
-    letter-spacing: 0rem;
+    font-size: 56px;
+    line-height: 60px;
+    letter-spacing: -1px;
   }
 }
 
@@ -173,8 +177,9 @@ h3,
     line-height: 1.75rem;
   }
   @media (max-width: map-get($grid-breakpoints,md)) {
-    font-size: 0.95625rem;
-    line-height: 1.275rem;
+    font-size: 1.125rem;
+    line-height: 1.8rem;
+    letter-spacing: -1px;
   }
 }
 
@@ -182,7 +187,7 @@ h4 {
   font-family: "univers light";
   font-size: 1.4875rem;
   line-height: 1.80625rem;
-  letter-spacing: 0rem;
+  letter-spacing: -1px;
   margin: 0;
   padding: 0;
   -webkit-font-smoothing: antialiased;

@@ -33,9 +33,10 @@
     }
     h1,
     h2 {
-      margin: 10px 0px;
+      margin: 5px 0px;
+      line-height: 56px;
     }
-    min-height: 500px;
+    min-height: 550px;
     padding: 30px 15px;
     transition: height 150ms linear;
     position: fixed;
@@ -52,7 +53,7 @@
     text-align: center;
     .menu-footer {
       position: absolute;
-      bottom: 30px;
+      bottom: 16px;
     }
     .mobile-social-icons {
       width: 100%;

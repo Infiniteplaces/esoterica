@@ -53,6 +53,12 @@ const WUGI = ({ mobile }) => {
 
     let yesterday = new Date(today)
 
+    let day = yesterday.getDate()
+    let month = yesterday.getMonth() + 1
+    let year = yesterday.getFullYear()
+
+    setDate(month + "/" + day + "/" + year)
+
     let dashDate = yesterday
       .toLocaleDateString("en-GB", {
         day: "2-digit",
@@ -71,8 +77,6 @@ const WUGI = ({ mobile }) => {
 
     dashDate = dashDate[0] + "-" + dashDate[1] + "-" + dashDate[2]
     noDashDate = noDashDate[1] + noDashDate[0] + noDashDate[2]
-    let cleanDate = dashDate[1] + " " + dashDate[0] + " " + dashDate[2]
-    setDate(cleanDate)
 
     _getDailyPositions(dashDate)
     _getDailyPerformance(dashDate)
@@ -90,11 +94,20 @@ const WUGI = ({ mobile }) => {
     let data = historical.docs.map(doc => doc.data())
 
     data.map(i => {
-      i["date_readable"] = new Date(i["DATE"] * 1000)
+      i["date_readable"] = new Date(i["DATE"].seconds * 1000)
+
       let date =
-        i["date_readable"].getMonth() + 1 + "/" + i["date_readable"].getDate()
+        i["date_readable"].getMonth() +
+        1 +
+        "/" +
+        i["date_readable"].getDate() +
+        "/" +
+        i["date_readable"]
+          .getFullYear()
+          .toString()
+          .substr(-2)
+
       i.date = date
-      i["seconds"] = i["DATE"]["seconds"]
       i["p/d"] = (i["p/d"] * 100).toFixed(2)
       return i
     })
@@ -102,6 +115,8 @@ const WUGI = ({ mobile }) => {
     data = data.sort((a, b) => {
       return a["DATE"] - b["DATE"]
     })
+
+    console.log(data)
 
     setHistorical(data)
     _processHistoricalData(data)
@@ -171,7 +186,6 @@ const WUGI = ({ mobile }) => {
     let holdingsDate =
       "Esoterica_NXTG_ECONOMY_ETF_WUGI_HOLDINGS_" + date + ".csv"
 
-    console.log(holdingsDate)
     let holdings = firebase
       .storage()
       .ref(holdingsDate)
@@ -186,6 +200,10 @@ const WUGI = ({ mobile }) => {
 
   function pct_change(a, b) {
     return (((a - b) / b) * 100).toFixed(2) + "%"
+  }
+
+  function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
   }
 
   function _processHistoricalData(data) {
@@ -330,9 +348,9 @@ const WUGI = ({ mobile }) => {
         <div className="hero">
           <h1 className="pb-4">WUGI</h1>
           <div className="w-100 d-flex flex-column flex-md-row justify-content-md-between">
-            <h3 className="d-flex align-items-end w-75 mb-5 mb-md-0">
+            <h2 className="d-flex align-items-end w-75 mb-5 mb-md-0">
               Esoterica NextG Economy ETF
-            </h3>
+            </h2>
             <div className="button secondary" onClick={() => setModal(true)}>
               Buy Funds
             </div>
@@ -406,7 +424,7 @@ const WUGI = ({ mobile }) => {
               <div className="d-flex flex-column flex-md-row align-items-md-end">
                 <h1>Fund Details</h1>
                 <span className="ml-md-5 pt-4 pt-md-0 pb-2">
-                  <strong> As of {performance["Accounting Date"]}</strong>
+                  <strong> As of {date}</strong>
                 </span>
               </div>
 
@@ -454,12 +472,7 @@ const WUGI = ({ mobile }) => {
                   </div>
                   <div className="d-flex justify-content-between pb-1">
                     <div className="eyebrow">Assets Under Management</div>
-                    <div>
-                      {performance["Relative Net Asset"].substr(
-                        0,
-                        performance["Relative Net Asset"].length - 7
-                      )}
-                    </div>
+                    <div>${performance["Total Net Assets"].split(".")[0]}</div>
                   </div>
                   <div className="d-flex justify-content-between pb-1">
                     <div className="eyebrow">TYPICAL # OF HOLDINGS</div>
@@ -558,16 +571,23 @@ const WUGI = ({ mobile }) => {
             >
               <h1>NAV & Market Price</h1>
               <div className="my-4">
-                <strong> As of {performance["Accounting Date"]}</strong>
+                <strong> As of {date}</strong>
               </div>
               <ResponsiveContainer width="90%" aspect={mobile ? 1 : 2.5}>
                 <LineChart
                   height={400}
                   data={historical}
-                  margin={{ top: 48, right: 0, bottom: 48, left: 0 }}
+                  margin={{ top: 48, right: 0, bottom: 48, left: 16 }}
                 >
-                  <XAxis dataKey="date" />
-                  <YAxis type="number" />
+                  <XAxis dataKey="date" width={200} minTickGap={16} />
+                  <YAxis type="number">
+                    <Label
+                      value="$ USD"
+                      offset={0}
+                      angle={-90}
+                      position="left"
+                    />
+                  </YAxis>
                   <CartesianGrid stroke="#d8d8d8" strokeDasharray="3 3" />
                   <Tooltip
                     itemStyle={{ padding: 0 }}
@@ -857,7 +877,7 @@ const WUGI = ({ mobile }) => {
                   Top 10 Holdings
                 </h1>
                 <span className="ml-md-5 mt-4 mt-md-0 pb-2">
-                  <strong> As of {performance["Accounting Date"]}</strong>
+                  <strong> As of {date}</strong>
                 </span>
               </div>
               <Row className="w-100 m-0 py-5">
@@ -928,7 +948,7 @@ const WUGI = ({ mobile }) => {
                   {topTenPositions.map((i, idx) => {
                     return (
                       <Row key={idx} className="holdings-row">
-                        <Col>{i["Shares"]}</Col>
+                        <Col>{numberWithCommas(i["Shares"]).split(".")[0]}</Col>
                       </Row>
                     )
                   })}
@@ -940,7 +960,9 @@ const WUGI = ({ mobile }) => {
                   {topTenPositions.map((i, idx) => {
                     return (
                       <Row key={idx} className="holdings-row">
-                        <Col>{i["Market Value"]}</Col>
+                        <Col>
+                          {numberWithCommas(i["Market Value"]).split(".")[0]}
+                        </Col>
                       </Row>
                     )
                   })}
@@ -959,7 +981,7 @@ const WUGI = ({ mobile }) => {
                   Top 10 Holdings
                 </h1>
                 <span className="ml-md-5 mt-4 mt-md-0 pb-2">
-                  <strong> As of {performance["Accounting Date"]}</strong>
+                  <strong> As of {date}</strong>
                 </span>
               </div>
 
@@ -980,7 +1002,7 @@ const WUGI = ({ mobile }) => {
                   </Row>
                   {topTenPositions.map((i, idx) => {
                     return (
-                      <Row className="holdings-row text-center">
+                      <Row key={idx} className="holdings-row text-center">
                         <Col>{i["Market Value Weight"]}</Col>
                         <Col>{i["Description"]}</Col>
                       </Row>
@@ -994,7 +1016,7 @@ const WUGI = ({ mobile }) => {
                   </Row>
                   {topTenPositions.map((i, idx) => {
                     return (
-                      <Row className="holdings-row text-center">
+                      <Row key={idx} className="holdings-row text-center">
                         <Col>{i["Ticker"]}</Col>
                         <Col>{i["Asset Currency"]}</Col>
                       </Row>
@@ -1009,10 +1031,10 @@ const WUGI = ({ mobile }) => {
                   </Row>
                   {topTenPositions.map((i, idx) => {
                     return (
-                      <Row className="holdings-row text-center">
+                      <Row key={idx} className="holdings-row text-center">
                         <Col>{i["Security Price"]}</Col>
-                        <Col>{i["Shares"]}</Col>
-                        <Col>{i["Market Value"]}</Col>
+                        <Col>{i["Shares"].split(".")[0]}</Col>
+                        <Col>{i["Market Value"].split(".")[0]}</Col>
                       </Row>
                     )
                   })}
@@ -1030,10 +1052,17 @@ const WUGI = ({ mobile }) => {
               <ResponsiveContainer width="90%" aspect={mobile ? 1 : 2}>
                 <LineChart
                   data={historical}
-                  margin={{ top: 48, right: 0, bottom: 48, left: 0 }}
+                  margin={{ top: 48, right: 0, bottom: 48, left: 16 }}
                 >
-                  <XAxis dataKey="date" />
-                  <YAxis type="number" />
+                  <XAxis dataKey="date" minTickGap={16} />
+                  <YAxis type="number">
+                    <Label
+                      value="% PCT"
+                      offset={0}
+                      angle={-90}
+                      position="left"
+                    />
+                  </YAxis>
                   <CartesianGrid stroke="#d8d8d8" strokeDasharray="3 3" />
                   <Tooltip
                     itemStyle={{ padding: 0 }}

@@ -12,6 +12,9 @@
     align-items: flex-end;
     padding: 0px 46px;
     margin-bottom: 50px;
+    @media (max-width: map-get($grid-breakpoints,md)) {
+      padding: 0px 16px;
+    }
     img {
       margin-left: 48px;
       padding-bottom: 8px;
@@ -51,7 +54,16 @@
         }
       }
       @media (max-width: map-get($grid-breakpoints,md)) {
+        animation: marquee_mobile 60s linear infinite;
         animation-play-state: running;
+        span {
+          display: flex;
+          h1 {
+            font-size: 56px;
+            padding-top: 16px;
+            margin: 0px 16px;
+          }
+        }
       }
     }
     &:hover {
@@ -71,5 +83,14 @@
   }
   to {
     transform: translateX(-100%);
+  }
+}
+
+@keyframes marquee_mobile {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-700%);
   }
 }
