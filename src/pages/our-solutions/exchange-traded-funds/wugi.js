@@ -873,9 +873,9 @@ const WUGI = ({}) => {
                     type="natural"
                     dataKey="p/d"
                     name="Premium / Discount"
-                    stroke="#000"
-                    dot={{ stroke: "#fdfc71" }}
-                    activeDot={{ stroke: "000" }}
+                    stroke="#00DEFF"
+                    dot={{ stroke: "#00DEFF" }}
+                    activeDot={{ stroke: "00DEFF" }}
                   />
                 </LineChart>
               </ResponsiveContainer>
