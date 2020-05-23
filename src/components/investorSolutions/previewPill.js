@@ -10,62 +10,34 @@ const PreviewPill = ({
   link,
   cta,
   img = null,
-  externalLink = false,
   tags = null,
 }) => {
   return (
     <Row id="previewPill" className="px-0">
       <Col className="px-0">
-        {externalLink ? (
-          <a href={link}>
-            <div
-              id="pill"
-              className="h-100 w-100"
-              style={{ backgroundColor: bgColor, color: textColor }}
-            >
-              <div className="text-container">
-                <h2 className="mb-3">{title}</h2>
-                {text}
-                <a href={link} className="button secondary">
-                  {cta}
-                </a>
-              </div>
-              {img ? (
-                <div
-                  className="img-container"
-                  style={{ backgroundImage: `url(${img})` }}
-                ></div>
-              ) : (
-                ""
-              )}
+        <Link to={link}>
+          <div
+            id="pill"
+            className="h-100 w-100"
+            style={{ backgroundColor: bgColor, color: textColor }}
+          >
+            <div className="text-container">
+              <h2 className="mb-3">{title}</h2>
+              <div className="my-3 my-md-0">{text}</div>
+              <Link className="button secondary" to={link}>
+                {cta}
+              </Link>
             </div>
-          </a>
-        ) : (
-          <Link to={link}>
-            <div
-              id="pill"
-              className="h-100 w-100"
-              style={{ backgroundColor: bgColor, color: textColor }}
-            >
-              <div className="text-container">
-                <h2 className="mb-3">{title}</h2>
-
-                {text}
-                <Link className="button secondary" to={link}>
-                  {cta}
-                </Link>
-              </div>
-              {img ? (
-                <div
-                  className="img-container"
-                  style={{ backgroundImage: `url(${img})` }}
-                ></div>
-              ) : (
-                ""
-              )}
-            </div>
-          </Link>
-        )}
+            {img ? (
+              <div
+                className="img-container"
+                style={{ backgroundImage: `url(${img})` }}
+              ></div>
+            ) : (
+              ""
+            )}
+          </div>
+        </Link>
       </Col>
     </Row>
   )

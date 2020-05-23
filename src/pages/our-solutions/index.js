@@ -40,7 +40,7 @@ class InvestorSolutionsPage extends React.Component {
                 <h1 className="section">Our Solutions</h1>
                 <img src={arrow} alt="" className="arrow" />
               </div>
-              <div className="my-5 w-75">
+              <div className="my-5">
                 <h2>
                   We’re here to help make the most of your financial future by
                   getting ahead of it.
