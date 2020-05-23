@@ -7,6 +7,7 @@
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^13.4.0",
     "bootstrap": "^4.4.1",
+    "date-holidays": "^1.5.2",
     "firebase": "^7.14.4",
     "gatsby": "^2.20.12",
     "gatsby-awesome-pagination": "^0.3.5",
@@ -24,7 +25,6 @@
     "gh-pages": "^2.2.0",
     "lodash": "^4.17.15",
     "moment": "^2.26.0",
-    "moment-holiday": "^1.5.1",
     "node-sass": "^4.13.1",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",

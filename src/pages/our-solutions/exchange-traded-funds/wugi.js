@@ -41,7 +41,6 @@ const WUGI = ({ mobile }) => {
 
   useEffect(() => {
     let today = new Date()
-
     var weekday = new Array(7)
     weekday[0] = "Sunday"
     weekday[1] = "Monday"
@@ -52,6 +51,9 @@ const WUGI = ({ mobile }) => {
     weekday[6] = "Saturday"
 
     var day_of_week = weekday[today.getDay()]
+
+    let clean_date = moment(today).format("MMM DD, YYYY")
+    setDate(clean_date)
 
     //// Get Date format for BBH
     //// 22-MAY-2020 [format required]
