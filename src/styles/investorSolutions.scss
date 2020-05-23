@@ -208,6 +208,9 @@
     text-shadow: 0px 0px 7px $black;
   }
   #pill {
+    h2 {
+      letter-spacing: -3px;
+    }
     border-radius: 4px;
     display: flex;
     justify-content: space-between;
