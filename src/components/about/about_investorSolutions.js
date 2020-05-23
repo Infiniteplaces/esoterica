@@ -25,7 +25,7 @@ const AboutInvestorSolutions = ({}) => {
               className="d-flex justify-content-center align-items-center text-center mb-5"
             >
               <Link
-                to="/our-solutions/exchange-traded-funds"
+                to="/our-solutions/exchange-traded-funds/wugi"
                 className="d-flex flex-column justify-content-between h-100"
               >
                 <img src={etf_icon} alt="" className="pt-0 pt-md-5" />

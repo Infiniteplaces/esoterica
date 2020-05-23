@@ -40,7 +40,7 @@ const LibraryTwoPost = ({ posts, mobile }) => {
                 </div>
               </div>
               {mobile ? (
-                <div className="post-title body-small">{i.node.title}</div>
+                <div className="post-title">{i.node.title}</div>
               ) : (
                 <span className="cta post-title">{i.node.title}</span>
               )}

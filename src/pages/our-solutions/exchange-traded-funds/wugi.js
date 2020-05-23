@@ -355,11 +355,10 @@ const WUGI = ({ mobile }) => {
   if (!positions) {
     return ""
   }
-  //
-  // if (!etfg) {
-  //   console.log("no etfg")
-  //   return ""
-  // }
+
+  if (!etfg) {
+    return ""
+  }
 
   if (!downloads) {
     return ""
@@ -413,7 +412,7 @@ const WUGI = ({ mobile }) => {
               </Col>
             </Row>
             <Row style={{ height: "90%" }} className="body-row">
-              <Col className="d-flex flex-column justify-content-around align-items-center">
+              <Col className="d-flex flex-column align-items-center justify-content-md-around align-items-center">
                 <h2>
                   <a href="https://www.etrade.wallst.com/v1/stocks/snapshot/snapshot.asp?ChallengeUrl=https://idp.etrade.com/idp/SSO.saml2&reinitiate-handshake=0&prospectnavyear=2011&AuthnContext=prospect&env=PRD&symbol=WUGI&rsO=new&country=US">
                     E*TRADE

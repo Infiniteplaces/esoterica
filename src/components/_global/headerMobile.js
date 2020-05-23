@@ -95,7 +95,7 @@ const HeaderMobile = ({ mobileNavOpen, mobileNavCat, dispatch }) => {
           <div key={idx} onClick={() => dispatch(setMobileNavCat(i.title))}>
             <h1>
               <span>{i.title}</span>
-              <img src={menuArrow} alt="" className="ml-3" />
+              <img src={menuArrow} alt="" className="ml-3" width="6" />
             </h1>
           </div>
         )
