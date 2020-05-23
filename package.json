@@ -23,6 +23,8 @@
     "gatsby-transformer-sharp": "^2.4.3",
     "gh-pages": "^2.2.0",
     "lodash": "^4.17.15",
+    "moment": "^2.26.0",
+    "moment-holiday": "^1.5.1",
     "node-sass": "^4.13.1",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",

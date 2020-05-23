@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import { connect } from "react-redux"
 import firebase from "gatsby-plugin-firebase"
 import { Container, Row, Col, Modal } from "reactstrap"
+import moment from "moment"
 import Slider from "react-slick"
 import {
   ResponsiveContainer,
@@ -41,48 +42,69 @@ const WUGI = ({ mobile }) => {
   useEffect(() => {
     let today = new Date()
 
-    let backDate = 1
-    if (today.getDay() === 0) {
-      backDate = 2
+    var weekday = new Array(7)
+    weekday[0] = "Sunday"
+    weekday[1] = "Monday"
+    weekday[2] = "Tuesday"
+    weekday[3] = "Wednesday"
+    weekday[4] = "Thursday"
+    weekday[5] = "Friday"
+    weekday[6] = "Saturday"
+
+    var day_of_week = weekday[today.getDay()]
+
+    //// Get Date format for BBH
+    //// 22-MAY-2020 [format required]
+    //// Exceptions for Sun & Mon
+
+    let bbh_days_back = 1
+    if (day_of_week === "Sunday") {
+      bbh_days_back = 2
+    } else if (day_of_week === "Monday") {
+      bbh_days_back = 3
     }
-    if (today.getDay() === 1) {
-      backDate = 3
+
+    let bbh_record_date = moment()
+      .subtract(bbh_days_back, "days")
+      .format("DD-MMM-YY")
+
+    //// Get Date format for ETFG
+    //// 22-MAY-2020 [format required]
+    //// Exceptions for Sat & Sun & Mon
+
+    let etfg_days_back = 1
+    if (day_of_week === "Saturday") {
+      etfg_days_back = 2
+    } else if (day_of_week === "Sunday") {
+      etfg_days_back = 3
+    } else if (day_of_week === "Monday") {
+      etfg_days_back = 3
     }
 
-    today = today.setDate(today.getDate() - backDate)
+    let etfg_record_date = moment()
+      .subtract(etfg_days_back, "days")
+      .format("DD-MMM-YY")
 
-    let yesterday = new Date(today)
+    //// Get Date format for Downloads File
+    //// 052220202 [format required]
+    //// Exceptions for Sun & Mon
 
-    let day = yesterday.getDate()
-    let month = yesterday.getMonth() + 1
-    let year = yesterday.getFullYear()
+    let downloads_days_back = 1
+    if (day_of_week === "Sunday") {
+      downloads_days_back = 2
+    } else if (day_of_week === "Monday") {
+      downloads_days_back = 3
+    }
 
-    setDate(month + "/" + day + "/" + year)
+    let downloads_record_date = moment()
+      .subtract(downloads_days_back, "days")
+      .format("MMDDYYYY")
 
-    let dashDate = yesterday
-      .toLocaleDateString("en-GB", {
-        day: "2-digit",
-        month: "short",
-        year: "2-digit",
-      })
-      .split(" ")
-
-    let noDashDate = yesterday
-      .toLocaleDateString("en-GB", {
-        day: "2-digit",
-        month: "2-digit",
-        year: "numeric",
-      })
-      .split("/")
-
-    dashDate = dashDate[0] + "-" + dashDate[1] + "-" + dashDate[2]
-    noDashDate = noDashDate[1] + noDashDate[0] + noDashDate[2]
-
-    _getDailyPositions(dashDate)
-    _getDailyPerformance(dashDate)
-    _getETFG(dashDate)
+    _getDailyPositions(bbh_record_date)
+    _getDailyPerformance(bbh_record_date)
+    _getETFG(etfg_record_date)
     _getHistoricalData()
-    _getDownloadUrl(noDashDate)
+    _getDownloadUrl(downloads_record_date)
   }, [])
 
   async function _getHistoricalData() {
@@ -94,7 +116,6 @@ const WUGI = ({ mobile }) => {
     let data = historical.docs.map(doc => doc.data())
 
     data.map(i => {
-      console.log(i)
       i["MARKET"] = i["MARKET"].toFixed(2)
       i["NAV"] = i["NAV"].toFixed(2)
       i["date_readable"] = new Date(i["DATE"].seconds * 1000)
@@ -119,8 +140,6 @@ const WUGI = ({ mobile }) => {
       return a["DATE"] - b["DATE"]
     })
 
-    console.log(data)
-
     setHistorical(data)
     _processHistoricalData(data)
   }
@@ -137,6 +156,7 @@ const WUGI = ({ mobile }) => {
   }
 
   function _getETFG(date) {
+    console.log(date)
     let daily = firebase
       .firestore()
       .collection(date.toUpperCase())
@@ -324,14 +344,28 @@ const WUGI = ({ mobile }) => {
     })
   }
 
-  if (
-    !performance ||
-    !positions ||
-    !etfg ||
-    !downloads ||
-    !navHistory ||
-    !marketHistory
-  ) {
+  if (!performance) {
+    return ""
+  }
+
+  if (!positions) {
+    return ""
+  }
+  //
+  // if (!etfg) {
+  //   console.log("no etfg")
+  //   return ""
+  // }
+
+  if (!downloads) {
+    return ""
+  }
+
+  if (!navHistory) {
+    return ""
+  }
+
+  if (!marketHistory) {
     return ""
   }
 
@@ -471,7 +505,9 @@ const WUGI = ({ mobile }) => {
                     <div className="eyebrow">
                       30 Day Median Mid Bid-Ask Spread
                     </div>
-                    <div>{etfg["30-Day Median Bid-Ask Price"]}</div>
+                    <div>
+                      {etfg ? etfg["30-Day Median Bid-Ask Price"] : "N/A"}
+                    </div>
                   </div>
                   <div className="d-flex justify-content-between pb-1">
                     <div className="eyebrow">Assets Under Management</div>
