@@ -151,7 +151,11 @@ const HeaderMobile = ({ mobileNavOpen, mobileNavCat, dispatch }) => {
           </div>
         ) : (
           <div className="mobile-social-icons pt-4 pb-0 mt-auto">
-            <a href="" target="_blank" rel="norefferer noopener">
+            <a
+              href="https://twitter.com/esotericacap?lang=en"
+              target="_blank"
+              rel="norefferer noopener"
+            >
               <img
                 src={twitter_black}
                 alt="twitter"
@@ -159,7 +163,11 @@ const HeaderMobile = ({ mobileNavOpen, mobileNavCat, dispatch }) => {
                 width="20px"
               />
             </a>
-            <a href="" target="_blank" rel="norefferer noopener">
+            <a
+              href="https://www.linkedin.com/company/esoterica-capital/about/"
+              target="_blank"
+              rel="norefferer noopener"
+            >
               <img
                 src={linkedin_black}
                 alt="linkedin"
@@ -167,7 +175,11 @@ const HeaderMobile = ({ mobileNavOpen, mobileNavCat, dispatch }) => {
                 width="21px"
               />
             </a>
-            <a href="" target="_blank" rel="norefferer noopener">
+            <a
+              href="https://www.youtube.com/channel/UClBaJptKDg9-SkmTNfzaZUw"
+              target="_blank"
+              rel="norefferer noopener"
+            >
               <img
                 src={youtube_black}
                 alt="youtube"
@@ -175,7 +187,11 @@ const HeaderMobile = ({ mobileNavOpen, mobileNavCat, dispatch }) => {
                 width="25px"
               />
             </a>
-            <a href="malto:" target="_blank" rel="norefferer noopener">
+            <a
+              href="malto:info@esotericacap.com"
+              target="_blank"
+              rel="norefferer noopener"
+            >
               <img
                 src={mail_black}
                 alt="mail"

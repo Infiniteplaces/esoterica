@@ -10,6 +10,7 @@ const PreviewPill = ({
   bgColor,
   textColor,
   link,
+  mobileImgWidth,
   cta,
   img = null,
   tags = null,
@@ -26,7 +27,7 @@ const PreviewPill = ({
             <div className="text-container">
               <h2 className="mb-3">{title}</h2>
               <div className="my-3 my-md-0">{text}</div>
-              {mobile ? <img src={img} alt="" /> : ""}
+              {mobile ? <img src={img} width={mobileImgWidth} alt="" /> : ""}
               <Link className="button secondary" to={link}>
                 {cta}
               </Link>

@@ -475,7 +475,7 @@ const WUGI = ({ mobile }) => {
                 </span>
               </div>
 
-              <div className="py-5 d-flex flex-column flex-md-row">
+              <div className="py-5 d-flex flex-column flex-lg-row">
                 <div className="left-col d-flex flex-column">
                   <div className="d-flex justify-content-between pb-1">
                     <div className="eyebrow">Ticker</div>
@@ -625,7 +625,7 @@ const WUGI = ({ mobile }) => {
               <div className="my-4">
                 <strong> As of {date}</strong>
               </div>
-              <ResponsiveContainer width="90%" aspect={mobile ? 1 : 2.5}>
+              <ResponsiveContainer width="90%" aspect={mobile ? 2 : 2.5}>
                 <LineChart
                   height={400}
                   data={historical}
@@ -1107,7 +1107,7 @@ const WUGI = ({ mobile }) => {
               className="border-top border-black pl-lg-0 pt-3"
             >
               <h1>Premium / Discount</h1>
-              <ResponsiveContainer width="90%" aspect={mobile ? 1 : 2}>
+              <ResponsiveContainer width="90%" aspect={mobile ? 1.75 : 2}>
                 <LineChart
                   data={historical}
                   margin={{ top: 48, right: 0, bottom: 48, left: 16 }}
