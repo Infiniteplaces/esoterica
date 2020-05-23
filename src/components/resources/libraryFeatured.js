@@ -14,7 +14,7 @@ const LibraryFeatured = ({
   let style = {
     backgroundImage: `url(${featured.heroImage.fluid.src})`,
   }
-  if (backgroundColor) {
+  if (backgroundColor || !featured.heroImage) {
     style = {
       backgroundColor: backgroundColor,
     }
