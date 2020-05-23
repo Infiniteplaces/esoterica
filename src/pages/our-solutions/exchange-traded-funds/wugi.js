@@ -625,7 +625,7 @@ const WUGI = ({ mobile }) => {
               <div className="my-4">
                 <strong> As of {date}</strong>
               </div>
-              <ResponsiveContainer width="90%" aspect={mobile ? 1.25 : 2.5}>
+              <ResponsiveContainer width="90%" aspect={mobile ? 1.15 : 2.5}>
                 <LineChart
                   height={400}
                   data={historical}
@@ -1107,7 +1107,7 @@ const WUGI = ({ mobile }) => {
               className="border-top border-black pl-lg-0 pt-3"
             >
               <h1>Premium / Discount</h1>
-              <ResponsiveContainer width="90%" aspect={mobile ? 1.25 : 2}>
+              <ResponsiveContainer width="90%" aspect={mobile ? 1.15 : 2}>
                 <LineChart
                   data={historical}
                   margin={{ top: 48, right: 0, bottom: 48, left: 16 }}

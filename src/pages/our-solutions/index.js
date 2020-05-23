@@ -58,7 +58,7 @@ class InvestorSolutionsPage extends React.Component {
               textColor={"#000"}
               link={"/our-solutions/exchange-traded-funds/wugi"}
               img={etf_illus}
-              mobileImgWidth="60%"
+              mobileImgWidth="75%"
               cta="Learn More"
             />
             <PreviewPill
@@ -70,7 +70,7 @@ class InvestorSolutionsPage extends React.Component {
               textColor={"#000"}
               link={"/our-solutions/advisor-services"}
               img={as_illus}
-              mobileImgWidth="25%"
+              mobileImgWidth="40%"
               cta="Learn More"
             />
             <PreviewPill
@@ -82,7 +82,7 @@ class InvestorSolutionsPage extends React.Component {
               textColor={"#000"}
               link={"/our-solutions/individual-investors"}
               img={ind_illus}
-              mobileImgWidth="25%"
+              mobileImgWidth="40%"
               cta="Learn More"
             />
             <PreviewPill
@@ -94,7 +94,7 @@ class InvestorSolutionsPage extends React.Component {
               textColor={"#000"}
               link={"/our-solutions/institutional-investors"}
               img={ins_illus}
-              mobileImgWidth="25%"
+              mobileImgWidth="40%"
               cta="Learn More"
             />
             <EmailPill />
