@@ -370,7 +370,7 @@ const ResearchTeam = ({ team }) => {
                     <div className="eyebrow">Connect</div>
                     <div className="social">
                       <a
-                        href={"https://twitter.com/" + i.social.twitter}
+                        href={i.social.twitter}
                         target="_blank"
                         rel="norefferer noopener"
                       >
@@ -382,10 +382,7 @@ const ResearchTeam = ({ team }) => {
                         />
                       </a>
                       <a
-                        href={
-                          "https://www.linkedin.com/company/" +
-                          i.social.linkedin
-                        }
+                        href={i.social.linkedin}
                         target="_blank"
                         rel="norefferer noopener"
                       >
@@ -397,9 +394,7 @@ const ResearchTeam = ({ team }) => {
                         />
                       </a>
                       <a
-                        href={
-                          "https://www.youtube.com/channel/" + i.social.youtube
-                        }
+                        href={i.social.youtube}
                         target="_blank"
                         rel="norefferer noopener"
                       >
