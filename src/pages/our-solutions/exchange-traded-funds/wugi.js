@@ -460,7 +460,7 @@ const WUGI = ({ mobile }) => {
               xs={{ size: 12 }}
               md={{ size: 12, offset: 0 }}
               lg={{ size: 10, offset: 2 }}
-              className="border-top border-black pl-md-0 pt-3"
+              className="border-top border-black pl-lg-0 pt-3"
             >
               <div className="d-flex flex-column flex-md-row align-items-md-end">
                 <h1>Fund Details</h1>
@@ -556,7 +556,7 @@ const WUGI = ({ mobile }) => {
             <Col
               md={{ size: 12, offset: 0 }}
               lg={{ size: 10, offset: 2 }}
-              className="border-top border-black pt-3 pl-md-0"
+              className="border-top border-black pt-3 pl-lg-0"
             >
               <h1>Fund Description</h1>
               <p className="d-flex pt-5">
@@ -581,7 +581,7 @@ const WUGI = ({ mobile }) => {
             <Col
               md={{ size: 12, offset: 0 }}
               lg={{ size: 10, offset: 2 }}
-              className="border-top border-black pt-3 pl-md-0"
+              className="border-top border-black pt-3 pl-lg-0"
             >
               <h1>Fund Documents</h1>
               <div className="py-5 document-container">
@@ -613,7 +613,7 @@ const WUGI = ({ mobile }) => {
             <Col
               md={{ size: 12, offset: 0 }}
               lg={{ size: 10, offset: 2 }}
-              className="border-top border-black pl-md-0 pt-3"
+              className="border-top border-black pl-lg-0 pt-3"
             >
               <h1>NAV & Market Price</h1>
               <div className="my-4">
@@ -705,7 +705,7 @@ const WUGI = ({ mobile }) => {
             <Col
               md={{ size: 12, offset: 0 }}
               lg={{ size: 10, offset: 2 }}
-              className="border-top border-black pl-md-0 pt-3 desktop-performance"
+              className="border-top border-black pl-lg-0 pt-3 desktop-performance"
             >
               <h1>WUGI Performance</h1>
               <div className="py-4 pl-2">
@@ -917,7 +917,7 @@ const WUGI = ({ mobile }) => {
             <Col
               md={{ size: 12, offset: 0 }}
               lg={{ size: 10, offset: 2 }}
-              className="border-top border-black pl-md-0 pt-3 desktop-holdings"
+              className="border-top border-black pl-lg-0 pt-3 desktop-holdings"
             >
               <div className="d-flex flex-column flex-md-row align-items-md-end">
                 <h1>
@@ -1021,7 +1021,7 @@ const WUGI = ({ mobile }) => {
             <Col
               md={{ size: 12, offset: 0 }}
               lg={{ size: 10, offset: 2 }}
-              className="border-top border-black pl-md-0 pt-3 mobile-holdings"
+              className="border-top border-black pl-lg-0 pt-3 mobile-holdings"
               style={{ paddingBottom: 50 }}
             >
               <div className="d-flex flex-column flex-md-row align-items-md-end">
@@ -1098,7 +1098,7 @@ const WUGI = ({ mobile }) => {
             <Col
               md={{ size: 12, offset: 0 }}
               lg={{ size: 10, offset: 2 }}
-              className="border-top border-black pl-md-0 pt-3"
+              className="border-top border-black pl-lg-0 pt-3"
             >
               <h1>Premium / Discount</h1>
               <ResponsiveContainer width="90%" aspect={mobile ? 1 : 2}>
@@ -1139,7 +1139,7 @@ const WUGI = ({ mobile }) => {
             <Col
               md={{ size: 12, offset: 0 }}
               lg={{ size: 10, offset: 2 }}
-              className="mb-5 pl-md-0"
+              className="mb-5 pl-lg-0"
             >
               <h1 className="py-md-5 py-4">Disclosures</h1>
               <p>
