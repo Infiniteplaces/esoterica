@@ -17,9 +17,15 @@ const LibraryTwoPost = ({ posts, mobile }) => {
             <div className="wrapper">
               <div
                 className="container-image"
-                style={{
-                  backgroundImage: `url(${i.node.heroImage.fluid.src})`,
-                }}
+                style={
+                  i.node.heroImage
+                    ? {
+                        backgroundImage: `url(${i.node.heroImage.fluid.src})`,
+                      }
+                    : {
+                        backgroundColor: " #fdfc71",
+                      }
+                }
               />
             </div>
 
