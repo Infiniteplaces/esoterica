@@ -259,9 +259,13 @@
       .text-container {
         width: 100%;
         padding: 16px;
+        img {
+          align-self: center;
+          width: 80%;
+          margin-bottom: 15px;
+        }
       }
       .img-container {
-        display: none;
       }
     }
   }

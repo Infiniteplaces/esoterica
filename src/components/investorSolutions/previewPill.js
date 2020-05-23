@@ -1,8 +1,10 @@
 import React from "react"
 import { Link } from "gatsby"
+import { connect } from "react-redux"
 import { Row, Col } from "reactstrap"
 
 const PreviewPill = ({
+  mobile,
   title,
   text,
   bgColor,
@@ -24,17 +26,18 @@ const PreviewPill = ({
             <div className="text-container">
               <h2 className="mb-3">{title}</h2>
               <div className="my-3 my-md-0">{text}</div>
+              {mobile ? <img src={img} alt="" /> : ""}
               <Link className="button secondary" to={link}>
                 {cta}
               </Link>
             </div>
-            {img ? (
+            {mobile ? (
+              ""
+            ) : (
               <div
                 className="img-container"
                 style={{ backgroundImage: `url(${img})` }}
               ></div>
-            ) : (
-              ""
             )}
           </div>
         </Link>
@@ -43,4 +46,9 @@ const PreviewPill = ({
   )
 }
 
-export default PreviewPill
+export default connect(
+  state => ({
+    mobile: state.global.mobile,
+  }),
+  null
+)(PreviewPill)
