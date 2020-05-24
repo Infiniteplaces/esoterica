@@ -13,8 +13,9 @@ import twitter_black from "../../images/icons/twitter.svg"
 import mail_black from "../../images/icons/mail.svg"
 
 import modal_close from "../../images/icons/modal_close_white.svg"
+import modal_close_mobile from "../../images/icons/close-white.svg"
 
-const ResearchTeam = ({ team }) => {
+const ResearchTeam = ({ team, mobile }) => {
   let [modal, setModal] = useState(null)
 
   const data = useStaticQuery(graphql`
@@ -345,7 +346,7 @@ const ResearchTeam = ({ team }) => {
           className="team-member-modal"
         >
           <div className="close" onClick={() => setModal(null)}>
-            <img src={modal_close} alt="" />
+            <img src={mobile ? modal_close_mobile : modal_close} alt="" />
           </div>
           <Container fluid className="team-member-modal-container">
             <Row className="d-flex flex-column flex-md-row align-items-start">
@@ -453,7 +454,7 @@ const ResearchTeam = ({ team }) => {
           className="team-member-modal"
         >
           <div className="close" onClick={() => setModal(null)}>
-            <img src={modal_close} alt="" />
+            <img src={mobile ? modal_close_mobile : modal_close} alt="" />
           </div>
           <Container fluid className="team-member-modal-container">
             <Row className="d-flex flex-column flex-md-row align-items-start">
@@ -592,4 +593,9 @@ const ResearchTeam = ({ team }) => {
   )
 }
 
-export default connect(state => ({}), null)(ResearchTeam)
+export default connect(
+  state => ({
+    mobile: state.global.mobile,
+  }),
+  null
+)(ResearchTeam)

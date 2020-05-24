@@ -3,7 +3,7 @@ const COOKIES = "cookies"
 
 const initialState = {
   mobile: false,
-  cookies: true,
+  cookies: false,
 }
 
 export const setMobile = bool => {
