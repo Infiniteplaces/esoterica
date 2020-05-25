@@ -84,9 +84,9 @@ const WUGI = ({ mobile }) => {
     } else if (day_of_week === "Sunday") {
       etfg_days_back = 3
     } else if (day_of_week === "Monday") {
-      etfg_days_back = 3
-    } else if (day_of_week === "Tuesday") {
       etfg_days_back = 4
+    } else if (day_of_week === "Tuesday") {
+      etfg_days_back = 5
     }
 
     let etfg_record_date = moment()
