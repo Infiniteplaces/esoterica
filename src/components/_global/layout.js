@@ -28,11 +28,11 @@ const Layout = ({ children, dispatch, mobile, cookies, navTheme }) => {
 
   const path = typeof window !== "undefined" ? window.location.pathname : "/"
 
-  if (typeof window !== "undefined") {
-    window.onload = function() {
-      document.body.innerHTML = document.body.innerHTML.replace(/\u2028/g, "")
-    }
-  }
+  // if (typeof window !== "undefined") {
+  //   window.onload = function() {
+  //     document.body.innerHTML = document.body.innerHTML.replace(/\u2028/g, "")
+  //   }
+  // }
 
   dispatch(setNavColor(navTheme === "dark" ? "black" : "white"))
 
