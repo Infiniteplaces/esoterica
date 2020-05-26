@@ -438,12 +438,13 @@
           .header-row {
             position: relative;
             .close {
+              z-index: 99999;
               img {
                 width: 100px;
               }
               position: absolute;
               right: 32%;
-              bottom: -80vh;
+              bottom: -70vh;
             }
           }
           .body-row {

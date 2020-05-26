@@ -53,7 +53,6 @@ class ArticleTemplate extends React.Component {
     if (this.json.content) {
       this.json.content.forEach(i => {
         if (i.nodeType === "embedded-asset-block") {
-          console.log(i.data.target.sys.id)
           this.setState({
             [i.data.target.sys.id]: false,
           })
@@ -91,7 +90,6 @@ class ArticleTemplate extends React.Component {
     // }
   }
   render() {
-    console.log(this.state)
     //// Handle Rich Text Rendering
     let { postType } = this.props.pageContext
     const libraryPost = get(this.props, "data.contentfulLibrary")
@@ -135,7 +133,6 @@ class ArticleTemplate extends React.Component {
             let { description, title, file } = node.data.target.fields
             let { id } = node.data.target.sys
             const { url } = file["en-US"]
-            console.log(this.state[id])
             return (
               <div className="w-100 d-flex flex-column align-items-center justify-content-center my-5">
                 <img

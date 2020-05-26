@@ -109,11 +109,7 @@ const LibraryFourPost = ({ posts, color = "#fdfc71", featured = false }) => {
                 style={{ backgroundColor: color }}
               >
                 <h3 className="description">{f4.description.description}</h3>
-                <img
-                  src={illustration}
-                  alt=""
-                  className="w-75 align-self-center"
-                />
+                <img src={illustration} alt="" className="align-self-center" />
                 <div className="post-text-container">
                   <h2 className="post-title">{f4.title}</h2>
                 </div>

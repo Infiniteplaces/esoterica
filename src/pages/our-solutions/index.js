@@ -99,7 +99,7 @@ class InvestorSolutionsPage extends React.Component {
             />
             <EmailPill />
           </Container>
-          <LibraryFeatured posts={featured} />
+          <LibraryFeatured primary posts={featured} />
         </div>
       </Layout>
     )

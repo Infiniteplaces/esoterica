@@ -154,8 +154,8 @@ h2 {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   @media (max-width: map-get($grid-breakpoints,md)) {
-    font-size: 56px;
-    line-height: 60px;
+    font-size: 32px;
+    line-height: 40px;
     letter-spacing: -1px;
   }
 }

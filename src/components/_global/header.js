@@ -149,7 +149,7 @@ const Header = ({
                     dispatch(setNavHover(true))
                   }}
                 >
-                  {i.title}
+                  <span>{i.title}</span>
                 </div>
               </a>
             )
@@ -168,7 +168,7 @@ const Header = ({
                     dispatch(setNavHover(true))
                   }}
                 >
-                  {i.title}
+                  <span>{i.title}</span>
                 </div>
               </Link>
             )

@@ -9,8 +9,10 @@ const LibraryFeatured = ({
   backgroundColor = null,
   textColor = "white",
   borderColor = "white",
+  primary = false,
 }) => {
-  const featured = posts[0].node
+  console.log(posts)
+  const featured = primary ? posts[0].node : posts[posts.length - 1].node
   let style = {
     backgroundImage: `url(${featured.heroImage.fluid.src})`,
   }

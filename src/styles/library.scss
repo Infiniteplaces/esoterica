@@ -287,6 +287,16 @@
         color: $transparent;
         text-shadow: 0px 0px 7px $black;
       }
+      .container-image {
+        img {
+          width: 75%;
+        }
+        @media (max-width: map-get($grid-breakpoints, md)) {
+          img {
+            width: 50%;
+          }
+        }
+      }
     }
     height: 50vw;
     min-height: 600px;

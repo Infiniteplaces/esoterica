@@ -36,6 +36,7 @@
       transition: all 250ms Cubic-bezier(0.33, 1, 0.33, 1);
       &:hover {
         background-color: $yellow;
+        color: $black;
         transition: all 250ms Cubic-bezier(0.33, 1, 0.33, 1);
       }
     }

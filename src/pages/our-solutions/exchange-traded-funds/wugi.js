@@ -627,16 +627,14 @@ const WUGI = ({ mobile }) => {
                   data={historical}
                   margin={{ top: 48, right: 0, bottom: 48, left: 16 }}
                 >
-                  <XAxis dataKey="date" width={200} minTickGap={16} />
-                  <YAxis type="number">
-                    <Label
-                      value="$ USD"
-                      offset={0}
-                      angle={-90}
-                      position="left"
-                    />
-                  </YAxis>
                   <CartesianGrid stroke="#d8d8d8" strokeDasharray="3 3" />
+                  <XAxis dataKey="date" width={200} minTickGap={16} />
+                  <YAxis
+                    orientation="left"
+                    ticks={[0, 10, 20, 30, 40]}
+                    tickFormatter={label => "$" + label}
+                  />
+
                   <Tooltip
                     itemStyle={{ padding: 0 }}
                     wrapperStyle={{ padding: 8 }}
@@ -730,10 +728,10 @@ const WUGI = ({ mobile }) => {
                     <Col>3 Months</Col>
                   </Row>
                   <Row className="nav-row text-center">
-                    <Col className="body-small">0.00%</Col>
+                    <Col className="body-small">-</Col>
                   </Row>
                   <Row className="mp-row text-center">
-                    <Col className="body-small">0.00%</Col>
+                    <Col className="body-small">-</Col>
                   </Row>
                 </Col>
                 <Col>
@@ -1109,14 +1107,11 @@ const WUGI = ({ mobile }) => {
                   margin={{ top: 48, right: 0, bottom: 48, left: 16 }}
                 >
                   <XAxis dataKey="date" minTickGap={16} />
-                  <YAxis type="number">
-                    <Label
-                      value="% PCT"
-                      offset={0}
-                      angle={-90}
-                      position="left"
-                    />
-                  </YAxis>
+                  <YAxis
+                    type="number"
+                    ticks={[-2, -1.5, -1.0, -0.5, 0, 1, 1.5, 2]}
+                    tickFormatter={label => label + "%"}
+                  />
                   <CartesianGrid stroke="#d8d8d8" strokeDasharray="3 3" />
                   <Tooltip
                     itemStyle={{ padding: 0 }}

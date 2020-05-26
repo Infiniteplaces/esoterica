@@ -4,6 +4,7 @@ import addToMailchimp from "gatsby-plugin-mailchimp"
 
 const Email = ({ mobile, header, color, text }) => {
   let [msg, setMsg] = useState("Stay in the know")
+  let [subscribed, setSubscribed] = useState(false)
   let email_cta = "SEND"
   function _submit(e) {
     e.preventDefault()
@@ -11,6 +12,7 @@ const Email = ({ mobile, header, color, text }) => {
     if (ValidateEmail(email)) {
       addToMailchimp(email).then(data => {
         if ((data.result = "success")) {
+          setSubscribed(true)
           setMsg("You've signed up!")
         }
       })
@@ -33,25 +35,30 @@ const Email = ({ mobile, header, color, text }) => {
       ) : (
         ""
       )}
-      <div className="email-form">
-        <form action="" onSubmit={e => _submit(e)}>
-          <input
-            className="email-input"
-            type="text"
-            htmlFor="email"
-            id="email"
-            name="email"
-            placeholder="Email Address"
-            style={{ color: text, backgroundColor: color, borderColor: text }}
-          />
-          <input
-            className="submit-button"
-            type="submit"
-            style={{ color: text, backgroundColor: color, borderColor: text }}
-            value={email_cta}
-          />
-        </form>
-      </div>
+
+      {subscribed ? (
+        <div>Thank you for signing up! Check your inbox for updates.</div>
+      ) : (
+        <div className="email-form">
+          <form action="" onSubmit={e => _submit(e)}>
+            <input
+              className="email-input"
+              type="text"
+              htmlFor="email"
+              id="email"
+              name="email"
+              placeholder="Email Address"
+              style={{ color: text, backgroundColor: color, borderColor: text }}
+            />
+            <input
+              className="submit-button"
+              type="submit"
+              style={{ color: text, backgroundColor: color, borderColor: text }}
+              value={email_cta}
+            />
+          </form>
+        </div>
+      )}
     </div>
   )
 }

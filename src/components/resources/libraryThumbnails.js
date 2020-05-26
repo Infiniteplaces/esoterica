@@ -29,8 +29,23 @@ const LibraryThumbnails = ({ mobile, related = false, recent = false }) => {
   `)
 
   let { nodes } = data.allContentfulLibrary
-
   let posts = nodes
+
+  if (related) {
+    posts = posts.filter(i => {
+      let { tags } = i
+      if (tags) {
+        for (let i = 0; i < tags.length; i++) {
+          for (let j = 0; j < related.tags.length; j++) {
+            if (tags[i] === related.tags[j]) {
+              return true
+            }
+          }
+        }
+        return false
+      }
+    })
+  }
 
   let display = posts.slice(0, 6).map((i, idx) => {
     let border_bottom = idx < 3 ? true : false

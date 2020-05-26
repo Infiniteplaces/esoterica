@@ -58,7 +58,9 @@ const Footer = ({}) => {
         </Row>
         <Row className="h-50 d-flex flex-column flex-md-row">
           <Col className="d-flex align-items-end order-2 order-md-1">
-            <img src={logo_white} alt="footer logo" className="footer-logo" />
+            <Link to="/">
+              <img src={logo_white} alt="footer logo" className="footer-logo" />
+            </Link>
           </Col>
           <Col className="d-flex justify-content-end align-items-end order-1 order-md-2">
             <Email header={true} />

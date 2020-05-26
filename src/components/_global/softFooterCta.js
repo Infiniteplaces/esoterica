@@ -26,12 +26,12 @@ const softFooterCta = ({ background, text, ctaLead, cta, link }) => {
             {ctaLead}{" "}
             <Link to={link} className="underline">
               {cta}
-              <img
-                src={background ? arrow_white : arrow_black}
-                alt=""
-                className="ml-4"
-              />
             </Link>
+            <img
+              src={background ? arrow_white : arrow_black}
+              alt=""
+              className="ml-4"
+            />
           </h2>
         </Col>
       </Row>
