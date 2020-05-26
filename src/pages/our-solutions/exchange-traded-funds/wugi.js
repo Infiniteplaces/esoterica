@@ -362,10 +362,6 @@ const WUGI = ({ mobile }) => {
     return ""
   }
 
-  if (!etfg) {
-    return ""
-  }
-
   if (!downloads) {
     return ""
   }
@@ -506,7 +502,7 @@ const WUGI = ({ mobile }) => {
                     <div>0.98%</div>
                   </div>
                 </div>
-                <div className="right-col d-flex flex-column">
+                <div className="right-col d-flex flex-column ml-lg-5">
                   <div className="d-flex justify-content-between pb-1">
                     <div className="eyebrow">NET EXPENSE RATIO*</div>
                     <div>0.75%</div>
