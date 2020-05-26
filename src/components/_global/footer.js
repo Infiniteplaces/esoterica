@@ -11,7 +11,7 @@ const Footer = ({}) => {
   return (
     <footer>
       <Container fluid className="footer-container">
-        <Row className="h-50">
+        <Row className="h-50 link-row">
           <Col className="d-flex flex-column">
             <span>
               <Link to="/contact">Contact</Link>
@@ -57,7 +57,7 @@ const Footer = ({}) => {
           </Col>
         </Row>
         <Row className="h-50 d-flex flex-column flex-md-row">
-          <Col className="d-flex align-items-end order-2 order-md-1">
+          <Col className="d-flex align-items-end justify-content-center justify-content-md-start order-2 order-md-1">
             <Link to="/">
               <img src={logo_white} alt="footer logo" className="footer-logo" />
             </Link>

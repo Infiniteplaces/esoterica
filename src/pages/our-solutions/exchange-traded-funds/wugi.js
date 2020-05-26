@@ -628,10 +628,16 @@ const WUGI = ({ mobile }) => {
                   margin={{ top: 48, right: 0, bottom: 48, left: 16 }}
                 >
                   <CartesianGrid stroke="#d8d8d8" strokeDasharray="3 3" />
-                  <XAxis dataKey="date" width={200} minTickGap={16} />
+                  <XAxis
+                    dataKey="date"
+                    width={200}
+                    minTickGap={16}
+                    tickMargin={8}
+                  />
                   <YAxis
                     orientation="left"
                     ticks={[0, 10, 20, 30, 40]}
+                    tickMargin={8}
                     tickFormatter={label => "$" + label}
                   />
 
@@ -1106,10 +1112,11 @@ const WUGI = ({ mobile }) => {
                   data={historical}
                   margin={{ top: 48, right: 0, bottom: 48, left: 16 }}
                 >
-                  <XAxis dataKey="date" minTickGap={16} />
+                  <XAxis dataKey="date" minTickGap={16} tickMargin={8} />
                   <YAxis
                     type="number"
-                    ticks={[-2, -1.5, -1.0, -0.5, 0, 1, 1.5, 2]}
+                    tickMargin={8}
+                    ticks={[-2, -1.5, -1.0, -0.5, 0, 0.5, 1, 1.5, 2]}
                     tickFormatter={label => label + "%"}
                   />
                   <CartesianGrid stroke="#d8d8d8" strokeDasharray="3 3" />
