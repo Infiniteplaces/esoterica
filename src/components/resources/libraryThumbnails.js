@@ -31,7 +31,7 @@ const LibraryThumbnails = ({ mobile, related = false, recent = false }) => {
   let { nodes } = data.allContentfulLibrary
   let posts = nodes
 
-  if (related) {
+  if (related && related.tags) {
     posts = posts.filter(i => {
       let { tags } = i
       if (tags) {
