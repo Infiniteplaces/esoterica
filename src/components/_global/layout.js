@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import PropTypes from "prop-types"
 import { connect } from "react-redux"
 import { useStaticQuery, graphql } from "gatsby"
@@ -13,7 +13,11 @@ import { setMobile } from "../../state/global"
 import { setNavHover, setNavColor } from "../../state/header"
 
 const Layout = ({ children, dispatch, mobile, cookies, navTheme }) => {
+  let [path, setPath] = useState("/")
   useEffect(() => {
+    if (typeof window !== "undefined") {
+      setPath(window.location.pathname)
+    }
     _onWindowResize()
     window.addEventListener("resize", _onWindowResize)
   })
@@ -25,8 +29,6 @@ const Layout = ({ children, dispatch, mobile, cookies, navTheme }) => {
       dispatch(setMobile(false))
     }
   }
-
-  let path = typeof window !== "undefined" ? window.location.pathname : "/"
 
   dispatch(setNavColor(navTheme === "dark" ? "black" : "white"))
 
