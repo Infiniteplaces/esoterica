@@ -37,7 +37,9 @@ const Email = ({ mobile, header, color, text }) => {
       )}
 
       {subscribed ? (
-        <div>Thank you for signing up! Check your inbox for updates.</div>
+        <div style={{ color: text }}>
+          Thank you for signing up! Check your inbox for updates.
+        </div>
       ) : (
         <div className="email-form">
           <form action="" onSubmit={e => _submit(e)}>

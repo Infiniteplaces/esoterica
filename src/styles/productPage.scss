@@ -166,8 +166,12 @@
         .header-row {
           position: relative;
           .close {
+            display: flex;
             position: absolute;
             right: 48px;
+            img {
+              margin-left: 15px;
+            }
           }
         }
         .body-row {
@@ -439,12 +443,14 @@
             position: relative;
             .close {
               z-index: 99999;
+              display: flex;
               img {
-                width: 100px;
+                margin-left: 15px;
+                width: 30px;
               }
               position: absolute;
               right: 32%;
-              bottom: -70vh;
+              bottom: -75vh;
             }
           }
           .body-row {

@@ -14,6 +14,7 @@ import linkedin_black from "../../images/icons/linkedin.svg"
 import youtube_black from "../../images/icons/youtube.svg"
 import twitter_black from "../../images/icons/twitter.svg"
 import mail_black from "../../images/icons/mail.svg"
+import close_white from "../../images/icons/close-white.svg"
 import softFooterBg from "../../images/investorSolutions/investorSolutionsFooterCta.png"
 
 import EmailCapture from "../../components/_global/emailCapture"
@@ -152,12 +153,12 @@ class ArticleTemplate extends React.Component {
                   }
                   onClick={() => this.setState({ [id]: false })}
                 >
-                  <span
+                  <h3
                     className="close"
                     onClick={() => this.setState({ [id]: false })}
                   >
-                    &times;
-                  </span>
+                    Close <img src={close_white} alt="" />
+                  </h3>
                   <img src={url} className="modal-content " id="img01" />
                   {description ? (
                     <div id="caption" className="eyebrow pt-5 text-white">

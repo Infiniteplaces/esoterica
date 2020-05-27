@@ -21,6 +21,9 @@ import SoftFooterCta from "../components/_global/softFooterCta"
 import softFooterBg from "../images/homepage/home_softFooter.png"
 
 class IndexPage extends React.Component {
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
   render() {
     let { mobile } = this.props
     const library = get(this, "props.data.allContentfulLibrary.edges")

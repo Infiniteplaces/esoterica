@@ -22,6 +22,7 @@ import {
 import Layout from "../../../components/_global/layout"
 import SEO from "../../../components/_global/seo"
 
+import modal_close_mobile from "../../../images/icons/close.svg"
 import modal_close from "../../../images/icons/modal_close.svg"
 import modal_arrow from "../../../images/icons/arrow-diag-black.svg"
 
@@ -409,7 +410,8 @@ const WUGI = ({ mobile }) => {
               <Col className="d-flex justify-content-center align-items-start">
                 <h3>Choose Brokerage</h3>
                 <div className="close" onClick={() => setModal(false)}>
-                  <img src={modal_close} alt="" />
+                  <h3>Close</h3>
+                  <img src={modal_close_mobile} alt="" />
                 </div>
               </Col>
             </Row>

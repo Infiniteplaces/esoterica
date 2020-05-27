@@ -312,6 +312,9 @@
     .description,
     .post-title {
       padding: 10px;
+      h2 {
+        font-size: 56px;
+      }
     }
     &:hover {
       webkit-filter: blur(3px);
@@ -361,6 +364,12 @@
             font-size: 12px;
             border-radius: 50px;
             text-transform: uppercase;
+          }
+        }
+        .post-title {
+          @media (max-width: map-get($grid-breakpoints,md)) {
+            font-size: 56px;
+            line-height: 60px;
           }
         }
       }
