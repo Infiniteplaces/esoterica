@@ -8,8 +8,8 @@ import hero from "../../images/investorSolutions/assetAllocationHero.jpg"
 import illustration from "../../images/homepage/world_illus.png"
 
 const LibraryFourPost = ({ posts, color = "#fdfc71", featured = false }) => {
-  let f2 = posts[1].node
-  let f3 = posts[2].node
+  let f2 = posts[0].node
+  let f3 = posts[1].node
   let f1, f4
   if (featured) {
     f4 = {
