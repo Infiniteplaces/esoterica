@@ -287,7 +287,7 @@ const ResearchTeam = ({ team, mobile }) => {
       title: "Trustee of Esoterica Thematic Trust",
       img: "jack_gee",
       bio:
-        "Jack was Managing Director and CFO/Treasurer of U.S. iShares at BlackRock from 2004 to 2019. Prior to BlackRock, he was Controller at Paul Capital Partners, responsible for the oversight of the financial, operational and accounting activities of the investments acquired in the secondary market. Jack also served as SVP and CFO/Treasurer at Fremont Investment Advisors, managing all aspects of finance and operations for the firm. Jack graduated from California State University with a Bachelor degree in Accounting and was also a Certified Public Accountant.",
+        "Jack was Managing Director and CFO/Treasurer of U.S. iShares at BlackRock from 2004 to 2019. Prior to BlackRock, he was Controller at Paul Capital Partners, responsible for the oversight of the financial, operational and accounting activities of the investments acquired in the secondary market. Jack also served as SVP and CFO/Treasurer at Fremont Investment Advisors, managing all aspects of finance and operations for the firm. Jack received his MBA from Saint Mary’s College of California, his BS in Accounting from California State University and was also a Certified Public Accountant.",
       social: {
         email: "j-gee@sbcglobal.net",
       },
@@ -440,7 +440,6 @@ const ResearchTeam = ({ team, mobile }) => {
               fluid={data[i.img].childImageSharp.fluid}
             />
           </div>
-          <div className="eyebrow">{i.title}</div>
           <div className="d-flex justify-content-between align-items-center">
             <h4>{i.name}</h4>
           </div>
@@ -469,7 +468,6 @@ const ResearchTeam = ({ team, mobile }) => {
               <Col>
                 <Row>
                   <Col>
-                    <div className="body-small">{i.title}</div>
                     <h3 className="pb-3">{i.name}</h3>
                     <p className="pb-3">{i.bio}</p>
                   </Col>
@@ -512,7 +510,6 @@ const ResearchTeam = ({ team, mobile }) => {
               fluid={data[i.img].childImageSharp.fluid}
             />
           </div>
-          <div className="eyebrow">{i.title}</div>
           <div className="d-flex justify-content-between align-items-center">
             <h4>{i.name}</h4>
           </div>
@@ -541,7 +538,6 @@ const ResearchTeam = ({ team, mobile }) => {
               <Col>
                 <Row>
                   <Col>
-                    <div className="body-small">{i.title}</div>
                     <h3 className="pb-3">{i.name}</h3>
                     <p className="pb-3">{i.bio}</p>
                   </Col>

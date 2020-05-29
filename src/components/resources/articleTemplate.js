@@ -9,6 +9,7 @@ import { Container, Row, Col } from "reactstrap"
 import { BLOCKS, INLINES } from "@contentful/rich-text-types"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import ReactPlayer from "react-player"
+import SpotifyPlayer from "react-spotify-player"
 
 import linkedin_black from "../../images/icons/linkedin.svg"
 import youtube_black from "../../images/icons/youtube.svg"
@@ -122,6 +123,21 @@ class ArticleTemplate extends React.Component {
     let soundcloud = post.soundcloud ? (
       <div className="audio-container">
         <ReactPlayer url={post.soundcloud} />
+      </div>
+    ) : (
+      ""
+    )
+    let spotify = post.spotify ? (
+      <div className="audio-container">
+        <SpotifyPlayer
+          uri={post.spotify}
+          size={{
+            width: "100%",
+            height: 81,
+          }}
+          view="coverart"
+          theme="black"
+        />
       </div>
     ) : (
       ""
@@ -277,7 +293,9 @@ class ArticleTemplate extends React.Component {
                       />
                     </a>
                     <a
-                      href="https://linkedin.com"
+                      href={
+                        "https://linkedin.com/shareArticle?url=" + shareItem
+                      }
                       target="_blank"
                       rel="norefferer noopener"
                     >
@@ -312,6 +330,7 @@ class ArticleTemplate extends React.Component {
               >
                 {youtube}
                 {soundcloud}
+                {spotify}
                 <div className="article-container">
                   {article}
                   {tags}
@@ -352,7 +371,6 @@ export const pageQuery = graphql`
     contentfulLibrary(slug: { eq: $slug }) {
       title
       youtube
-
       tags
       author {
         name
