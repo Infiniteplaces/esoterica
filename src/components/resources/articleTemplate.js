@@ -247,9 +247,11 @@ class ArticleTemplate extends React.Component {
       </div>
     )
 
+    console.log(post)
+
     return (
       <Layout navTheme="dark" location={this.props.location}>
-        <SEO title={post.title} />
+        <SEO title={post.title} description={post.description.description} />
         <div id="articleTemplate">
           <div className="header-container">
             <Img
@@ -375,6 +377,9 @@ export const pageQuery = graphql`
       author {
         name
       }
+      description {
+        description
+      }
       childContentfulLibraryArticleRichTextNode {
         json
       }
@@ -389,6 +394,9 @@ export const pageQuery = graphql`
       title
       author {
         name
+      }
+      description {
+        description
       }
       childContentfulGlossaryArticleRichTextNode {
         json
