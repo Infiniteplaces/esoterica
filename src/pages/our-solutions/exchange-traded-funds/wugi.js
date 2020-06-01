@@ -62,8 +62,6 @@ const WUGI = ({ mobile }) => {
       bbh_days_back = 2
     } else if (day_of_week === "Monday") {
       bbh_days_back = 3
-    } else if (day_of_week === "Tuesday") {
-      bbh_days_back = 4
     }
 
     let bbh_record_date = moment()
@@ -86,8 +84,6 @@ const WUGI = ({ mobile }) => {
       etfg_days_back = 3
     } else if (day_of_week === "Monday") {
       etfg_days_back = 4
-    } else if (day_of_week === "Tuesday") {
-      etfg_days_back = 5
     }
 
     let etfg_record_date = moment()
@@ -103,8 +99,6 @@ const WUGI = ({ mobile }) => {
       downloads_days_back = 2
     } else if (day_of_week === "Monday") {
       downloads_days_back = 3
-    } else if (day_of_week === "Tuesday") {
-      downloads_days_back = 4
     }
 
     let downloads_record_date = moment()

@@ -247,8 +247,6 @@ class ArticleTemplate extends React.Component {
       </div>
     )
 
-    console.log(post)
-
     return (
       <Layout navTheme="dark" location={this.props.location}>
         <SEO title={post.title} description={post.description.description} />
