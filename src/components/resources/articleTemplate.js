@@ -120,13 +120,27 @@ class ArticleTemplate extends React.Component {
     ) : (
       ""
     )
-    let soundcloud = post.soundcloud ? (
-      <div className="audio-container">
-        <ReactPlayer url={post.soundcloud} />
-      </div>
-    ) : (
-      ""
-    )
+
+    let anchor
+    if (post.anchorPodcast) {
+      let url =
+        post.anchorPodcast.split("/episodes")[0] +
+        "/embed/episodes" +
+        post.anchorPodcast.split("/episodes")[1]
+      console.log(url)
+      anchor = (
+        <div className="audio-container">
+          <iframe
+            src={url}
+            height="102px"
+            width="100%"
+            frameBorder="0"
+            scrolling="no"
+          ></iframe>
+        </div>
+      )
+    }
+
     let spotify = post.spotify ? (
       <div className="audio-container">
         <SpotifyPlayer
@@ -329,7 +343,7 @@ class ArticleTemplate extends React.Component {
                 className="d-flex flex-column align-items-center"
               >
                 {youtube}
-                {soundcloud}
+                {anchor}
                 {spotify}
                 <div className="article-container">
                   {article}
@@ -371,6 +385,8 @@ export const pageQuery = graphql`
     contentfulLibrary(slug: { eq: $slug }) {
       title
       youtube
+      spotify
+      anchorPodcast
       tags
       author {
         name
