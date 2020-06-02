@@ -4,7 +4,7 @@
   </a>
 </p>
 
-## Esoterica Capital Website Reference Guide
+**Esoterica Capital Website Reference Guide**
 
 # Site Architecture
 
@@ -21,19 +21,19 @@ To gain access to the code base, clone this repository:
 
 # Packages, dependencies and APIs
 
-## State
+**State**
 This website uses `react-redux` to control global state objects 
 
-## Email 
+**Email**
 This website uses `Mailchimp` as its email client
 
-## CMS
+**CMS**
 This website uses `Contentful` as it's headless CMS [see more on this below] 
 
-## Firebase
+**Firebase**
 This website uses `Firebase` as it's database for daily & historical financial record keeping
 
-## APIs
+**APIs**
 This website utilizes the `Firebase SDK` to interact with the `Firebase` database storage. Files are queried on load from daily updated files and held statically on page after load. 
 
 # Deploying code
