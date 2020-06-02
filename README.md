@@ -47,4 +47,6 @@ To deploy code to the production environment
 
 `esotericacap.com` interfaces with `Contentful` as a headless CMS. Updates published to `Contentful` trigger a build hook in `Netlify` similar to production deployments in Github. Any failures in this pipeline should be checked within the `Netlify` deploy logs. 
 
+# Design & Style Guide
 
+All design documents used for this site can be found [here](https://www.dropbox.com/sh/poh5lomudzgntoa/AABuAQGZTTWWMz3bfShwAo4sa?dl=0)
