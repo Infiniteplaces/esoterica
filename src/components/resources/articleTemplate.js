@@ -132,7 +132,6 @@ class ArticleTemplate extends React.Component {
         <div className="audio-container">
           <iframe
             src={url}
-            height="102px"
             width="100%"
             frameBorder="0"
             scrolling="no"
