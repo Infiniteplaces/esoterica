@@ -10,10 +10,10 @@
 
 This site is build using `React` framework `Gatsby` with `Redux` controlling state. It is hosted on `Netlfiy` and uses `Contentful` as the CMS with a build hook to this `Github`. 
 
-# Accessing The Code
+# Accessing The Code Locally
 
-To gain access to the code base, clone this repository:
-1. Clone this repository
+To gain access to the code base:
+1. Clone down this repository
 2. `cd eosterica`
 3. `yarn install`
 4. `yarn start`
