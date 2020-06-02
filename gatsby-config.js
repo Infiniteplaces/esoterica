@@ -48,7 +48,7 @@ module.exports = {
       resolve: "gatsby-plugin-firebase",
       options: {
         credentials: {
-          apiKey: "AIzaSyAaGS6kL9ofgW25lKpU19qjyHcZJpufROU",
+          apiKey: `${process.env.GATSBY_FIREBASE_API_KEY}`,
           authDomain: "esoterica-capital.netlify.app",
           databaseURL: "https://esoweb.firebaseio.com",
           projectId: "esoweb",
