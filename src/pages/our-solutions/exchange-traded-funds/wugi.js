@@ -444,7 +444,7 @@ const WUGI = ({ mobile }) => {
                   <img src={modal_arrow} alt="" />
                 </h2>
                 <h2>
-                  <a href="www.bbae.com">BBAE</a>
+                  <a href="https://www.bbae.com">BBAE</a>
                   <img src={modal_arrow} alt="" />
                 </h2>
               </Col>
