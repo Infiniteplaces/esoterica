@@ -180,11 +180,13 @@ footer {
           &.email-input {
             padding-bottom: 5px;
             width: 70% !important;
+            border-radius: 0;
           }
           &.submit-button {
             padding-bottom: 5px;
             width: 30% !important;
             color: $white;
+            border-radius: 0;
           }
           &:focus {
             outline: none;
