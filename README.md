@@ -47,6 +47,9 @@ To deploy code to the production environment
 
 `esotericacap.com` interfaces with `Contentful` as a headless CMS. Updates published to `Contentful` trigger a build hook in `Netlify` similar to production deployments in Github. Any failures in this pipeline should be checked within the `Netlify` deploy logs. 
 
+### Adding Users
+Login to our blog’s [Organization Settings](https://app.contentful.com/account/organizations/61HctfN7WpF5bEH9KTpKBy/subscription_overview). Then, under the headline for `Users` select the `Manage users` link. Within the Manage Users page you will then be able to add individuals by their email, as well as set their permissions. Make sure that when you invite a new user you select Esoterica Capital Blog from the dropdown beneath `Add to spaces`. That’s it!
+
 # Design & Style Guide
 
 All design documents used for this site can be found [here](https://www.dropbox.com/sh/poh5lomudzgntoa/AABuAQGZTTWWMz3bfShwAo4sa?dl=0)
