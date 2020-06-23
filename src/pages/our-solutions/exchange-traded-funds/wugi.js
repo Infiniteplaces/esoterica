@@ -606,7 +606,7 @@ const WUGI = ({ mobile }) => {
                 <div className="py-1 d-flex justify-content-between">
                   <div className="">
                     <a href={downloads.sar.i} className="underline">
-                      SAR
+                      Semi-Annual Report
                     </a>
                   </div>
                 </div>
