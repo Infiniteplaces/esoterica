@@ -129,7 +129,7 @@ class OurNewestFundPage extends React.Component {
                 </Col>
                 <Col xs="10" md="8" className="info-col pl-0">
                   <h4>Semis are the nucleus of the 5G ecosystem.</h4>
-                  <p>
+                  <p className="info-body">
                     Every existing device and every facet of the 5G cycle must
                     be upgraded with new semiconductor technology to run faster
                     and smarter, all the while being more energy efficient. 5G
@@ -154,7 +154,7 @@ class OurNewestFundPage extends React.Component {
                 </Col>
                 <Col xs="10" md="8" className="info-col pl-0">
                   <h4>Cloud giants push into Edge Computing.</h4>
-                  <p>
+                  <p className="info-body">
                     Edge Computing and 5G are interlinked technologies as both
                     are poised to significantly improve the performance of
                     applications (faster speed) and enable huge amounts of data
@@ -181,7 +181,7 @@ class OurNewestFundPage extends React.Component {
                 </Col>
                 <Col xs="10" md="8" className="info-col pl-0">
                   <h4>What does software have to do with 5G?</h4>
-                  <p>
+                  <p className="info-body">
                     5G will result in a massive amount of new data. The ability
                     to continuously filter and process this new data, in
                     real-time, will be critical, particularly for A.I. and
@@ -208,7 +208,7 @@ class OurNewestFundPage extends React.Component {
                 </Col>
                 <Col xs="10" md="8" className="info-col pl-0">
                   <h4>Enabling Technologies.</h4>
-                  <p>
+                  <p className="info-body">
                     Eventually, when all of the 5G building blocks are in place,
                     the big winners will be the enabling technologies (think of
                     Instagram and Netflix in the 4G cycle), giving rise to a
