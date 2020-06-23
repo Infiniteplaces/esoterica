@@ -140,8 +140,9 @@
         display: flex;
         justify-content: center;
         img {
-          min-width: 200px;
-          width: 85%;
+          min-width: 225px;
+          width: 60%;
+          max-width: 300px;
         }
       }
     }
@@ -170,6 +171,7 @@
             font-family: "times now extralight";
             font-weight: 400;
             font-size: 32px;
+            line-height: 36px;
           }
           .info-body {
             padding: 24px 0px;
