@@ -104,6 +104,10 @@
         justify-content: center;
       }
       .info-col {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         h4 {
           font-family: "times now extralight";
           font-weight: 400;
@@ -152,6 +156,10 @@
           justify-content: center;
         }
         .info-col {
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
           h4 {
             font-family: "times now extralight";
             font-weight: 400;

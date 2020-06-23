@@ -191,6 +191,7 @@ class OurNewestFundPage extends React.Component {
                     businesses build digital experiences in the context of
                     5G/Edge Computing.
                   </p>
+                  <p></p>
                 </Col>
                 {!this.state.mobile && (
                   <Col xs="12" md="3" className="image-col">
@@ -216,6 +217,7 @@ class OurNewestFundPage extends React.Component {
                     vehicles, AR/VR - and applications that have
                     yet-to-be-created.
                   </p>
+                  <p></p>
                 </Col>
               </Row>
             </Row>
