@@ -121,7 +121,9 @@ class OurNewestFundPage extends React.Component {
               <Row className="pillar mx-md-5">
                 {this.state.mobile && (
                   <Col xs="12" md="3" className="image-col">
-                    <img src={pillar_one} alt="" />
+                    <div className="text-center">
+                      <img src={pillar_one} alt="" />
+                    </div>
                   </Col>
                 )}
                 <Col xs="2" md="1" className="number-col">
@@ -146,13 +148,17 @@ class OurNewestFundPage extends React.Component {
                 </Col>
                 {!this.state.mobile && (
                   <Col xs="12" md="3" className="image-col">
-                    <img src={pillar_one} alt="" />
+                    <div className="text-center">
+                      <img src={pillar_one} alt="" />
+                    </div>
                   </Col>
                 )}
               </Row>
               <Row className="pillar mx-md-5 pb-md-5">
-                <Col xs="12" md="3" className="image-col">
-                  <img src={pillar_two} alt="" />
+                <Col xs="12" md="3" className="image-col pr-md-0">
+                  <div className="text-center">
+                    <img src={pillar_two} alt="" />
+                  </div>
                 </Col>
                 <Col xs="2" md="1" className="number-col">
                   <img src={number_two} alt="" />
@@ -180,7 +186,9 @@ class OurNewestFundPage extends React.Component {
               <Row className="pillar mx-md-5">
                 {this.state.mobile && (
                   <Col xs="12" md="3" className="image-col ">
-                    <img src={pillar_three} alt="" />
+                    <div className="text-center">
+                      <img src={pillar_three} alt="" />
+                    </div>
                   </Col>
                 )}
                 <Col xs="2" md="1" className="number-col">
@@ -202,13 +210,17 @@ class OurNewestFundPage extends React.Component {
                 </Col>
                 {!this.state.mobile && (
                   <Col xs="12" md="3" className="image-col">
-                    <img src={pillar_three} alt="" />
+                    <div className="text-center">
+                      <img src={pillar_three} alt="" />
+                    </div>
                   </Col>
                 )}
               </Row>
               <Row className="pillar mx-md-5">
-                <Col xs="12" md="3" className="image-col">
-                  <img src={pillar_four} alt="" />
+                <Col xs="12" md="3" className="image-col pr-md-0">
+                  <div className="text-center">
+                    <img src={pillar_four} alt="" />
+                  </div>
                 </Col>
                 <Col xs="2" md="1" className="number-col">
                   <img src={number_four} className="mt-md-2" alt="" />
