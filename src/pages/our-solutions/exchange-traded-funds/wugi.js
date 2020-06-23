@@ -211,6 +211,11 @@ const WUGI = ({ mobile }) => {
       .ref("Esoterica+NextG+Economy+ETF+SAI.pdf")
       .getDownloadURL()
 
+    let sar = firebase
+      .storage()
+      .ref("esoterica_sar_2020.pdf")
+      .getDownloadURL()
+
     let holdingsDate =
       "Esoterica_NXTG_ECONOMY_ETF_WUGI_HOLDINGS_" + date + ".csv"
 
@@ -222,6 +227,7 @@ const WUGI = ({ mobile }) => {
     setDownloads({
       prospectus: prospectus,
       sai: sai,
+      sar: sar,
       holdings: holdings,
     })
   }
@@ -594,6 +600,13 @@ const WUGI = ({ mobile }) => {
                   <div className="">
                     <a href={downloads.sai.i} className="underline">
                       SAI
+                    </a>
+                  </div>
+                </div>
+                <div className="py-1 d-flex justify-content-between">
+                  <div className="">
+                    <a href={downloads.sar.i} className="underline">
+                      SAR
                     </a>
                   </div>
                 </div>
