@@ -135,9 +135,14 @@ class OurNewestFundPage extends React.Component {
                     and smarter, all the while being more energy efficient. 5G
                     will require a massive expansion of semiconductor content.
                   </p>
-                  <Link to="/resources/library/semi-eating-world/" className="">
-                    Semiconductors Eating the World <img src={arrow} alt="" />
-                  </Link>
+                  <div>
+                    <Link
+                      to="/resources/library/semi-eating-world/"
+                      className=""
+                    >
+                      Semiconductors Eating the World <img src={arrow} alt="" />
+                    </Link>
+                  </div>
                 </Col>
                 {!this.state.mobile && (
                   <Col xs="12" md="3" className="image-col">
@@ -162,22 +167,24 @@ class OurNewestFundPage extends React.Component {
                     running on edge locations demand lower latency and reduced
                     bandwidth.
                   </p>
-                  <Link
-                    to="/resources/library/the-convergence-of-cloud-and-5g/"
-                    className=""
-                  >
-                    The Convergence of Cloud and 5G <img src={arrow} alt="" />
-                  </Link>
+                  <div>
+                    <Link
+                      to="/resources/library/the-convergence-of-cloud-and-5g/"
+                      className=""
+                    >
+                      The Convergence of Cloud and 5G <img src={arrow} alt="" />
+                    </Link>
+                  </div>
                 </Col>
               </Row>
               <Row className="pillar mx-md-5">
                 {this.state.mobile && (
-                  <Col xs="12" md="3" className="image-col">
+                  <Col xs="12" md="3" className="image-col ">
                     <img src={pillar_three} alt="" />
                   </Col>
                 )}
                 <Col xs="2" md="1" className="number-col">
-                  <img src={number_three} alt="" />
+                  <img src={number_three} className="mt-md-2" alt="" />
                 </Col>
                 <Col xs="10" md="8" className="info-col pl-0">
                   <h4>What does software have to do with 5G?</h4>
@@ -204,7 +211,7 @@ class OurNewestFundPage extends React.Component {
                   <img src={pillar_four} alt="" />
                 </Col>
                 <Col xs="2" md="1" className="number-col">
-                  <img src={number_four} alt="" />
+                  <img src={number_four} className="mt-md-2" alt="" />
                 </Col>
                 <Col xs="10" md="8" className="info-col pl-0">
                   <h4>Enabling Technologies.</h4>
