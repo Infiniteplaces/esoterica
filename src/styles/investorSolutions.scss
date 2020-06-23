@@ -88,6 +88,103 @@
   }
 }
 
+#ourNewestFund {
+  h2 {
+    padding: 56px 0px;
+  }
+  .pillars-row {
+    padding: 0px 20px;
+    margin-bottom: 48px;
+    .pillar {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 48px;
+      .number-col {
+        display: flex;
+        justify-content: center;
+      }
+      .info-col {
+        h4 {
+          font-family: "times now extralight";
+          font-weight: 400;
+          font-size: 32px;
+        }
+        p {
+          padding: 24px 0px;
+        }
+        a {
+          font-weight: 700;
+          font-family: "univers light";
+          background-color: $transparent;
+          transition: background-color 150ms linear;
+          img {
+            width: 16px;
+            margin-left: 8px;
+          }
+          &:hover {
+            background-color: $yellow;
+            transition: background-color 150ms linear;
+            font-size: inherit;
+            font-family: inherit;
+          }
+        }
+      }
+      .image-col {
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+  @media (max-width: map-get($grid-breakpoints,md)) {
+    h2 {
+      padding: 40px 0px;
+    }
+    .pillars-row {
+      padding: 0px 20px;
+      margin-bottom: 48px;
+      .pillar {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 88px;
+        .number-col {
+          display: flex;
+          justify-content: center;
+        }
+        .info-col {
+          h4 {
+            font-family: "times now extralight";
+            font-weight: 400;
+            font-size: 32px;
+          }
+          p {
+            padding: 24px 0px;
+          }
+          a {
+            font-weight: 700;
+            font-family: "univers light";
+            img {
+              width: 16px;
+              margin-left: 8px;
+            }
+            &:hover {
+              font-size: inherit;
+              font-family: inherit;
+            }
+          }
+        }
+        .image-col {
+          text-align: center;
+          margin-bottom: 24px;
+          img {
+            width: 80%;
+          }
+        }
+      }
+    }
+  }
+}
+
 #individualInvestors,
 #institutionalInvestors,
 #advisorServices,

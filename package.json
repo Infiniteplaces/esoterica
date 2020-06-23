@@ -6,6 +6,7 @@
   "author": "Tucker Schoos",
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^13.4.0",
+    "axios": "^0.19.2",
     "bootstrap": "^4.4.1",
     "firebase": "^7.14.4",
     "gatsby": "^2.20.12",
