@@ -743,10 +743,10 @@ const WUGI = ({ mobile }) => {
                     <Col>3 Months</Col>
                   </Row>
                   <Row className="nav-row text-center">
-                    <Col className="body-small">-</Col>
+                    <Col className="body-small">41.24%</Col>
                   </Row>
                   <Row className="mp-row text-center">
-                    <Col className="body-small">-</Col>
+                    <Col className="body-small">40.15%</Col>
                   </Row>
                 </Col>
                 <Col>
@@ -857,12 +857,12 @@ const WUGI = ({ mobile }) => {
                   </Row>
                   <Row className="nav-row">
                     <Col className="text-center">NAV</Col>
-                    <Col className="text-center">-</Col>
+                    <Col className="text-center">41.24%</Col>
                     <Col className="text-center">-</Col>
                   </Row>
                   <Row className="mp-row">
                     <Col className="text-center">Market Price</Col>
-                    <Col className="text-center">-</Col>
+                    <Col className="text-center">40.15%</Col>
                     <Col className="text-center">-</Col>
                   </Row>
                 </Col>
