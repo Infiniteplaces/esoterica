@@ -724,7 +724,7 @@ const WUGI = ({ mobile }) => {
             >
               <h1>WUGI Performance</h1>
               <div className="py-4 pl-2">
-                <strong>As of March 31, 2020</strong>
+                <strong>As of June 30, 2020</strong>
               </div>
               <Row className="w-100 m-0 py-1">
                 <Col className="">
@@ -837,7 +837,7 @@ const WUGI = ({ mobile }) => {
             >
               <h1>WUGI Performance</h1>
               <div className="py-4 pl-2">
-                <strong>As of March 31, 2020</strong>
+                <strong>As of June 30, 2020</strong>
               </div>
               <Slider
                 {...{
