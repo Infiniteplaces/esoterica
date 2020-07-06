@@ -61,7 +61,7 @@ const WUGI = ({ mobile }) => {
     if (day_of_week === "Sunday") {
       bbh_days_back = 2
     } else if (day_of_week === "Monday") {
-      bbh_days_back = 3
+      bbh_days_back = 4
     }
 
     let bbh_record_date = moment()
@@ -83,7 +83,7 @@ const WUGI = ({ mobile }) => {
     } else if (day_of_week === "Sunday") {
       etfg_days_back = 3
     } else if (day_of_week === "Monday") {
-      etfg_days_back = 4
+      etfg_days_back = 5
     }
 
     let etfg_record_date = moment()
@@ -98,7 +98,7 @@ const WUGI = ({ mobile }) => {
     if (day_of_week === "Sunday") {
       downloads_days_back = 2
     } else if (day_of_week === "Monday") {
-      downloads_days_back = 3
+      downloads_days_back = 4
     }
 
     let downloads_record_date = moment()
@@ -356,22 +356,27 @@ const WUGI = ({ mobile }) => {
   }
 
   if (!performance) {
+    console.log("Missing Performance Data")
     return ""
   }
 
   if (!positions) {
+    console.log("Missing Positions Data")
     return ""
   }
 
   if (!downloads) {
+    console.log("Missing Downloads Data")
     return ""
   }
 
   if (!navHistory) {
+    console.log("Missing Nav Hisory Data")
     return ""
   }
 
   if (!marketHistory) {
+    console.log("Missing Market History Data")
     return ""
   }
 
