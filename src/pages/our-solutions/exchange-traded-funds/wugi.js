@@ -61,7 +61,7 @@ const WUGI = ({ mobile }) => {
     if (day_of_week === "Sunday") {
       bbh_days_back = 2
     } else if (day_of_week === "Monday") {
-      bbh_days_back = 4
+      bbh_days_back = 3
     }
 
     let bbh_record_date = moment()
@@ -83,7 +83,7 @@ const WUGI = ({ mobile }) => {
     } else if (day_of_week === "Sunday") {
       etfg_days_back = 3
     } else if (day_of_week === "Monday") {
-      etfg_days_back = 5
+      etfg_days_back = 4
     }
 
     let etfg_record_date = moment()
@@ -98,7 +98,7 @@ const WUGI = ({ mobile }) => {
     if (day_of_week === "Sunday") {
       downloads_days_back = 2
     } else if (day_of_week === "Monday") {
-      downloads_days_back = 4
+      downloads_days_back = 3
     }
 
     let downloads_record_date = moment()
@@ -650,7 +650,7 @@ const WUGI = ({ mobile }) => {
                   />
                   <YAxis
                     orientation="left"
-                    ticks={[0, 10, 20, 30, 40]}
+                    ticks={[0, 10, 20, 30, 40, 50, 60]}
                     tickMargin={8}
                     tickFormatter={label => "$" + label}
                   />
